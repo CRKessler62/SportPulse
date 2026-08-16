@@ -1,6 +1,6 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-16T04:27:18.472375+00:00",
+  "lastUpdated": "2026-08-16T04:55:08.274737+00:00",
   "games": [
     {
       "gamePk": 822940,
@@ -9,7 +9,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T16:15:00Z"
+      "gameDate": "2026-08-16T16:15:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 823344,
@@ -18,7 +27,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T17:35:00Z"
+      "gameDate": "2026-08-16T17:35:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 824880,
@@ -27,7 +45,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T17:35:00Z"
+      "gameDate": "2026-08-16T17:35:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 822774,
@@ -36,7 +63,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T17:37:00Z"
+      "gameDate": "2026-08-16T17:37:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 823590,
@@ -45,7 +81,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T17:40:00Z"
+      "gameDate": "2026-08-16T17:40:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 824397,
@@ -54,7 +99,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T17:40:00Z"
+      "gameDate": "2026-08-16T17:40:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 824236,
@@ -63,7 +117,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T17:40:00Z"
+      "gameDate": "2026-08-16T17:40:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 824477,
@@ -72,7 +135,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T17:40:00Z"
+      "gameDate": "2026-08-16T17:40:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 823670,
@@ -81,7 +153,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T18:10:00Z"
+      "gameDate": "2026-08-16T18:10:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 824642,
@@ -90,7 +171,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T19:15:00Z"
+      "gameDate": "2026-08-16T19:15:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 823182,
@@ -99,7 +189,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T20:05:00Z"
+      "gameDate": "2026-08-16T20:05:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 824965,
@@ -108,7 +207,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T20:05:00Z"
+      "gameDate": "2026-08-16T20:05:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 823991,
@@ -117,7 +225,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T20:07:00Z"
+      "gameDate": "2026-08-16T20:07:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 823912,
@@ -126,7 +243,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T20:10:00Z"
+      "gameDate": "2026-08-16T20:10:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     },
     {
       "gamePk": 824156,
@@ -135,7 +261,16 @@
       "awayScore": 0,
       "homeScore": 0,
       "status": "Scheduled",
-      "gameDate": "2026-08-16T23:20:00Z"
+      "gameDate": "2026-08-16T23:20:00Z",
+      "inning": null,
+      "inningOrdinal": null,
+      "inningState": null,
+      "outs": null,
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      }
     }
   ]
 }
