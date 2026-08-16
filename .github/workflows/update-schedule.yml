@@ -1,0 +1,199 @@
+name: Update MLB Schedule
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+
+  update-schedule:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get MLB schedule
+        run: |
+
+          START_DATE=$(date -u -d "30 days ago" +"%Y-%m-%d")
+          END_DATE=$(date -u -d "30 days" +"%Y-%m-%d")
+
+          curl -L \
+            "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=${START_DATE}&endDate=${END_DATE}&hydrate=probablePitcher,venue,team" \
+            -o mlb-schedule.json
+
+      - name: Build schedule.json
+        run: |
+
+          python3 <<'PY'
+
+          import json
+          from datetime import datetime, timezone
+          from zoneinfo import ZoneInfo
+
+          EASTERN = ZoneInfo("America/New_York")
+
+          with open("mlb-schedule.json", "r") as f:
+              data = json.load(f)
+
+          games = []
+
+          for date_block in data.get("dates", []):
+
+              for game in date_block.get("games", []):
+
+                  game_date_utc = game.get("gameDate")
+
+                  if not game_date_utc:
+                      continue
+
+                  dt = datetime.fromisoformat(
+                      game_date_utc.replace("Z", "+00:00")
+                  )
+
+                  local_date = dt.astimezone(EASTERN)
+
+                  away = game.get("teams", {}).get("away", {})
+                  home = game.get("teams", {}).get("home", {})
+
+                  away_team = away.get("team", {})
+                  home_team = home.get("team", {})
+
+                  away_pitcher = (
+                      away.get("probablePitcher", {}).get("fullName")
+                      if away.get("probablePitcher")
+                      else None
+                  )
+
+                  home_pitcher = (
+                      home.get("probablePitcher", {}).get("fullName")
+                      if home.get("probablePitcher")
+                      else None
+                  )
+
+                  status = game.get(
+                      "status", {}
+                  )
+
+                  games.append({
+
+                      "gamePk": game.get("gamePk"),
+
+                      "date": local_date.strftime("%Y-%m-%d"),
+
+                      "gameDate": game_date_utc,
+
+                      "localGameTime":
+                          local_date.isoformat(),
+
+                      "status":
+                          status.get(
+                              "detailedState",
+                              "Scheduled"
+                          ),
+
+                      "abstractGameState":
+                          status.get(
+                              "abstractGameState"
+                          ),
+
+                      "codedGameState":
+                          status.get(
+                              "codedGameState"
+                          ),
+
+                      "awayTeam": {
+                          "id": away_team.get("id"),
+                          "name": away_team.get("name"),
+                          "abbreviation":
+                              away_team.get(
+                                  "abbreviation"
+                              )
+                      },
+
+                      "homeTeam": {
+                          "id": home_team.get("id"),
+                          "name": home_team.get("name"),
+                          "abbreviation":
+                              home_team.get(
+                                  "abbreviation"
+                              )
+                      },
+
+                      "awayScore":
+                          away.get("score"),
+
+                      "homeScore":
+                          home.get("score"),
+
+                      "venue":
+                          (
+                              game.get(
+                                  "venue", {}
+                              ).get("name")
+                              if game.get("venue")
+                              else None
+                          ),
+
+                      "awayPitcher":
+                          away_pitcher,
+
+                      "homePitcher":
+                          home_pitcher
+                  })
+
+
+          output = {
+
+              "league": "MLB",
+
+              "timezone": "America/New_York",
+
+              "lastUpdated":
+                  datetime.now(
+                      timezone.utc
+                  ).isoformat(),
+
+              "games": games
+
+          }
+
+
+          with open(
+              "data/schedule.json",
+              "w"
+          ) as f:
+
+              json.dump(
+                  output,
+                  f,
+                  indent=2
+              )
+
+
+          print(
+              f"Created schedule.json with {len(games)} games"
+          )
+
+          PY
+
+      - name: Save updated schedule
+        run: |
+
+          git config user.name "SportPulse Bot"
+
+          git config user.email "sportpulse-bot@users.noreply.github.com"
+
+          git add data/schedule.json
+
+          git diff --cached --quiet || \
+            git commit -m "Update MLB schedule"
+
+          git push
