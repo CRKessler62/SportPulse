@@ -1,846 +1,1434 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-16T23:23:32.101454+00:00",
-  "offense": {
-    "battingAverage": [
-      {
-        "rank": 1,
-        "player": "Yordan Alvarez",
-        "team": "Houston Astros",
-        "value": ".321"
-      },
-      {
-        "rank": 2,
-        "player": "Luis Arraez",
-        "team": "Philadelphia Phillies",
-        "value": ".315"
-      },
-      {
-        "rank": 3,
-        "player": "Chandler Simpson",
-        "team": "Tampa Bay Rays",
-        "value": ".309"
-      },
-      {
-        "rank": 4,
-        "player": "Gabriel Moreno",
-        "team": "Arizona Diamondbacks",
-        "value": ".308"
-      },
-      {
-        "rank": 5,
-        "player": "Otto Lopez",
-        "team": "Miami Marlins",
-        "value": ".308"
-      }
-    ],
-    "hits": [
-      {
-        "rank": 1,
-        "player": "Otto Lopez",
-        "team": "Miami Marlins",
-        "value": "150"
-      },
-      {
-        "rank": 2,
-        "player": "Luis Arraez",
-        "team": "Philadelphia Phillies",
-        "value": "149"
-      },
-      {
-        "rank": 3,
-        "player": "Yordan Alvarez",
-        "team": "Houston Astros",
-        "value": "142"
-      },
-      {
-        "rank": 4,
-        "player": "Yandy D\u00edaz",
-        "team": "Tampa Bay Rays",
-        "value": "141"
-      },
-      {
-        "rank": 5,
-        "player": "Nick Gonzales",
-        "team": "Pittsburgh Pirates",
-        "value": "137"
-      }
-    ],
-    "homeRuns": [
-      {
-        "rank": 1,
-        "player": "Kyle Schwarber",
-        "team": "Philadelphia Phillies",
-        "value": "37"
-      },
-      {
-        "rank": 2,
-        "player": "Yordan Alvarez",
-        "team": "Houston Astros",
-        "value": "36"
-      },
-      {
-        "rank": 2,
-        "player": "Matt Olson",
-        "team": "Atlanta Braves",
-        "value": "36"
-      },
-      {
-        "rank": 4,
-        "player": "Junior Caminero",
-        "team": "Tampa Bay Rays",
-        "value": "35"
-      },
-      {
-        "rank": 5,
-        "player": "Hunter Goodman",
-        "team": "Colorado Rockies",
-        "value": "34"
-      }
-    ],
-    "rbi": [
-      {
-        "rank": 1,
-        "player": "CJ Abrams",
-        "team": "Washington Nationals",
-        "value": "91"
-      },
-      {
-        "rank": 1,
-        "player": "Sal Stewart",
-        "team": "Cincinnati Reds",
-        "value": "91"
-      },
-      {
-        "rank": 3,
-        "player": "Alec Burleson",
-        "team": "St. Louis Cardinals",
-        "value": "90"
-      },
-      {
-        "rank": 4,
-        "player": "Yordan Alvarez",
-        "team": "Houston Astros",
-        "value": "88"
-      },
-      {
-        "rank": 4,
-        "player": "Jordan Walker",
-        "team": "St. Louis Cardinals",
-        "value": "88"
-      }
-    ],
-    "runs": [
-      {
-        "rank": 1,
-        "player": "James Wood",
-        "team": "Washington Nationals",
-        "value": "100"
-      },
-      {
-        "rank": 2,
-        "player": "Matt Olson",
-        "team": "Atlanta Braves",
-        "value": "88"
-      },
-      {
-        "rank": 3,
-        "player": "Pete Crow-Armstrong",
-        "team": "Chicago Cubs",
-        "value": "87"
-      },
-      {
-        "rank": 4,
-        "player": "Bryan Reynolds",
-        "team": "Pittsburgh Pirates",
-        "value": "85"
-      },
-      {
-        "rank": 5,
-        "player": "Miguel Vargas",
-        "team": "Chicago White Sox",
-        "value": "83"
-      }
-    ],
-    "obp": [
-      {
-        "rank": 1,
-        "player": "Yordan Alvarez",
-        "team": "Houston Astros",
-        "value": ".436"
-      },
-      {
-        "rank": 2,
-        "player": "Nick Kurtz",
-        "team": "Athletics",
-        "value": ".396"
-      },
-      {
-        "rank": 3,
-        "player": "James Wood",
-        "team": "Washington Nationals",
-        "value": ".393"
-      },
-      {
-        "rank": 4,
-        "player": "Willson Contreras",
-        "team": "Boston Red Sox",
-        "value": ".389"
-      },
-      {
-        "rank": 5,
-        "player": "Shohei Ohtani",
-        "team": "Los Angeles Dodgers",
-        "value": ".388"
-      }
-    ],
-    "slg": [
-      {
-        "rank": 1,
-        "player": "Yordan Alvarez",
-        "team": "Houston Astros",
-        "value": ".622"
-      },
-      {
-        "rank": 2,
-        "player": "Matt Olson",
-        "team": "Atlanta Braves",
-        "value": ".551"
-      },
-      {
-        "rank": 3,
-        "player": "Munetaka Murakami",
-        "team": "Chicago White Sox",
-        "value": ".543"
-      },
-      {
-        "rank": 4,
-        "player": "Luis Garc\u00eda Jr.",
-        "team": "New York Yankees",
-        "value": ".541"
-      },
-      {
-        "rank": 5,
-        "player": "Hunter Goodman",
-        "team": "Colorado Rockies",
-        "value": ".541"
-      }
-    ],
-    "ops": [
-      {
-        "rank": 1,
-        "player": "Yordan Alvarez",
-        "team": "Houston Astros",
-        "value": "1.058"
-      },
-      {
-        "rank": 2,
-        "player": "Shohei Ohtani",
-        "team": "Los Angeles Dodgers",
-        "value": ".928"
-      },
-      {
-        "rank": 2,
-        "player": "James Wood",
-        "team": "Washington Nationals",
-        "value": ".928"
-      },
-      {
-        "rank": 4,
-        "player": "Willson Contreras",
-        "team": "Boston Red Sox",
-        "value": ".912"
-      },
-      {
-        "rank": 5,
-        "player": "Munetaka Murakami",
-        "team": "Chicago White Sox",
-        "value": ".911"
-      }
-    ],
-    "stolenBases": [],
-    "doubles": [
-      {
-        "rank": 1,
-        "player": "Alec Burleson",
-        "team": "St. Louis Cardinals",
-        "value": "31"
-      },
-      {
-        "rank": 2,
-        "player": "Rafael Devers",
-        "team": "San Francisco Giants",
-        "value": "30"
-      },
-      {
-        "rank": 2,
-        "player": "Matt Olson",
-        "team": "Atlanta Braves",
-        "value": "30"
-      },
-      {
-        "rank": 2,
-        "player": "Bryan Reynolds",
-        "team": "Pittsburgh Pirates",
-        "value": "30"
-      },
-      {
-        "rank": 5,
-        "player": "Otto Lopez",
-        "team": "Miami Marlins",
-        "value": "29"
-      },
-      {
-        "rank": 5,
-        "player": "Ceddanne Rafaela",
-        "team": "Boston Red Sox",
-        "value": "29"
-      }
-    ],
-    "triples": [
-      {
-        "rank": 1,
-        "player": "Corbin Carroll",
-        "team": "Arizona Diamondbacks",
-        "value": "15"
-      },
-      {
-        "rank": 2,
-        "player": "Luis Arraez",
-        "team": "Philadelphia Phillies",
-        "value": "7"
-      },
-      {
-        "rank": 2,
-        "player": "Pete Crow-Armstrong",
-        "team": "Chicago Cubs",
-        "value": "7"
-      },
-      {
-        "rank": 2,
-        "player": "Otto Lopez",
-        "team": "Miami Marlins",
-        "value": "7"
-      },
-      {
-        "rank": 2,
-        "player": "Jake McCarthy",
-        "team": "Colorado Rockies",
-        "value": "7"
-      }
-    ]
-  },
-  "pitching": {
-    "era": [
-      {
-        "rank": 1,
-        "player": "Jacob Misiorowski",
-        "team": "Milwaukee Brewers",
-        "value": "1.75"
-      },
-      {
-        "rank": 2,
-        "player": "Chris Sale",
-        "team": "Atlanta Braves",
-        "value": "2.16"
-      },
-      {
-        "rank": 3,
-        "player": "Cam Schlittler",
-        "team": "New York Yankees",
-        "value": "2.19"
-      },
-      {
-        "rank": 4,
-        "player": "Dylan Cease",
-        "team": "Toronto Blue Jays",
-        "value": "2.42"
-      },
-      {
-        "rank": 5,
-        "player": "Chase Burns",
-        "team": "Cincinnati Reds",
-        "value": "2.47"
-      }
-    ],
-    "wins": [
-      {
-        "rank": 1,
-        "player": "Sonny Gray",
-        "team": "Boston Red Sox",
-        "value": "15"
-      },
-      {
-        "rank": 1,
-        "player": "Cristopher S\u00e1nchez",
-        "team": "Philadelphia Phillies",
-        "value": "15"
-      },
-      {
-        "rank": 3,
-        "player": "Chase Burns",
-        "team": "Cincinnati Reds",
-        "value": "14"
-      },
-      {
-        "rank": 4,
-        "player": "Sandy Alcantara",
-        "team": "Miami Marlins",
-        "value": "13"
-      },
-      {
-        "rank": 4,
-        "player": "Aaron Ashby",
-        "team": "Milwaukee Brewers",
-        "value": "13"
-      },
-      {
-        "rank": 4,
-        "player": "Foster Griffin",
-        "team": "Cleveland Guardians",
-        "value": "13"
-      }
-    ],
-    "strikeouts": [
-      {
-        "rank": 1,
-        "player": "Jacob Misiorowski",
-        "team": "Milwaukee Brewers",
-        "value": "210"
-      },
-      {
-        "rank": 2,
-        "player": "Dylan Cease",
-        "team": "Toronto Blue Jays",
-        "value": "201"
-      },
-      {
-        "rank": 3,
-        "player": "Gavin Williams",
-        "team": "Cleveland Guardians",
-        "value": "190"
-      },
-      {
-        "rank": 4,
-        "player": "Cam Schlittler",
-        "team": "New York Yankees",
-        "value": "189"
-      },
-      {
-        "rank": 5,
-        "player": "Jes\u00fas Luzardo",
-        "team": "Philadelphia Phillies",
-        "value": "185"
-      }
-    ],
-    "whip": [
-      {
-        "rank": 1,
-        "player": "Jacob Misiorowski",
-        "team": "Milwaukee Brewers",
-        "value": "0.75"
-      },
-      {
-        "rank": 2,
-        "player": "Yoshinobu Yamamoto",
-        "team": "Los Angeles Dodgers",
-        "value": "0.89"
-      },
-      {
-        "rank": 3,
-        "player": "Drew Rasmussen",
-        "team": "Tampa Bay Rays",
-        "value": "0.91"
-      },
-      {
-        "rank": 4,
-        "player": "Cam Schlittler",
-        "team": "New York Yankees",
-        "value": "0.94"
-      },
-      {
-        "rank": 5,
-        "player": "Logan Gilbert",
-        "team": "Seattle Mariners",
-        "value": "0.99"
-      }
-    ],
-    "saves": [
-      {
-        "rank": 1,
-        "player": "Bryan Baker",
-        "team": "Tampa Bay Rays",
-        "value": "34"
-      },
-      {
-        "rank": 2,
-        "player": "Cade Smith",
-        "team": "Cleveland Guardians",
-        "value": "31"
-      },
-      {
-        "rank": 3,
-        "player": "Mason Miller",
-        "team": "San Diego Padres",
-        "value": "30"
-      },
-      {
-        "rank": 3,
-        "player": "Riley O'Brien",
-        "team": "St. Louis Cardinals",
-        "value": "30"
-      },
-      {
-        "rank": 5,
-        "player": "Louis Varland",
-        "team": "Toronto Blue Jays",
-        "value": "28"
-      }
-    ],
-    "innings": [
-      {
-        "rank": 1,
-        "player": "Sandy Alcantara",
-        "team": "Miami Marlins",
-        "value": "170.2"
-      },
-      {
-        "rank": 2,
-        "player": "Cristopher S\u00e1nchez",
-        "team": "Philadelphia Phillies",
-        "value": "155.2"
-      },
-      {
-        "rank": 3,
-        "player": "Cam Schlittler",
-        "team": "New York Yankees",
-        "value": "152.0"
-      },
-      {
-        "rank": 4,
-        "player": "Michael Wacha",
-        "team": "Kansas City Royals",
-        "value": "150.2"
-      },
-      {
-        "rank": 5,
-        "player": "Tanner Bibee",
-        "team": "Cleveland Guardians",
-        "value": "150.1"
-      },
-      {
-        "rank": 5,
-        "player": "Jes\u00fas Luzardo",
-        "team": "Philadelphia Phillies",
-        "value": "150.1"
-      }
-    ],
-    "qualityStarts": []
-  },
-  "defense": {
-    "fieldingPercentage": [
-      {
-        "rank": 1,
-        "player": "Sandy Alcantara",
-        "team": "Miami Marlins",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Randy Arozarena",
-        "team": "Seattle Mariners",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "JJ Bleday",
-        "team": "Cincinnati Reds",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Taj Bradley",
-        "team": "Minnesota Twins",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Jackson Chourio",
-        "team": "Milwaukee Brewers",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "William Contreras",
-        "team": "Milwaukee Brewers",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Reid Detmers",
-        "team": "Los Angeles Angels",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Nathan Eovaldi",
-        "team": "Texas Rangers",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "MacKenzie Gore",
-        "team": "Texas Rangers",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Sonny Gray",
-        "team": "Boston Red Sox",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Foster Griffin",
-        "team": "Cleveland Guardians",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Michael Harris II",
-        "team": "Atlanta Braves",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Shota Imanaga",
-        "team": "Chicago Cubs",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Jes\u00fas Luzardo",
-        "team": "Philadelphia Phillies",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Jakob Marsee",
-        "team": "Miami Marlins",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Davis Martin",
-        "team": "Chicago White Sox",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Nick Martinez",
-        "team": "Tampa Bay Rays",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Michael McGreevy",
-        "team": "St. Louis Cardinals",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Jacob Misiorowski",
-        "team": "Milwaukee Brewers",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Andre Pallante",
-        "team": "St. Louis Cardinals",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Drew Rasmussen",
-        "team": "Tampa Bay Rays",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Eduardo Rodriguez",
-        "team": "Arizona Diamondbacks",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Joe Ryan",
-        "team": "Minnesota Twins",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Chris Sale",
-        "team": "Atlanta Braves",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Jos\u00e9 Soriano",
-        "team": "Toronto Blue Jays",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Christian V\u00e1zquez",
-        "team": "Houston Astros",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Christian Walker",
-        "team": "Houston Astros",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Ryan Weathers",
-        "team": "New York Yankees",
-        "value": "1.000"
-      },
-      {
-        "rank": 1,
-        "player": "Yoshinobu Yamamoto",
-        "team": "Los Angeles Dodgers",
-        "value": "1.000"
-      }
-    ],
-    "putouts": [
-      {
-        "rank": 1,
-        "player": "Alec Burleson",
-        "team": "St. Louis Cardinals",
-        "value": "957"
-      },
-      {
-        "rank": 2,
-        "player": "William Contreras",
-        "team": "Milwaukee Brewers",
-        "value": "947"
-      },
-      {
-        "rank": 3,
-        "player": "Spencer Torkelson",
-        "team": "Detroit Tigers",
-        "value": "926"
-      },
-      {
-        "rank": 4,
-        "player": "Michael Busch",
-        "team": "Chicago Cubs",
-        "value": "924"
-      },
-      {
-        "rank": 5,
-        "player": "J.T. Realmuto",
-        "team": "Philadelphia Phillies",
-        "value": "921"
-      }
-    ],
-    "assists": [
-      {
-        "rank": 1,
-        "player": "JJ Wetherholt",
-        "team": "St. Louis Cardinals",
-        "value": "337"
-      },
-      {
-        "rank": 2,
-        "player": "Cole Young",
-        "team": "Seattle Mariners",
-        "value": "311"
-      },
-      {
-        "rank": 3,
-        "player": "Luis Arraez",
-        "team": "Philadelphia Phillies",
-        "value": "308"
-      },
-      {
-        "rank": 3,
-        "player": "Masyn Winn",
-        "team": "St. Louis Cardinals",
-        "value": "308"
-      },
-      {
-        "rank": 5,
-        "player": "Nico Hoerner",
-        "team": "Chicago Cubs",
-        "value": "301"
-      }
-    ],
-    "errors": [
-      {
-        "rank": 1,
-        "player": "CJ Abrams",
-        "team": "Washington Nationals",
-        "value": "19"
-      },
-      {
-        "rank": 2,
-        "player": "Otto Lopez",
-        "team": "Miami Marlins",
-        "value": "18"
-      },
-      {
-        "rank": 2,
-        "player": "Trea Turner",
-        "team": "Philadelphia Phillies",
-        "value": "18"
-      },
-      {
-        "rank": 4,
-        "player": "Willy Adames",
-        "team": "San Francisco Giants",
-        "value": "16"
-      },
-      {
-        "rank": 4,
-        "player": "Zach Neto",
-        "team": "Los Angeles Angels",
-        "value": "16"
-      }
-    ],
-    "doublePlays": [
-      {
-        "rank": 1,
-        "player": "Alec Burleson",
-        "team": "St. Louis Cardinals",
-        "value": "107"
-      },
-      {
-        "rank": 2,
-        "player": "Matt Olson",
-        "team": "Atlanta Braves",
-        "value": "94"
-      },
-      {
-        "rank": 3,
-        "player": "Michael Busch",
-        "team": "Chicago Cubs",
-        "value": "90"
-      },
-      {
-        "rank": 4,
-        "player": "Spencer Torkelson",
-        "team": "Detroit Tigers",
-        "value": "86"
-      },
-      {
-        "rank": 5,
-        "player": "Masyn Winn",
-        "team": "St. Louis Cardinals",
-        "value": "85"
-      }
-    ]
+  "lastUpdated": "2026-08-16T23:31:31.817722+00:00",
+  "leagues": {
+    "AL": {
+      "offense": {
+        "battingAverage": [
+          {
+            "rank": 1,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": ".321"
+          },
+          {
+            "rank": 2,
+            "player": "Chandler Simpson",
+            "team": "Tampa Bay Rays",
+            "value": ".309"
+          },
+          {
+            "rank": 3,
+            "player": "Yandy D\u00edaz",
+            "team": "Tampa Bay Rays",
+            "value": ".302"
+          },
+          {
+            "rank": 4,
+            "player": "Josh Jung",
+            "team": "Texas Rangers",
+            "value": ".294"
+          },
+          {
+            "rank": 5,
+            "player": "Chase DeLauter",
+            "team": "Cleveland Guardians",
+            "value": ".285"
+          }
+        ],
+        "hits": [
+          {
+            "rank": 1,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": "142"
+          },
+          {
+            "rank": 2,
+            "player": "Yandy D\u00edaz",
+            "team": "Tampa Bay Rays",
+            "value": "141"
+          },
+          {
+            "rank": 3,
+            "player": "Ceddanne Rafaela",
+            "team": "Boston Red Sox",
+            "value": "133"
+          },
+          {
+            "rank": 4,
+            "player": "Chandler Simpson",
+            "team": "Tampa Bay Rays",
+            "value": "133"
+          },
+          {
+            "rank": 5,
+            "player": "Ernie Clement",
+            "team": "Toronto Blue Jays",
+            "value": "132"
+          }
+        ],
+        "homeRuns": [
+          {
+            "rank": 1,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": "36"
+          },
+          {
+            "rank": 2,
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "value": "35"
+          },
+          {
+            "rank": 3,
+            "player": "Ben Rice",
+            "team": "New York Yankees",
+            "value": "33"
+          },
+          {
+            "rank": 4,
+            "player": "Munetaka Murakami",
+            "team": "Chicago White Sox",
+            "value": "28"
+          },
+          {
+            "rank": 5,
+            "player": "Miguel Vargas",
+            "team": "Chicago White Sox",
+            "value": "28"
+          }
+        ],
+        "rbi": [
+          {
+            "rank": 1,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": "88"
+          },
+          {
+            "rank": 2,
+            "player": "Dillon Dingler",
+            "team": "Detroit Tigers",
+            "value": "82"
+          },
+          {
+            "rank": 3,
+            "player": "Pete Alonso",
+            "team": "Baltimore Orioles",
+            "value": "80"
+          },
+          {
+            "rank": 4,
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "value": "79"
+          },
+          {
+            "rank": 5,
+            "player": "Ben Rice",
+            "team": "New York Yankees",
+            "value": "78"
+          }
+        ],
+        "runs": [
+          {
+            "rank": 1,
+            "player": "Miguel Vargas",
+            "team": "Chicago White Sox",
+            "value": "83"
+          },
+          {
+            "rank": 2,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": "82"
+          },
+          {
+            "rank": 3,
+            "player": "Kevin McGonigle",
+            "team": "Detroit Tigers",
+            "value": "80"
+          },
+          {
+            "rank": 4,
+            "player": "Randy Arozarena",
+            "team": "Seattle Mariners",
+            "value": "78"
+          },
+          {
+            "rank": 5,
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "value": "77"
+          }
+        ],
+        "obp": [
+          {
+            "rank": 1,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": ".436"
+          },
+          {
+            "rank": 2,
+            "player": "Nick Kurtz",
+            "team": "Athletics",
+            "value": ".396"
+          },
+          {
+            "rank": 3,
+            "player": "Willson Contreras",
+            "team": "Boston Red Sox",
+            "value": ".389"
+          },
+          {
+            "rank": 4,
+            "player": "Kevin McGonigle",
+            "team": "Detroit Tigers",
+            "value": ".386"
+          },
+          {
+            "rank": 5,
+            "player": "Mike Trout",
+            "team": "Los Angeles Angels",
+            "value": ".382"
+          }
+        ],
+        "slg": [
+          {
+            "rank": 1,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": ".622"
+          },
+          {
+            "rank": 2,
+            "player": "Munetaka Murakami",
+            "team": "Chicago White Sox",
+            "value": ".543"
+          },
+          {
+            "rank": 3,
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "value": ".541"
+          },
+          {
+            "rank": 4,
+            "player": "Ben Rice",
+            "team": "New York Yankees",
+            "value": ".533"
+          },
+          {
+            "rank": 5,
+            "player": "Willson Contreras",
+            "team": "Boston Red Sox",
+            "value": ".523"
+          }
+        ],
+        "ops": [
+          {
+            "rank": 1,
+            "player": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "value": "1.058"
+          },
+          {
+            "rank": 2,
+            "player": "Willson Contreras",
+            "team": "Boston Red Sox",
+            "value": ".912"
+          },
+          {
+            "rank": 3,
+            "player": "Munetaka Murakami",
+            "team": "Chicago White Sox",
+            "value": ".911"
+          },
+          {
+            "rank": 4,
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "value": ".905"
+          },
+          {
+            "rank": 5,
+            "player": "Nick Kurtz",
+            "team": "Athletics",
+            "value": ".879"
+          }
+        ],
+        "stolenBases": [
+          {
+            "rank": 1,
+            "player": "Dylan Cease",
+            "team": "Toronto Blue Jays",
+            "value": "24"
+          },
+          {
+            "rank": 2,
+            "player": "Spencer Arrighetti",
+            "team": "Houston Astros",
+            "value": "19"
+          },
+          {
+            "rank": 3,
+            "player": "George Kirby",
+            "team": "Seattle Mariners",
+            "value": "19"
+          },
+          {
+            "rank": 4,
+            "player": "Drew Rasmussen",
+            "team": "Tampa Bay Rays",
+            "value": "19"
+          },
+          {
+            "rank": 5,
+            "player": "Sean Burke",
+            "team": "Chicago White Sox",
+            "value": "18"
+          }
+        ],
+        "doubles": [
+          {
+            "rank": 1,
+            "player": "Ceddanne Rafaela",
+            "team": "Boston Red Sox",
+            "value": "29"
+          },
+          {
+            "rank": 2,
+            "player": "Ernie Clement",
+            "team": "Toronto Blue Jays",
+            "value": "28"
+          },
+          {
+            "rank": 3,
+            "player": "Brandon Nimmo",
+            "team": "Texas Rangers",
+            "value": "28"
+          },
+          {
+            "rank": 4,
+            "player": "Miguel Vargas",
+            "team": "Chicago White Sox",
+            "value": "28"
+          },
+          {
+            "rank": 5,
+            "player": "Wilyer Abreu",
+            "team": "Boston Red Sox",
+            "value": "27"
+          }
+        ],
+        "triples": [
+          {
+            "rank": 1,
+            "player": "Chandler Simpson",
+            "team": "Tampa Bay Rays",
+            "value": "6"
+          },
+          {
+            "rank": 2,
+            "player": "Leody Taveras",
+            "team": "Baltimore Orioles",
+            "value": "6"
+          },
+          {
+            "rank": 3,
+            "player": "Kody Clemens",
+            "team": "Minnesota Twins",
+            "value": "5"
+          },
+          {
+            "rank": 4,
+            "player": "Gunnar Henderson",
+            "team": "Baltimore Orioles",
+            "value": "4"
+          },
+          {
+            "rank": 5,
+            "player": "Colt Keith",
+            "team": "Detroit Tigers",
+            "value": "4"
+          }
+        ]
+      },
+      "pitching": {
+        "era": [
+          {
+            "rank": 1,
+            "player": "Cam Schlittler",
+            "team": "New York Yankees",
+            "value": "2.19"
+          },
+          {
+            "rank": 2,
+            "player": "Dylan Cease",
+            "team": "Toronto Blue Jays",
+            "value": "2.42"
+          },
+          {
+            "rank": 3,
+            "player": "Parker Messick",
+            "team": "Cleveland Guardians",
+            "value": "2.59"
+          },
+          {
+            "rank": 4,
+            "player": "Sonny Gray",
+            "team": "Boston Red Sox",
+            "value": "2.65"
+          },
+          {
+            "rank": 5,
+            "player": "Nick Martinez",
+            "team": "Tampa Bay Rays",
+            "value": "2.74"
+          }
+        ],
+        "wins": [
+          {
+            "rank": 1,
+            "player": "Sonny Gray",
+            "team": "Boston Red Sox",
+            "value": "15"
+          },
+          {
+            "rank": 2,
+            "player": "Nick Martinez",
+            "team": "Tampa Bay Rays",
+            "value": "12"
+          },
+          {
+            "rank": 3,
+            "player": "Drew Rasmussen",
+            "team": "Tampa Bay Rays",
+            "value": "12"
+          },
+          {
+            "rank": 4,
+            "player": "Gavin Williams",
+            "team": "Cleveland Guardians",
+            "value": "11"
+          },
+          {
+            "rank": 5,
+            "player": "Nathan Eovaldi",
+            "team": "Texas Rangers",
+            "value": "10"
+          }
+        ],
+        "strikeouts": [
+          {
+            "rank": 1,
+            "player": "Dylan Cease",
+            "team": "Toronto Blue Jays",
+            "value": "201"
+          },
+          {
+            "rank": 2,
+            "player": "Gavin Williams",
+            "team": "Cleveland Guardians",
+            "value": "190"
+          },
+          {
+            "rank": 3,
+            "player": "Cam Schlittler",
+            "team": "New York Yankees",
+            "value": "189"
+          },
+          {
+            "rank": 4,
+            "player": "Reid Detmers",
+            "team": "Los Angeles Angels",
+            "value": "167"
+          },
+          {
+            "rank": 5,
+            "player": "Sean Burke",
+            "team": "Chicago White Sox",
+            "value": "154"
+          }
+        ],
+        "whip": [
+          {
+            "rank": 1,
+            "player": "Drew Rasmussen",
+            "team": "Tampa Bay Rays",
+            "value": "0.91"
+          },
+          {
+            "rank": 2,
+            "player": "Cam Schlittler",
+            "team": "New York Yankees",
+            "value": "0.94"
+          },
+          {
+            "rank": 3,
+            "player": "Logan Gilbert",
+            "team": "Seattle Mariners",
+            "value": "0.99"
+          },
+          {
+            "rank": 4,
+            "player": "Keider Montero",
+            "team": "Detroit Tigers",
+            "value": "0.99"
+          },
+          {
+            "rank": 5,
+            "player": "Parker Messick",
+            "team": "Cleveland Guardians",
+            "value": "1.03"
+          }
+        ],
+        "saves": [
+          {
+            "rank": 1,
+            "player": "Bryan Baker",
+            "team": "Tampa Bay Rays",
+            "value": "34"
+          },
+          {
+            "rank": 2,
+            "player": "Cade Smith",
+            "team": "Cleveland Guardians",
+            "value": "31"
+          },
+          {
+            "rank": 3,
+            "player": "Louis Varland",
+            "team": "Toronto Blue Jays",
+            "value": "28"
+          },
+          {
+            "rank": 4,
+            "player": "David Bednar",
+            "team": "New York Yankees",
+            "value": "27"
+          },
+          {
+            "rank": 5,
+            "player": "Aroldis Chapman",
+            "team": "Boston Red Sox",
+            "value": "27"
+          }
+        ],
+        "innings": [
+          {
+            "rank": 1,
+            "player": "Cam Schlittler",
+            "team": "New York Yankees",
+            "value": "152.0"
+          },
+          {
+            "rank": 2,
+            "player": "Michael Wacha",
+            "team": "Kansas City Royals",
+            "value": "150.2"
+          },
+          {
+            "rank": 3,
+            "player": "Tanner Bibee",
+            "team": "Cleveland Guardians",
+            "value": "150.1"
+          },
+          {
+            "rank": 4,
+            "player": "Gavin Williams",
+            "team": "Cleveland Guardians",
+            "value": "149.0"
+          },
+          {
+            "rank": 5,
+            "player": "Logan Gilbert",
+            "team": "Seattle Mariners",
+            "value": "145.1"
+          }
+        ],
+        "qualityStarts": []
+      },
+      "defense": {
+        "fieldingPercentage": [
+          {
+            "rank": 1,
+            "player": "Randy Arozarena",
+            "team": "Seattle Mariners",
+            "value": "1.000"
+          },
+          {
+            "rank": 2,
+            "player": "Christian V\u00e1zquez",
+            "team": "Houston Astros",
+            "value": "1.000"
+          },
+          {
+            "rank": 3,
+            "player": "Christian Walker",
+            "team": "Houston Astros",
+            "value": "1.000"
+          },
+          {
+            "rank": 4,
+            "player": "Cal Raleigh",
+            "team": "Seattle Mariners",
+            "value": ".998"
+          },
+          {
+            "rank": 5,
+            "player": "Spencer Torkelson",
+            "team": "Detroit Tigers",
+            "value": ".998"
+          }
+        ],
+        "putouts": [
+          {
+            "rank": 1,
+            "player": "Spencer Torkelson",
+            "team": "Detroit Tigers",
+            "value": "926"
+          },
+          {
+            "rank": 2,
+            "player": "Pete Alonso",
+            "team": "Baltimore Orioles",
+            "value": "867"
+          },
+          {
+            "rank": 3,
+            "player": "Jonathan Aranda",
+            "team": "Tampa Bay Rays",
+            "value": "819"
+          },
+          {
+            "rank": 4,
+            "player": "Willson Contreras",
+            "team": "Boston Red Sox",
+            "value": "790"
+          },
+          {
+            "rank": 5,
+            "player": "Josh Naylor",
+            "team": "Seattle Mariners",
+            "value": "785"
+          }
+        ],
+        "assists": [
+          {
+            "rank": 1,
+            "player": "Cole Young",
+            "team": "Seattle Mariners",
+            "value": "311"
+          },
+          {
+            "rank": 2,
+            "player": "Gunnar Henderson",
+            "team": "Baltimore Orioles",
+            "value": "281"
+          },
+          {
+            "rank": 3,
+            "player": "Jazz Chisholm Jr.",
+            "team": "New York Yankees",
+            "value": "268"
+          },
+          {
+            "rank": 4,
+            "player": "Zach Neto",
+            "team": "Los Angeles Angels",
+            "value": "247"
+          },
+          {
+            "rank": 5,
+            "player": "Andr\u00e9s Gim\u00e9nez",
+            "team": "Toronto Blue Jays",
+            "value": "240"
+          }
+        ],
+        "errors": [
+          {
+            "rank": 1,
+            "player": "Zach Neto",
+            "team": "Los Angeles Angels",
+            "value": "16"
+          },
+          {
+            "rank": 2,
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "value": "15"
+          },
+          {
+            "rank": 3,
+            "player": "Gunnar Henderson",
+            "team": "Baltimore Orioles",
+            "value": "14"
+          },
+          {
+            "rank": 4,
+            "player": "Kazuma Okamoto",
+            "team": "Toronto Blue Jays",
+            "value": "13"
+          },
+          {
+            "rank": 5,
+            "player": "Brayan Rocchio",
+            "team": "Cleveland Guardians",
+            "value": "11"
+          }
+        ],
+        "doublePlays": [
+          {
+            "rank": 1,
+            "player": "Spencer Torkelson",
+            "team": "Detroit Tigers",
+            "value": "86"
+          },
+          {
+            "rank": 2,
+            "player": "Josh Naylor",
+            "team": "Seattle Mariners",
+            "value": "82"
+          },
+          {
+            "rank": 3,
+            "player": "Christian Walker",
+            "team": "Houston Astros",
+            "value": "80"
+          },
+          {
+            "rank": 4,
+            "player": "Pete Alonso",
+            "team": "Baltimore Orioles",
+            "value": "74"
+          },
+          {
+            "rank": 5,
+            "player": "Jake Burger",
+            "team": "Texas Rangers",
+            "value": "73"
+          }
+        ]
+      },
+      "defenseNote": "Pitchers are excluded from all defensive statistics."
+    },
+    "NL": {
+      "offense": {
+        "battingAverage": [
+          {
+            "rank": 1,
+            "player": "Luis Arraez",
+            "team": "Philadelphia Phillies",
+            "value": ".315"
+          },
+          {
+            "rank": 2,
+            "player": "Gabriel Moreno",
+            "team": "Arizona Diamondbacks",
+            "value": ".308"
+          },
+          {
+            "rank": 3,
+            "player": "Otto Lopez",
+            "team": "Miami Marlins",
+            "value": ".308"
+          },
+          {
+            "rank": 4,
+            "player": "Nick Gonzales",
+            "team": "Pittsburgh Pirates",
+            "value": ".307"
+          },
+          {
+            "rank": 5,
+            "player": "Freddie Freeman",
+            "team": "Los Angeles Dodgers",
+            "value": ".298"
+          }
+        ],
+        "hits": [
+          {
+            "rank": 1,
+            "player": "Otto Lopez",
+            "team": "Miami Marlins",
+            "value": "150"
+          },
+          {
+            "rank": 2,
+            "player": "Luis Arraez",
+            "team": "Philadelphia Phillies",
+            "value": "149"
+          },
+          {
+            "rank": 3,
+            "player": "Nick Gonzales",
+            "team": "Pittsburgh Pirates",
+            "value": "137"
+          },
+          {
+            "rank": 4,
+            "player": "Freddie Freeman",
+            "team": "Los Angeles Dodgers",
+            "value": "136"
+          },
+          {
+            "rank": 5,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "value": "135"
+          }
+        ],
+        "homeRuns": [
+          {
+            "rank": 1,
+            "player": "Kyle Schwarber",
+            "team": "Philadelphia Phillies",
+            "value": "37"
+          },
+          {
+            "rank": 2,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "value": "36"
+          },
+          {
+            "rank": 3,
+            "player": "Hunter Goodman",
+            "team": "Colorado Rockies",
+            "value": "34"
+          },
+          {
+            "rank": 4,
+            "player": "James Wood",
+            "team": "Washington Nationals",
+            "value": "30"
+          },
+          {
+            "rank": 5,
+            "player": "CJ Abrams",
+            "team": "Washington Nationals",
+            "value": "29"
+          }
+        ],
+        "rbi": [
+          {
+            "rank": 1,
+            "player": "CJ Abrams",
+            "team": "Washington Nationals",
+            "value": "91"
+          },
+          {
+            "rank": 2,
+            "player": "Sal Stewart",
+            "team": "Cincinnati Reds",
+            "value": "91"
+          },
+          {
+            "rank": 3,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "value": "90"
+          },
+          {
+            "rank": 4,
+            "player": "Jordan Walker",
+            "team": "St. Louis Cardinals",
+            "value": "88"
+          },
+          {
+            "rank": 5,
+            "player": "Brandon Lowe",
+            "team": "Pittsburgh Pirates",
+            "value": "79"
+          }
+        ],
+        "runs": [
+          {
+            "rank": 1,
+            "player": "James Wood",
+            "team": "Washington Nationals",
+            "value": "100"
+          },
+          {
+            "rank": 2,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "value": "88"
+          },
+          {
+            "rank": 3,
+            "player": "Pete Crow-Armstrong",
+            "team": "Chicago Cubs",
+            "value": "87"
+          },
+          {
+            "rank": 4,
+            "player": "Bryan Reynolds",
+            "team": "Pittsburgh Pirates",
+            "value": "85"
+          },
+          {
+            "rank": 5,
+            "player": "Trea Turner",
+            "team": "Philadelphia Phillies",
+            "value": "82"
+          }
+        ],
+        "obp": [
+          {
+            "rank": 1,
+            "player": "James Wood",
+            "team": "Washington Nationals",
+            "value": ".393"
+          },
+          {
+            "rank": 2,
+            "player": "Shohei Ohtani",
+            "team": "Los Angeles Dodgers",
+            "value": ".388"
+          },
+          {
+            "rank": 3,
+            "player": "Gabriel Moreno",
+            "team": "Arizona Diamondbacks",
+            "value": ".385"
+          },
+          {
+            "rank": 4,
+            "player": "Jake Bauers",
+            "team": "Milwaukee Brewers",
+            "value": ".384"
+          },
+          {
+            "rank": 5,
+            "player": "Bryce Harper",
+            "team": "Philadelphia Phillies",
+            "value": ".375"
+          }
+        ],
+        "slg": [
+          {
+            "rank": 1,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "value": ".551"
+          },
+          {
+            "rank": 2,
+            "player": "Hunter Goodman",
+            "team": "Colorado Rockies",
+            "value": ".541"
+          },
+          {
+            "rank": 3,
+            "player": "Shohei Ohtani",
+            "team": "Los Angeles Dodgers",
+            "value": ".540"
+          },
+          {
+            "rank": 4,
+            "player": "Kyle Schwarber",
+            "team": "Philadelphia Phillies",
+            "value": ".537"
+          },
+          {
+            "rank": 5,
+            "player": "James Wood",
+            "team": "Washington Nationals",
+            "value": ".535"
+          }
+        ],
+        "ops": [
+          {
+            "rank": 1,
+            "player": "Shohei Ohtani",
+            "team": "Los Angeles Dodgers",
+            "value": ".928"
+          },
+          {
+            "rank": 2,
+            "player": "James Wood",
+            "team": "Washington Nationals",
+            "value": ".928"
+          },
+          {
+            "rank": 3,
+            "player": "Pete Crow-Armstrong",
+            "team": "Chicago Cubs",
+            "value": ".907"
+          },
+          {
+            "rank": 4,
+            "player": "Kyle Schwarber",
+            "team": "Philadelphia Phillies",
+            "value": ".905"
+          },
+          {
+            "rank": 5,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "value": ".891"
+          }
+        ],
+        "stolenBases": [
+          {
+            "rank": 1,
+            "player": "Eury P\u00e9rez",
+            "team": "Miami Marlins",
+            "value": "25"
+          },
+          {
+            "rank": 2,
+            "player": "Andrew Abbott",
+            "team": "Cincinnati Reds",
+            "value": "21"
+          },
+          {
+            "rank": 3,
+            "player": "Chase Burns",
+            "team": "Cincinnati Reds",
+            "value": "21"
+          },
+          {
+            "rank": 4,
+            "player": "Matthew Liberatore",
+            "team": "St. Louis Cardinals",
+            "value": "20"
+          },
+          {
+            "rank": 5,
+            "player": "Robbie Ray",
+            "team": "San Diego Padres",
+            "value": "17"
+          }
+        ],
+        "doubles": [
+          {
+            "rank": 1,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "value": "31"
+          },
+          {
+            "rank": 2,
+            "player": "Rafael Devers",
+            "team": "San Francisco Giants",
+            "value": "30"
+          },
+          {
+            "rank": 3,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "value": "30"
+          },
+          {
+            "rank": 4,
+            "player": "Bryan Reynolds",
+            "team": "Pittsburgh Pirates",
+            "value": "30"
+          },
+          {
+            "rank": 5,
+            "player": "Otto Lopez",
+            "team": "Miami Marlins",
+            "value": "29"
+          }
+        ],
+        "triples": [
+          {
+            "rank": 1,
+            "player": "Corbin Carroll",
+            "team": "Arizona Diamondbacks",
+            "value": "15"
+          },
+          {
+            "rank": 2,
+            "player": "Luis Arraez",
+            "team": "Philadelphia Phillies",
+            "value": "7"
+          },
+          {
+            "rank": 3,
+            "player": "Pete Crow-Armstrong",
+            "team": "Chicago Cubs",
+            "value": "7"
+          },
+          {
+            "rank": 4,
+            "player": "Otto Lopez",
+            "team": "Miami Marlins",
+            "value": "7"
+          },
+          {
+            "rank": 5,
+            "player": "Jake McCarthy",
+            "team": "Colorado Rockies",
+            "value": "7"
+          }
+        ]
+      },
+      "pitching": {
+        "era": [
+          {
+            "rank": 1,
+            "player": "Jacob Misiorowski",
+            "team": "Milwaukee Brewers",
+            "value": "1.75"
+          },
+          {
+            "rank": 2,
+            "player": "Chris Sale",
+            "team": "Atlanta Braves",
+            "value": "2.16"
+          },
+          {
+            "rank": 3,
+            "player": "Chase Burns",
+            "team": "Cincinnati Reds",
+            "value": "2.47"
+          },
+          {
+            "rank": 4,
+            "player": "Cristopher S\u00e1nchez",
+            "team": "Philadelphia Phillies",
+            "value": "2.54"
+          },
+          {
+            "rank": 5,
+            "player": "Yoshinobu Yamamoto",
+            "team": "Los Angeles Dodgers",
+            "value": "2.60"
+          }
+        ],
+        "wins": [
+          {
+            "rank": 1,
+            "player": "Cristopher S\u00e1nchez",
+            "team": "Philadelphia Phillies",
+            "value": "15"
+          },
+          {
+            "rank": 2,
+            "player": "Chase Burns",
+            "team": "Cincinnati Reds",
+            "value": "14"
+          },
+          {
+            "rank": 3,
+            "player": "Sandy Alcantara",
+            "team": "Miami Marlins",
+            "value": "13"
+          },
+          {
+            "rank": 4,
+            "player": "Aaron Ashby",
+            "team": "Milwaukee Brewers",
+            "value": "13"
+          },
+          {
+            "rank": 5,
+            "player": "Braxton Ashcraft",
+            "team": "Pittsburgh Pirates",
+            "value": "12"
+          }
+        ],
+        "strikeouts": [
+          {
+            "rank": 1,
+            "player": "Jacob Misiorowski",
+            "team": "Milwaukee Brewers",
+            "value": "210"
+          },
+          {
+            "rank": 2,
+            "player": "Jes\u00fas Luzardo",
+            "team": "Philadelphia Phillies",
+            "value": "185"
+          },
+          {
+            "rank": 3,
+            "player": "Cristopher S\u00e1nchez",
+            "team": "Philadelphia Phillies",
+            "value": "181"
+          },
+          {
+            "rank": 4,
+            "player": "Paul Skenes",
+            "team": "Pittsburgh Pirates",
+            "value": "166"
+          },
+          {
+            "rank": 5,
+            "player": "Chris Sale",
+            "team": "Atlanta Braves",
+            "value": "160"
+          }
+        ],
+        "whip": [
+          {
+            "rank": 1,
+            "player": "Jacob Misiorowski",
+            "team": "Milwaukee Brewers",
+            "value": "0.75"
+          },
+          {
+            "rank": 2,
+            "player": "Yoshinobu Yamamoto",
+            "team": "Los Angeles Dodgers",
+            "value": "0.89"
+          },
+          {
+            "rank": 3,
+            "player": "Chris Sale",
+            "team": "Atlanta Braves",
+            "value": "1.02"
+          },
+          {
+            "rank": 4,
+            "player": "Logan Webb",
+            "team": "San Francisco Giants",
+            "value": "1.06"
+          },
+          {
+            "rank": 5,
+            "player": "Foster Griffin",
+            "team": "Washington Nationals",
+            "value": "1.07"
+          }
+        ],
+        "saves": [
+          {
+            "rank": 1,
+            "player": "Mason Miller",
+            "team": "San Diego Padres",
+            "value": "30"
+          },
+          {
+            "rank": 2,
+            "player": "Riley O'Brien",
+            "team": "St. Louis Cardinals",
+            "value": "30"
+          },
+          {
+            "rank": 3,
+            "player": "Jhoan Duran",
+            "team": "Philadelphia Phillies",
+            "value": "26"
+          },
+          {
+            "rank": 4,
+            "player": "Raisel Iglesias",
+            "team": "Atlanta Braves",
+            "value": "25"
+          },
+          {
+            "rank": 5,
+            "player": "Paul Sewald",
+            "team": "Arizona Diamondbacks",
+            "value": "24"
+          }
+        ],
+        "innings": [
+          {
+            "rank": 1,
+            "player": "Sandy Alcantara",
+            "team": "Miami Marlins",
+            "value": "170.2"
+          },
+          {
+            "rank": 2,
+            "player": "Cristopher S\u00e1nchez",
+            "team": "Philadelphia Phillies",
+            "value": "155.2"
+          },
+          {
+            "rank": 3,
+            "player": "Jes\u00fas Luzardo",
+            "team": "Philadelphia Phillies",
+            "value": "150.1"
+          },
+          {
+            "rank": 4,
+            "player": "Eduardo Rodriguez",
+            "team": "Arizona Diamondbacks",
+            "value": "149.1"
+          },
+          {
+            "rank": 5,
+            "player": "Yoshinobu Yamamoto",
+            "team": "Los Angeles Dodgers",
+            "value": "145.1"
+          }
+        ],
+        "qualityStarts": []
+      },
+      "defense": {
+        "fieldingPercentage": [
+          {
+            "rank": 1,
+            "player": "JJ Bleday",
+            "team": "Cincinnati Reds",
+            "value": "1.000"
+          },
+          {
+            "rank": 2,
+            "player": "Jackson Chourio",
+            "team": "Milwaukee Brewers",
+            "value": "1.000"
+          },
+          {
+            "rank": 3,
+            "player": "William Contreras",
+            "team": "Milwaukee Brewers",
+            "value": "1.000"
+          },
+          {
+            "rank": 4,
+            "player": "Michael Harris II",
+            "team": "Atlanta Braves",
+            "value": "1.000"
+          },
+          {
+            "rank": 5,
+            "player": "Jakob Marsee",
+            "team": "Miami Marlins",
+            "value": "1.000"
+          }
+        ],
+        "putouts": [
+          {
+            "rank": 1,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "value": "957"
+          },
+          {
+            "rank": 2,
+            "player": "William Contreras",
+            "team": "Milwaukee Brewers",
+            "value": "947"
+          },
+          {
+            "rank": 3,
+            "player": "Michael Busch",
+            "team": "Chicago Cubs",
+            "value": "924"
+          },
+          {
+            "rank": 4,
+            "player": "J.T. Realmuto",
+            "team": "Philadelphia Phillies",
+            "value": "921"
+          },
+          {
+            "rank": 5,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "value": "884"
+          }
+        ],
+        "assists": [
+          {
+            "rank": 1,
+            "player": "JJ Wetherholt",
+            "team": "St. Louis Cardinals",
+            "value": "337"
+          },
+          {
+            "rank": 2,
+            "player": "Luis Arraez",
+            "team": "Philadelphia Phillies",
+            "value": "308"
+          },
+          {
+            "rank": 3,
+            "player": "Masyn Winn",
+            "team": "St. Louis Cardinals",
+            "value": "308"
+          },
+          {
+            "rank": 4,
+            "player": "Nico Hoerner",
+            "team": "Chicago Cubs",
+            "value": "301"
+          },
+          {
+            "rank": 5,
+            "player": "Dansby Swanson",
+            "team": "Chicago Cubs",
+            "value": "299"
+          }
+        ],
+        "errors": [
+          {
+            "rank": 1,
+            "player": "CJ Abrams",
+            "team": "Washington Nationals",
+            "value": "19"
+          },
+          {
+            "rank": 2,
+            "player": "Otto Lopez",
+            "team": "Miami Marlins",
+            "value": "18"
+          },
+          {
+            "rank": 3,
+            "player": "Trea Turner",
+            "team": "Philadelphia Phillies",
+            "value": "18"
+          },
+          {
+            "rank": 4,
+            "player": "Willy Adames",
+            "team": "San Francisco Giants",
+            "value": "16"
+          },
+          {
+            "rank": 5,
+            "player": "Elly De La Cruz",
+            "team": "Cincinnati Reds",
+            "value": "14"
+          }
+        ],
+        "doublePlays": [
+          {
+            "rank": 1,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "value": "107"
+          },
+          {
+            "rank": 2,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "value": "94"
+          },
+          {
+            "rank": 3,
+            "player": "Michael Busch",
+            "team": "Chicago Cubs",
+            "value": "90"
+          },
+          {
+            "rank": 4,
+            "player": "Masyn Winn",
+            "team": "St. Louis Cardinals",
+            "value": "85"
+          },
+          {
+            "rank": 5,
+            "player": "TJ Rumfield",
+            "team": "Colorado Rockies",
+            "value": "80"
+          }
+        ]
+      },
+      "defenseNote": "Pitchers are excluded from all defensive statistics."
+    }
   }
 }
