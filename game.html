@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SportPulse MLB Game Center</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+.header {
+    background: #111827;
+    color: white;
+    padding: 22px 16px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+nav a {
+    background: #1f2937;
+    color: white;
+    text-decoration: none;
+    padding: 11px 15px;
+    border-radius: 11px;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 16px 60px;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.07);
+}
+
+.game-header {
+    text-align: center;
+}
+
+.status {
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.live {
+    color: #dc2626;
+}
+
+.final {
+    color: #16a34a;
+}
+
+.team-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 650px;
+    margin: 10px auto;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.score {
+    font-size: 34px;
+}
+
+.inning {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.live-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info {
+    background: #f4f6f8;
+    padding: 17px;
+    border-radius: 13px;
+}
+
+.label {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.value {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.bases {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 35px;
+    margin: 25px 0;
+}
+
+.base-wrap {
+    text-align: center;
+}
+
+.base {
+    width: 48px;
+    height: 48px;
+    transform: rotate(45deg);
+    border: 3px solid #9ca3af;
+    background: white;
+    margin: 0 auto 18px;
+}
+
+.base.occupied {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.base-label {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+th {
+    background: #111827;
+    color: white;
+    padding: 12px 8px;
+}
+
+td {
+    padding: 11px 8px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
+}
+
+.team-heading {
+    font-size: 25px;
+    font-weight: 800;
+    margin: 0 0 18px;
+}
+
+.subheading {
+    font-size: 21px;
+    margin: 25px 0 14px;
+}
+
+.play {
+    background: #f4f6f8;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+.loading {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.error {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    color: #dc2626;
+}
+
+footer {
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+@media(max-width:600px) {
+
+    .team-score {
+        font-size: 19px;
+    }
+
+    .score {
+        font-size: 27px;
+    }
+
+    .live-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+SportPulse
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+<a href="mlb.html">⚾ MLB</a>
+<a href="nfl.html">🏈 NFL</a>
+<a href="nba.html">🏀 NBA</a>
+<a href="nhl.html">🏒 NHL</a>
+<a href="mls.html">⚽ MLS</a>
+
+</nav>
+
+</header>
+
+<main class="container">
+
+<a href="mlb.html" class="back">
+← Back to MLB
+</a>
+
+<div id="game">
+
+<div class="loading">
+Loading MLB Game Center...
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+<strong>SportPulse</strong>
+
+<br><br>
+
+MLB Game Center
+
+</footer>
+
+
+<script>
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const gamePk =
+    params.get("gamePk");
+
+
+async function loadGame() {
+
+    if (!gamePk) {
+
+        document.getElementById("game").innerHTML = `
+            <div class="error">
+                No game selected.
+            </div>
+        `;
+
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                "https://statsapi.mlb.com/api/v1.1/game/" +
+                gamePk +
+                "/feed/live"
+            );
+
+        if (!response.ok) {
+            throw new Error("Game unavailable");
+        }
+
+        const data =
+            await response.json();
+
+        renderGame(data);
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        document.getElementById("game").innerHTML = `
+            <div class="error">
+                Unable to load this MLB game.
+            </div>
+        `;
+
+    }
+
+}
+
+
+function renderGame(data) {
+
+    const game =
+        data.gameData;
+
+    const live =
+        data.liveData;
+
+    const teams =
+        game.teams;
+
+    const linescore =
+        live.linescore;
+
+    const boxscore =
+        live.boxscore;
+
+    const awayTeam =
+        teams.away.name;
+
+    const homeTeam =
+        teams.home.name;
+
+    const awayScore =
+        linescore.teams.away.runs || 0;
+
+    const homeScore =
+        linescore.teams.home.runs || 0;
+
+    const status =
+        game.status.detailedState;
+
+    const inning =
+        linescore.currentInningOrdinal || "";
+
+    const inningState =
+        linescore.inningState || "";
+
+    const outs =
+        linescore.outs ?? 0;
+
+    const offense =
+        linescore.offense || {};
+
+    const batter =
+        offense.batter?.fullName || "—";
+
+    const pitcher =
+        linescore.pitcher?.fullName || "—";
+
+    const first =
+        !!offense.first;
+
+    const second =
+        !!offense.second;
+
+    const third =
+        !!offense.third;
+
+    const currentPlay =
+        live.plays?.currentPlay?.result?.description ||
+        "No current play available.";
+
+
+    let html = `
+
+    <div class="card game-header">
+
+        <div class="status ${
+            status.toLowerCase().includes("progress")
+            ? "live"
+            : status.toLowerCase().includes("final")
+            ? "final"
+            : ""
+        }">
+
+            ${
+                status.toLowerCase().includes("progress")
+                ? "🔴 "
+                : ""
+            }
+
+            ${status}
+
+        </div>
+
+
+        <div class="team-score">
+
+            <span>${awayTeam}</span>
+
+            <span class="score">
+                ${awayScore}
+            </span>
+
+        </div>
+
+
+        <div class="team-score">
+
+            <span>${homeTeam}</span>
+
+            <span class="score">
+                ${homeScore}
+            </span>
+
+        </div>
+
+
+        ${
+            inning
+            ? `
+                <div class="inning">
+                    ${inningState || ""}
+                    ${inning}
+                </div>
+            `
+            : ""
+        }
+
+    </div>
+    `;
+
+
+    /*
+    LIVE INFORMATION
+    */
+
+    if (
+        status.toLowerCase().includes("progress")
+    ) {
+
+        html += `
+
+        <div class="card">
+
+            <h2>
+                ⚾ Current Game Situation
+            </h2>
+
+
+            <div class="live-grid">
+
+
+                <div class="info">
+
+                    <div class="label">
+                        AT BAT
+                    </div>
+
+                    <div class="value">
+                        ⚾ ${batter}
+                    </div>
+
+                </div>
+
+
+                <div class="info">
+
+                    <div class="label">
+                        PITCHING
+                    </div>
+
+                    <div class="value">
+                        🎯 ${pitcher}
+                    </div>
+
+                </div>
+
+
+                <div class="info">
+
+                    <div class="label">
+                        OUTS
+                    </div>
+
+                    <div class="value">
+                        ${outs}
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <h3>
+                🏃 Runners on Base
+            </h3>
+
+
+            <div class="bases">
+
+
+                <div class="base-wrap">
+
+                    <div class="base ${
+                        second
+                        ? "occupied"
+                        : ""
+                    }"></div>
+
+                    <div class="base-label">
+                        2nd
+                    </div>
+
+                </div>
+
+
+                <div class="base-wrap">
+
+                    <div class="base ${
+                        third
+                        ? "occupied"
+                        : ""
+                    }"></div>
+
+                    <div class="base-label">
+                        3rd
+                    </div>
+
+                </div>
+
+
+                <div class="base-wrap">
+
+                    <div class="base ${
+                        first
+                        ? "occupied"
+                        : ""
+                    }"></div>
+
+                    <div class="base-label">
+                        1st
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <h3>
+                📋 Current Play
+            </h3>
+
+            <div class="play">
+                ${currentPlay}
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /*
+    LINESCORE
+    */
+
+    html += `
+
+    <div class="card">
+
+        <h2>
+            📊 Linescore
+        </h2>
+
+        <div class="table-wrap">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+            <th>Team</th>
+    `;
+
+
+    const innings =
+        linescore.innings || [];
+
+
+    innings.forEach(
+        inningData => {
+
+            html += `
+                <th>
+                    ${inningData.num}
+                </th>
+            `;
+
+        }
+    );
+
+
+    html += `
+
+            <th>R</th>
+            <th>H</th>
+            <th>E</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+    `;
+
+
+    function line(teamName, teamData) {
+
+        let row = `
+            <tr>
+
+                <td>
+                    <strong>
+                        ${teamName}
+                    </strong>
+                </td>
+        `;
+
+
+        innings.forEach(
+            inningData => {
+
+                const side =
+                    teamName === awayTeam
+                    ? inningData.away
+                    : inningData.home;
+
+                row += `
+                    <td>
+                        ${side?.runs ?? 0}
+                    </td>
+                `;
+
+            }
+        );
+
+
+        row += `
+
+            <td>${teamData.runs ?? 0}</td>
+            <td>${teamData.hits ?? 0}</td>
+            <td>${teamData.errors ?? 0}</td>
+
+            </tr>
+        `;
+
+        return row;
+
+    }
+
+
+    html +=
+        line(
+            awayTeam,
+            linescore.teams.away
+        );
+
+    html +=
+        line(
+            homeTeam,
+            linescore.teams.home
+        );
+
+
+    html += `
+
+        </tbody>
+
+        </table>
+
+        </div>
+
+    </div>
+
+    `;
+
+
+    /*
+    TEAM STATS
+    */
+
+    const awayId =
+        teams.away.id;
+
+    const homeId =
+        teams.home.id;
+
+
+    html +=
+        buildTeamStats(
+            awayTeam,
+            boxscore.teams[`away`]
+        );
+
+
+    html +=
+        buildTeamStats(
+            homeTeam,
+            boxscore.teams[`home`]
+        );
+
+
+    /*
+    PLAY BY PLAY
+    */
+
+    html += `
+
+    <div class="card">
+
+        <h2>
+            📋 Play-by-Play
+        </h2>
+    `;
+
+
+    const plays =
+        live.plays?.allPlays || [];
+
+
+    const recent =
+        plays.slice(-40).reverse();
+
+
+    if (!recent.length) {
+
+        html += `
+            <p>
+                No play-by-play available.
+            </p>
+        `;
+
+    }
+    else {
+
+        recent.forEach(
+            play => {
+
+                html += `
+
+                <div class="play">
+
+                    <strong>
+                        ${
+                            play.about?.inning
+                            ? play.about.inningOrdinal || ""
+                            : ""
+                        }
+                    </strong>
+
+                    <br>
+
+                    ${
+                        play.result?.description ||
+                        "Play"
+                    }
+
+                </div>
+
+                `;
+
+            }
+        );
+
+    }
+
+
+    html += `
+    </div>
+    `;
+
+
+    document.getElementById(
+        "game"
+    ).innerHTML = html;
+
+}
+
+
+function buildTeamStats(
+    teamName,
+    teamData
+) {
+
+    if (!teamData) {
+        return "";
+    }
+
+
+    let html = `
+
+    <div class="card">
+
+        <div class="team-heading">
+            ⚾ ${teamName}
+        </div>
+
+
+        <div class="subheading">
+            🏏 Batting
+        </div>
+
+
+        <div class="table-wrap">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+            <th>Player</th>
+            <th>AB</th>
+            <th>R</th>
+            <th>H</th>
+            <th>RBI</th>
+            <th>BB</th>
+            <th>SO</th>
+            <th>HR</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+    `;
+
+
+    const players =
+        teamData.players || {};
+
+
+    Object.values(
+        players
+    ).forEach(
+        player => {
+
+            const stats =
+                player.stats?.batting;
+
+
+            if (!stats) {
+                return;
+            }
+
+
+            html += `
+
+            <tr>
+
+                <td>
+                    ${
+                        player.person?.fullName ||
+                        "Player"
+                    }
+                </td>
+
+                <td>
+                    ${stats.atBats ?? 0}
+                </td>
+
+                <td>
+                    ${stats.runs ?? 0}
+                </td>
+
+                <td>
+                    ${stats.hits ?? 0}
+                </td>
+
+                <td>
+                    ${stats.rbi ?? 0}
+                </td>
+
+                <td>
+                    ${stats.baseOnBalls ?? 0}
+                </td>
+
+                <td>
+                    ${stats.strikeOuts ?? 0}
+                </td>
+
+                <td>
+                    ${stats.homeRuns ?? 0}
+                </td>
+
+            </tr>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+
+        </tbody>
+
+        </table>
+
+        </div>
+
+
+        <div class="subheading">
+            🎯 Pitching
+        </div>
+
+
+        <div class="table-wrap">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+            <th>Pitcher</th>
+            <th>IP</th>
+            <th>H</th>
+            <th>R</th>
+            <th>ER</th>
+            <th>BB</th>
+            <th>SO</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+    `;
+
+
+    Object.values(
+        players
+    ).forEach(
+        player => {
+
+            const stats =
+                player.stats?.pitching;
+
+
+            if (!stats) {
+                return;
+            }
+
+
+            html += `
+
+            <tr>
+
+                <td>
+                    ${
+                        player.person?.fullName ||
+                        "Pitcher"
+                    }
+                </td>
+
+                <td>
+                    ${stats.inningsPitched ?? 0}
+                </td>
+
+                <td>
+                    ${stats.hits ?? 0}
+                </td>
+
+                <td>
+                    ${stats.runs ?? 0}
+                </td>
+
+                <td>
+                    ${stats.earnedRuns ?? 0}
+                </td>
+
+                <td>
+                    ${stats.baseOnBalls ?? 0}
+                </td>
+
+                <td>
+                    ${stats.strikeOuts ?? 0}
+                </td>
+
+            </tr>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+
+        </tbody>
+
+        </table>
+
+        </div>
+
+    </div>
+
+    `;
+
+
+    return html;
+
+}
+
+
+loadGame();
+
+
+/*
+Refresh live Game Center
+every 30 seconds.
+*/
+
+setInterval(
+    loadGame,
+    30000
+);
+
+</script>
+
+</body>
+</html>
