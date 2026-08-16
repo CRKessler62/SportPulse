@@ -1,0 +1,767 @@
+name: Update MLB League Leaders
+
+on:
+  schedule:
+    - cron: "15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+
+  update-leaders:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build MLB League Leaders
+        run: |
+
+          python3 <<'PY'
+
+          import json
+          import urllib.request
+          import urllib.parse
+          import os
+          import time
+          from datetime import datetime, timezone
+
+
+          SEASON = "2026"
+
+          LEAGUES = {
+              "AL": "103",
+              "NL": "104"
+          }
+
+
+          # =========================================
+          # PLAYER POSITION CACHE
+          # =========================================
+
+          position_cache = {}
+
+
+          def get_player_position(player_id):
+
+              if not player_id:
+                  return ""
+
+
+              if player_id in position_cache:
+                  return position_cache[player_id]
+
+
+              url = (
+                  "https://statsapi.mlb.com/api/v1/people/"
+                  + str(player_id)
+              )
+
+
+              try:
+
+                  request = urllib.request.Request(
+                      url,
+                      headers={
+                          "User-Agent":
+                          "SportPulse/1.0"
+                      }
+                  )
+
+
+                  with urllib.request.urlopen(
+                      request,
+                      timeout=30
+                  ) as response:
+
+                      data = json.load(response)
+
+
+                  people = data.get(
+                      "people",
+                      []
+                  )
+
+
+                  if not people:
+
+                      position_cache[player_id] = ""
+
+                      return ""
+
+
+                  person = people[0]
+
+
+                  position = person.get(
+                      "primaryPosition",
+                      {}
+                  )
+
+
+                  abbreviation = position.get(
+                      "abbreviation",
+                      ""
+                  )
+
+
+                  if not abbreviation:
+
+                      abbreviation = position.get(
+                          "name",
+                          ""
+                      )
+
+
+                  position_cache[player_id] = abbreviation
+
+
+                  return abbreviation
+
+
+              except Exception as error:
+
+                  print(
+                      "Position lookup failed:",
+                      player_id,
+                      error
+                  )
+
+
+                  position_cache[player_id] = ""
+
+                  return ""
+
+
+          # =========================================
+          # GET LEADERS
+          # =========================================
+
+          def get_leaders(
+              category,
+              league_id,
+              stat_group=None,
+              exclude_pitchers=False
+          ):
+
+              if exclude_pitchers:
+                  limit = 50
+              else:
+                  limit = 5
+
+
+              params = {
+
+                  "leaderCategories":
+                      category,
+
+                  "season":
+                      SEASON,
+
+                  "sportId":
+                      "1",
+
+                  "leagueId":
+                      league_id,
+
+                  "limit":
+                      limit,
+
+                  "hydrate":
+                      "person,team"
+
+              }
+
+
+              if stat_group:
+
+                  params["statGroup"] = stat_group
+
+
+              url = (
+                  "https://statsapi.mlb.com/api/v1/stats/leaders?"
+                  +
+                  urllib.parse.urlencode(params)
+              )
+
+
+              print("")
+              print(
+                  "Loading:",
+                  category,
+                  "League:",
+                  league_id
+              )
+
+
+              request = urllib.request.Request(
+
+                  url,
+
+                  headers={
+                      "User-Agent":
+                      "SportPulse/1.0"
+                  }
+
+              )
+
+
+              with urllib.request.urlopen(
+                  request,
+                  timeout=60
+              ) as response:
+
+                  data = json.load(response)
+
+
+              league_leaders = data.get(
+                  "leagueLeaders",
+                  []
+              )
+
+
+              if not league_leaders:
+
+                  print(
+                      "No data returned."
+                  )
+
+                  return []
+
+
+              leaders = league_leaders[0].get(
+                  "leaders",
+                  []
+              )
+
+
+              results = []
+
+
+              for leader in leaders:
+
+                  person = leader.get(
+                      "person",
+                      {}
+                  )
+
+
+                  team = leader.get(
+                      "team",
+                      {}
+                  )
+
+
+                  player_id = person.get(
+                      "id"
+                  )
+
+
+                  # Get the actual player position
+                  # from the MLB player profile.
+
+                  position = get_player_position(
+                      player_id
+                  )
+
+
+                  # =================================
+                  # EXCLUDE PITCHERS FROM DEFENSE
+                  # =================================
+
+                  if exclude_pitchers:
+
+                      if (
+                          position == "P"
+                          or
+                          position.lower() == "pitcher"
+                      ):
+
+                          continue
+
+
+                  results.append({
+
+                      "rank":
+                          len(results) + 1,
+
+                      "player":
+                          person.get(
+                              "fullName",
+                              "Unknown"
+                          ),
+
+                      "team":
+                          team.get(
+                              "name",
+                              "Unknown"
+                          ),
+
+                      "position":
+                          position,
+
+                      "value":
+                          leader.get(
+                              "value",
+                              ""
+                          )
+
+                  })
+
+
+                  if len(results) >= 5:
+
+                      break
+
+
+              print(
+                  category,
+                  "returned",
+                  len(results),
+                  "players"
+              )
+
+
+              return results
+
+
+          # =========================================
+          # OFFENSE
+          # =========================================
+
+          OFFENSE = {
+
+              "battingAverage":
+                  (
+                      "battingAverage",
+                      "hitting"
+                  ),
+
+              "hits":
+                  (
+                      "hits",
+                      "hitting"
+                  ),
+
+              "homeRuns":
+                  (
+                      "homeRuns",
+                      "hitting"
+                  ),
+
+              "rbi":
+                  (
+                      "rbi",
+                      "hitting"
+                  ),
+
+              "runs":
+                  (
+                      "runs",
+                      "hitting"
+                  ),
+
+              "obp":
+                  (
+                      "onBasePercentage",
+                      "hitting"
+                  ),
+
+              "slg":
+                  (
+                      "sluggingPercentage",
+                      "hitting"
+                  ),
+
+              "ops":
+                  (
+                      "onBasePlusSlugging",
+                      "hitting"
+                  ),
+
+              "stolenBases":
+                  (
+                      "stolenBases",
+                      None
+                  ),
+
+              "doubles":
+                  (
+                      "doubles",
+                      "hitting"
+                  ),
+
+              "triples":
+                  (
+                      "triples",
+                      "hitting"
+                  )
+
+          }
+
+
+          # =========================================
+          # PITCHING
+          # =========================================
+
+          PITCHING = {
+
+              "era":
+                  (
+                      "era",
+                      "pitching"
+                  ),
+
+              "wins":
+                  (
+                      "wins",
+                      "pitching"
+                  ),
+
+              "strikeouts":
+                  (
+                      "strikeouts",
+                      "pitching"
+                  ),
+
+              "whip":
+                  (
+                      "whip",
+                      "pitching"
+                  ),
+
+              "saves":
+                  (
+                      "saves",
+                      "pitching"
+                  ),
+
+              "innings":
+                  (
+                      "inningsPitched",
+                      "pitching"
+                  ),
+
+              "qualityStarts":
+                  (
+                      "qualityStarts",
+                      "pitching"
+                  )
+
+          }
+
+
+          # =========================================
+          # DEFENSE
+          # =========================================
+
+          DEFENSE = {
+
+              "fieldingPercentage":
+                  (
+                      "fieldingPercentage",
+                      "fielding"
+                  ),
+
+              "putouts":
+                  (
+                      "putouts",
+                      "fielding"
+                  ),
+
+              "assists":
+                  (
+                      "assists",
+                      "fielding"
+                  ),
+
+              "errors":
+                  (
+                      "errors",
+                      "fielding"
+                  ),
+
+              "doublePlays":
+                  (
+                      "doublePlays",
+                      "fielding"
+                  )
+
+          }
+
+
+          # =========================================
+          # BUILD LEAGUE
+          # =========================================
+
+          def build_league(league_id):
+
+              league = {
+
+                  "offense": {},
+
+                  "pitching": {},
+
+                  "defense": {},
+
+                  "defenseNote":
+                      "Pitchers are excluded from all defensive statistics."
+
+              }
+
+
+              print("")
+              print(
+                  "================================"
+              )
+
+              print(
+                  "BUILDING LEAGUE:",
+                  league_id
+              )
+
+              print(
+                  "================================"
+              )
+
+
+              # OFFENSE
+
+              for name, settings in OFFENSE.items():
+
+                  try:
+
+                      league["offense"][name] = \
+                          get_leaders(
+                              settings[0],
+                              league_id,
+                              settings[1],
+                              False
+                          )
+
+                  except Exception as error:
+
+                      print(
+                          "ERROR:",
+                          name,
+                          error
+                      )
+
+                      league["offense"][name] = []
+
+
+              # PITCHING
+
+              for name, settings in PITCHING.items():
+
+                  try:
+
+                      league["pitching"][name] = \
+                          get_leaders(
+                              settings[0],
+                              league_id,
+                              settings[1],
+                              False
+                          )
+
+                  except Exception as error:
+
+                      print(
+                          "ERROR:",
+                          name,
+                          error
+                      )
+
+                      league["pitching"][name] = []
+
+
+              # DEFENSE
+
+              for name, settings in DEFENSE.items():
+
+                  try:
+
+                      league["defense"][name] = \
+                          get_leaders(
+                              settings[0],
+                              league_id,
+                              settings[1],
+                              True
+                          )
+
+                  except Exception as error:
+
+                      print(
+                          "ERROR:",
+                          name,
+                          error
+                      )
+
+                      league["defense"][name] = []
+
+
+              return league
+
+
+          # =========================================
+          # BUILD BOTH LEAGUES
+          # =========================================
+
+          AL = build_league(
+              LEAGUES["AL"]
+          )
+
+
+          NL = build_league(
+              LEAGUES["NL"]
+          )
+
+
+          # =========================================
+          # OUTPUT
+          # =========================================
+
+          output = {
+
+              "season": 2026,
+
+              "lastUpdated":
+                  datetime.now(
+                      timezone.utc
+                  ).isoformat(),
+
+              "leagues": {
+
+                  "AL": AL,
+
+                  "NL": NL
+
+              }
+
+          }
+
+
+          os.makedirs(
+              "data",
+              exist_ok=True
+          )
+
+
+          with open(
+              "data/leaders.json",
+              "w"
+          ) as file:
+
+              json.dump(
+                  output,
+                  file,
+                  indent=2
+              )
+
+
+          # =========================================
+          # VALIDATION
+          # =========================================
+
+          total = 0
+
+          for league in [AL, NL]:
+
+              for section in [
+                  "offense",
+                  "pitching",
+                  "defense"
+              ]:
+
+                  for players in \
+                      league[section].values():
+
+                      total += len(players)
+
+
+          print("")
+          print(
+              "================================"
+          )
+
+          print(
+              "TOTAL LEADER RECORDS:",
+              total
+          )
+
+          print(
+              "================================"
+          )
+
+
+          print("")
+          print(
+              "POSITION SAMPLE:"
+          )
+
+
+          for player in \
+              AL["offense"]["homeRuns"]:
+
+              print(
+                  player["player"],
+                  "|",
+                  player["team"],
+                  "|",
+                  player["position"],
+                  "|",
+                  player["value"]
+              )
+
+
+          print("")
+          print(
+              "STOLEN BASE SAMPLE:"
+          )
+
+
+          for player in \
+              AL["offense"]["stolenBases"]:
+
+              print(
+                  player["player"],
+                  "|",
+                  player["team"],
+                  "|",
+                  player["position"],
+                  "|",
+                  player["value"]
+              )
+
+
+          if total == 0:
+
+              raise Exception(
+                  "No MLB leader data was returned."
+              )
+
+
+          PY
+
+
+      - name: Save updated leaders
+        run: |
+
+          git config user.name \
+            "SportPulse Bot"
+
+          git config user.email \
+            "sportpulse-bot@users.noreply.github.com"
+
+          git add data/leaders.json
+
+          git diff --cached --quiet || \
+            git commit -m \
+            "Add MLB leader player positions"
+
+          git push
