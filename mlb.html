@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SportPulse MLB Standings</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 15px;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background: #1f2937;
+    padding: 10px 13px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #374151;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.update-box {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    color: #6b7280;
+}
+
+.status {
+    font-weight: 700;
+    color: #16a34a;
+}
+
+.division {
+    margin-bottom: 35px;
+}
+
+.division h2 {
+    margin-bottom: 12px;
+    font-size: 25px;
+}
+
+.table-wrap {
+    background: white;
+    border-radius: 14px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th {
+    background: #111827;
+    color: white;
+    padding: 13px 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.team {
+    font-weight: 700;
+}
+
+.rank {
+    font-weight: 900;
+    width: 35px;
+}
+
+.winner {
+    font-weight: 900;
+}
+
+footer {
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+}
+
+@media(max-width:700px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 9px 10px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+SportPulse
+</div>
+
+<nav>
+<a href="index.html">🏠 Home</a>
+<a href="mlb.html">⚾ MLB</a>
+<a href="nfl.html">🏈 NFL</a>
+<a href="nba.html">🏀 NBA</a>
+<a href="nhl.html">🏒 NHL</a>
+<a href="mls.html">⚽ MLS</a>
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>⚾ MLB Standings</h1>
+
+<p>Live Major League Baseball standings</p>
+
+</section>
+
+<main class="container">
+
+<div class="update-box">
+
+<span class="status">● LIVE DATA</span>
+
+&nbsp; Last updated:
+<strong id="lastUpdated">Loading...</strong>
+
+</div>
+
+<div id="standings">
+Loading MLB standings...
+</div>
+
+</main>
+
+<footer>
+
+<strong>SportPulse</strong>
+
+<br><br>
+
+MLB standings automatically updated.
+
+<br><br>
+
+Know where your team stands. Know what matters next.
+
+</footer>
+
+<script>
+
+async function loadStandings() {
+
+    try {
+
+        const response = await fetch(
+            "data/standings.json?cache=" + Date.now()
+        );
+
+        const data = await response.json();
+
+        document.getElementById("lastUpdated").textContent =
+            new Date(data.lastUpdated).toLocaleString();
+
+        const container =
+            document.getElementById("standings");
+
+        container.innerHTML = "";
+
+        const divisions = [
+            "American League East",
+            "American League Central",
+            "American League West",
+            "National League East",
+            "National League Central",
+            "National League West"
+        ];
+
+        divisions.forEach(function(divisionName) {
+
+            const teams = data.teams.filter(function(team) {
+
+                return team.division === divisionName;
+
+            });
+
+            teams.sort(function(a, b) {
+
+                return Number(a.divisionRank) -
+                       Number(b.divisionRank);
+
+            });
+
+            if (teams.length === 0) {
+                return;
+            }
+
+            const section =
+                document.createElement("div");
+
+            section.className = "division";
+
+            let html = `
+                <h2>${divisionName}</h2>
+
+                <div class="table-wrap">
+
+                <table>
+
+                <thead>
+
+                <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>PCT</th>
+                    <th>GB</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+            `;
+
+            teams.forEach(function(team, index) {
+
+                html += `
+
+                <tr>
+
+                    <td class="rank">
+                        ${team.divisionRank || index + 1}
+                    </td>
+
+                    <td class="team">
+                        ${team.name}
+                    </td>
+
+                    <td class="winner">
+                        ${team.wins}
+                    </td>
+
+                    <td>
+                        ${team.losses}
+                    </td>
+
+                    <td>
+                        ${team.winPct}
+                    </td>
+
+                    <td>
+                        ${team.gamesBack}
+                    </td>
+
+                </tr>
+
+                `;
+
+            });
+
+            html += `
+                </tbody>
+                </table>
+                </div>
+            `;
+
+            section.innerHTML = html;
+
+            container.appendChild(section);
+
+        });
+
+    }
+
+    catch (error) {
+
+        document.getElementById("standings").innerHTML = `
+
+            <div class="update-box">
+
+                Unable to load MLB standings.
+
+                <br><br>
+
+                Please refresh the page.
+
+            </div>
+
+        `;
+
+        console.error(error);
+
+    }
+
+}
+
+loadStandings();
+
+setInterval(function() {
+    loadStandings();
+}, 5 * 60 * 1000);
+
+</script>
+
+</body>
+
+</html>
