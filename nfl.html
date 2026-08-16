@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SportPulse NFL</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 20px;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: 600;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.division {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.division-header {
+    background: #111827;
+    color: white;
+    padding: 15px 18px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: #6b7280;
+    font-size: 12px;
+    text-align: left;
+    padding: 13px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.team {
+    font-weight: bold;
+}
+
+.record {
+    font-weight: bold;
+}
+
+.playoff {
+    font-weight: bold;
+}
+
+.green {
+    color: #16a34a;
+}
+
+.yellow {
+    color: #ca8a04;
+}
+
+.gray {
+    color: #6b7280;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.big-number {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.subtext {
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.important {
+    border-left: 5px solid #2563eb;
+}
+
+footer {
+    margin-top: 50px;
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 30px;
+}
+
+@media(max-width:700px) {
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4),
+    th:nth-child(5),
+    td:nth-child(5) {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header">
+
+<div class="logo">
+SportPulse
+</div>
+
+<nav>
+<a href="index.html">⚾ MLB</a>
+<a href="nfl.html">🏈 NFL</a>
+<a href="nba.html">🏀 NBA</a>
+<a href="nhl.html">🏒 NHL</a>
+</nav>
+
+</div>
+</header>
+
+
+<section class="hero">
+
+<h1>🏈 NFL Standings</h1>
+
+<p>Know where your team stands. Know what matters next.</p>
+
+</section>
+
+
+<main class="container">
+
+
+<h2 class="section-title">🏆 NFL Playoff Picture</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Best Record</h3>
+<div class="big-number">Kansas City Chiefs</div>
+<div class="subtext">11–3 · AFC</div>
+</div>
+
+<div class="card">
+<h3>AFC Leader</h3>
+<div class="big-number">Kansas City Chiefs</div>
+<div class="subtext">11–3</div>
+</div>
+
+<div class="card">
+<h3>NFC Leader</h3>
+<div class="big-number">Philadelphia Eagles</div>
+<div class="subtext">10–4</div>
+</div>
+
+</div>
+
+
+<h2 class="section-title">AFC</h2>
+
+
+<!-- AFC EAST -->
+
+<div class="division">
+
+<div class="division-header">AFC East</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Buffalo Bills</td>
+<td>10</td>
+<td>4</td>
+<td>.714</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Miami Dolphins</td>
+<td>9</td>
+<td>5</td>
+<td>.643</td>
+<td>1.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">New York Jets</td>
+<td>6</td>
+<td>8</td>
+<td>.429</td>
+<td>4.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">New England Patriots</td>
+<td>4</td>
+<td>10</td>
+<td>.286</td>
+<td>6.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- AFC NORTH -->
+
+<div class="division">
+
+<div class="division-header">AFC North</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Baltimore Ravens</td>
+<td>10</td>
+<td>4</td>
+<td>.714</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Cincinnati Bengals</td>
+<td>8</td>
+<td>6</td>
+<td>.571</td>
+<td>2.0</td>
+<td class="green">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Pittsburgh Steelers</td>
+<td>7</td>
+<td>7</td>
+<td>.500</td>
+<td>3.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Cleveland Browns</td>
+<td>5</td>
+<td>9</td>
+<td>.357</td>
+<td>5.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- AFC SOUTH -->
+
+<div class="division">
+
+<div class="division-header">AFC South</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Houston Texans</td>
+<td>9</td>
+<td>5</td>
+<td>.643</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Jacksonville Jaguars</td>
+<td>8</td>
+<td>6</td>
+<td>.571</td>
+<td>1.0</td>
+<td class="green">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Indianapolis Colts</td>
+<td>6</td>
+<td>8</td>
+<td>.429</td>
+<td>3.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Tennessee Titans</td>
+<td>4</td>
+<td>10</td>
+<td>.286</td>
+<td>5.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- AFC WEST -->
+
+<div class="division">
+
+<div class="division-header">AFC West</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Kansas City Chiefs</td>
+<td>11</td>
+<td>3</td>
+<td>.786</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Denver Broncos</td>
+<td>8</td>
+<td>6</td>
+<td>.571</td>
+<td>3.0</td>
+<td class="green">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Las Vegas Raiders</td>
+<td>6</td>
+<td>8</td>
+<td>.429</td>
+<td>5.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Los Angeles Chargers</td>
+<td>5</td>
+<td>9</td>
+<td>.357</td>
+<td>6.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<h2 class="section-title">NFC</h2>
+
+
+<!-- NFC EAST -->
+
+<div class="division">
+
+<div class="division-header">NFC East</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Philadelphia Eagles</td>
+<td>10</td>
+<td>4</td>
+<td>.714</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Dallas Cowboys</td>
+<td>8</td>
+<td>6</td>
+<td>.571</td>
+<td>2.0</td>
+<td class="green">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">New York Giants</td>
+<td>6</td>
+<td>8</td>
+<td>.429</td>
+<td>4.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Washington Commanders</td>
+<td>4</td>
+<td>10</td>
+<td>.286</td>
+<td>6.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- NFC NORTH -->
+
+<div class="division">
+
+<div class="division-header">NFC North</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Detroit Lions</td>
+<td>10</td>
+<td>4</td>
+<td>.714</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Green Bay Packers</td>
+<td>9</td>
+<td>5</td>
+<td>.643</td>
+<td>1.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">Minnesota Vikings</td>
+<td>7</td>
+<td>7</td>
+<td>.500</td>
+<td>3.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Chicago Bears</td>
+<td>5</td>
+<td>9</td>
+<td>.357</td>
+<td>5.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- NFC SOUTH -->
+
+<div class="division">
+
+<div class="division-header">NFC South</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Atlanta Falcons</td>
+<td>8</td>
+<td>6</td>
+<td>.571</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">New Orleans Saints</td>
+<td>7</td>
+<td>7</td>
+<td>.500</td>
+<td>1.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Tampa Bay Buccaneers</td>
+<td>6</td>
+<td>8</td>
+<td>.429</td>
+<td>2.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Carolina Panthers</td>
+<td>4</td>
+<td>10</td>
+<td>.286</td>
+<td>4.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- NFC WEST -->
+
+<div class="division">
+
+<div class="division-header">NFC West</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">San Francisco 49ers</td>
+<td>10</td>
+<td>4</td>
+<td>.714</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Seattle Seahawks</td>
+<td>9</td>
+<td>5</td>
+<td>.643</td>
+<td>1.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">Los Angeles Rams</td>
+<td>7</td>
+<td>7</td>
+<td>.500</td>
+<td>3.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Arizona Cardinals</td>
+<td>5</td>
+<td>9</td>
+<td>.357</td>
+<td>5.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<h2 class="section-title">🧠 What Matters?</h2>
+
+<div class="card important">
+
+<h3>NFL Playoff Race</h3>
+
+<br>
+
+<p>
+SportPulse will eventually calculate which games have the biggest
+impact on each team's playoff chances.
+</p>
+
+<br>
+
+<strong>
+Know where your team stands. Know what matters next.
+</strong>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+SportPulse · Know where your team stands. Know what matters next.
+
+</footer>
+
+</body>
+</html>
