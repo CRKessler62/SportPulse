@@ -1,5 +1,141 @@
 {
   "league": "MLB",
-  "lastUpdated": null,
-  "games": []
+  "lastUpdated": "2026-08-16T04:27:18.472375+00:00",
+  "games": [
+    {
+      "gamePk": 822940,
+      "awayTeam": "Baltimore Orioles",
+      "homeTeam": "Tampa Bay Rays",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T16:15:00Z"
+    },
+    {
+      "gamePk": 823344,
+      "awayTeam": "Boston Red Sox",
+      "homeTeam": "Pittsburgh Pirates",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T17:35:00Z"
+    },
+    {
+      "gamePk": 824880,
+      "awayTeam": "Arizona Diamondbacks",
+      "homeTeam": "Atlanta Braves",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T17:35:00Z"
+    },
+    {
+      "gamePk": 822774,
+      "awayTeam": "New York Yankees",
+      "homeTeam": "Toronto Blue Jays",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T17:37:00Z"
+    },
+    {
+      "gamePk": 823590,
+      "awayTeam": "Washington Nationals",
+      "homeTeam": "New York Mets",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T17:40:00Z"
+    },
+    {
+      "gamePk": 824397,
+      "awayTeam": "San Diego Padres",
+      "homeTeam": "Cleveland Guardians",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T17:40:00Z"
+    },
+    {
+      "gamePk": 824236,
+      "awayTeam": "Chicago White Sox",
+      "homeTeam": "Detroit Tigers",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T17:40:00Z"
+    },
+    {
+      "gamePk": 824477,
+      "awayTeam": "Miami Marlins",
+      "homeTeam": "Cincinnati Reds",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T17:40:00Z"
+    },
+    {
+      "gamePk": 823670,
+      "awayTeam": "Philadelphia Phillies",
+      "homeTeam": "Minnesota Twins",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T18:10:00Z"
+    },
+    {
+      "gamePk": 824642,
+      "awayTeam": "St. Louis Cardinals",
+      "homeTeam": "Chicago Cubs",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T19:15:00Z"
+    },
+    {
+      "gamePk": 823182,
+      "awayTeam": "Colorado Rockies",
+      "homeTeam": "San Francisco Giants",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T20:05:00Z"
+    },
+    {
+      "gamePk": 824965,
+      "awayTeam": "Texas Rangers",
+      "homeTeam": "Athletics",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T20:05:00Z"
+    },
+    {
+      "gamePk": 823991,
+      "awayTeam": "Kansas City Royals",
+      "homeTeam": "Los Angeles Angels",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T20:07:00Z"
+    },
+    {
+      "gamePk": 823912,
+      "awayTeam": "Milwaukee Brewers",
+      "homeTeam": "Los Angeles Dodgers",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T20:10:00Z"
+    },
+    {
+      "gamePk": 824156,
+      "awayTeam": "Seattle Mariners",
+      "homeTeam": "Houston Astros",
+      "awayScore": 0,
+      "homeScore": 0,
+      "status": "Scheduled",
+      "gameDate": "2026-08-16T23:20:00Z"
+    }
+  ]
 }
