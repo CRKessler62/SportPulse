@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SportPulse MLB</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 15px;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background: #1f2937;
+    padding: 10px 13px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+nav a:hover {
+    background: #374151;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.update-box {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    color: #6b7280;
+}
+
+.status {
+    font-weight: 700;
+    color: #16a34a;
+}
+
+/* SECTION TITLES */
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* GAMES */
+
+.scores-section {
+    margin-bottom: 45px;
+}
+
+.game-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.game-status {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.live {
+    color: #dc2626;
+}
+
+.final {
+    color: #16a34a;
+}
+
+.scheduled {
+    color: #2563eb;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    font-size: 18px;
+}
+
+.team-name {
+    font-weight: 700;
+}
+
+.score {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.no-games {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    color: #6b7280;
+}
+
+/* DIVISIONS */
+
+.division {
+    margin-bottom: 35px;
+}
+
+.division h2 {
+    margin-bottom: 12px;
+    font-size: 25px;
+}
+
+.table-wrap {
+    background: white;
+    border-radius: 14px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th {
+    background: #111827;
+    color: white;
+    padding: 13px 10px;
+    text-align: left;
+}
+
+td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.team {
+    font-weight: 700;
+}
+
+.rank {
+    font-weight: 900;
+}
+
+/* WILD CARD */
+
+.wildcard {
+    margin-bottom: 45px;
+}
+
+.wildcard-header {
+    background: #1d4ed8;
+    color: white;
+    padding: 16px;
+    border-radius: 14px 14px 0 0;
+}
+
+.wildcard-header h2 {
+    font-size: 24px;
+}
+
+.wildcard-header p {
+    margin-top: 5px;
+    opacity: .9;
+    font-size: 14px;
+}
+
+.wildcard-table {
+    background: white;
+    border-radius: 0 0 14px 14px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.wildcard-table table {
+    min-width: 650px;
+}
+
+.wildcard-team {
+    font-weight: 800;
+}
+
+.playoff {
+    color: #16a34a;
+    font-weight: 800;
+}
+
+.bubble {
+    color: #ca8a04;
+    font-weight: 800;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+}
+
+@media(max-width:700px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 9px 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+SportPulse
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+<a href="mlb.html">⚾ MLB</a>
+<a href="nfl.html">🏈 NFL</a>
+<a href="nba.html">🏀 NBA</a>
+<a href="nhl.html">🏒 NHL</a>
+<a href="mls.html">⚽ MLS</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>⚾ MLB</h1>
+
+<p>Live scores, division standings and Wild Card races</p>
+
+</section>
+
+
+<main class="container">
+
+
+<div class="update-box">
+
+<span class="status">● LIVE DATA</span>
+
+&nbsp;&nbsp;
+
+Standings updated:
+
+<strong id="lastUpdated">Loading...</strong>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- GAMES -->
+<!-- ========================= -->
+
+<section class="scores-section">
+
+<h2 class="section-title">
+🔴 MLB Games
+</h2>
+
+<div id="scores">
+
+Loading games...
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- DIVISION STANDINGS -->
+<!-- ========================= -->
+
+<section>
+
+<h2 class="section-title">
+🏆 Division Standings
+</h2>
+
+<div id="divisions">
+
+Loading standings...
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- WILD CARD -->
+<!-- ========================= -->
+
+<section>
+
+<h2 class="section-title">
+🃏 Wild Card Races
+</h2>
+
+<div id="wildcards">
+
+Loading Wild Card standings...
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<strong>SportPulse</strong>
+
+<br><br>
+
+Live MLB scores, standings and playoff races.
+
+<br><br>
+
+Know where your team stands. Know what matters next.
+
+</footer>
+
+
+<script>
+
+
+/* =====================================================
+   MLB DIVISION MAP
+
+   This is used because the current JSON data does not
+   contain division names.
+===================================================== */
+
+const divisionMap = {
+
+    "American League East": [
+        "Baltimore Orioles",
+        "Boston Red Sox",
+        "New York Yankees",
+        "Tampa Bay Rays",
+        "Toronto Blue Jays"
+    ],
+
+    "American League Central": [
+        "Chicago White Sox",
+        "Cleveland Guardians",
+        "Detroit Tigers",
+        "Kansas City Royals",
+        "Minnesota Twins"
+    ],
+
+    "American League West": [
+        "Houston Astros",
+        "Los Angeles Angels",
+        "Athletics",
+        "Seattle Mariners",
+        "Texas Rangers"
+    ],
+
+    "National League East": [
+        "Atlanta Braves",
+        "Miami Marlins",
+        "New York Mets",
+        "Philadelphia Phillies",
+        "Washington Nationals"
+    ],
+
+    "National League Central": [
+        "Chicago Cubs",
+        "Cincinnati Reds",
+        "Milwaukee Brewers",
+        "Pittsburgh Pirates",
+        "St. Louis Cardinals"
+    ],
+
+    "National League West": [
+        "Arizona Diamondbacks",
+        "Colorado Rockies",
+        "Los Angeles Dodgers",
+        "San Diego Padres",
+        "San Francisco Giants"
+    ]
+
+};
+
+
+/* =====================================================
+   GET DIVISION
+===================================================== */
+
+function getDivision(teamName) {
+
+    for (const division in divisionMap) {
+
+        if (divisionMap[division].includes(teamName)) {
+
+            return division;
+
+        }
+
+    }
+
+    return null;
+}
+
+
+/* =====================================================
+   GET LEAGUE
+===================================================== */
+
+function getLeague(division) {
+
+    if (division.startsWith("American")) {
+
+        return "AL";
+
+    }
+
+    if (division.startsWith("National")) {
+
+        return "NL";
+
+    }
+
+    return null;
+}
+
+
+/* =====================================================
+   LOAD SCORES
+===================================================== */
+
+async function loadScores() {
+
+    try {
+
+        const response = await fetch(
+            "data/scores.json?cache=" + Date.now()
+        );
+
+        const data = await response.json();
+
+        const container =
+            document.getElementById("scores");
+
+        container.innerHTML = "";
+
+
+        if (!data.games || data.games.length === 0) {
+
+            container.innerHTML = `
+                <div class="no-games">
+                    No MLB games scheduled today.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        data.games.forEach(function(game) {
+
+            let statusClass = "scheduled";
+
+            const status =
+                game.status || "Scheduled";
+
+            const lowerStatus =
+                status.toLowerCase();
+
+
+            if (
+                lowerStatus.includes("progress") ||
+                lowerStatus.includes("live") ||
+                lowerStatus.includes("inning")
+            ) {
+
+                statusClass = "live";
+
+            }
+
+
+            if (
+                lowerStatus.includes("final")
+            ) {
+
+                statusClass = "final";
+
+            }
+
+
+            const awayScore =
+                game.awayScore ?? "-";
+
+            const homeScore =
+                game.homeScore ?? "-";
+
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "game-card";
+
+
+            card.innerHTML = `
+
+                <div class="game-status ${statusClass}">
+                    ${status}
+                </div>
+
+                <div class="team-row">
+
+                    <span class="team-name">
+                        ${game.awayTeam}
+                    </span>
+
+                    <span class="score">
+                        ${awayScore}
+                    </span>
+
+                </div>
+
+                <div class="team-row">
+
+                    <span class="team-name">
+                        ${game.homeTeam}
+                    </span>
+
+                    <span class="score">
+                        ${homeScore}
+                    </span>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(card);
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        document.getElementById("scores").innerHTML = `
+
+            <div class="no-games">
+                Unable to load today's MLB games.
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD STANDINGS
+===================================================== */
+
+async function loadStandings() {
+
+    try {
+
+        const response = await fetch(
+            "data/standings.json?cache=" + Date.now()
+        );
+
+        const data = await response.json();
+
+
+        document.getElementById("lastUpdated").textContent =
+            new Date(data.lastUpdated).toLocaleString();
+
+
+        const divisionsContainer =
+            document.getElementById("divisions");
+
+        const wildcardContainer =
+            document.getElementById("wildcards");
+
+
+        divisionsContainer.innerHTML = "";
+
+        wildcardContainer.innerHTML = "";
+
+
+        /*
+        ================================================
+        ADD DIVISION INFORMATION TO EVERY TEAM
+        ================================================
+        */
+
+        data.teams.forEach(function(team) {
+
+            team.calculatedDivision =
+                getDivision(team.name);
+
+            team.calculatedLeague =
+                getLeague(team.calculatedDivision || "");
+
+        });
+
+
+        /*
+        ================================================
+        DISPLAY SIX DIVISIONS
+        ================================================
+        */
+
+        for (const divisionName in divisionMap) {
+
+            const teams =
+                data.teams.filter(function(team) {
+
+                    return team.calculatedDivision ===
+                           divisionName;
+
+                });
+
+
+            /*
+            Sort by winning percentage
+            */
+
+            teams.sort(function(a, b) {
+
+                return parseFloat(b.winPct || 0)
+                     - parseFloat(a.winPct || 0);
+
+            });
+
+
+            if (teams.length === 0) {
+
+                continue;
+
+            }
+
+
+            const section =
+                document.createElement("div");
+
+            section.className =
+                "division";
+
+
+            let html = `
+
+                <h2>${divisionName}</h2>
+
+                <div class="table-wrap">
+
+                <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>PCT</th>
+                    <th>GB</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+            `;
+
+
+            teams.forEach(function(team, index) {
+
+                html += `
+
+                    <tr>
+
+                        <td class="rank">
+                            ${index + 1}
+                        </td>
+
+                        <td class="team">
+                            ${team.name}
+                        </td>
+
+                        <td>
+                            ${team.wins}
+                        </td>
+
+                        <td>
+                            ${team.losses}
+                        </td>
+
+                        <td>
+                            ${team.winPct}
+                        </td>
+
+                        <td>
+                            ${team.gamesBack}
+                        </td>
+
+                    </tr>
+
+                `;
+
+            });
+
+
+            html += `
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+            `;
+
+
+            section.innerHTML =
+                html;
+
+
+            divisionsContainer.appendChild(
+                section
+            );
+
+        }
+
+
+        /*
+        ================================================
+        BUILD AL WILD CARD
+        ================================================
+        */
+
+        buildWildCard(
+            "American League",
+            "AL"
+        );
+
+
+        /*
+        ================================================
+        BUILD NL WILD CARD
+        ================================================
+        */
+
+        buildWildCard(
+            "National League",
+            "NL"
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        document.getElementById(
+            "divisions"
+        ).innerHTML = `
+
+            <div class="no-games">
+
+                Unable to load MLB standings.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   BUILD WILD CARD
+===================================================== */
+
+function buildWildCard(
+    leagueName,
+    leagueCode
+) {
+
+
+    /*
+    Get all teams in this league
+    */
+
+    const leagueTeams =
+        window.mlbTeams.filter(function(team) {
+
+            return team.calculatedLeague ===
+                   leagueCode;
+
+        });
+
+
+    /*
+    Find the three division winners
+
+    We use the best winning percentage in each
+    division as the division winner.
+    */
+
+    const divisionWinners = [];
+
+
+    for (const divisionName in divisionMap) {
+
+        if (
+            getLeague(divisionName) !==
+            leagueCode
+        ) {
+
+            continue;
+
+        }
+
+
+        const divisionTeams =
+            leagueTeams.filter(function(team) {
+
+                return team.calculatedDivision ===
+                       divisionName;
+
+            });
+
+
+        divisionTeams.sort(function(a, b) {
+
+            return parseFloat(b.winPct || 0)
+                 - parseFloat(a.winPct || 0);
+
+        });
+
+
+        if (divisionTeams.length > 0) {
+
+            divisionWinners.push(
+                divisionTeams[0]
+            );
+
+        }
+
+    }
+
+
+    /*
+    Everyone NOT winning their division
+    */
+
+    const wildcardTeams =
+        leagueTeams.filter(function(team) {
+
+            return !divisionWinners.includes(team);
+
+        });
+
+
+    /*
+    Sort remaining teams by winning percentage
+    */
+
+    wildcardTeams.sort(function(a, b) {
+
+        return parseFloat(b.winPct || 0)
+             - parseFloat(a.winPct || 0);
+
+    });
+
+
+    /*
+    Take the top three Wild Card teams
+    plus a few teams immediately outside
+    the race.
+    */
+
+    const displayTeams =
+        wildcardTeams.slice(0, 6);
+
+
+    /*
+    Create section
+    */
+
+    const section =
+        document.createElement("div");
+
+    section.className =
+        "wildcard";
+
+
+    let html = `
+
+        <div class="wildcard-header">
+
+            <h2>
+                🃏 ${leagueName} Wild Card
+            </h2>
+
+            <p>
+                Top 3 non-division winners qualify
+            </p>
+
+        </div>
+
+        <div class="wildcard-table">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+            <th>WC</th>
+            <th>Team</th>
+            <th>W</th>
+            <th>L</th>
+            <th>PCT</th>
+            <th>GB</th>
+            <th>Status</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+    `;
+
+
+    displayTeams.forEach(function(team, index) {
+
+
+        let status = "In Wild Card";
+
+        let statusClass = "playoff";
+
+
+        if (index >= 3) {
+
+            status =
+                "Outside";
+
+            statusClass =
+                "bubble";
+
+        }
+
+
+        /*
+        Calculate games behind the final
+        Wild Card position.
+        */
+
+        let gamesBehind = "—";
+
+
+        if (
+            index >= 3 &&
+            displayTeams[2]
+        ) {
+
+            gamesBehind =
+                calculateGamesBack(
+                    displayTeams[2],
+                    team
+                );
+
+        }
+
+
+        html += `
+
+            <tr>
+
+                <td class="rank">
+
+                    ${index < 3
+                        ? "WC" + (index + 1)
+                        : "—"}
+
+                </td>
+
+                <td class="wildcard-team">
+
+                    ${team.name}
+
+                </td>
+
+                <td>
+
+                    ${team.wins}
+
+                </td>
+
+                <td>
+
+                    ${team.losses}
+
+                </td>
+
+                <td>
+
+                    ${team.winPct}
+
+                </td>
+
+                <td>
+
+                    ${gamesBehind}
+
+                </td>
+
+                <td class="${statusClass}">
+
+                    ${status}
+
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+
+    html += `
+
+        </tbody>
+
+        </table>
+
+        </div>
+
+    `;
+
+
+    section.innerHTML =
+        html;
+
+
+    document.getElementById(
+        "wildcards"
+    ).appendChild(section);
+
+}
+
+
+/* =====================================================
+   CALCULATE GAMES BACK
+===================================================== */
+
+function calculateGamesBack(
+    leader,
+    team
+) {
+
+    const leaderWins =
+        Number(leader.wins || 0);
+
+    const leaderLosses =
+        Number(leader.losses || 0);
+
+    const teamWins =
+        Number(team.wins || 0);
+
+    const teamLosses =
+        Number(team.losses || 0);
+
+
+    const gamesBack =
+        (
+            (leaderWins - teamWins) +
+            (teamLosses - leaderLosses)
+        ) / 2;
+
+
+    if (gamesBack <= 0) {
+
+        return "—";
+
+    }
+
+
+    return gamesBack.toFixed(1);
+
+}
+
+
+/* =====================================================
+   START STANDINGS
+===================================================== */
+
+async function initializeStandings() {
+
+    try {
+
+        const response = await fetch(
+            "data/standings.json?cache=" + Date.now()
+        );
+
+        const data = await response.json();
+
+
+        /*
+        Make teams globally available to the
+        Wild Card function.
+        */
+
+        window.mlbTeams =
+            data.teams;
+
+
+        /*
+        Add division and league information.
+        */
+
+        window.mlbTeams.forEach(function(team) {
+
+            team.calculatedDivision =
+                getDivision(team.name);
+
+            team.calculatedLeague =
+                getLeague(
+                    team.calculatedDivision || ""
+                );
+
+        });
+
+
+        document.getElementById(
+            "lastUpdated"
+        ).textContent =
+            new Date(
+                data.lastUpdated
+            ).toLocaleString();
+
+
+        /*
+        Build divisions
+        */
+
+        const divisionsContainer =
+            document.getElementById(
+                "divisions"
+            );
+
+        divisionsContainer.innerHTML = "";
+
+
+        for (const divisionName in divisionMap) {
+
+            const teams =
+                window.mlbTeams.filter(function(team) {
+
+                    return team.calculatedDivision ===
+                           divisionName;
+
+                });
+
+
+            teams.sort(function(a, b) {
+
+                return parseFloat(b.winPct || 0)
+                     - parseFloat(a.winPct || 0);
+
+            });
+
+
+            if (teams.length === 0) {
+
+                continue;
+
+            }
+
+
+            const section =
+                document.createElement("div");
+
+            section.className =
+                "division";
+
+
+            let html = `
+
+                <h2>${divisionName}</h2>
+
+                <div class="table-wrap">
+
+                <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>PCT</th>
+                    <th>GB</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+            `;
+
+
+            teams.forEach(function(team, index) {
+
+                html += `
+
+                    <tr>
+
+                        <td class="rank">
+                            ${index + 1}
+                        </td>
+
+                        <td class="team">
+                            ${team.name}
+                        </td>
+
+                        <td>
+                            ${team.wins}
+                        </td>
+
+                        <td>
+                            ${team.losses}
+                        </td>
+
+                        <td>
+                            ${team.winPct}
+                        </td>
+
+                        <td>
+                            ${team.gamesBack}
+                        </td>
+
+                    </tr>
+
+                `;
+
+            });
+
+
+            html += `
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+            `;
+
+
+            section.innerHTML =
+                html;
+
+
+            divisionsContainer.appendChild(
+                section
+            );
+
+        }
+
+
+        /*
+        Build Wild Card sections
+        */
+
+        document.getElementById(
+            "wildcards"
+        ).innerHTML = "";
+
+
+        buildWildCard(
+            "American League",
+            "AL"
+        );
+
+
+        buildWildCard(
+            "National League",
+            "NL"
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        document.getElementById(
+            "divisions"
+        ).innerHTML = `
+            <div class="no-games">
+                Unable to load MLB standings.
+            </div>
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadScores();
+
+initializeStandings();
+
+
+/* =====================================================
+   REFRESH EVERY 5 MINUTES
+===================================================== */
+
+setInterval(function() {
+
+    loadScores();
+
+    initializeStandings();
+
+}, 5 * 60 * 1000);
+
+
+</script>
+
+</body>
+
+</html>
