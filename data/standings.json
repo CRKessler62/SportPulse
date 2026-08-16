@@ -1,0 +1,311 @@
+{
+  "league": "MLB",
+  "lastUpdated": null,
+  "teams": [
+    {
+      "name": "Baltimore Orioles",
+      "abbreviation": "BAL",
+      "league": "AL",
+      "division": "AL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Boston Red Sox",
+      "abbreviation": "BOS",
+      "league": "AL",
+      "division": "AL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "New York Yankees",
+      "abbreviation": "NYY",
+      "league": "AL",
+      "division": "AL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Tampa Bay Rays",
+      "abbreviation": "TB",
+      "league": "AL",
+      "division": "AL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Toronto Blue Jays",
+      "abbreviation": "TOR",
+      "league": "AL",
+      "division": "AL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+
+    {
+      "name": "Chicago White Sox",
+      "abbreviation": "CWS",
+      "league": "AL",
+      "division": "AL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Cleveland Guardians",
+      "abbreviation": "CLE",
+      "league": "AL",
+      "division": "AL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Detroit Tigers",
+      "abbreviation": "DET",
+      "league": "AL",
+      "division": "AL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Kansas City Royals",
+      "abbreviation": "KC",
+      "league": "AL",
+      "division": "AL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Minnesota Twins",
+      "abbreviation": "MIN",
+      "league": "AL",
+      "division": "AL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+
+    {
+      "name": "Houston Astros",
+      "abbreviation": "HOU",
+      "league": "AL",
+      "division": "AL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Los Angeles Angels",
+      "abbreviation": "LAA",
+      "league": "AL",
+      "division": "AL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Athletics",
+      "abbreviation": "ATH",
+      "league": "AL",
+      "division": "AL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Seattle Mariners",
+      "abbreviation": "SEA",
+      "league": "AL",
+      "division": "AL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Texas Rangers",
+      "abbreviation": "TEX",
+      "league": "AL",
+      "division": "AL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+
+    {
+      "name": "Atlanta Braves",
+      "abbreviation": "ATL",
+      "league": "NL",
+      "division": "NL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Miami Marlins",
+      "abbreviation": "MIA",
+      "league": "NL",
+      "division": "NL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "New York Mets",
+      "abbreviation": "NYM",
+      "league": "NL",
+      "division": "NL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Philadelphia Phillies",
+      "abbreviation": "PHI",
+      "league": "NL",
+      "division": "NL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Washington Nationals",
+      "abbreviation": "WSH",
+      "league": "NL",
+      "division": "NL East",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+
+    {
+      "name": "Chicago Cubs",
+      "abbreviation": "CHC",
+      "league": "NL",
+      "division": "NL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Cincinnati Reds",
+      "abbreviation": "CIN",
+      "league": "NL",
+      "division": "NL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Milwaukee Brewers",
+      "abbreviation": "MIL",
+      "league": "NL",
+      "division": "NL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Pittsburgh Pirates",
+      "abbreviation": "PIT",
+      "league": "NL",
+      "division": "NL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "St. Louis Cardinals",
+      "abbreviation": "STL",
+      "league": "NL",
+      "division": "NL Central",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+
+    {
+      "name": "Arizona Diamondbacks",
+      "abbreviation": "ARI",
+      "league": "NL",
+      "division": "NL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Colorado Rockies",
+      "abbreviation": "COL",
+      "league": "NL",
+      "division": "NL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "Los Angeles Dodgers",
+      "abbreviation": "LAD",
+      "league": "NL",
+      "division": "NL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "San Diego Padres",
+      "abbreviation": "SD",
+      "league": "NL",
+      "division": "NL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    },
+    {
+      "name": "San Francisco Giants",
+      "abbreviation": "SF",
+      "league": "NL",
+      "division": "NL West",
+      "wins": null,
+      "losses": null,
+      "winPct": null,
+      "gamesBack": null
+    }
+  ]
+}
