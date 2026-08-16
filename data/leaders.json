@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-16T23:31:31.817722+00:00",
+  "lastUpdated": "2026-08-16T23:37:21.162801+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -169,7 +169,7 @@
             "rank": 1,
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
-            "value": ".436"
+            "value": ".435"
           },
           {
             "rank": 2,
@@ -201,7 +201,7 @@
             "rank": 1,
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
-            "value": ".622"
+            "value": ".621"
           },
           {
             "rank": 2,
@@ -233,7 +233,7 @@
             "rank": 1,
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
-            "value": "1.058"
+            "value": "1.056"
           },
           {
             "rank": 2,
@@ -614,7 +614,7 @@
             "rank": 5,
             "player": "Josh Naylor",
             "team": "Seattle Mariners",
-            "value": "785"
+            "value": "786"
           }
         ],
         "assists": [
