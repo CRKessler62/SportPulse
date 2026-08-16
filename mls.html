@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SportPulse MLS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 20px;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: 600;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.division {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.division-header {
+    background: #111827;
+    color: white;
+    padding: 15px 18px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: #6b7280;
+    font-size: 12px;
+    text-align: left;
+    padding: 13px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.team {
+    font-weight: bold;
+}
+
+.green {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.yellow {
+    color: #ca8a04;
+    font-weight: bold;
+}
+
+.gray {
+    color: #6b7280;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.big-number {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.subtext {
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.important {
+    border-left: 5px solid #2563eb;
+}
+
+footer {
+    margin-top: 50px;
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 30px;
+}
+
+@media(max-width:700px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4),
+    th:nth-child(5),
+    td:nth-child(5) {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+SportPulse
+</div>
+
+<nav>
+<a href="index.html">⚾ MLB</a>
+<a href="nfl.html">🏈 NFL</a>
+<a href="nba.html">🏀 NBA</a>
+<a href="nhl.html">🏒 NHL</a>
+<a href="mls.html">⚽ MLS</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>⚽ MLS Standings</h1>
+
+<p>Know where your club stands. Know what matters next.</p>
+
+</section>
+
+
+<main class="container">
+
+
+<h2 class="section-title">🏆 MLS Playoff Picture</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Eastern Conference Leader</h3>
+
+<div class="big-number">
+Inter Miami CF
+</div>
+
+<div class="subtext">
+Eastern Conference
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>Western Conference Leader</h3>
+
+<div class="big-number">
+Vancouver Whitecaps FC
+</div>
+
+<div class="subtext">
+Western Conference
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>Playoff Format</h3>
+
+<div class="big-number">
+Top 9
+</div>
+
+<div class="subtext">
+Teams per conference qualify
+</div>
+
+</div>
+
+</div>
+
+
+<h2 class="section-title">Eastern Conference</h2>
+
+
+<div class="division">
+
+<div class="division-header">
+Eastern Conference
+</div>
+
+<table>
+
+<tr>
+<th>CLUB</th>
+<th>GP</th>
+<th>W</th>
+<th>L</th>
+<th>D</th>
+<th>PTS</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Inter Miami CF</td>
+<td>15</td>
+<td>9</td>
+<td>3</td>
+<td>3</td>
+<td>30</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Nashville SC</td>
+<td>15</td>
+<td>8</td>
+<td>3</td>
+<td>4</td>
+<td>28</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">FC Cincinnati</td>
+<td>15</td>
+<td>8</td>
+<td>4</td>
+<td>3</td>
+<td>27</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Philadelphia Union</td>
+<td>15</td>
+<td>7</td>
+<td>4</td>
+<td>4</td>
+<td>25</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Charlotte FC</td>
+<td>15</td>
+<td>7</td>
+<td>5</td>
+<td>3</td>
+<td>24</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">New York City FC</td>
+<td>15</td>
+<td>6</td>
+<td>5</td>
+<td>4</td>
+<td>22</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Orlando City SC</td>
+<td>15</td>
+<td>6</td>
+<td>6</td>
+<td>3</td>
+<td>21</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Columbus Crew</td>
+<td>15</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>20</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">New England Revolution</td>
+<td>15</td>
+<td>5</td>
+<td>6</td>
+<td>4</td>
+<td>19</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Red Bull New York</td>
+<td>15</td>
+<td>5</td>
+<td>7</td>
+<td>3</td>
+<td>18</td>
+<td class="yellow">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">Toronto FC</td>
+<td>15</td>
+<td>4</td>
+<td>7</td>
+<td>4</td>
+<td>16</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Chicago Fire FC</td>
+<td>15</td>
+<td>4</td>
+<td>8</td>
+<td>3</td>
+<td>15</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Atlanta United</td>
+<td>15</td>
+<td>3</td>
+<td>9</td>
+<td>3</td>
+<td>12</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">CF Montréal</td>
+<td>15</td>
+<td>2</td>
+<td>9</td>
+<td>4</td>
+<td>10</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">D.C. United</td>
+<td>15</td>
+<td>2</td>
+<td>10</td>
+<td>3</td>
+<td>9</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2 class="section-title">Western Conference</h2>
+
+
+<div class="division">
+
+<div class="division-header">
+Western Conference
+</div>
+
+<table>
+
+<tr>
+<th>CLUB</th>
+<th>GP</th>
+<th>W</th>
+<th>L</th>
+<th>D</th>
+<th>PTS</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Vancouver Whitecaps FC</td>
+<td>15</td>
+<td>9</td>
+<td>2</td>
+<td>4</td>
+<td>31</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Seattle Sounders FC</td>
+<td>15</td>
+<td>8</td>
+<td>3</td>
+<td>4</td>
+<td>28</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">San Diego FC</td>
+<td>15</td>
+<td>8</td>
+<td>4</td>
+<td>3</td>
+<td>27</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">LAFC</td>
+<td>15</td>
+<td>7</td>
+<td>4</td>
+<td>4</td>
+<td>25</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Minnesota United FC</td>
+<td>15</td>
+<td>7</td>
+<td>5</td>
+<td>3</td>
+<td>24</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Portland Timbers</td>
+<td>15</td>
+<td>6</td>
+<td>5</td>
+<td>4</td>
+<td>22</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Colorado Rapids</td>
+<td>15</td>
+<td>6</td>
+<td>6</td>
+<td>3</td>
+<td>21</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">FC Dallas</td>
+<td>15</td>
+<td>5</td>
+<td>6</td>
+<td>4</td>
+<td>19</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Austin FC</td>
+<td>15</td>
+<td>4</td>
+<td>7</td>
+<td>4</td>
+<td>16</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">San Jose Earthquakes</td>
+<td>15</td>
+<td>4</td>
+<td>8</td>
+<td>3</td>
+<td>15</td>
+<td class="yellow">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">Real Salt Lake</td>
+<td>15</td>
+<td>4</td>
+<td>8</td>
+<td>3</td>
+<td>15</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Houston Dynamo FC</td>
+<td>15</td>
+<td>3</td>
+<td>8</td>
+<td>4</td>
+<td>13</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Sporting Kansas City</td>
+<td>15</td>
+<td>3</td>
+<td>9</td>
+<td>3</td>
+<td>12</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">St. Louis CITY SC</td>
+<td>15</td>
+<td>2</td>
+<td>9</td>
+<td>4</td>
+<td>10</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">LA Galaxy</td>
+<td>15</td>
+<td>2</td>
+<td>10</td>
+<td>3</td>
+<td>9</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2 class="section-title">🧠 What Matters?</h2>
+
+<div class="card important">
+
+<h3>MLS Playoff Race</h3>
+
+<br>
+
+<p>
+The top nine clubs in each conference qualify for the MLS Cup Playoffs.
+SportPulse will eventually calculate which matches have the biggest
+impact on each club's playoff chances.
+</p>
+
+<br>
+
+<strong>
+Know where your club stands. Know what matters next.
+</strong>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+SportPulse · Know where your team stands. Know what matters next.
+
+</footer>
+
+</body>
+</html>
