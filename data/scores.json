@@ -1,6 +1,6 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-16T13:21:45.604737+00:00",
+  "lastUpdated": "2026-08-16T13:44:22.552965+00:00",
   "games": [
     {
       "gamePk": 822940,
@@ -14,11 +14,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 823344,
@@ -32,11 +34,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 824880,
@@ -50,11 +54,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 822774,
@@ -68,11 +74,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 823590,
@@ -86,11 +94,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 824397,
@@ -104,11 +114,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 824236,
@@ -122,11 +134,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 824477,
@@ -140,11 +154,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 823670,
@@ -158,11 +174,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 824642,
@@ -176,11 +194,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 823182,
@@ -194,11 +214,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 824965,
@@ -212,11 +234,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 823991,
@@ -230,11 +254,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 823912,
@@ -248,11 +274,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     },
     {
       "gamePk": 824156,
@@ -266,11 +294,13 @@
       "inningOrdinal": null,
       "inningState": null,
       "outs": null,
+      "battingTeam": null,
       "runners": {
         "first": false,
         "second": false,
         "third": false
-      }
+      },
+      "inningScores": []
     }
   ]
 }
