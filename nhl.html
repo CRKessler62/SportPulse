@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SportPulse NHL</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 20px;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: 600;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.division {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.division-header {
+    background: #111827;
+    color: white;
+    padding: 15px 18px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: #6b7280;
+    font-size: 12px;
+    text-align: left;
+    padding: 13px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.team {
+    font-weight: bold;
+}
+
+.green {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.yellow {
+    color: #ca8a04;
+    font-weight: bold;
+}
+
+.gray {
+    color: #6b7280;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.big-number {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.subtext {
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.important {
+    border-left: 5px solid #2563eb;
+}
+
+footer {
+    margin-top: 50px;
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 30px;
+}
+
+@media(max-width:700px) {
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4),
+    th:nth-child(5),
+    td:nth-child(5) {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header">
+
+<div class="logo">
+SportPulse
+</div>
+
+<nav>
+<a href="index.html">⚾ MLB</a>
+<a href="nfl.html">🏈 NFL</a>
+<a href="nba.html">🏀 NBA</a>
+<a href="nhl.html">🏒 NHL</a>
+</nav>
+
+</div>
+</header>
+
+
+<section class="hero">
+
+<h1>🏒 NHL Standings</h1>
+
+<p>Know where your team stands. Know what matters next.</p>
+
+</section>
+
+
+<main class="container">
+
+<h2 class="section-title">🏆 NHL Playoff Picture</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Best Record</h3>
+<div class="big-number">Carolina Hurricanes</div>
+<div class="subtext">Prototype standings</div>
+</div>
+
+<div class="card">
+<h3>Eastern Leader</h3>
+<div class="big-number">Buffalo Sabres</div>
+<div class="subtext">Atlantic Division</div>
+</div>
+
+<div class="card">
+<h3>Western Leader</h3>
+<div class="big-number">Colorado Avalanche</div>
+<div class="subtext">Central Division</div>
+</div>
+
+</div>
+
+
+<h2 class="section-title">Eastern Conference</h2>
+
+
+<!-- ATLANTIC -->
+
+<div class="division">
+
+<div class="division-header">Atlantic Division</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>OTL</th>
+<th>PTS</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Buffalo Sabres</td>
+<td>50</td>
+<td>24</td>
+<td>8</td>
+<td>108</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Tampa Bay Lightning</td>
+<td>49</td>
+<td>25</td>
+<td>8</td>
+<td>106</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Florida Panthers</td>
+<td>47</td>
+<td>27</td>
+<td>8</td>
+<td>102</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Toronto Maple Leafs</td>
+<td>45</td>
+<td>28</td>
+<td>9</td>
+<td>99</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Montreal Canadiens</td>
+<td>43</td>
+<td>30</td>
+<td>9</td>
+<td>95</td>
+<td class="yellow">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Boston Bruins</td>
+<td>40</td>
+<td>32</td>
+<td>10</td>
+<td>90</td>
+<td class="yellow">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Ottawa Senators</td>
+<td>38</td>
+<td>34</td>
+<td>10</td>
+<td>86</td>
+<td class="gray">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Detroit Red Wings</td>
+<td>34</td>
+<td>38</td>
+<td>10</td>
+<td>78</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- METROPOLITAN -->
+
+<div class="division">
+
+<div class="division-header">Metropolitan Division</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>OTL</th>
+<th>PTS</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Carolina Hurricanes</td>
+<td>52</td>
+<td>23</td>
+<td>7</td>
+<td>111</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">New Jersey Devils</td>
+<td>47</td>
+<td>27</td>
+<td>8</td>
+<td>102</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">New York Rangers</td>
+<td>45</td>
+<td>29</td>
+<td>8</td>
+<td>98</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Washington Capitals</td>
+<td>44</td>
+<td>30</td>
+<td>8</td>
+<td>96</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Pittsburgh Penguins</td>
+<td>42</td>
+<td>31</td>
+<td>9</td>
+<td>93</td>
+<td class="yellow">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Philadelphia Flyers</td>
+<td>39</td>
+<td>34</td>
+<td>9</td>
+<td>87</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">New York Islanders</td>
+<td>35</td>
+<td>37</td>
+<td>10</td>
+<td>80</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">Columbus Blue Jackets</td>
+<td>30</td>
+<td>43</td>
+<td>9</td>
+<td>69</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<h2 class="section-title">Western Conference</h2>
+
+
+<!-- CENTRAL -->
+
+<div class="division">
+
+<div class="division-header">Central Division</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>OTL</th>
+<th>PTS</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Colorado Avalanche</td>
+<td>51</td>
+<td>24</td>
+<td>7</td>
+<td>109</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Dallas Stars</td>
+<td>48</td>
+<td>26</td>
+<td>8</td>
+<td>104</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Winnipeg Jets</td>
+<td>46</td>
+<td>28</td>
+<td>8</td>
+<td>100</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Nashville Predators</td>
+<td>43</td>
+<td>30</td>
+<td>9</td>
+<td>95</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Minnesota Wild</td>
+<td>41</td>
+<td>32</td>
+<td>9</td>
+<td>91</td>
+<td class="yellow">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">St. Louis Blues</td>
+<td>38</td>
+<td>34</td>
+<td>10</td>
+<td>86</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Utah Mammoth</td>
+<td>36</td>
+<td>37</td>
+<td>9</td>
+<td>81</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">Chicago Blackhawks</td>
+<td>28</td>
+<td>45</td>
+<td>9</td>
+<td>65</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<!-- PACIFIC -->
+
+<div class="division">
+
+<div class="division-header">Pacific Division</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>OTL</th>
+<th>PTS</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Edmonton Oilers</td>
+<td>49</td>
+<td>26</td>
+<td>7</td>
+<td>105</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Vegas Golden Knights</td>
+<td>47</td>
+<td>28</td>
+<td>7</td>
+<td>101</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Los Angeles Kings</td>
+<td>45</td>
+<td>29</td>
+<td>8</td>
+<td>98</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Vancouver Canucks</td>
+<td>42</td>
+<td>31</td>
+<td>9</td>
+<td>93</td>
+<td class="green">Playoff</td>
+</tr>
+
+<tr>
+<td class="team">Calgary Flames</td>
+<td>39</td>
+<td>34</td>
+<td>9</td>
+<td>87</td>
+<td class="yellow">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Seattle Kraken</td>
+<td>37</td>
+<td>36</td>
+<td>9</td>
+<td>83</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Anaheim Ducks</td>
+<td>35</td>
+<td>38</td>
+<td>9</td>
+<td>79</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">San Jose Sharks</td>
+<td>31</td>
+<td>43</td>
+<td>8</td>
+<td>70</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+</div>
+
+
+<h2 class="section-title">🧠 What Matters?</h2>
+
+<div class="card important">
+
+<h3>NHL Playoff Race</h3>
+
+<br>
+
+<p>
+SportPulse will eventually calculate which games have the biggest
+impact on each team's playoff position and wild-card race.
+</p>
+
+<br>
+
+<strong>
+Know where your team stands. Know what matters next.
+</strong>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+SportPulse · Know where your team stands. Know what matters next.
+
+</footer>
+
+</body>
+</html>
