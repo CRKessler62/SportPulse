@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SportPulse MLB</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+/* HEADER */
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 15px;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+/* NAVIGATION */
+
+.sports-nav {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sports-nav a {
+    color: white;
+    text-decoration: none;
+    background: #1f2937;
+    padding: 9px 11px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.sports-nav a:hover {
+    background: #374151;
+}
+
+/* HERO */
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+/* CONTENT */
+
+.container {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 18px;
+}
+
+.section-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* TOP CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 23px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #6b7280;
+}
+
+.big-number {
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.subtext {
+    color: #6b7280;
+    margin-top: 7px;
+}
+
+/* STANDINGS */
+
+.division {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
+}
+
+.division-header {
+    background: #111827;
+    color: white;
+    padding: 16px 18px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: #6b7280;
+    font-size: 12px;
+    text-align: left;
+    padding: 13px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.team {
+    font-weight: 800;
+}
+
+.green {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.yellow {
+    color: #ca8a04;
+    font-weight: 700;
+}
+
+.gray {
+    color: #6b7280;
+}
+
+/* WHAT MATTERS */
+
+.important {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
+    border-left: 5px solid #2563eb;
+    margin-bottom: 40px;
+}
+
+.important p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .sports-nav a {
+        font-size: 12px;
+        padding: 8px 9px;
+    }
+
+    th,
+    td {
+        padding: 11px 8px;
+        font-size: 13px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4),
+    th:nth-child(5),
+    td:nth-child(5) {
+        display: none;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+SportPulse
+</div>
+
+
+<div class="sports-nav">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="mlb.html">⚾ MLB</a>
+
+<a href="nfl.html">🏈 NFL</a>
+
+<a href="nba.html">🏀 NBA</a>
+
+<a href="nhl.html">🏒 NHL</a>
+
+<a href="mls.html">⚽ MLS</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>⚾ MLB Standings</h1>
+
+<p>
+Know where your team stands. Know what matters next.
+</p>
+
+</section>
+
+
+<main class="container">
+
+
+<h2 class="section-title">
+🏆 MLB Playoff Picture
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>Best Record</h3>
+
+<div class="big-number">
+Milwaukee Brewers
+</div>
+
+<div class="subtext">
+Prototype standings
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>AL Leader</h3>
+
+<div class="big-number">
+Tampa Bay Rays
+</div>
+
+<div class="subtext">
+American League
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>NL Leader</h3>
+
+<div class="big-number">
+Milwaukee Brewers
+</div>
+
+<div class="subtext">
+National League
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- AMERICAN LEAGUE -->
+
+
+<h2 class="section-title">
+American League
+</h2>
+
+
+<!-- AL EAST -->
+
+<div class="division">
+
+<div class="division-header">
+AL East
+</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Tampa Bay Rays</td>
+<td>74</td>
+<td>48</td>
+<td>.607</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">New York Yankees</td>
+<td>68</td>
+<td>54</td>
+<td>.557</td>
+<td>6.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">Boston Red Sox</td>
+<td>65</td>
+<td>57</td>
+<td>.533</td>
+<td>9.0</td>
+<td class="green">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Toronto Blue Jays</td>
+<td>60</td>
+<td>62</td>
+<td>.492</td>
+<td>14.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Baltimore Orioles</td>
+<td>45</td>
+<td>77</td>
+<td>.369</td>
+<td>29.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- AL CENTRAL -->
+
+<div class="division">
+
+<div class="division-header">
+AL Central
+</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Detroit Tigers</td>
+<td>70</td>
+<td>52</td>
+<td>.574</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Minnesota Twins</td>
+<td>65</td>
+<td>57</td>
+<td>.533</td>
+<td>5.0</td>
+<td class="green">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Cleveland Guardians</td>
+<td>62</td>
+<td>60</td>
+<td>.508</td>
+<td>8.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Kansas City Royals</td>
+<td>56</td>
+<td>66</td>
+<td>.459</td>
+<td>14.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">Chicago White Sox</td>
+<td>40</td>
+<td>82</td>
+<td>.328</td>
+<td>30.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- AL WEST -->
+
+<div class="division">
+
+<div class="division-header">
+AL West
+</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Seattle Mariners</td>
+<td>72</td>
+<td>50</td>
+<td>.590</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Houston Astros</td>
+<td>69</td>
+<td>53</td>
+<td>.566</td>
+<td>3.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">Texas Rangers</td>
+<td>61</td>
+<td>61</td>
+<td>.500</td>
+<td>11.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Los Angeles Angels</td>
+<td>55</td>
+<td>67</td>
+<td>.451</td>
+<td>17.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">Oakland Athletics</td>
+<td>43</td>
+<td>79</td>
+<td>.352</td>
+<td>29.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- NATIONAL LEAGUE -->
+
+
+<h2 class="section-title">
+National League
+</h2>
+
+
+<!-- NL EAST -->
+
+<div class="division">
+
+<div class="division-header">
+NL East
+</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Atlanta Braves</td>
+<td>71</td>
+<td>51</td>
+<td>.582</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Philadelphia Phillies</td>
+<td>68</td>
+<td>54</td>
+<td>.557</td>
+<td>3.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">New York Mets</td>
+<td>65</td>
+<td>57</td>
+<td>.533</td>
+<td>6.0</td>
+<td class="green">Wild Card Race</td>
+</tr>
+
+<tr>
+<td class="team">Miami Marlins</td>
+<td>52</td>
+<td>70</td>
+<td>.426</td>
+<td>19.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">Washington Nationals</td>
+<td>45</td>
+<td>77</td>
+<td>.369</td>
+<td>26.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- NL CENTRAL -->
+
+<div class="division">
+
+<div class="division-header">
+NL Central
+</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Milwaukee Brewers</td>
+<td>76</td>
+<td>48</td>
+<td>.613</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">Chicago Cubs</td>
+<td>69</td>
+<td>55</td>
+<td>.556</td>
+<td>7.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">Cincinnati Reds</td>
+<td>63</td>
+<td>61</td>
+<td>.508</td>
+<td>13.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">St. Louis Cardinals</td>
+<td>57</td>
+<td>67</td>
+<td>.460</td>
+<td>19.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">Pittsburgh Pirates</td>
+<td>42</td>
+<td>82</td>
+<td>.339</td>
+<td>34.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- NL WEST -->
+
+<div class="division">
+
+<div class="division-header">
+NL West
+</div>
+
+<table>
+
+<tr>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>PCT</th>
+<th>GB</th>
+<th>STATUS</th>
+</tr>
+
+<tr>
+<td class="team">Los Angeles Dodgers</td>
+<td>73</td>
+<td>49</td>
+<td>.598</td>
+<td>—</td>
+<td class="green">Division Leader</td>
+</tr>
+
+<tr>
+<td class="team">San Diego Padres</td>
+<td>68</td>
+<td>54</td>
+<td>.557</td>
+<td>5.0</td>
+<td class="green">Wild Card</td>
+</tr>
+
+<tr>
+<td class="team">San Francisco Giants</td>
+<td>61</td>
+<td>61</td>
+<td>.500</td>
+<td>12.0</td>
+<td class="yellow">Bubble</td>
+</tr>
+
+<tr>
+<td class="team">Arizona Diamondbacks</td>
+<td>57</td>
+<td>65</td>
+<td>.467</td>
+<td>16.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+<tr>
+<td class="team">Colorado Rockies</td>
+<td>35</td>
+<td>87</td>
+<td>.287</td>
+<td>38.0</td>
+<td class="gray">Outside</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- WHAT MATTERS -->
+
+<h2 class="section-title">
+🧠 What Matters?
+</h2>
+
+
+<div class="important">
+
+<h3>
+MLB Playoff Race
+</h3>
+
+<p>
+SportPulse will eventually automatically calculate which games
+have the biggest impact on each team's playoff chances,
+division race and Wild Card position.
+</p>
+
+<br>
+
+<strong>
+Know where your team stands. Know what matters next.
+</strong>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>SportPulse</strong>
+
+<br><br>
+
+⚾ MLB · 🏈 NFL · 🏀 NBA · 🏒 NHL · ⚽ MLS
+
+<br><br>
+
+Know where your team stands. Know what matters next.
+
+</footer>
+
+
+</body>
+
+</html>
