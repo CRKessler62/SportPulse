@@ -1,0 +1,34 @@
+{
+  "league": "MLB",
+  "season": 2026,
+  "lastUpdated": "2026-08-16T23:01:07.083282+00:00",
+  "offense": {
+    "battingAverage": [],
+    "hits": [],
+    "homeRuns": [],
+    "rbi": [],
+    "runs": [],
+    "obp": [],
+    "slg": [],
+    "ops": [],
+    "stolenBases": [],
+    "doubles": [],
+    "triples": []
+  },
+  "pitching": {
+    "era": [],
+    "wins": [],
+    "strikeouts": [],
+    "whip": [],
+    "saves": [],
+    "innings": [],
+    "qualityStarts": []
+  },
+  "defense": {
+    "fieldingPercentage": [],
+    "putouts": [],
+    "assists": [],
+    "errors": [],
+    "doublePlays": []
+  }
+}
