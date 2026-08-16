@@ -1,34 +1,159 @@
 {
-  "league": "MLB",
   "season": 2026,
-  "lastUpdated": "2026-08-16T23:01:07.083282+00:00",
+  "lastUpdated": "2026-08-16T23:14:31.954447+00:00",
   "offense": {
-    "battingAverage": [],
-    "hits": [],
-    "homeRuns": [],
-    "rbi": [],
-    "runs": [],
-    "obp": [],
-    "slg": [],
-    "ops": [],
+    "battingAverage": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "hits": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "homeRuns": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "rbi": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "runs": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "onBasePercentage": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "sluggingPercentage": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "onBasePlusSlugging": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
     "stolenBases": [],
-    "doubles": [],
-    "triples": []
+    "doubles": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "triples": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ]
   },
   "pitching": {
-    "era": [],
-    "wins": [],
-    "strikeouts": [],
-    "whip": [],
-    "saves": [],
-    "innings": [],
+    "era": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "wins": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "strikeouts": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "whip": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "saves": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "inningsPitched": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
     "qualityStarts": []
   },
   "defense": {
-    "fieldingPercentage": [],
-    "putouts": [],
-    "assists": [],
-    "errors": [],
-    "doublePlays": []
+    "fieldingPercentage": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "putouts": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "assists": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "errors": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ],
+    "doublePlays": [
+      {
+        "player": "Unknown",
+        "team": "Unknown",
+        "value": ""
+      }
+    ]
   }
 }
