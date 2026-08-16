@@ -1,0 +1,186 @@
+name: Update MLB Schedule
+
+on:
+  schedule:
+    - cron: "15 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+
+  update-schedule:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get MLB schedule
+        run: |
+
+          START_DATE=$(date -u +"%Y-%m-%d")
+          END_DATE=$(date -u -d "+30 days" +"%Y-%m-%d")
+
+          curl -L \
+            "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=${START_DATE}&endDate=${END_DATE}&hydrate=team,probablePitcher" \
+            -o mlb-schedule-response.json
+
+      - name: Build schedule.json
+        run: |
+
+          python3 <<'PY'
+
+          import json
+          from datetime import datetime, timezone
+
+          with open("mlb-schedule-response.json", "r") as f:
+              data = json.load(f)
+
+          games = []
+
+          for date in data.get("dates", []):
+
+              game_date = date.get("date")
+
+              for game in date.get("games", []):
+
+                  away = game["teams"]["away"]
+                  home = game["teams"]["home"]
+
+                  away_team = away["team"]
+                  home_team = home["team"]
+
+                  away_pitcher = away.get("probablePitcher")
+                  home_pitcher = home.get("probablePitcher")
+
+                  games.append({
+
+                      "gamePk":
+                          game["gamePk"],
+
+                      "date":
+                          game_date,
+
+                      "gameDate":
+                          game["gameDate"],
+
+                      "status":
+                          game["status"]["detailedState"],
+
+                      "abstractStatus":
+                          game["status"].get(
+                              "abstractGameState"
+                          ),
+
+                      "awayTeam": {
+                          "id":
+                              away_team["id"],
+                          "name":
+                              away_team["name"],
+                          "abbreviation":
+                              away_team.get(
+                                  "abbreviation"
+                              )
+                      },
+
+                      "homeTeam": {
+                          "id":
+                              home_team["id"],
+                          "name":
+                              home_team["name"],
+                          "abbreviation":
+                              home_team.get(
+                                  "abbreviation"
+                              )
+                      },
+
+                      "awayScore":
+                          away.get("score"),
+
+                      "homeScore":
+                          home.get("score"),
+
+                      "awayPitcher": (
+                          away_pitcher["fullName"]
+                          if away_pitcher
+                          else None
+                      ),
+
+                      "homePitcher": (
+                          home_pitcher["fullName"]
+                          if home_pitcher
+                          else None
+                      ),
+
+                      "venue":
+                          game.get(
+                              "venue",
+                              {}
+                          ).get(
+                              "name"
+                          ),
+
+                      "dayNight":
+                          game.get(
+                              "dayNight"
+                          ),
+
+                      "doubleHeader":
+                          game.get(
+                              "doubleHeader"
+                          ),
+
+                      "gameNumber":
+                          game.get(
+                              "gameNumber"
+                          )
+
+                  })
+
+
+          output = {
+
+              "league":
+                  "MLB",
+
+              "lastUpdated":
+                  datetime.now(
+                      timezone.utc
+                  ).isoformat(),
+
+              "games":
+                  games
+
+          }
+
+
+          with open(
+              "data/schedule.json",
+              "w"
+          ) as f:
+
+              json.dump(
+                  output,
+                  f,
+                  indent=2
+              )
+
+          PY
+
+      - name: Save schedule
+        run: |
+
+          git config user.name "SportPulse Bot"
+
+          git config user.email "sportpulse-bot@users.noreply.github.com"
+
+          git add data/schedule.json
+
+          git diff --cached --quiet || \
+            git commit -m "Update MLB schedule"
+
+          git push
