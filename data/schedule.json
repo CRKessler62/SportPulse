@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-16T21:41:14.347227+00:00",
+  "lastUpdated": "2026-08-16T22:49:11.566783+00:00",
   "games": [
     {
       "gamePk": 824766,
@@ -9992,9 +9992,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T17:35:00Z",
       "localGameTime": "2026-08-16T13:35:00-04:00",
-      "status": "Delayed",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Game Over",
+      "abstractGameState": "Final",
+      "codedGameState": "O",
       "awayTeam": {
         "id": 111,
         "name": "Boston Red Sox",
@@ -10006,7 +10006,7 @@
         "abbreviation": "PIT"
       },
       "awayScore": 3,
-      "homeScore": 7,
+      "homeScore": 8,
       "venue": "PNC Park",
       "awayPitcher": "Patrick Sandoval",
       "homePitcher": "Lake Bachar"
@@ -10101,7 +10101,7 @@
         "name": "Cleveland Guardians",
         "abbreviation": "CLE"
       },
-      "awayScore": 2,
+      "awayScore": 3,
       "homeScore": 0,
       "venue": "Progressive Field",
       "awayPitcher": "Casey Mize",
@@ -10184,9 +10184,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T19:15:00Z",
       "localGameTime": "2026-08-16T15:15:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 138,
         "name": "St. Louis Cardinals",
@@ -10197,8 +10197,8 @@
         "name": "Chicago Cubs",
         "abbreviation": "CHC"
       },
-      "awayScore": 9,
-      "homeScore": 2,
+      "awayScore": 11,
+      "homeScore": 4,
       "venue": "Wrigley Field",
       "awayPitcher": "Hunter Dobbins",
       "homePitcher": "Edward Cabrera"
@@ -10221,8 +10221,8 @@
         "name": "San Francisco Giants",
         "abbreviation": "SF"
       },
-      "awayScore": 6,
-      "homeScore": 6,
+      "awayScore": 13,
+      "homeScore": 7,
       "venue": "Oracle Park",
       "awayPitcher": "Gabriel Hughes",
       "homePitcher": "Blade Tidwell"
@@ -10232,9 +10232,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T20:05:00Z",
       "localGameTime": "2026-08-16T16:05:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Game Over",
+      "abstractGameState": "Final",
+      "codedGameState": "O",
       "awayTeam": {
         "id": 140,
         "name": "Texas Rangers",
@@ -10246,7 +10246,7 @@
         "abbreviation": "ATH"
       },
       "awayScore": 2,
-      "homeScore": 2,
+      "homeScore": 5,
       "venue": "Sutter Health Park",
       "awayPitcher": "Cody Bradford",
       "homePitcher": "Jacob Lopez"
@@ -10256,9 +10256,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T20:07:00Z",
       "localGameTime": "2026-08-16T16:07:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 118,
         "name": "Kansas City Royals",
@@ -10293,7 +10293,7 @@
         "name": "Los Angeles Dodgers",
         "abbreviation": "LAD"
       },
-      "awayScore": 2,
+      "awayScore": 4,
       "homeScore": 1,
       "venue": "UNIQLO Field at Dodger Stadium",
       "awayPitcher": "Logan Henderson",
@@ -10513,7 +10513,7 @@
       "homeScore": null,
       "venue": "Kauffman Stadium",
       "awayPitcher": "Mason Barnett",
-      "homePitcher": null
+      "homePitcher": "Michael Wacha"
     },
     {
       "gamePk": 823668,
@@ -10848,7 +10848,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "American Family Field",
-      "awayPitcher": null,
+      "awayPitcher": "Bryce Miller",
       "homePitcher": "Kyle Harrison"
     },
     {
@@ -11232,7 +11232,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "American Family Field",
-      "awayPitcher": null,
+      "awayPitcher": "Logan Gilbert",
       "homePitcher": "Dustin May"
     },
     {
@@ -11448,7 +11448,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "American Family Field",
-      "awayPitcher": null,
+      "awayPitcher": "George Kirby",
       "homePitcher": "Robert Gasser"
     },
     {
