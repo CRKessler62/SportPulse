@@ -1,0 +1,102 @@
+name: Update MLB Live Scores
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-scores:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get today's MLB games
+        run: |
+          DATE=$(date -u +"%Y-%m-%d")
+
+          curl -L \
+            "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=${DATE}&hydrate=team,linescore" \
+            -o mlb-response.json
+
+      - name: Build scores.json
+        run: |
+          python3 <<'PY'
+          import json
+          from datetime import datetime, timezone
+
+          with open("mlb-response.json", "r") as f:
+              data = json.load(f)
+
+          games = []
+
+          for date in data.get("dates", []):
+              for game in date.get("games", []):
+
+                  away = game["teams"]["away"]
+                  home = game["teams"]["home"]
+
+                  away_team = away["team"]["name"]
+                  home_team = home["team"]["name"]
+
+                  away_score = away.get("score", 0)
+                  home_score = home.get("score", 0)
+
+                  status = game["status"]["detailedState"]
+
+                  linescore = game.get("linescore", {})
+
+                  inning = linescore.get("currentInning")
+                  inning_ordinal = linescore.get("currentInningOrdinal")
+                  inning_state = linescore.get("inningState")
+                  outs = linescore.get("outs")
+
+                  offense = linescore.get("offense", {})
+
+                  runners = {
+                      "first": bool(offense.get("first")),
+                      "second": bool(offense.get("second")),
+                      "third": bool(offense.get("third"))
+                  }
+
+                  games.append({
+                      "gamePk": game["gamePk"],
+                      "awayTeam": away_team,
+                      "homeTeam": home_team,
+                      "awayScore": away_score,
+                      "homeScore": home_score,
+                      "status": status,
+                      "gameDate": game["gameDate"],
+                      "inning": inning,
+                      "inningOrdinal": inning_ordinal,
+                      "inningState": inning_state,
+                      "outs": outs,
+                      "runners": runners
+                  })
+
+          output = {
+              "league": "MLB",
+              "lastUpdated": datetime.now(timezone.utc).isoformat(),
+              "games": games
+          }
+
+          with open("data/scores.json", "w") as f:
+              json.dump(output, f, indent=2)
+          PY
+
+      - name: Save updated scores
+        run: |
+          git config user.name "SportPulse Bot"
+          git config user.email "sportpulse-bot@users.noreply.github.com"
+
+          git add data/scores.json
+
+          git diff --cached --quiet || \
+            git commit -m "Update MLB live scores"
+
+          git push
