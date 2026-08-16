@@ -1,6 +1,6 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-16T13:44:22.552965+00:00",
+  "lastUpdated": "2026-08-16T14:27:00.946381+00:00",
   "games": [
     {
       "gamePk": 822940,
@@ -8,7 +8,7 @@
       "homeTeam": "Tampa Bay Rays",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-16T16:15:00Z",
       "inning": null,
       "inningOrdinal": null,
@@ -28,7 +28,7 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-16T17:35:00Z",
       "inning": null,
       "inningOrdinal": null,
