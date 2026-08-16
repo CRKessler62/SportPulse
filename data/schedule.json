@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-16T15:48:33.953739+00:00",
+  "lastUpdated": "2026-08-16T16:56:31.944211+00:00",
   "games": [
     {
       "gamePk": 824766,
@@ -9968,9 +9968,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T16:15:00Z",
       "localGameTime": "2026-08-16T12:15:00-04:00",
-      "status": "Warmup",
+      "status": "In Progress",
       "abstractGameState": "Live",
-      "codedGameState": "P",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 110,
         "name": "Baltimore Orioles",
@@ -10005,8 +10005,8 @@
         "name": "Pittsburgh Pirates",
         "abbreviation": "PIT"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "PNC Park",
       "awayPitcher": "Patrick Sandoval",
       "homePitcher": "Lake Bachar"
@@ -10184,9 +10184,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T19:15:00Z",
       "localGameTime": "2026-08-16T15:15:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 138,
         "name": "St. Louis Cardinals",
@@ -10208,9 +10208,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T20:05:00Z",
       "localGameTime": "2026-08-16T16:05:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 115,
         "name": "Colorado Rockies",
@@ -10256,9 +10256,9 @@
       "date": "2026-08-16",
       "gameDate": "2026-08-16T20:07:00Z",
       "localGameTime": "2026-08-16T16:07:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 118,
         "name": "Kansas City Royals",
@@ -10416,8 +10416,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Citizens Bank Park",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Janson Junk",
+      "homePitcher": "Cristopher S\u00e1nchez"
     },
     {
       "gamePk": 823343,
@@ -10440,7 +10440,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "PNC Park",
-      "awayPitcher": null,
+      "awayPitcher": "Framber Valdez",
       "homePitcher": null
     },
     {
@@ -10464,7 +10464,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Fenway Park",
-      "awayPitcher": null,
+      "awayPitcher": "Mitch Bratt",
       "homePitcher": null
     },
     {
@@ -10488,7 +10488,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Citi Field",
-      "awayPitcher": null,
+      "awayPitcher": "Walker Buehler",
       "homePitcher": "Nolan McLean"
     },
     {
@@ -10536,8 +10536,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Target Field",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Mart\u00edn P\u00e9rez",
+      "homePitcher": "Bailey Ober"
     },
     {
       "gamePk": 824641,
@@ -10560,7 +10560,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Wrigley Field",
-      "awayPitcher": null,
+      "awayPitcher": "Luis Castillo",
       "homePitcher": "Shota Imanaga"
     },
     {
@@ -10608,7 +10608,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Oriole Park at Camden Yards",
-      "awayPitcher": null,
+      "awayPitcher": "Will Warren",
       "homePitcher": null
     },
     {
@@ -10632,8 +10632,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "PNC Park",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Keider Montero",
+      "homePitcher": "Braxton Ashcraft"
     },
     {
       "gamePk": 824398,
@@ -10704,7 +10704,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Tropicana Field",
-      "awayPitcher": null,
+      "awayPitcher": "Jos\u00e9 Soriano",
       "homePitcher": null
     },
     {
@@ -10729,7 +10729,7 @@
       "homeScore": null,
       "venue": "Citizens Bank Park",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Zack Wheeler"
     },
     {
       "gamePk": 824723,
@@ -10752,8 +10752,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Fenway Park",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Merrill Kelly",
+      "homePitcher": "Ranger Suarez"
     },
     {
       "gamePk": 823586,
@@ -10776,7 +10776,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Citi Field",
-      "awayPitcher": null,
+      "awayPitcher": "Robbie Ray",
       "homePitcher": null
     },
     {
@@ -10824,8 +10824,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Target Field",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Tyler Mahle",
+      "homePitcher": "Zebby Matthews"
     },
     {
       "gamePk": 823749,
@@ -10968,7 +10968,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "PNC Park",
-      "awayPitcher": null,
+      "awayPitcher": "Jackson Jobe",
       "homePitcher": "Paul Skenes"
     },
     {
@@ -10992,7 +10992,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Citi Field",
-      "awayPitcher": null,
+      "awayPitcher": "Michael King",
       "homePitcher": null
     },
     {
@@ -11016,8 +11016,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Target Field",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Chris Sale",
+      "homePitcher": "Taj Bradley"
     },
     {
       "gamePk": 824640,
@@ -11064,8 +11064,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Fenway Park",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Brandon Pfaadt",
+      "homePitcher": "Payton Tolle"
     },
     {
       "gamePk": 823424,
@@ -11088,8 +11088,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Citizens Bank Park",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Sandy Alcantara",
+      "homePitcher": "Aaron Nola"
     },
     {
       "gamePk": 824801,
@@ -11112,7 +11112,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Oriole Park at Camden Yards",
-      "awayPitcher": null,
+      "awayPitcher": "Max Fried",
       "homePitcher": null
     },
     {
@@ -11161,7 +11161,7 @@
       "homeScore": null,
       "venue": "Great American Ball Park",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Chase Burns"
     },
     {
       "gamePk": 822937,
@@ -11184,7 +11184,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Tropicana Field",
-      "awayPitcher": null,
+      "awayPitcher": "Max Scherzer",
       "homePitcher": null
     },
     {
@@ -11353,7 +11353,7 @@
       "homeScore": null,
       "venue": "Progressive Field",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Gavin Williams"
     },
     {
       "gamePk": 822934,
@@ -11376,7 +11376,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Tropicana Field",
-      "awayPitcher": null,
+      "awayPitcher": "Shane Bieber",
       "homePitcher": null
     },
     {
@@ -11472,7 +11472,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Oriole Park at Camden Yards",
-      "awayPitcher": null,
+      "awayPitcher": "Gerrit Cole",
       "homePitcher": null
     },
     {
