@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-17T17:14:11.159052+00:00",
+  "lastUpdated": "2026-08-17T19:09:57.545454+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -882,24 +882,24 @@
           },
           {
             "rank": 3,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "position": "1B",
+            "value": "137"
+          },
+          {
+            "rank": 4,
             "player": "Nick Gonzales",
             "team": "Pittsburgh Pirates",
             "position": "3B",
             "value": "137"
           },
           {
-            "rank": 4,
+            "rank": 5,
             "player": "Freddie Freeman",
             "team": "Los Angeles Dodgers",
             "position": "1B",
             "value": "136"
-          },
-          {
-            "rank": 5,
-            "player": "Alec Burleson",
-            "team": "St. Louis Cardinals",
-            "position": "1B",
-            "value": "135"
           }
         ],
         "homeRuns": [
@@ -942,24 +942,24 @@
         "rbi": [
           {
             "rank": 1,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "position": "1B",
+            "value": "92"
+          },
+          {
+            "rank": 2,
             "player": "CJ Abrams",
             "team": "Washington Nationals",
             "position": "SS",
             "value": "91"
           },
           {
-            "rank": 2,
+            "rank": 3,
             "player": "Sal Stewart",
             "team": "Cincinnati Reds",
             "position": "1B",
             "value": "91"
-          },
-          {
-            "rank": 3,
-            "player": "Alec Burleson",
-            "team": "St. Louis Cardinals",
-            "position": "1B",
-            "value": "90"
           },
           {
             "rank": 4,
@@ -1167,7 +1167,7 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "31"
+            "value": "32"
           },
           {
             "rank": 2,
@@ -1505,7 +1505,7 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "957"
+            "value": "961"
           },
           {
             "rank": 2,
@@ -1546,16 +1546,16 @@
           },
           {
             "rank": 2,
-            "player": "Luis Arraez",
-            "team": "Philadelphia Phillies",
-            "position": "2B",
-            "value": "308"
-          },
-          {
-            "rank": 3,
             "player": "Masyn Winn",
             "team": "St. Louis Cardinals",
             "position": "SS",
+            "value": "309"
+          },
+          {
+            "rank": 3,
+            "player": "Luis Arraez",
+            "team": "Philadelphia Phillies",
+            "position": "2B",
             "value": "308"
           },
           {
