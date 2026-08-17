@@ -1,0 +1,2588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Sports 20/20 | Game</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #111827;
+}
+
+.header {
+    background: #0b1220;
+    color: white;
+    padding: 22px 16px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    background: #1d293d;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 15px 60px;
+}
+
+/* GAME HEADER */
+
+.game-header {
+    background: #0b1220;
+    color: white;
+    border-radius: 22px;
+    padding: 28px 20px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.status {
+    font-weight: 900;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.status.live {
+    color: #ef4444;
+}
+
+.status.final {
+    color: #4ade80;
+}
+
+.status.scheduled {
+    color: #93c5fd;
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.team {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.score {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.at {
+    color: #94a3b8;
+    font-weight: 800;
+}
+
+.game-meta {
+    margin-top: 18px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* TABS */
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    background: white;
+    padding: 8px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.tab {
+    flex: 1;
+    min-width: 120px;
+    border: none;
+    background: #e5e7eb;
+    padding: 13px 15px;
+    border-radius: 11px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #2563eb;
+    color: white;
+}
+
+.panel {
+    display: none;
+}
+
+.panel.active {
+    display: block;
+}
+
+/* CARDS */
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* LIVE */
+
+.live-box {
+    background: #111827;
+    color: white;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.live-title {
+    color: #f87171;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.live-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+}
+
+.live-stat {
+    background: #1f2937;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+.live-label {
+    color: #9ca3af;
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+/* LINESCORE */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #111827;
+    color: white;
+    padding: 12px 9px;
+}
+
+td {
+    padding: 12px 9px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
+}
+
+.total {
+    font-weight: 900;
+    background: #f3f4f6;
+}
+
+/* PLAYER TABLE */
+
+.player-section {
+    margin-bottom: 28px;
+}
+
+.player-section h3 {
+    background: #111827;
+    color: white;
+    padding: 15px;
+    border-radius: 13px 13px 0 0;
+    margin-bottom: 0;
+}
+
+.player-name {
+    font-weight: 900;
+}
+
+.player-position {
+    color: #6b7280;
+    font-size: 13px;
+    display: block;
+    margin-top: 3px;
+}
+
+.number {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* DECISIONS */
+
+.decisions {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+}
+
+.decision {
+    background: #f3f4f6;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.decision-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 900;
+}
+
+.decision-name {
+    font-weight: 900;
+    margin-top: 7px;
+}
+
+/* 20/20 */
+
+.insight-hero {
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #172554
+    );
+    color: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.insight-hero h2 {
+    margin-top: 0;
+}
+
+.insight-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+    gap: 15px;
+}
+
+.insight {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.insight h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+.insight-value {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.insight-text {
+    color: #6b7280;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+.big-insight {
+    grid-column: 1 / -1;
+}
+
+.empty {
+    background: white;
+    padding: 35px 20px;
+    border-radius: 18px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer {
+    background: #0b1220;
+    color: #94a3b8;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+@media(max-width:650px) {
+
+    .teams {
+        grid-template-columns: 1fr;
+    }
+
+    .score {
+        font-size: 40px;
+    }
+
+    .at {
+        display: none;
+    }
+
+    .live-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .decisions {
+        grid-template-columns: 1fr;
+    }
+
+    .team {
+        font-size: 21px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+👁️ Sports 20/20
+</div>
+
+<div class="nav">
+
+<a href="index.html">🏠 Home</a>
+<a href="mlb.html">⚾ MLB</a>
+<a href="nfl.html">🏈 NFL</a>
+<a href="nba.html">🏀 NBA</a>
+<a href="nhl.html">🏒 NHL</a>
+<a href="mls.html">⚽ MLS</a>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+<div id="errorBox"></div>
+
+<div class="game-header">
+
+<div
+id="gameStatus"
+class="status">
+Loading game...
+</div>
+
+<div class="teams">
+
+<div
+id="awayTeam"
+class="team">
+—
+</div>
+
+<div>
+
+<div
+id="awayScore"
+class="score">
+-
+</div>
+
+<div class="at">
+@
+</div>
+
+<div
+id="homeScore"
+class="score">
+-
+</div>
+
+</div>
+
+<div
+id="homeTeam"
+class="team">
+—
+</div>
+
+</div>
+
+<div
+id="gameMeta"
+class="game-meta">
+Loading...
+</div>
+
+</div>
+
+
+<div class="tabs">
+
+<button
+class="tab active"
+onclick="showTab('overview',this)">
+📋 Game
+</button>
+
+<button
+class="tab"
+onclick="showTab('boxscore',this)">
+📊 Box Score
+</button>
+
+<button
+class="tab"
+onclick="showTab('twenty',this)">
+👁️ 20/20
+</button>
+
+</div>
+
+
+<!-- =========================
+     OVERVIEW
+========================= -->
+
+<section
+id="overview"
+class="panel active">
+
+<div id="liveArea"></div>
+
+<div class="card">
+
+<h2>
+📈 Linescore
+</h2>
+
+<div
+id="linescore"
+class="table-wrap">
+
+<div class="empty">
+Loading linescore...
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Pitching Decisions
+</h2>
+
+<div
+id="decisions">
+
+<div class="empty">
+Loading decisions...
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🔥 Key Plays
+</h2>
+
+<div
+id="plays">
+
+<div class="empty">
+Loading game plays...
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     BOXSCORE
+========================= -->
+
+<section
+id="boxscore"
+class="panel">
+
+<div class="card">
+
+<h2>
+⚾ Batting
+</h2>
+
+<div id="batting">
+<div class="empty">
+Loading actual game batting...
+</div>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Pitching
+</h2>
+
+<div id="pitching">
+<div class="empty">
+Loading pitchers who actually appeared...
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     20/20
+========================= -->
+
+<section
+id="twenty"
+class="panel">
+
+<div class="insight-hero">
+
+<h2>
+👁️ The Sports 20/20 View
+</h2>
+
+<p>
+Don't just follow the score.
+See what actually mattered in the game.
+</p>
+
+</div>
+
+<div
+id="insights"
+class="insight-grid">
+
+<div class="empty">
+Building the 20/20 view...
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+<strong>
+Sports 20/20
+</strong>
+
+<br><br>
+
+Know where your team stands.
+Know what matters next.
+
+</footer>
+
+
+<script>
+
+/* =========================================
+   GAME ID
+========================================= */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const gamePk =
+    params.get("gamePk");
+
+
+let gameFeed = null;
+
+let boxscore = null;
+
+
+/* =========================================
+   HELPERS
+========================================= */
+
+function escapeHTML(value) {
+
+    if (value === null ||
+        value === undefined) {
+
+        return "";
+
+    }
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function valueOrDash(value) {
+
+    if (
+        value === undefined ||
+        value === null ||
+        value === ""
+    ) {
+
+        return "—";
+
+    }
+
+    return escapeHTML(value);
+
+}
+
+
+function statValue(
+    stats,
+    key
+) {
+
+    if (!stats)
+        return "—";
+
+    if (
+        stats[key] === undefined ||
+        stats[key] === null ||
+        stats[key] === ""
+    ) {
+
+        return "—";
+
+    }
+
+    return escapeHTML(
+        stats[key]
+    );
+
+}
+
+
+/* =========================================
+   TABS
+========================================= */
+
+function showTab(
+    id,
+    button
+) {
+
+    document
+        .querySelectorAll(".panel")
+        .forEach(
+            panel =>
+                panel.classList.remove(
+                    "active"
+                )
+        );
+
+    document
+        .querySelectorAll(".tab")
+        .forEach(
+            tab =>
+                tab.classList.remove(
+                    "active"
+                )
+        );
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+    button.classList.add("active");
+
+}
+
+
+/* =========================================
+   LOAD GAME
+========================================= */
+
+async function loadGame() {
+
+    if (!gamePk) {
+
+        showError(
+            "No game was selected. Please return to MLB and select a game."
+        );
+
+        return;
+
+    }
+
+    try {
+
+        const [
+            feedResponse,
+            boxResponse
+        ] = await Promise.all([
+
+            fetch(
+                `https://statsapi.mlb.com/api/v1/game/${gamePk}/feed/live`
+            ),
+
+            fetch(
+                `https://statsapi.mlb.com/api/v1/game/${gamePk}/boxscore`
+            )
+
+        ]);
+
+
+        if (!feedResponse.ok &&
+            !boxResponse.ok) {
+
+            throw new Error(
+                "MLB game data unavailable."
+            );
+
+        }
+
+
+        if (feedResponse.ok) {
+
+            gameFeed =
+                await feedResponse.json();
+
+        }
+
+
+        if (boxResponse.ok) {
+
+            boxscore =
+                await boxResponse.json();
+
+        }
+
+
+        renderGameHeader();
+
+        renderLive();
+
+        renderLinescore();
+
+        renderDecisions();
+
+        renderPlays();
+
+        renderBatting();
+
+        renderPitching();
+
+        renderTwentyTwenty();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        showError(
+            "Unable to load this MLB game right now. Please try again."
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+function showError(message) {
+
+    document.getElementById(
+        "errorBox"
+    ).innerHTML = `
+
+    <div class="error">
+    ${escapeHTML(message)}
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+function renderGameHeader() {
+
+    const game =
+        gameFeed?.gameData;
+
+    const live =
+        gameFeed?.liveData;
+
+    const teams =
+        game?.teams || {};
+
+    const away =
+        teams.away || {};
+
+    const home =
+        teams.home || {};
+
+    const status =
+        game?.status || {};
+
+    document.getElementById(
+        "awayTeam"
+    ).textContent =
+        away.name || "Away";
+
+    document.getElementById(
+        "homeTeam"
+    ).textContent =
+        home.name || "Home";
+
+
+    const awayScore =
+        live?.linescore?.teams?.away?.runs;
+
+    const homeScore =
+        live?.linescore?.teams?.home?.runs;
+
+
+    document.getElementById(
+        "awayScore"
+    ).textContent =
+        awayScore ?? "-";
+
+    document.getElementById(
+        "homeScore"
+    ).textContent =
+        homeScore ?? "-";
+
+
+    const abstract =
+        status.abstractGameState ||
+        status.detailedState ||
+        "Unknown";
+
+
+    const statusElement =
+        document.getElementById(
+            "gameStatus"
+        );
+
+
+    statusElement.textContent =
+        abstract;
+
+
+    statusElement.className =
+        "status " +
+        (
+            abstract === "Final"
+            ? "final"
+            :
+            abstract === "Live"
+            ? "live"
+            :
+            "scheduled"
+        );
+
+
+    const date =
+        game?.datetime?.dateTime;
+
+
+    const venue =
+        game?.venue?.name;
+
+
+    let meta = "";
+
+
+    if (date) {
+
+        meta +=
+            new Date(date)
+            .toLocaleString(
+                "en-US",
+                {
+                    dateStyle:"medium",
+                    timeStyle:"short"
+                }
+            );
+
+    }
+
+
+    if (venue) {
+
+        meta +=
+            ` • ${escapeHTML(venue)}`;
+
+    }
+
+
+    document.getElementById(
+        "gameMeta"
+    ).innerHTML =
+        meta || "MLB Game";
+
+}
+
+
+/* =========================================
+   LIVE GAME
+========================================= */
+
+function renderLive() {
+
+    const container =
+        document.getElementById(
+            "liveArea"
+        );
+
+    const state =
+        gameFeed?.gameData?.status
+        ?.abstractGameState;
+
+
+    if (state !== "Live") {
+
+        container.innerHTML = "";
+
+        return;
+
+    }
+
+
+    const line =
+        gameFeed?.liveData?.linescore;
+
+
+    const offense =
+        line?.offense || {};
+
+    const defense =
+        line?.defense || {};
+
+
+    const batter =
+        offense.batter?.fullName ||
+        "—";
+
+    const pitcher =
+        defense.pitcher?.fullName ||
+        "—";
+
+
+    const inning =
+        line?.currentInningOrdinal ||
+        "—";
+
+
+    const inningState =
+        line?.inningState ||
+        "";
+
+
+    const outs =
+        line?.outs;
+
+    const balls =
+        line?.balls;
+
+    const strikes =
+        line?.strikes;
+
+
+    const runners = [];
+
+    if (offense.first)
+        runners.push("1st");
+
+    if (offense.second)
+        runners.push("2nd");
+
+    if (offense.third)
+        runners.push("3rd");
+
+
+    container.innerHTML = `
+
+    <div class="live-box">
+
+        <div class="live-title">
+        🔴 LIVE NOW
+        </div>
+
+        <div class="live-grid">
+
+            <div class="live-stat">
+                <span class="live-label">
+                At Bat
+                </span>
+                ${escapeHTML(batter)}
+            </div>
+
+            <div class="live-stat">
+                <span class="live-label">
+                Pitching
+                </span>
+                ${escapeHTML(pitcher)}
+            </div>
+
+            <div class="live-stat">
+                <span class="live-label">
+                Inning
+                </span>
+                ${escapeHTML(
+                    inningState +
+                    " " +
+                    inning
+                )}
+            </div>
+
+            <div class="live-stat">
+                <span class="live-label">
+                Count
+                </span>
+                ${balls ?? "—"} -
+                ${strikes ?? "—"}
+            </div>
+
+            <div class="live-stat">
+                <span class="live-label">
+                Outs
+                </span>
+                ${outs ?? "—"}
+            </div>
+
+            <div class="live-stat">
+                <span class="live-label">
+                Runners
+                </span>
+                ${
+                    runners.length
+                    ?
+                    runners.join(" • ")
+                    :
+                    "Bases empty"
+                }
+            </div>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   LINESCORE
+========================================= */
+
+function renderLinescore() {
+
+    const container =
+        document.getElementById(
+            "linescore"
+        );
+
+
+    const line =
+        gameFeed?.liveData?.linescore;
+
+
+    if (!line) {
+
+        container.innerHTML = `
+        <div class="empty">
+        Linescore unavailable.
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    const innings =
+        line.innings || [];
+
+
+    if (!innings.length) {
+
+        container.innerHTML = `
+        <div class="empty">
+        No inning data available yet.
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    let header = `
+        <tr>
+        <th>Team</th>
+    `;
+
+
+    innings.forEach(
+        inning => {
+
+            header += `
+            <th>${inning.num}</th>
+            `;
+
+        }
+    );
+
+
+    header += `
+        <th>R</th>
+        <th>H</th>
+        <th>E</th>
+        </tr>
+    `;
+
+
+    const away =
+        line.teams?.away || {};
+
+    const home =
+        line.teams?.home || {};
+
+
+    function row(
+        name,
+        team,
+        side
+    ) {
+
+        let html = `
+        <tr>
+        <td><strong>
+        ${escapeHTML(name)}
+        </strong></td>
+        `;
+
+
+        innings.forEach(
+            inning => {
+
+                const data =
+                    inning[side] || {};
+
+                html += `
+                <td>
+                ${
+                    data.runs === undefined
+                    ? "—"
+                    :
+                    data.runs
+                }
+                </td>
+                `;
+
+            }
+        );
+
+
+        html += `
+        <td class="total">
+        ${team.runs ?? "—"}
+        </td>
+
+        <td class="total">
+        ${team.hits ?? "—"}
+        </td>
+
+        <td class="total">
+        ${team.errors ?? "—"}
+        </td>
+
+        </tr>
+        `;
+
+
+        return html;
+
+    }
+
+
+    container.innerHTML = `
+
+    <table>
+
+    <thead>
+    ${header}
+    </thead>
+
+    <tbody>
+
+    ${
+        row(
+            gameFeed.gameData.teams.away.name,
+            away,
+            "away"
+        )
+    }
+
+    ${
+        row(
+            gameFeed.gameData.teams.home.name,
+            home,
+            "home"
+        )
+    }
+
+    </tbody>
+
+    </table>
+
+    `;
+
+}
+
+
+/* =========================================
+   PITCHING DECISIONS
+========================================= */
+
+function renderDecisions() {
+
+    const container =
+        document.getElementById(
+            "decisions"
+        );
+
+
+    const decisions =
+        gameFeed?.liveData?.decisions;
+
+
+    if (!decisions) {
+
+        container.innerHTML = `
+        <div class="empty">
+        Pitching decisions are not available yet.
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    const items = [
+
+        [
+            "W",
+            decisions.winner?.fullName
+        ],
+
+        [
+            "L",
+            decisions.loser?.fullName
+        ],
+
+        [
+            "SV",
+            decisions.save?.fullName
+        ]
+
+    ];
+
+
+    container.innerHTML = `
+
+    <div class="decisions">
+
+    ${
+        items.map(
+            item => `
+
+            <div class="decision">
+
+                <div class="decision-label">
+                ${item[0]}
+                </div>
+
+                <div class="decision-name">
+                ${
+                    item[1]
+                    ?
+                    escapeHTML(item[1])
+                    :
+                    "—"
+                }
+                </div>
+
+            </div>
+
+            `
+        ).join("")
+    }
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   KEY PLAYS
+========================================= */
+
+function renderPlays() {
+
+    const container =
+        document.getElementById(
+            "plays"
+        );
+
+
+    const plays =
+        gameFeed?.liveData?.plays
+        ?.allPlays || [];
+
+
+    const scoring =
+        plays.filter(
+            play =>
+                play.about?.isScoringPlay
+        );
+
+
+    if (!scoring.length) {
+
+        container.innerHTML = `
+        <div class="empty">
+        No scoring plays available.
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        scoring
+        .slice(-15)
+        .reverse()
+        .map(
+            play => {
+
+                const inning =
+                    play.about
+                    ?.inning;
+
+                const description =
+                    play.result
+                    ?.description ||
+                    "Scoring play";
+
+
+                return `
+
+                <div class="card"
+                     style="margin-bottom:10px;
+                            box-shadow:none;
+                            border:1px solid #e5e7eb;">
+
+                    <strong>
+                    Inning ${valueOrDash(inning)}
+                    </strong>
+
+                    <br><br>
+
+                    ${escapeHTML(
+                        description
+                    )}
+
+                </div>
+
+                `;
+
+            }
+        )
+        .join("");
+
+}
+
+
+/* =========================================
+   PLAYER POSITION
+========================================= */
+
+function getPosition(player) {
+
+    return (
+        player.position?.abbreviation ||
+        player.position?.name ||
+        "—"
+    );
+
+}
+
+
+/* =========================================
+   BATTING
+========================================= */
+
+function renderBatting() {
+
+    const container =
+        document.getElementById(
+            "batting"
+        );
+
+
+    if (!boxscore?.teams) {
+
+        container.innerHTML = `
+        <div class="empty">
+        Boxscore unavailable.
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    [
+        ["away","Away"],
+        ["home","Home"]
+
+    ].forEach(
+        ([side,label]) => {
+
+            const team =
+                boxscore.teams[side];
+
+
+            if (!team)
+                return;
+
+
+            const playerMap =
+                team.players || {};
+
+
+            const actualBatters =
+                new Set(
+                    team.batters || []
+                );
+
+
+            let players = Object.values(
+                playerMap
+            )
+            .filter(
+                player =>
+                    actualBatters.has(
+                        player.person?.id
+                    )
+            );
+
+
+            /*
+             * Sort using the actual
+             * batting order.
+             */
+
+            players.sort(
+                (a,b) => {
+
+                    const ao =
+                        parseInt(
+                            a.battingOrder ||
+                            "999",
+                            10
+                        );
+
+                    const bo =
+                        parseInt(
+                            b.battingOrder ||
+                            "999",
+                            10
+                        );
+
+                    return ao - bo;
+
+                }
+            );
+
+
+            if (!players.length) {
+
+                container.innerHTML += `
+
+                <div class="player-section">
+
+                <h3>
+                ${escapeHTML(
+                    team.team?.name ||
+                    label
+                )}
+                </h3>
+
+                <div class="empty">
+                No batters have appeared yet.
+                </div>
+
+                </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            let rows = "";
+
+
+            players.forEach(
+                player => {
+
+                    const stats =
+                        player.stats?.batting ||
+                        {};
+
+
+                    const order =
+                        player.battingOrder
+                        ?
+                        parseInt(
+                            player.battingOrder,
+                            10
+                        ) / 100 + 1
+                        :
+                        "—";
+
+
+                    rows += `
+
+                    <tr>
+
+                    <td>
+
+                        <span class="number">
+                        ${
+                            typeof order === "number"
+                            ?
+                            order + "."
+                            :
+                            ""
+                        }
+                        </span>
+
+                        <span class="player-name">
+                        ${escapeHTML(
+                            player.person?.fullName ||
+                            "Unknown"
+                        )}
+                        </span>
+
+                        <span class="player-position">
+                        ${escapeHTML(
+                            getPosition(player)
+                        )}
+                        </span>
+
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"atBats")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"hits")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"runs")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"homeRuns")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"rbi")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"baseOnBalls")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"strikeOuts")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"stolenBases")}
+                    </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+
+            container.innerHTML += `
+
+            <div class="player-section">
+
+            <h3>
+            ${escapeHTML(
+                team.team?.name ||
+                label
+            )}
+            </h3>
+
+            <div class="table-wrap">
+
+            <table>
+
+            <thead>
+
+            <tr>
+
+            <th>Player</th>
+            <th>AB</th>
+            <th>H</th>
+            <th>R</th>
+            <th>HR</th>
+            <th>RBI</th>
+            <th>BB</th>
+            <th>SO</th>
+            <th>SB</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            ${rows}
+
+            </tbody>
+
+            </table>
+
+            </div>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   PITCHING
+========================================= */
+
+function renderPitching() {
+
+    const container =
+        document.getElementById(
+            "pitching"
+        );
+
+
+    if (!boxscore?.teams) {
+
+        container.innerHTML = `
+        <div class="empty">
+        Pitching data unavailable.
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    [
+        ["away","Away"],
+        ["home","Home"]
+
+    ].forEach(
+        ([side,label]) => {
+
+            const team =
+                boxscore.teams[side];
+
+
+            if (!team)
+                return;
+
+
+            const playerMap =
+                team.players || {};
+
+
+            const actualPitchers =
+                new Set(
+                    team.pitchers || []
+                );
+
+
+            let pitchers =
+                Object.values(
+                    playerMap
+                )
+                .filter(
+                    player =>
+                        actualPitchers.has(
+                            player.person?.id
+                        )
+                );
+
+
+            /*
+             * MLB's pitchers array is
+             * the actual pitchers who
+             * appeared in the game.
+             */
+
+            if (!pitchers.length) {
+
+                container.innerHTML += `
+
+                <div class="player-section">
+
+                <h3>
+                ${escapeHTML(
+                    team.team?.name ||
+                    label
+                )}
+                </h3>
+
+                <div class="empty">
+                No pitchers have appeared yet.
+                </div>
+
+                </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            let rows = "";
+
+
+            pitchers.forEach(
+                player => {
+
+                    const stats =
+                        player.stats?.pitching ||
+                        {};
+
+
+                    rows += `
+
+                    <tr>
+
+                    <td>
+
+                        <span class="player-name">
+                        ${escapeHTML(
+                            player.person?.fullName ||
+                            "Unknown"
+                        )}
+                        </span>
+
+                        <span class="player-position">
+                        ${escapeHTML(
+                            getPosition(player)
+                        )}
+                        </span>
+
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"gamesStarted")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"inningsPitched")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"hits")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"runs")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"earnedRuns")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"baseOnBalls")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"strikeOuts")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"homeRuns")}
+                    </td>
+
+                    <td>
+                    ${statValue(stats,"era")}
+                    </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+
+            container.innerHTML += `
+
+            <div class="player-section">
+
+            <h3>
+            ${escapeHTML(
+                team.team?.name ||
+                label
+            )}
+            </h3>
+
+            <div class="table-wrap">
+
+            <table>
+
+            <thead>
+
+            <tr>
+
+            <th>Pitcher</th>
+            <th>GS</th>
+            <th>IP</th>
+            <th>H</th>
+            <th>R</th>
+            <th>ER</th>
+            <th>BB</th>
+            <th>SO</th>
+            <th>HR</th>
+            <th>ERA</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            ${rows}
+
+            </tbody>
+
+            </table>
+
+            </div>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   20/20
+========================================= */
+
+function renderTwentyTwenty() {
+
+    const container =
+        document.getElementById(
+            "insights"
+        );
+
+
+    if (!boxscore?.teams) {
+
+        container.innerHTML = `
+        <div class="empty">
+        The 20/20 view is waiting for game data.
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    const away =
+        boxscore.teams.away;
+
+    const home =
+        boxscore.teams.home;
+
+
+    const awayStats =
+        away.teamStats?.batting || {};
+
+    const homeStats =
+        home.teamStats?.batting || {};
+
+
+    const awayPitch =
+        away.teamStats?.pitching || {};
+
+    const homePitch =
+        home.teamStats?.pitching || {};
+
+
+    const awayName =
+        away.team?.name ||
+        "Away";
+
+    const homeName =
+        home.team?.name ||
+        "Home";
+
+
+    const awayRuns =
+        gameFeed?.liveData
+        ?.linescore?.teams
+        ?.away?.runs;
+
+    const homeRuns =
+        gameFeed?.liveData
+        ?.linescore?.teams
+        ?.home?.runs;
+
+
+    /*
+     * Determine winner only when
+     * the game has actually ended.
+     */
+
+    const gameState =
+        gameFeed?.gameData?.status
+        ?.abstractGameState;
+
+
+    let winner =
+        "Game in progress";
+
+    if (
+        gameState === "Final" &&
+        awayRuns !== undefined &&
+        homeRuns !== undefined
+    ) {
+
+        winner =
+            awayRuns > homeRuns
+            ? awayName
+            :
+            homeRuns > awayRuns
+            ? homeName
+            :
+            "Tie";
+
+    }
+
+
+    /*
+     * Find best hitters based on
+     * actual game data.
+     */
+
+    function bestHitter(team) {
+
+        const players =
+            Object.values(
+                team.players || {}
+            )
+            .filter(
+                player =>
+                    (
+                        team.batters || []
+                    )
+                    .includes(
+                        player.person?.id
+                    )
+            );
+
+
+        players.sort(
+            (a,b) => {
+
+                const ah =
+                    Number(
+                        a.stats?.batting
+                        ?.hits ?? 0
+                    );
+
+                const bh =
+                    Number(
+                        b.stats?.batting
+                        ?.hits ?? 0
+                    );
+
+                if (bh !== ah)
+                    return bh - ah;
+
+
+                const ar =
+                    Number(
+                        a.stats?.batting
+                        ?.runs ?? 0
+                    );
+
+                const br =
+                    Number(
+                        b.stats?.batting
+                        ?.runs ?? 0
+                    );
+
+                return br - ar;
+
+            }
+        );
+
+
+        return players[0];
+
+    }
+
+
+    function bestPitcher(team) {
+
+        const players =
+            Object.values(
+                team.players || {}
+            )
+            .filter(
+                player =>
+                    (
+                        team.pitchers || []
+                    )
+                    .includes(
+                        player.person?.id
+                    )
+            );
+
+
+        players.sort(
+            (a,b) => {
+
+                const aso =
+                    Number(
+                        a.stats?.pitching
+                        ?.strikeOuts ?? 0
+                    );
+
+                const bso =
+                    Number(
+                        b.stats?.pitching
+                        ?.strikeOuts ?? 0
+                    );
+
+                return bso - aso;
+
+            }
+        );
+
+
+        return players[0];
+
+    }
+
+
+    const awayHitter =
+        bestHitter(away);
+
+    const homeHitter =
+        bestHitter(home);
+
+    const awayPitcher =
+        bestPitcher(away);
+
+    const homePitcher =
+        bestPitcher(home);
+
+
+    function hitterText(
+        player
+    ) {
+
+        if (!player)
+            return "No batting data yet.";
+
+        const s =
+            player.stats?.batting || {};
+
+
+        return `
+
+        <strong>
+        ${escapeHTML(
+            player.person?.fullName
+        )}
+        </strong>
+
+        <br>
+
+        ${statValue(s,"hits")}
+        H •
+        ${statValue(s,"runs")}
+        R •
+        ${statValue(s,"homeRuns")}
+        HR •
+        ${statValue(s,"rbi")}
+        RBI
+
+        `;
+
+    }
+
+
+    function pitcherText(
+        player
+    ) {
+
+        if (!player)
+            return "No pitching data yet.";
+
+        const s =
+            player.stats?.pitching || {};
+
+
+        return `
+
+        <strong>
+        ${escapeHTML(
+            player.person?.fullName
+        )}
+        </strong>
+
+        <br>
+
+        ${statValue(s,"inningsPitched")}
+        IP •
+        ${statValue(s,"strikeOuts")}
+        K •
+        ${statValue(s,"earnedRuns")}
+        ER
+
+        `;
+
+    }
+
+
+    const runDiff =
+        (
+            Number(homeRuns ?? 0) -
+            Number(awayRuns ?? 0)
+        );
+
+
+    let runStory =
+        "The game has not produced a final score yet.";
+
+
+    if (
+        gameState === "Final" &&
+        awayRuns !== undefined &&
+        homeRuns !== undefined
+    ) {
+
+        const margin =
+            Math.abs(
+                Number(awayRuns) -
+                Number(homeRuns)
+            );
+
+
+        if (margin >= 5) {
+
+            runStory =
+                `A decisive ${margin}-run margin
+                separated the teams.`;
+
+        }
+
+        else if (margin <= 2) {
+
+            runStory =
+                `This was a close game decided
+                by ${margin} run${
+                    margin === 1 ? "" : "s"
+                }.`;
+
+        }
+
+        else {
+
+            runStory =
+                `The final margin was
+                ${margin} runs.`;
+
+        }
+
+    }
+
+
+    container.innerHTML = `
+
+    <div class="insight big-insight">
+
+        <h3>
+        🎯 What mattered most?
+        </h3>
+
+        <div class="insight-value">
+        ${
+            escapeHTML(winner)
+        }
+        </div>
+
+        <div class="insight-text">
+        ${
+            escapeHTML(runStory)
+        }
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        🔥 ${escapeHTML(awayName)} Hitter
+        </h3>
+
+        <div class="insight-text">
+        ${hitterText(awayHitter)}
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        🔥 ${escapeHTML(homeName)} Hitter
+        </h3>
+
+        <div class="insight-text">
+        ${hitterText(homeHitter)}
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        🎯 ${escapeHTML(awayName)} Pitcher
+        </h3>
+
+        <div class="insight-text">
+        ${pitcherText(awayPitcher)}
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        🎯 ${escapeHTML(homeName)} Pitcher
+        </h3>
+
+        <div class="insight-text">
+        ${pitcherText(homePitcher)}
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        ⚾ ${escapeHTML(awayName)} Offense
+        </h3>
+
+        <div class="insight-text">
+
+        ${statValue(
+            awayStats,
+            "hits"
+        )} hits •
+
+        ${statValue(
+            awayStats,
+            "homeRuns"
+        )} HR •
+
+        ${statValue(
+            awayStats,
+            "baseOnBalls"
+        )} BB
+
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        ⚾ ${escapeHTML(homeName)} Offense
+        </h3>
+
+        <div class="insight-text">
+
+        ${statValue(
+            homeStats,
+            "hits"
+        )} hits •
+
+        ${statValue(
+            homeStats,
+            "homeRuns"
+        )} HR •
+
+        ${statValue(
+            homeStats,
+            "baseOnBalls"
+        )} BB
+
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        🧤 ${escapeHTML(awayName)} Pitching
+        </h3>
+
+        <div class="insight-text">
+
+        ${statValue(
+            awayPitch,
+            "strikeOuts"
+        )} strikeouts •
+
+        ${statValue(
+            awayPitch,
+            "earnedRuns"
+        )} earned runs
+
+        </div>
+
+    </div>
+
+
+    <div class="insight">
+
+        <h3>
+        🧤 ${escapeHTML(homeName)} Pitching
+        </h3>
+
+        <div class="insight-text">
+
+        ${statValue(
+            homePitch,
+            "strikeOuts"
+        )} strikeouts •
+
+        ${statValue(
+            homePitch,
+            "earnedRuns"
+        )} earned runs
+
+        </div>
+
+    </div>
+
+
+    <div class="insight big-insight">
+
+        <h3>
+        👁️ Sports 20/20 Takeaway
+        </h3>
+
+        <div class="insight-text">
+
+        ${
+            gameState === "Final"
+            ?
+            `The final result was
+            ${escapeHTML(winner)}.
+            Sports 20/20 looks beyond the
+            final score by combining the
+            actual game batting,
+            pitching, scoring and
+            situational information.`
+            :
+            `This game is still being played.
+            The 20/20 view will continue
+            updating as new statistics
+            become available.`
+        }
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+loadGame();
+
+
+/* =========================================
+   AUTO REFRESH
+========================================= */
+
+setInterval(
+    () => {
+
+        loadGame();
+
+    },
+    30000
+);
+
+</script>
+
+</body>
+
+</html>
