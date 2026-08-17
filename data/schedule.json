@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-17T19:17:35.815117+00:00",
+  "lastUpdated": "2026-08-17T21:00:15.807197+00:00",
   "games": [
     {
       "gamePk": 824414,
@@ -9968,9 +9968,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T17:40:00Z",
       "localGameTime": "2026-08-17T13:40:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 138,
         "name": "St. Louis Cardinals",
@@ -10029,8 +10029,8 @@
         "name": "Tampa Bay Rays",
         "abbreviation": "TB"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Tropicana Field",
       "awayPitcher": "Brandon Young",
       "homePitcher": "Shane McClanahan"
@@ -10053,8 +10053,8 @@
         "name": "Philadelphia Phillies",
         "abbreviation": "PHI"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Citizens Bank Park",
       "awayPitcher": "Janson Junk",
       "homePitcher": "Cristopher S\u00e1nchez"
@@ -10064,9 +10064,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T23:05:00Z",
       "localGameTime": "2026-08-17T19:05:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 116,
         "name": "Detroit Tigers",
@@ -10077,8 +10077,8 @@
         "name": "Pittsburgh Pirates",
         "abbreviation": "PIT"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "PNC Park",
       "awayPitcher": "Framber Valdez",
       "homePitcher": "Carmen Mlodzinski"
@@ -10088,9 +10088,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T23:10:00Z",
       "localGameTime": "2026-08-17T19:10:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 109,
         "name": "Arizona Diamondbacks",
@@ -10136,9 +10136,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T23:40:00Z",
       "localGameTime": "2026-08-17T19:40:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 133,
         "name": "Athletics",
@@ -10149,8 +10149,8 @@
         "name": "Kansas City Royals",
         "abbreviation": "KC"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Kauffman Stadium",
       "awayPitcher": "Mason Barnett",
       "homePitcher": "Michael Wacha"
@@ -10160,9 +10160,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T23:40:00Z",
       "localGameTime": "2026-08-17T19:40:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 144,
         "name": "Atlanta Braves",
@@ -10173,8 +10173,8 @@
         "name": "Minnesota Twins",
         "abbreviation": "MIN"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Target Field",
       "awayPitcher": "Mart\u00edn P\u00e9rez",
       "homePitcher": "Bailey Ober"
@@ -10184,9 +10184,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-18T00:05:00Z",
       "localGameTime": "2026-08-17T20:05:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 145,
         "name": "Chicago White Sox",
@@ -10208,9 +10208,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-18T00:40:00Z",
       "localGameTime": "2026-08-17T20:40:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 119,
         "name": "Los Angeles Dodgers",
@@ -10248,7 +10248,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Oriole Park at Camden Yards",
-      "awayPitcher": "Will Warren",
+      "awayPitcher": "Carlos Rod\u00f3n",
       "homePitcher": "Shane Baz"
     },
     {
@@ -10345,7 +10345,7 @@
       "homeScore": null,
       "venue": "Tropicana Field",
       "awayPitcher": "Jos\u00e9 Soriano",
-      "homePitcher": null
+      "homePitcher": "Nick Martinez"
     },
     {
       "gamePk": 823423,
@@ -10825,7 +10825,7 @@
       "homeScore": null,
       "venue": "Tropicana Field",
       "awayPitcher": "Max Scherzer",
-      "homePitcher": null
+      "homePitcher": "Drew Rasmussen"
     },
     {
       "gamePk": 824076,
@@ -11017,7 +11017,7 @@
       "homeScore": null,
       "venue": "Tropicana Field",
       "awayPitcher": "Shane Bieber",
-      "homePitcher": null
+      "homePitcher": "Ian Seymour"
     },
     {
       "gamePk": 824074,
