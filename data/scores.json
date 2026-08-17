@@ -1,19 +1,19 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-17T15:55:16.499481+00:00",
+  "lastUpdated": "2026-08-17T18:03:13.578326+00:00",
   "games": [
     {
       "gamePk": 824514,
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Cincinnati Reds",
-      "awayScore": 0,
+      "awayScore": 2,
       "homeScore": 0,
-      "status": "Pre-Game",
+      "status": "In Progress",
       "gameDate": "2026-08-17T17:40:00Z",
       "inning": 1,
       "inningOrdinal": "1st",
-      "inningState": "Top",
-      "outs": 0,
+      "inningState": "End",
+      "outs": 3,
       "battingTeam": "St. Louis Cardinals",
       "runners": {
         "first": false,
@@ -23,7 +23,7 @@
       "inningScores": [
         {
           "inning": 1,
-          "awayRuns": 0,
+          "awayRuns": 2,
           "homeRuns": 0
         }
       ]
