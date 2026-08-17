@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Sports 20/20 MLB</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #111827;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: linear-gradient(
+        135deg,
+        #07111f,
+        #14243d
+    );
+
+    color: white;
+    padding: 22px 16px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #3b82f6;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,.09);
+    padding: 11px 15px;
+    border-radius: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at center,
+            #1d4ed8 0%,
+            #0b1730 45%,
+            #050b16 100%
+        );
+
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 46px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 14px auto 0;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 25px 15px 60px;
+}
+
+.section-title {
+    font-size: 31px;
+    margin: 38px 0 18px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status-bar {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.live-dot {
+    color: #16a34a;
+    font-weight: 900;
+}
+
+
+/* =========================
+   DATE CONTROLS
+========================= */
+
+.date-controls {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.date-controls button {
+    border: none;
+    background: #111827;
+    color: white;
+
+    padding: 13px 18px;
+
+    border-radius: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.today-button {
+    background: #2563eb !important;
+}
+
+.date-display {
+    flex: 1;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+
+/* =========================
+   GAMES
+========================= */
+
+.games {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(310px,1fr)
+        );
+
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+.game-card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 21px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.07);
+
+    border:
+        1px solid
+        #e5e7eb;
+}
+
+.game-status {
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.game-status.live {
+    color: #dc2626;
+}
+
+.game-status.final {
+    color: #16a34a;
+}
+
+.game-status.scheduled {
+    color: #2563eb;
+}
+
+.team-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 7px 0;
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+.score {
+    font-size: 28px;
+}
+
+.game-info {
+    color: #6b7280;
+
+    margin-top: 13px;
+
+    line-height: 1.6;
+}
+
+.game-button {
+    display: block;
+
+    text-align: center;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    margin-top: 17px;
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   LIVE BOX
+========================= */
+
+.live-box {
+    margin-top: 15px;
+
+    background: #f1f5f9;
+
+    border-radius: 14px;
+
+    padding: 15px;
+}
+
+.live-line {
+    padding: 5px 0;
+}
+
+.live-label {
+    font-weight: 900;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.no-games {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   TABLES
+========================= */
+
+.table-card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.06);
+}
+
+.table-title {
+    background: #111827;
+
+    color: white;
+
+    padding: 17px;
+
+    font-size: 21px;
+
+    font-weight: 900;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #e5e7eb;
+
+    padding: 12px 8px;
+}
+
+td {
+    padding: 12px 8px;
+
+    border-bottom:
+        1px solid
+        #e5e7eb;
+
+    text-align: center;
+}
+
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+
+.team-name {
+    font-weight: 800;
+}
+
+
+/* =========================
+   WILD CARD
+========================= */
+
+.wildcard-note {
+    background: #eff6ff;
+
+    border-left:
+        5px solid
+        #2563eb;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   20/20
+========================= */
+
+.twenty20 {
+
+    background:
+        linear-gradient(
+            135deg,
+            #07111f,
+            #101d35
+        );
+
+    color: white;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,.18);
+}
+
+.twenty20 h2 {
+    font-size: 32px;
+    margin-top: 0;
+}
+
+.twenty20-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px,1fr)
+        );
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.twenty-card {
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius: 17px;
+
+    padding: 20px;
+}
+
+.twenty-card h3 {
+    margin-top: 0;
+    color: #60a5fa;
+}
+
+.twenty-card p {
+    color: #dbeafe;
+    line-height: 1.55;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #07111f;
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .date-controls {
+        flex-direction: column;
+    }
+
+    .date-controls button,
+    .date-display {
+        width: 100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<div class="logo">
+
+Sports <span>20/20</span>
+
+</div>
+
+
+<nav>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="mlb.html">
+⚾ MLB
+</a>
+
+<a href="nfl.html">
+🏈 NFL
+</a>
+
+<a href="nba.html">
+🏀 NBA
+</a>
+
+<a href="nhl.html">
+🏒 NHL
+</a>
+
+<a href="mls.html">
+⚽ MLS
+</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+⚾ MLB
+</h1>
+
+<p>
+See the scores.
+See the standings.
+See the stats.
+See what matters next.
+</p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =========================
+     STATUS
+========================= -->
+
+<div class="status-bar">
+
+<span class="live-dot">
+● MLB LIVE DATA
+</span>
+
+<span id="lastUpdated">
+Connecting to MLB...
+</span>
+
+</div>
+
+
+<!-- =========================
+     SCHEDULE
+========================= -->
+
+<h2 class="section-title">
+
+📅 MLB Games
+
+</h2>
+
+
+<div class="date-controls">
+
+<button
+onclick="previousDay()">
+
+← Previous
+
+</button>
+
+
+<div
+id="dateDisplay"
+class="date-display">
+
+Loading...
+
+</div>
+
+
+<button
+onclick="nextDay()">
+
+Next →
+
+</button>
+
+
+<button
+class="today-button"
+onclick="today()">
+
+Today
+
+</button>
+
+</div>
+
+
+<div
+id="games"
+class="games">
+
+<div class="no-games">
+
+Loading MLB games...
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     STANDINGS
+========================= -->
+
+<h2 class="section-title">
+
+🏆 Division Standings
+
+</h2>
+
+
+<div
+id="standings">
+
+<div class="no-games">
+
+Loading standings...
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     WILD CARD
+========================= -->
+
+<h2 class="section-title">
+
+🃏 Full Wild Card Race
+
+</h2>
+
+
+<div class="wildcard-note">
+
+<strong>
+Complete Wild Card picture.
+</strong>
+
+<br>
+
+Every team outside the current division
+leaders is shown so you can see the entire
+race, not just the three playoff positions.
+
+</div>
+
+
+<div
+id="wildcards">
+
+<div class="no-games">
+
+Loading Wild Card race...
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     20/20
+========================= -->
+
+<h2 class="section-title">
+
+👁️ Sports 20/20
+
+</h2>
+
+
+<section class="twenty20">
+
+<h2>
+The 20/20 View
+</h2>
+
+
+<p>
+
+The score tells you what happened.
+
+<strong>
+Sports 20/20 is designed to explain
+why it matters and what could happen next.
+</strong>
+
+</p>
+
+
+<div class="twenty20-grid">
+
+
+<div class="twenty-card">
+
+<h3>
+📈 Momentum
+</h3>
+
+<p>
+
+Identify teams trending upward or
+downward based on recent performance,
+streaks and results.
+
+</p>
+
+</div>
+
+
+<div class="twenty-card">
+
+<h3>
+🎯 Playoff Pressure
+</h3>
+
+<p>
+
+Show how important today's game is
+to the division and Wild Card race.
+
+</p>
+
+</div>
+
+
+<div class="twenty-card">
+
+<h3>
+🔥 Players to Watch
+</h3>
+
+<p>
+
+Highlight players whose recent performance
+could influence the game.
+
+</p>
+
+</div>
+
+
+<div class="twenty-card">
+
+<h3>
+⚔️ Matchup Advantage
+</h3>
+
+<p>
+
+Compare pitching, hitting, bullpen and
+recent performance.
+
+</p>
+
+</div>
+
+
+<div class="twenty-card">
+
+<h3>
+📊 What the Numbers Say
+</h3>
+
+<p>
+
+Turn statistics into useful context
+instead of simply displaying numbers.
+
+</p>
+
+</div>
+
+
+<div class="twenty-card">
+
+<h3>
+🔮 What Matters Next
+</h3>
+
+<p>
+
+Explain what each team needs to do next
+to improve its playoff position.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+Sports 20/20
+</strong>
+
+<br><br>
+
+Know where your team stands.
+Know what matters next.
+
+</footer>
+
+
+<script>
+
+
+/* =========================================
+   MLB API
+========================================= */
+
+const API =
+"https://statsapi.mlb.com/api/v1";
+
+
+/* =========================================
+   CURRENT DATE
+========================================= */
+
+let selectedDate =
+new Date();
+
+
+/* =========================================
+   IMPORTANT:
+   LOCAL DATE, NOT UTC
+========================================= */
+
+function formatDate(date) {
+
+    const year =
+        date.getFullYear();
+
+    const month =
+        String(
+            date.getMonth() + 1
+        )
+        .padStart(2,"0");
+
+    const day =
+        String(
+            date.getDate()
+        )
+        .padStart(2,"0");
+
+    return `${year}-${month}-${day}`;
+
+}
+
+
+/* =========================================
+   DISPLAY DATE
+========================================= */
+
+function displayDate(date) {
+
+    return date.toLocaleDateString(
+        "en-US",
+        {
+            weekday:"long",
+            month:"long",
+            day:"numeric",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+/* =========================================
+   DATE BUTTONS
+========================================= */
+
+function previousDay() {
+
+    selectedDate.setDate(
+        selectedDate.getDate() - 1
+    );
+
+    loadGames();
+
+}
+
+
+function nextDay() {
+
+    selectedDate.setDate(
+        selectedDate.getDate() + 1
+    );
+
+    loadGames();
+
+}
+
+
+function today() {
+
+    selectedDate =
+        new Date();
+
+    loadGames();
+
+}
+
+
+/* =========================================
+   LOAD GAMES
+========================================= */
+
+async function loadGames() {
+
+    const container =
+        document.getElementById(
+            "games"
+        );
+
+
+    document.getElementById(
+        "dateDisplay"
+    ).textContent =
+        displayDate(
+            selectedDate
+        );
+
+
+    container.innerHTML = `
+
+    <div class="no-games">
+
+    Loading MLB games...
+
+    </div>
+
+    `;
+
+
+    /*
+     * This is now based on the user's
+     * LOCAL calendar date.
+     *
+     * No toISOString().
+     */
+
+    const date =
+        formatDate(
+            selectedDate
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                `${API}/schedule` +
+                `?sportId=1` +
+                `&date=${date}` +
+                `&hydrate=team,venue`
+
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "MLB schedule unavailable"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        const dates =
+            data.dates || [];
+
+
+        if (!dates.length) {
+
+            container.innerHTML = `
+
+            <div class="no-games">
+
+            No MLB games scheduled
+            for ${displayDate(selectedDate)}.
+
+            </div>
+
+            `;
+
+            updateTime();
+
+            return;
+
+        }
+
+
+        const games =
+            dates[0].games || [];
+
+
+        if (!games.length) {
+
+            container.innerHTML = `
+
+            <div class="no-games">
+
+            No MLB games found.
+
+            </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /*
+         * Sort by game time.
+         */
+
+        games.sort(
+            (a,b) =>
+                new Date(
+                    a.gameDate
+                )
+                -
+                new Date(
+                    b.gameDate
+                )
+        );
+
+
+        container.innerHTML =
+            games
+            .map(
+                createGameCard
+            )
+            .join("");
+
+
+        updateTime();
+
+
+        /*
+         * Load live information
+         * for games that have started.
+         */
+
+        games.forEach(
+            game => {
+
+                const state =
+                    game.status
+                    ?.abstractGameState;
+
+
+                if (
+                    state === "Live"
+                ) {
+
+                    loadLiveGame(
+                        game.gamePk
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(
+            error
+        );
+
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        ⚠️ Unable to load MLB games.
+
+        <br><br>
+
+        Please refresh the page.
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   GAME CARD
+========================================= */
+
+function createGameCard(game) {
+
+    const status =
+        game.status || {};
+
+
+    const state =
+        status.abstractGameState;
+
+
+    const detail =
+        status.detailedState ||
+        "";
+
+
+    let statusClass =
+        "scheduled";
+
+
+    let statusText =
+        "🕐 " +
+        new Date(
+            game.gameDate
+        )
+        .toLocaleTimeString(
+            "en-US",
+            {
+                hour:"numeric",
+                minute:"2-digit"
+            }
+        );
+
+
+    if (
+        state === "Live"
+    ) {
+
+        statusClass =
+            "live";
+
+        statusText =
+            "🔴 " +
+            detail;
+
+    }
+
+
+    if (
+        state === "Final"
+    ) {
+
+        statusClass =
+            "final";
+
+        statusText =
+            "✅ FINAL";
+
+    }
+
+
+    const away =
+        game.teams?.away;
+
+
+    const home =
+        game.teams?.home;
+
+
+    const awayName =
+        away?.team?.name ||
+        "Away";
+
+
+    const homeName =
+        home?.team?.name ||
+        "Home";
+
+
+    const awayScore =
+        away?.score ??
+        "-";
+
+
+    const homeScore =
+        home?.score ??
+        "-";
+
+
+    const venue =
+        game.venue?.name ||
+        "";
+
+
+    return `
+
+    <div class="game-card">
+
+
+        <div
+        class="game-status ${statusClass}"
+        >
+
+        ${statusText}
+
+        </div>
+
+
+        <div class="team-row">
+
+        <span>
+        ${awayName}
+        </span>
+
+        <span class="score">
+        ${awayScore}
+        </span>
+
+        </div>
+
+
+        <div class="team-row">
+
+        <span>
+        ${homeName}
+        </span>
+
+        <span class="score">
+        ${homeScore}
+        </span>
+
+        </div>
+
+
+        <div
+        id="live-${game.gamePk}"
+        >
+        </div>
+
+
+        <div class="game-info">
+
+        ${
+            venue
+            ?
+            `📍 ${venue}`
+            :
+            ""
+        }
+
+        </div>
+
+
+        <a
+        class="game-button"
+        href="game.html?gamePk=${game.gamePk}"
+        >
+
+        📊 VIEW GAME & 20/20
+
+        </a>
+
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   LIVE GAME DATA
+========================================= */
+
+async function loadLiveGame(
+    gamePk
+) {
+
+    try {
+
+        const response =
+            await fetch(
+
+                `${API}.1/game/` +
+                `${gamePk}/feed/live`
+
+            );
+
+
+        if (!response.ok)
+            return;
+
+
+        const data =
+            await response.json();
+
+
+        const box =
+            document.getElementById(
+                "live-" +
+                gamePk
+            );
+
+
+        if (!box)
+            return;
+
+
+        const linescore =
+            data.liveData
+            ?.linescore;
+
+
+        if (!linescore)
+            return;
+
+
+        const offense =
+            linescore.offense ||
+            {};
+
+
+        const defense =
+            linescore.defense ||
+            {};
+
+
+        const batter =
+            offense.batter
+            ?.fullName ||
+            "—";
+
+
+        const pitcher =
+            defense.pitcher
+            ?.fullName ||
+            "—";
+
+
+        const inning =
+            linescore
+            .currentInningOrdinal ||
+            "—";
+
+
+        const inningState =
+            linescore
+            .inningState ||
+            "";
+
+
+        const outs =
+            linescore.outs ??
+            0;
+
+
+        box.innerHTML = `
+
+        <div class="live-box">
+
+            <div class="live-line">
+
+            <span class="live-label">
+            ⚾ At Bat:
+            </span>
+
+            ${batter}
+
+            </div>
+
+
+            <div class="live-line">
+
+            <span class="live-label">
+            🎯 Pitching:
+            </span>
+
+            ${pitcher}
+
+            </div>
+
+
+            <div class="live-line">
+
+            <span class="live-label">
+            🕐 Inning:
+            </span>
+
+            ${inningState}
+            ${inning}
+
+            </div>
+
+
+            <div class="live-line">
+
+            <span class="live-label">
+            🚨 Outs:
+            </span>
+
+            ${outs}
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "Live game error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   STANDINGS
+========================================= */
+
+async function loadStandings() {
+
+    const container =
+        document.getElementById(
+            "standings"
+        );
+
+
+    container.innerHTML = `
+
+    <div class="no-games">
+
+    Loading standings...
+
+    </div>
+
+    `;
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                `${API}/standings` +
+                `?leagueId=103,104` +
+                `&season=${new Date().getFullYear()}` +
+                `&standingsTypes=regularSeason`
+
+            );
+
+
+        if (!response.ok)
+            throw new Error();
+
+
+        const data =
+            await response.json();
+
+
+        const records =
+            data.records || [];
+
+
+        container.innerHTML = "";
+
+
+        records.forEach(
+            record => {
+
+                const divisionName =
+                    record.division?.name ||
+                    "Division";
+
+
+                const teams =
+                    record.teamRecords ||
+                    [];
+
+
+                let rows = "";
+
+
+                teams.forEach(
+                    (
+                        team,
+                        index
+                    ) => {
+
+                        rows += `
+
+                        <tr>
+
+                        <td class="team-name">
+
+                        ${index + 1}.
+                        ${team.team.name}
+
+                        </td>
+
+                        <td>
+                        ${team.wins}
+                        </td>
+
+                        <td>
+                        ${team.losses}
+                        </td>
+
+                        <td>
+                        ${team.winningPercentage}
+                        </td>
+
+                        <td>
+                        ${team.gamesBack || "-"}
+                        </td>
+
+                        </tr>
+
+                        `;
+
+                    }
+                );
+
+
+                container.innerHTML += `
+
+                <div class="table-card">
+
+                <div class="table-title">
+
+                ${divisionName}
+
+                </div>
+
+
+                <table>
+
+                <thead>
+
+                <tr>
+
+                <th>
+                Team
+                </th>
+
+                <th>
+                W
+                </th>
+
+                <th>
+                L
+                </th>
+
+                <th>
+                PCT
+                </th>
+
+                <th>
+                GB
+                </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                ${rows}
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+                `;
+
+            }
+        );
+
+
+        renderWildCards(
+            records
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "Standings error:",
+            error
+        );
+
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Unable to load standings.
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   FULL WILD CARD
+========================================= */
+
+function renderWildCards(
+    records
+) {
+
+    const container =
+        document.getElementById(
+            "wildcards"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const leagueGroups = [
+
+        {
+            id:103,
+            name:
+                "American League"
+        },
+
+        {
+            id:104,
+            name:
+                "National League"
+        }
+
+    ];
+
+
+    leagueGroups.forEach(
+        league => {
+
+            const divisions =
+                records.filter(
+                    record =>
+                        Number(
+                            record.league?.id
+                        ) === league.id
+                );
+
+
+            let allTeams = [];
+
+
+            divisions.forEach(
+                division => {
+
+                    allTeams =
+                        allTeams.concat(
+                            division.teamRecords ||
+                            []
+                        );
+
+                }
+            );
+
+
+            /*
+             * Find each division winner.
+             */
+
+            const divisionWinners =
+                divisions
+                .map(
+                    division => {
+
+                        const teams =
+                            [
+                                ...(division.teamRecords || [])
+                            ];
+
+                        teams.sort(
+                            (
+                                a,
+                                b
+                            ) =>
+                                Number(
+                                    b.winningPercentage
+                                )
+                                -
+                                Number(
+                                    a.winningPercentage
+                                )
+                        );
+
+
+                        return teams[0]
+                            ?.team
+                            ?.id;
+
+                    }
+                );
+
+
+            /*
+             * Everyone else is part
+             * of the Wild Card race.
+             */
+
+            const wildCardTeams =
+                allTeams
+                .filter(
+                    team =>
+                        !divisionWinners
+                        .includes(
+                            team.team.id
+                        )
+                );
+
+
+            wildCardTeams.sort(
+                (
+                    a,
+                    b
+                ) =>
+                    Number(
+                        b.winningPercentage
+                    )
+                    -
+                    Number(
+                        a.winningPercentage
+                    )
+            );
+
+
+            let rows = "";
+
+
+            wildCardTeams.forEach(
+                (
+                    team,
+                    index
+                ) => {
+
+                    rows += `
+
+                    <tr>
+
+                    <td>
+
+                    ${
+                        index < 3
+                        ?
+                        "WC" +
+                        (
+                            index + 1
+                        )
+                        :
+                        "—"
+                    }
+
+                    </td>
+
+
+                    <td
+                    class="team-name"
+                    >
+
+                    ${team.team.name}
+
+                    </td>
+
+
+                    <td>
+
+                    ${team.wins}
+
+                    </td>
+
+
+                    <td>
+
+                    ${team.losses}
+
+                    </td>
+
+
+                    <td>
+
+                    ${team.winningPercentage}
+
+                    </td>
+
+
+                    <td>
+
+                    ${team.gamesBack || "-"}
+
+                    </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+
+            container.innerHTML += `
+
+            <div class="table-card">
+
+            <div class="table-title">
+
+            🃏 ${league.name}
+
+            </div>
+
+
+            <table>
+
+            <thead>
+
+            <tr>
+
+            <th>
+            WC
+            </th>
+
+            <th>
+            Team
+            </th>
+
+            <th>
+            W
+            </th>
+
+            <th>
+            L
+            </th>
+
+            <th>
+            PCT
+            </th>
+
+            <th>
+            GB
+            </th>
+
+            </tr>
+
+            </thead>
+
+
+            <tbody>
+
+            ${rows}
+
+            </tbody>
+
+            </table>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   UPDATE TIME
+========================================= */
+
+function updateTime() {
+
+    document.getElementById(
+        "lastUpdated"
+    ).textContent =
+
+        "Updated " +
+
+        new Date()
+        .toLocaleTimeString(
+            "en-US"
+        );
+
+}
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+loadGames();
+
+loadStandings();
+
+
+/* =========================================
+   AUTO REFRESH
+========================================= */
+
+setInterval(
+    () => {
+
+        loadGames();
+
+        loadStandings();
+
+    },
+    60000
+);
+
+</script>
+
+
+</body>
+
+</html>
