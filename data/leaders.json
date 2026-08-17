@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-17T21:58:27.842062+00:00",
+  "lastUpdated": "2026-08-17T22:59:28.316031+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -24,7 +24,7 @@
             "player": "Yandy D\u00edaz",
             "team": "Tampa Bay Rays",
             "position": "DH",
-            "value": ".302"
+            "value": ".303"
           },
           {
             "rank": 4,
@@ -35,10 +35,10 @@
           },
           {
             "rank": 5,
-            "player": "Chase DeLauter",
-            "team": "Cleveland Guardians",
-            "position": "RF",
-            "value": ".285"
+            "player": "Jonathan Aranda",
+            "team": "Tampa Bay Rays",
+            "position": "1B",
+            "value": ".286"
           }
         ],
         "hits": [
@@ -54,7 +54,7 @@
             "player": "Yandy D\u00edaz",
             "team": "Tampa Bay Rays",
             "position": "DH",
-            "value": "141"
+            "value": "142"
           },
           {
             "rank": 3,
@@ -246,7 +246,7 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".541"
+            "value": ".538"
           },
           {
             "rank": 4,
@@ -290,7 +290,7 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".905"
+            "value": ".901"
           },
           {
             "rank": 5,
@@ -695,7 +695,7 @@
             "player": "Jonathan Aranda",
             "team": "Tampa Bay Rays",
             "position": "1B",
-            "value": "819"
+            "value": "823"
           },
           {
             "rank": 4,
@@ -725,7 +725,7 @@
             "player": "Gunnar Henderson",
             "team": "Baltimore Orioles",
             "position": "SS",
-            "value": "281"
+            "value": "282"
           },
           {
             "rank": 3,
@@ -834,7 +834,7 @@
             "player": "Luis Arraez",
             "team": "Philadelphia Phillies",
             "position": "2B",
-            "value": ".315"
+            "value": ".314"
           },
           {
             "rank": 2,
@@ -1047,7 +1047,7 @@
             "player": "Bryce Harper",
             "team": "Philadelphia Phillies",
             "position": "1B",
-            "value": ".375"
+            "value": ".376"
           }
         ],
         "slg": [
@@ -1077,7 +1077,7 @@
             "player": "Kyle Schwarber",
             "team": "Philadelphia Phillies",
             "position": "DH",
-            "value": ".537"
+            "value": ".536"
           },
           {
             "rank": 5,
@@ -1114,7 +1114,7 @@
             "player": "Kyle Schwarber",
             "team": "Philadelphia Phillies",
             "position": "DH",
-            "value": ".905"
+            "value": ".903"
           },
           {
             "rank": 5,
@@ -1264,7 +1264,7 @@
             "player": "Cristopher S\u00e1nchez",
             "team": "Philadelphia Phillies",
             "position": "P",
-            "value": "2.54"
+            "value": "2.53"
           },
           {
             "rank": 5,
@@ -1331,7 +1331,7 @@
             "player": "Cristopher S\u00e1nchez",
             "team": "Philadelphia Phillies",
             "position": "P",
-            "value": "181"
+            "value": "182"
           },
           {
             "rank": 4,
@@ -1435,7 +1435,7 @@
             "player": "Cristopher S\u00e1nchez",
             "team": "Philadelphia Phillies",
             "position": "P",
-            "value": "155.2"
+            "value": "157.1"
           },
           {
             "rank": 3,
@@ -1526,7 +1526,7 @@
             "player": "J.T. Realmuto",
             "team": "Philadelphia Phillies",
             "position": "C",
-            "value": "921"
+            "value": "923"
           },
           {
             "rank": 5,
@@ -1542,7 +1542,7 @@
             "player": "JJ Wetherholt",
             "team": "St. Louis Cardinals",
             "position": "2B",
-            "value": "337"
+            "value": "338"
           },
           {
             "rank": 2,
@@ -1637,7 +1637,7 @@
             "player": "Masyn Winn",
             "team": "St. Louis Cardinals",
             "position": "SS",
-            "value": "85"
+            "value": "86"
           },
           {
             "rank": 5,
