@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-16T23:49:26.197064+00:00",
+  "lastUpdated": "2026-08-17T03:30:15.501893+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -47,7 +47,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": "142"
+            "value": "143"
           },
           {
             "rank": 2,
@@ -232,7 +232,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": ".621"
+            "value": ".619"
           },
           {
             "rank": 2,
@@ -269,7 +269,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": "1.056"
+            "value": "1.054"
           },
           {
             "rank": 2,
@@ -709,7 +709,7 @@
             "player": "Josh Naylor",
             "team": "Seattle Mariners",
             "position": "1B",
-            "value": "786"
+            "value": "790"
           }
         ],
         "assists": [
@@ -718,7 +718,7 @@
             "player": "Cole Young",
             "team": "Seattle Mariners",
             "position": "2B",
-            "value": "311"
+            "value": "312"
           },
           {
             "rank": 2,
@@ -799,7 +799,7 @@
             "player": "Josh Naylor",
             "team": "Seattle Mariners",
             "position": "1B",
-            "value": "82"
+            "value": "83"
           },
           {
             "rank": 3,
