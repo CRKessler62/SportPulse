@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-17T21:00:15.807197+00:00",
+  "lastUpdated": "2026-08-17T22:55:13.453716+00:00",
   "games": [
     {
       "gamePk": 824414,
@@ -9992,9 +9992,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T22:40:00Z",
       "localGameTime": "2026-08-17T18:40:00-04:00",
-      "status": "Scheduled",
-      "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 138,
         "name": "St. Louis Cardinals",
@@ -10005,8 +10005,8 @@
         "name": "Cincinnati Reds",
         "abbreviation": "CIN"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 1,
       "venue": "Great American Ball Park",
       "awayPitcher": "Andre Pallante",
       "homePitcher": "Rhett Lowder"
@@ -10016,9 +10016,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T22:05:00Z",
       "localGameTime": "2026-08-17T18:05:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 110,
         "name": "Baltimore Orioles",
@@ -10029,8 +10029,8 @@
         "name": "Tampa Bay Rays",
         "abbreviation": "TB"
       },
-      "awayScore": 0,
-      "homeScore": 0,
+      "awayScore": 1,
+      "homeScore": 1,
       "venue": "Tropicana Field",
       "awayPitcher": "Brandon Young",
       "homePitcher": "Shane McClanahan"
@@ -10040,9 +10040,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T22:40:00Z",
       "localGameTime": "2026-08-17T18:40:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 146,
         "name": "Miami Marlins",
@@ -10064,8 +10064,8 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T23:05:00Z",
       "localGameTime": "2026-08-17T19:05:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 116,
@@ -10112,8 +10112,8 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T23:10:00Z",
       "localGameTime": "2026-08-17T19:10:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 135,
@@ -10125,8 +10125,8 @@
         "name": "New York Mets",
         "abbreviation": "NYM"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Citi Field",
       "awayPitcher": "Walker Buehler",
       "homePitcher": "Nolan McLean"
@@ -10197,8 +10197,8 @@
         "name": "Chicago Cubs",
         "abbreviation": "CHC"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Wrigley Field",
       "awayPitcher": "Luis Castillo",
       "homePitcher": "Shota Imanaga"
@@ -10221,8 +10221,8 @@
         "name": "Colorado Rockies",
         "abbreviation": "COL"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Coors Field",
       "awayPitcher": "Blake Snell",
       "homePitcher": "Tomoyuki Sugano"
@@ -10417,7 +10417,7 @@
       "homeScore": null,
       "venue": "Citi Field",
       "awayPitcher": "Robbie Ray",
-      "homePitcher": null
+      "homePitcher": "Zac Thornton"
     },
     {
       "gamePk": 824075,
@@ -10633,7 +10633,7 @@
       "homeScore": null,
       "venue": "Citi Field",
       "awayPitcher": "Michael King",
-      "homePitcher": null
+      "homePitcher": "Robert Stock"
     },
     {
       "gamePk": 823664,
