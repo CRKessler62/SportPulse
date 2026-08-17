@@ -1,0 +1,1251 @@
+name: Update MLB Playoff Odds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  playoff-odds:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Calculate MLB Playoff Projections
+        run: |
+
+          python3 <<'PY'
+
+          import json
+          import os
+          import random
+          import urllib.request
+          from datetime import datetime, timezone
+
+
+          # =========================================
+          # SETTINGS
+          # =========================================
+
+          SEASON = 2026
+
+          SIMULATIONS = 10000
+
+
+          # =========================================
+          # MLB API
+          # =========================================
+
+          def get_api(url):
+
+              request = urllib.request.Request(
+                  url,
+                  headers={
+                      "User-Agent":
+                      "SportPulse/1.0"
+                  }
+              )
+
+              with urllib.request.urlopen(
+                  request,
+                  timeout=60
+              ) as response:
+
+                  return json.load(response)
+
+
+          # =========================================
+          # LOAD STANDINGS
+          # =========================================
+
+          print("")
+          print("==============================")
+          print("LOADING MLB STANDINGS")
+          print("==============================")
+
+
+          standings_url = (
+              "https://statsapi.mlb.com/api/v1/standings"
+              "?leagueId=103,104"
+              "&season=2026"
+              "&standingsTypes=regularSeason"
+          )
+
+
+          standings = get_api(
+              standings_url
+          )
+
+
+          teams = {}
+
+
+          for record in standings.get(
+              "records",
+              []
+          ):
+
+              league_id = record.get(
+                  "league",
+                  {}
+              ).get(
+                  "id"
+              )
+
+
+              division = record.get(
+                  "division",
+                  {}
+              )
+
+
+              division_id = division.get(
+                  "id"
+              )
+
+
+              division_name = division.get(
+                  "nameShort",
+                  ""
+              )
+
+
+              for item in record.get(
+                  "teamRecords",
+                  []
+              ):
+
+                  team = item.get(
+                      "team",
+                      {}
+                  )
+
+
+                  team_id = team.get(
+                      "id"
+                  )
+
+
+                  if not team_id:
+                      continue
+
+
+                  wins = int(
+                      item.get(
+                          "wins",
+                          0
+                      )
+                  )
+
+
+                  losses = int(
+                      item.get(
+                          "losses",
+                          0
+                      )
+                  )
+
+
+                  games_played = (
+                      wins + losses
+                  )
+
+
+                  if games_played > 0:
+
+                      win_pct = (
+                          wins /
+                          games_played
+                      )
+
+                  else:
+
+                      win_pct = 0.500
+
+
+                  teams[team_id] = {
+
+                      "id":
+                          team_id,
+
+                      "name":
+                          team.get(
+                              "name",
+                              "Unknown"
+                          ),
+
+                      "leagueId":
+                          league_id,
+
+                      "divisionId":
+                          division_id,
+
+                      "division":
+                          division_name,
+
+                      "wins":
+                          wins,
+
+                      "losses":
+                          losses,
+
+                      "winPct":
+                          win_pct,
+
+                      "remaining":
+                          0
+
+                  }
+
+
+          print(
+              "Teams loaded:",
+              len(teams)
+          )
+
+
+          if len(teams) != 30:
+
+              raise RuntimeError(
+                  "Expected 30 MLB teams."
+              )
+
+
+          # =========================================
+          # LOAD REMAINING SCHEDULE
+          # =========================================
+
+          today = datetime.now(
+              timezone.utc
+          ).strftime(
+              "%Y-%m-%d"
+          )
+
+
+          print("")
+          print(
+              "Loading remaining schedule..."
+          )
+
+
+          schedule_url = (
+              "https://statsapi.mlb.com/api/v1/schedule"
+              "?sportId=1"
+              "&startDate="
+              + today
+              + "&endDate=2026-10-04"
+              "&gameTypes=R"
+              "&limit=1000"
+          )
+
+
+          schedule = get_api(
+              schedule_url
+          )
+
+
+          remaining_games = []
+
+
+          for date in schedule.get(
+              "dates",
+              []
+          ):
+
+              for game in date.get(
+                  "games",
+                  []
+              ):
+
+                  status = game.get(
+                      "status",
+                      {}
+                  )
+
+
+                  state = status.get(
+                      "abstractGameState",
+                      ""
+                  )
+
+
+                  # Final games are already included
+                  # in the current standings.
+
+                  if state == "Final":
+
+                      continue
+
+
+                  game_teams = game.get(
+                      "teams",
+                      {}
+                  )
+
+
+                  away = (
+                      game_teams
+                      .get(
+                          "away",
+                          {}
+                      )
+                      .get(
+                          "team",
+                          {}
+                      )
+                      .get(
+                          "id"
+                      )
+                  )
+
+
+                  home = (
+                      game_teams
+                      .get(
+                          "home",
+                          {}
+                      )
+                      .get(
+                          "team",
+                          {}
+                      )
+                      .get(
+                          "id"
+                      )
+                  )
+
+
+                  if (
+                      away not in teams
+                      or
+                      home not in teams
+                  ):
+
+                      continue
+
+
+                  remaining_games.append({
+
+                      "away":
+                          away,
+
+                      "home":
+                          home
+
+                  })
+
+
+                  teams[away][
+                      "remaining"
+                  ] += 1
+
+
+                  teams[home][
+                      "remaining"
+                  ] += 1
+
+
+          print(
+              "Remaining games:",
+              len(remaining_games)
+          )
+
+
+          # =========================================
+          # WIN PROBABILITY
+          # =========================================
+
+          def home_win_probability(
+              away_id,
+              home_id
+          ):
+
+              away_pct = teams[
+                  away_id
+              ][
+                  "winPct"
+              ]
+
+
+              home_pct = teams[
+                  home_id
+              ][
+                  "winPct"
+              ]
+
+
+              # Difference in team quality.
+
+              difference = (
+                  home_pct -
+                  away_pct
+              )
+
+
+              probability = (
+                  0.500
+                  +
+                  (
+                      difference *
+                      0.85
+                  )
+                  +
+                  0.025
+              )
+
+
+              # Keep probabilities realistic.
+
+              if probability < 0.20:
+
+                  probability = 0.20
+
+
+              if probability > 0.80:
+
+                  probability = 0.80
+
+
+              return probability
+
+
+          # =========================================
+          # RESULT COUNTERS
+          # =========================================
+
+          playoff_count = {
+
+              team_id: 0
+
+              for team_id in teams
+
+          }
+
+
+          division_count = {
+
+              team_id: 0
+
+              for team_id in teams
+
+          }
+
+
+          wildcard_count = {
+
+              team_id: 0
+
+              for team_id in teams
+
+          }
+
+
+          projected_wins = {
+
+              team_id: []
+
+              for team_id in teams
+
+          }
+
+
+          playoff_cutoffs = {
+
+              103: [],
+
+              104: []
+
+          }
+
+
+          # =========================================
+          # SIMULATE SEASONS
+          # =========================================
+
+          print("")
+          print("==============================")
+          print(
+              "RUNNING",
+              SIMULATIONS,
+              "SIMULATIONS"
+          )
+          print("==============================")
+
+
+          for simulation in range(
+              SIMULATIONS
+          ):
+
+              # Start with current records.
+
+              wins = {
+
+                  team_id:
+                      team["wins"]
+
+                  for team_id, team
+                  in teams.items()
+
+              }
+
+
+              # -------------------------------------
+              # SIMULATE EVERY REMAINING GAME
+              # -------------------------------------
+
+              for game in remaining_games:
+
+                  away =
+                      game["away"]
+
+                  home =
+                      game["home"]
+
+
+                  probability =
+                      home_win_probability(
+                          away,
+                          home
+                      )
+
+
+                  if (
+                      random.random()
+                      <
+                      probability
+                  ):
+
+                      wins[home] += 1
+
+                  else:
+
+                      wins[away] += 1
+
+
+              # -------------------------------------
+              # DIVISION WINNERS
+              # -------------------------------------
+
+              division_winners = set()
+
+
+              division_ids = set(
+
+                  team["divisionId"]
+
+                  for team in teams.values()
+
+              )
+
+
+              for division_id in division_ids:
+
+                  division_teams = [
+
+                      team_id
+
+                      for team_id, team
+                      in teams.items()
+
+                      if (
+                          team[
+                              "divisionId"
+                          ]
+                          ==
+                          division_id
+                      )
+
+                  ]
+
+
+                  # Random tie-breaker.
+
+                  division_teams.sort(
+
+                      key=lambda team_id: (
+                          wins[team_id],
+                          random.random()
+                      ),
+
+                      reverse=True
+
+                  )
+
+
+                  winner =
+                      division_teams[0]
+
+
+                  division_winners.add(
+                      winner
+                  )
+
+
+                  division_count[
+                      winner
+                  ] += 1
+
+
+              # -------------------------------------
+              # WILD CARD TEAMS
+              # -------------------------------------
+
+              playoff_teams = set(
+                  division_winners
+              )
+
+
+              for league_id in [
+                  103,
+                  104
+              ]:
+
+                  league_teams = [
+
+                      team_id
+
+                      for team_id, team
+                      in teams.items()
+
+                      if (
+                          team[
+                              "leagueId"
+                          ]
+                          ==
+                          league_id
+
+                          and
+
+                          team_id
+                          not in
+                          division_winners
+                      )
+
+                  ]
+
+
+                  league_teams.sort(
+
+                      key=lambda team_id: (
+                          wins[team_id],
+                          random.random()
+                      ),
+
+                      reverse=True
+
+                  )
+
+
+                  wild_cards =
+                      league_teams[:3]
+
+
+                  for team_id in wild_cards:
+
+                      playoff_teams.add(
+                          team_id
+                      )
+
+                      wildcard_count[
+                          team_id
+                      ] += 1
+
+
+                  # ---------------------------------
+                  # PLAYOFF CUTOFF
+                  # ---------------------------------
+
+                  playoff_wins = [
+
+                      wins[team_id]
+
+                      for team_id
+                      in playoff_teams
+
+                      if (
+                          teams[
+                              team_id
+                          ][
+                              "leagueId"
+                          ]
+                          ==
+                          league_id
+                      )
+
+                  ]
+
+
+                  if len(
+                      playoff_wins
+                  ) == 6:
+
+                      playoff_wins.sort()
+
+
+                      playoff_cutoffs[
+                          league_id
+                      ].append(
+                          playoff_wins[0]
+                      )
+
+
+              # -------------------------------------
+              # PLAYOFF COUNTS
+              # -------------------------------------
+
+              for team_id in playoff_teams:
+
+                  playoff_count[
+                      team_id
+                  ] += 1
+
+
+              # -------------------------------------
+              # SAVE PROJECTED WINS
+              # -------------------------------------
+
+              for team_id in teams:
+
+                  projected_wins[
+                      team_id
+                  ].append(
+                      wins[team_id]
+                  )
+
+
+              if (
+                  simulation > 0
+                  and
+                  simulation % 1000 == 0
+              ):
+
+                  print(
+                      "Completed:",
+                      simulation
+                  )
+
+
+          # =========================================
+          # MEDIAN
+          # =========================================
+
+          def median(values):
+
+              if not values:
+
+                  return 0
+
+
+              values =
+                  sorted(values)
+
+
+              middle =
+                  len(values) // 2
+
+
+              if (
+                  len(values) % 2
+                  == 1
+              ):
+
+                  return values[
+                      middle
+                  ]
+
+
+              return (
+
+                  values[
+                      middle - 1
+                  ]
+
+                  +
+
+                  values[
+                      middle
+                  ]
+
+              ) / 2
+
+
+          # =========================================
+          # PLAYOFF LINES
+          # =========================================
+
+          al_cutoff = int(
+              round(
+                  median(
+                      playoff_cutoffs[
+                          103
+                      ]
+                  )
+              )
+          )
+
+
+          nl_cutoff = int(
+              round(
+                  median(
+                      playoff_cutoffs[
+                          104
+                      ]
+                  )
+              )
+          )
+
+
+          print("")
+          print("==============================")
+          print(
+              "PROJECTED AL PLAYOFF LINE:",
+              al_cutoff
+          )
+          print(
+              "PROJECTED NL PLAYOFF LINE:",
+              nl_cutoff
+          )
+          print("==============================")
+
+
+          # =========================================
+          # BUILD OUTPUT
+          # =========================================
+
+          results = []
+
+
+          for team_id, team in teams.items():
+
+              playoff_pct = (
+
+                  playoff_count[
+                      team_id
+                  ]
+
+                  /
+
+                  SIMULATIONS
+
+                  *
+
+                  100
+
+              )
+
+
+              division_pct = (
+
+                  division_count[
+                      team_id
+                  ]
+
+                  /
+
+                  SIMULATIONS
+
+                  *
+
+                  100
+
+              )
+
+
+              wildcard_pct = (
+
+                  wildcard_count[
+                      team_id
+                  ]
+
+                  /
+
+                  SIMULATIONS
+
+                  *
+
+                  100
+
+              )
+
+
+              miss_pct = (
+                  100 -
+                  playoff_pct
+              )
+
+
+              average_wins = (
+
+                  sum(
+                      projected_wins[
+                          team_id
+                      ]
+                  )
+
+                  /
+
+                  SIMULATIONS
+
+              )
+
+
+              average_wins = round(
+                  average_wins,
+                  1
+              )
+
+
+              if team[
+                  "leagueId"
+              ] == 103:
+
+                  playoff_target =
+                      al_cutoff
+
+              else:
+
+                  playoff_target =
+                      nl_cutoff
+
+
+              wins_needed = max(
+
+                  0,
+
+                  playoff_target
+                  -
+                  team[
+                      "wins"
+                  ]
+
+              )
+
+
+              # =====================================
+              # STATUS
+              # =====================================
+
+              if playoff_pct >= 90:
+
+                  status =
+                      "Very strong position"
+
+
+              elif playoff_pct >= 75:
+
+                  status =
+                      "Strong position"
+
+
+              elif playoff_pct >= 50:
+
+                  status =
+                      "In the hunt"
+
+
+              elif playoff_pct >= 25:
+
+                  status =
+                      "Bubble team"
+
+
+              elif playoff_pct >= 5:
+
+                  status =
+                      "Long shot"
+
+
+              else:
+
+                  status =
+                      "Very unlikely"
+
+
+              # =====================================
+              # WHAT THEY NEED
+              # =====================================
+
+              if playoff_pct >= 90:
+
+                  what_they_need = (
+
+                      "They are in excellent position. "
+                      "Maintaining their current pace "
+                      "should keep them in the playoffs."
+
+                  )
+
+
+              elif wins_needed == 0:
+
+                  what_they_need = (
+
+                      "They are currently at or above "
+                      "the projected playoff win line. "
+                      "The priority is maintaining their position."
+
+                  )
+
+
+              elif team[
+                  "remaining"
+              ] <= wins_needed:
+
+                  what_they_need = (
+
+                      "They need to win nearly every "
+                      "remaining game to reach the "
+                      "projected playoff line."
+
+                  )
+
+
+              else:
+
+                  what_they_need = (
+
+                      "They need approximately "
+
+                      +
+                      str(
+                          wins_needed
+                      )
+
+                      +
+
+                      " more wins to reach the "
+                      "current projected playoff line."
+
+                  )
+
+
+              results.append({
+
+                  "teamId":
+                      team_id,
+
+                  "team":
+                      team[
+                          "name"
+                      ],
+
+                  "league":
+                      (
+                          "AL"
+
+                          if
+                          team[
+                              "leagueId"
+                          ]
+                          ==
+                          103
+
+                          else
+
+                          "NL"
+                      ),
+
+                  "division":
+                      team[
+                          "division"
+                      ],
+
+                  "wins":
+                      team[
+                          "wins"
+                      ],
+
+                  "losses":
+                      team[
+                          "losses"
+                      ],
+
+                  "gamesRemaining":
+                      team[
+                          "remaining"
+                      ],
+
+                  "playoffProbability":
+                      round(
+                          playoff_pct,
+                          1
+                      ),
+
+                  "divisionProbability":
+                      round(
+                          division_pct,
+                          1
+                      ),
+
+                  "wildCardProbability":
+                      round(
+                          wildcard_pct,
+                          1
+                      ),
+
+                  "missProbability":
+                      round(
+                          miss_pct,
+                          1
+                      ),
+
+                  "projectedWins":
+                      average_wins,
+
+                  "projectedPlayoffTarget":
+                      playoff_target,
+
+                  "winsNeeded":
+                      wins_needed,
+
+                  "status":
+                      status,
+
+                  "whatTheyNeed":
+                      what_they_need
+
+              })
+
+
+          # =========================================
+          # SORT
+          # =========================================
+
+          results.sort(
+
+              key=lambda team: (
+                  team[
+                      "league"
+                  ],
+
+                  -team[
+                      "playoffProbability"
+                  ]
+
+              )
+
+          )
+
+
+          # =========================================
+          # OUTPUT
+          # =========================================
+
+          output = {
+
+              "season":
+                  SEASON,
+
+              "lastUpdated":
+                  datetime.now(
+                      timezone.utc
+                  ).isoformat(),
+
+              "simulationCount":
+                  SIMULATIONS,
+
+              "method":
+                  "SportPulse Monte Carlo simulation of the remaining MLB schedule using current team winning percentage and home-field advantage.",
+
+              "note":
+                  "SportPulse projections are estimates and are not official MLB playoff odds.",
+
+              "playoffTargets": {
+
+                  "AL":
+                      al_cutoff,
+
+                  "NL":
+                      nl_cutoff
+
+              },
+
+              "teams":
+                  results
+
+          }
+
+
+          # =========================================
+          # WRITE FILE
+          # =========================================
+
+          os.makedirs(
+              "data",
+              exist_ok=True
+          )
+
+
+          with open(
+              "data/playoff_odds.json",
+              "w",
+              encoding="utf-8"
+          ) as file:
+
+              json.dump(
+                  output,
+                  file,
+                  indent=2
+              )
+
+
+          # =========================================
+          # VALIDATION
+          # =========================================
+
+          if len(results) != 30:
+
+              raise RuntimeError(
+                  "Expected 30 teams."
+              )
+
+
+          print("")
+          print("==============================")
+          print("PLAYOFF PROJECTIONS COMPLETE")
+          print("==============================")
+          print(
+              "Simulations:",
+              SIMULATIONS
+          )
+          print(
+              "Teams:",
+              len(results)
+          )
+          print(
+              "AL playoff line:",
+              al_cutoff
+          )
+          print(
+              "NL playoff line:",
+              nl_cutoff
+          )
+          print("==============================")
+
+
+          PY
+
+
+      - name: Save data
+        run: |
+
+          git config user.name "SportPulse Bot"
+
+          git config user.email "sportpulse-bot@users.noreply.github.com"
+
+          git add data/playoff_odds.json
+
+          git diff --cached --quiet || \
+            git commit -m "Update MLB playoff projections"
+
+          git pull --rebase origin main
+
+          git push origin main
