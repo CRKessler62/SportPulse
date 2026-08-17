@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-17T14:58:22.950814+00:00",
+  "lastUpdated": "2026-08-17T15:55:01.114270+00:00",
   "games": [
     {
       "gamePk": 824414,
@@ -10105,7 +10105,7 @@
       "homeScore": null,
       "venue": "Fenway Park",
       "awayPitcher": "Mitch Bratt",
-      "homePitcher": null
+      "homePitcher": "Alec Gamboa"
     },
     {
       "gamePk": 823589,
@@ -10561,7 +10561,7 @@
       "homeScore": null,
       "venue": "Daikin Park",
       "awayPitcher": "George Klassen",
-      "homePitcher": null
+      "homePitcher": "Cristian Javier"
     },
     {
       "gamePk": 824319,
