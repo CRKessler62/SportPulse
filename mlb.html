@@ -1,0 +1,4438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Sports 20/20 MLB</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #08101f;
+    color: white;
+    padding: 22px 16px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 4px 18px rgba(0,0,0,.15);
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.logo span {
+    color: #3b82f6;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    background: #18243a;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #08101f,
+        #172a4b
+    );
+
+    color: white;
+    text-align: center;
+    padding: 40px 18px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 0 0 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 24px 14px 60px;
+}
+
+.updated {
+    background: white;
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.06);
+}
+
+.live-data {
+    color: #16a34a;
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+/* =========================
+   MAIN TABS
+========================= */
+
+.main-tabs {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 8px;
+
+    background: white;
+    padding: 8px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.07);
+
+    margin-bottom: 28px;
+
+    position: sticky;
+    top: 88px;
+
+    z-index: 15;
+}
+
+.main-tab {
+    border: none;
+    background: #e5e7eb;
+    color: #374151;
+
+    border-radius: 12px;
+
+    padding: 15px 8px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.main-tab.active {
+    background: #2563eb;
+    color: white;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.section-title {
+    font-size: 30px;
+    margin: 30px 0 16px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.07);
+
+    margin-bottom: 18px;
+}
+
+.no-games {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.calendar-controls button,
+.today-button,
+.small-button {
+    border: none;
+    border-radius: 11px;
+    padding: 12px 16px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.calendar-controls button {
+    background: #111827;
+    color: white;
+}
+
+.today-button {
+    background: #2563eb;
+    color: white;
+
+    display: block;
+
+    margin: 0 auto 20px;
+}
+
+.selected-date {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+/* =========================
+   GAMES
+========================= */
+
+.games {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(300px,1fr)
+        );
+
+    gap: 18px;
+}
+
+.game-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.07);
+}
+
+.status {
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.status.live {
+    color: #dc2626;
+}
+
+.status.final {
+    color: #16a34a;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    padding: 7px 0;
+}
+
+.score {
+    font-size: 27px;
+}
+
+.live-box {
+    background: #f3f4f6;
+    border-radius: 14px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.live-row {
+    padding: 6px 0;
+}
+
+.live-label {
+    color: #6b7280;
+    font-weight: 900;
+}
+
+.bases {
+    display: flex;
+    gap: 14px;
+    margin: 14px 0 4px 6px;
+}
+
+.base {
+    width: 21px;
+    height: 21px;
+
+    border: 3px solid #9ca3af;
+
+    transform: rotate(45deg);
+
+    background: white;
+}
+
+.base.occupied {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.final-decisions {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.final-title {
+    font-weight: 900;
+    margin-bottom: 7px;
+}
+
+.decision {
+    padding: 4px 0;
+}
+
+.decision-label {
+    font-weight: 900;
+}
+
+.game-details {
+    border-top: 1px solid #e5e7eb;
+
+    margin-top: 16px;
+
+    padding-top: 14px;
+
+    color: #6b7280;
+}
+
+.view-game {
+    display: block;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    margin-top: 16px;
+
+    font-weight: 900;
+}
+
+/* =========================
+   STANDINGS
+========================= */
+
+.division,
+.wildcard {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.07);
+}
+
+.division h3,
+.wildcard h3 {
+    margin: 0;
+
+    color: white;
+
+    padding: 17px;
+
+    font-size: 21px;
+}
+
+.division h3 {
+    background: #111827;
+}
+
+.wildcard h3 {
+    background: #2563eb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #e5e7eb;
+
+    padding: 11px 7px;
+
+    font-size: 13px;
+}
+
+td {
+    padding: 11px 7px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    text-align: center;
+}
+
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+
+.team-name {
+    font-weight: 900;
+}
+
+/* =========================
+   SUB TABS
+========================= */
+
+.subtabs {
+    display: flex;
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 18px;
+}
+
+.subtab {
+    border: none;
+
+    border-radius: 11px;
+
+    padding: 11px 15px;
+
+    background: #e5e7eb;
+
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.subtab.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* =========================
+   LEADERS
+========================= */
+
+.leader-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px,1fr)
+        );
+
+    gap: 16px;
+}
+
+.leader-category {
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+.leader-category h3 {
+    margin: 0;
+
+    padding: 14px;
+
+    background: #111827;
+
+    color: white;
+}
+
+.leader-row {
+    display: grid;
+
+    grid-template-columns:
+        32px 1fr auto;
+
+    gap: 8px;
+
+    align-items: center;
+
+    padding: 11px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+.leader-rank {
+    font-weight: 900;
+    color: #6b7280;
+}
+
+.leader-player {
+    font-weight: 900;
+}
+
+.leader-team {
+    display: block;
+
+    font-size: 12px;
+
+    color: #6b7280;
+
+    margin-top: 3px;
+}
+
+.leader-value {
+    font-weight: 900;
+}
+
+.league-badge {
+    display: inline-flex;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 10px;
+
+    margin-right: 7px;
+}
+
+.al-badge {
+    background: #2563eb;
+}
+
+.nl-badge {
+    background: #dc2626;
+}
+
+/* =========================
+   20/20
+========================= */
+
+.twenty-header {
+    background:
+        linear-gradient(
+            135deg,
+            #08101f,
+            #1d4ed8
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+}
+
+.twenty-header h2 {
+    margin-top: 0;
+}
+
+.team-select {
+    width: 100%;
+
+    padding: 14px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 11px;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    background: white;
+}
+
+.view-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px,1fr)
+        );
+
+    gap: 16px;
+}
+
+.metric {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.06);
+}
+
+.metric-label {
+    color: #6b7280;
+
+    font-weight: 800;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+}
+
+.metric-value {
+    font-size: 31px;
+
+    font-weight: 900;
+
+    margin-top: 6px;
+}
+
+.metric-note {
+    color: #6b7280;
+
+    margin-top: 6px;
+
+    font-size: 13px;
+}
+
+.score-ring {
+    font-size: 46px;
+
+    font-weight: 900;
+
+    text-align: center;
+
+    padding: 12px;
+}
+
+.good {
+    color: #16a34a;
+}
+
+.warn {
+    color: #d97706;
+}
+
+.bad {
+    color: #dc2626;
+}
+
+.insight {
+    border-left:
+        5px solid #2563eb;
+
+    background: #eff6ff;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    margin: 12px 0;
+
+    line-height: 1.5;
+}
+
+.insight.warning {
+    border-left-color: #d97706;
+    background: #fffbeb;
+}
+
+.insight.success {
+    border-left-color: #16a34a;
+    background: #f0fdf4;
+}
+
+.what-if-controls {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+}
+
+.what-if-controls input {
+    width: 100%;
+
+    padding: 12px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+.sim-result {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    margin-top: 16px;
+}
+
+.sim-result strong {
+    color: #93c5fd;
+}
+
+.matter-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap: 14px;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    padding: 15px 0;
+}
+
+.matter-row:last-child {
+    border-bottom: none;
+}
+
+.matter-title {
+    font-weight: 900;
+}
+
+.matter-note {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+.importance {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 10px;
+
+    padding: 8px 10px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+.note {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+/* =========================
+   PLAYOFF
+========================= */
+
+.playoff-team {
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 17px;
+
+    margin-bottom: 14px;
+}
+
+.playoff-team-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.playoff-team-name {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.playoff-record {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+.playoff-percent {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.playoff-status {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 7px 10px;
+
+    border-radius: 9px;
+
+    background: #f3f4f6;
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+.probability-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap: 8px;
+
+    margin-top: 13px;
+}
+
+.probability-label {
+    color: #6b7280;
+}
+
+.probability-value {
+    font-weight: 900;
+}
+
+.progress {
+    grid-column: 1 / -1;
+
+    height: 8px;
+
+    background: #e5e7eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+}
+
+.what-needed {
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+    padding: 13px;
+
+    margin-top: 13px;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #08101f;
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .main-tabs {
+        grid-template-columns:
+            repeat(2,1fr);
+
+        top: 76px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .calendar-controls {
+        flex-wrap: wrap;
+    }
+
+    .selected-date {
+        width: 100%;
+        flex-basis: 100%;
+        order: -1;
+    }
+
+    .what-if-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .matter-row {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<div class="logo">
+Sports <span>20/20</span>
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="mlb.html">⚾ MLB</a>
+
+<a href="nfl.html">🏈 NFL</a>
+
+<a href="nba.html">🏀 NBA</a>
+
+<a href="nhl.html">🏒 NHL</a>
+
+<a href="mls.html">⚽ MLS</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+⚾ MLB
+</h1>
+
+<p>
+Scores. Standings. Stats. Context.
+See what matters next.
+</p>
+
+</section>
+
+
+<main class="container">
+
+
+<div class="updated">
+
+<span class="live-data">
+● LIVE DATA
+</span>
+
+<span id="updated">
+Loading...
+</span>
+
+</div>
+
+
+<!-- =========================
+     MAIN TABS
+========================= -->
+
+<div class="main-tabs">
+
+<button
+class="main-tab active"
+onclick="openTab('live',this)">
+🔴 Live Games
+</button>
+
+<button
+class="main-tab"
+onclick="openTab('standings',this)">
+📊 Standings
+</button>
+
+<button
+class="main-tab"
+onclick="openTab('stats',this)">
+📈 Stats
+</button>
+
+<button
+class="main-tab"
+onclick="openTab('twenty',this)">
+👁️ 20/20 View
+</button>
+
+</div>
+
+
+
+<!-- =========================
+     LIVE GAMES
+========================= -->
+
+<section
+id="live"
+class="tab-panel active">
+
+<h2 class="section-title">
+🔴 MLB Live Games & Schedule
+</h2>
+
+<div class="card">
+
+<div class="calendar-controls">
+
+<button onclick="previousDay()">
+← Previous
+</button>
+
+<div
+id="selectedDate"
+class="selected-date">
+Loading...
+</div>
+
+<button onclick="nextDay()">
+Next →
+</button>
+
+</div>
+
+
+<button
+class="today-button"
+onclick="today()">
+
+Today
+
+</button>
+
+
+<div
+id="schedule"
+class="games">
+
+<div class="no-games">
+Loading MLB schedule...
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STANDINGS
+========================= -->
+
+<section
+id="standings"
+class="tab-panel">
+
+<h2 class="section-title">
+📊 Division Standings
+</h2>
+
+<div id="divisions">
+
+<div class="no-games">
+Loading standings...
+</div>
+
+</div>
+
+
+<h2 class="section-title">
+🃏 Wild Card Races
+</h2>
+
+<div id="wildCards">
+
+<div class="no-games">
+Loading Wild Card standings...
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section
+id="stats"
+class="tab-panel">
+
+<h2 class="section-title">
+📈 MLB Stats & Leaders
+</h2>
+
+<div class="card">
+
+
+<div class="subtabs">
+
+<button
+id="alButton"
+class="subtab active"
+onclick="showLeague('AL')">
+
+<span class="league-badge al-badge">
+AL
+</span>
+
+American League
+
+</button>
+
+
+<button
+id="nlButton"
+class="subtab"
+onclick="showLeague('NL')">
+
+<span class="league-badge nl-badge">
+NL
+</span>
+
+National League
+
+</button>
+
+</div>
+
+
+
+<div class="subtabs">
+
+<button
+id="offenseButton"
+class="subtab active"
+onclick="showLeaders('offense')">
+
+🏏 Offense
+
+</button>
+
+
+<button
+id="pitchingButton"
+class="subtab"
+onclick="showLeaders('pitching')">
+
+🎯 Pitching
+
+</button>
+
+
+<button
+id="defenseButton"
+class="subtab"
+onclick="showLeaders('defense')">
+
+🧤 Defense
+
+</button>
+
+</div>
+
+
+
+<div
+id="leaders"
+class="leader-grid">
+
+<div class="no-games">
+Loading MLB leaders...
+</div>
+
+</div>
+
+
+<div
+id="leadersUpdated"
+class="note">
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     20/20 VIEW
+========================= -->
+
+<section
+id="twenty"
+class="tab-panel">
+
+
+<div class="twenty-header">
+
+<h2>
+👁️ Sports 20/20 View
+</h2>
+
+<p>
+This is where Sports 20/20 goes beyond
+scores and standings.
+</p>
+
+<select
+id="teamSelect"
+class="team-select"
+onchange="renderTwentyView()">
+
+<option value="">
+Select a team...
+</option>
+
+</select>
+
+</div>
+
+
+
+<!-- TEAM OVERVIEW -->
+
+<div id="twentyDashboard">
+
+<div class="no-games">
+Select a team to see its 20/20 outlook.
+</div>
+
+</div>
+
+
+
+<!-- PLAYOFF PICTURE -->
+
+<h2 class="section-title">
+🏆 Playoff Picture
+</h2>
+
+<div class="card">
+
+
+<div class="subtabs">
+
+<button
+id="playoffAL"
+class="subtab active"
+onclick="showPlayoffLeague('AL')">
+
+🇺🇸 AL
+
+</button>
+
+
+<button
+id="playoffNL"
+class="subtab"
+onclick="showPlayoffLeague('NL')">
+
+🇺🇸 NL
+
+</button>
+
+</div>
+
+
+<div
+id="playoffPicture">
+
+<div class="no-games">
+Loading playoff projections...
+</div>
+
+</div>
+
+
+<p class="note">
+
+Playoff probabilities come from your
+playoff projection data. Sports 20/20
+adds context around those numbers.
+
+</p>
+
+</div>
+
+
+
+<!-- GAMES THAT MATTER -->
+
+<h2 class="section-title">
+🔥 Games That Matter
+</h2>
+
+<div class="card">
+
+<div
+id="gamesThatMatter">
+
+<div class="no-games">
+Loading games that matter...
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WHAT IF -->
+
+<h2 class="section-title">
+❓ What If?
+</h2>
+
+<div class="card">
+
+<p>
+
+Change the team's expected record over
+its next 10 games and see how its season
+pace changes.
+
+</p>
+
+
+<div class="what-if-controls">
+
+<div>
+
+<label>
+<strong>
+Expected wins
+</strong>
+</label>
+
+<input
+id="simWins"
+type="number"
+min="0"
+max="10"
+value="6">
+
+</div>
+
+
+<div>
+
+<label>
+<strong>
+Expected losses
+</strong>
+</label>
+
+<input
+id="simLosses"
+type="number"
+min="0"
+max="10"
+value="4">
+
+</div>
+
+</div>
+
+
+<button
+class="small-button"
+style="margin-top:14px;background:#2563eb;color:white"
+onclick="runWhatIf()">
+
+Run What-If
+
+</button>
+
+
+<div id="simResult">
+</div>
+
+</div>
+
+
+
+<!-- ROOT FOR -->
+
+<h2 class="section-title">
+👥 Who Should I Root For?
+</h2>
+
+<div class="card">
+
+<div id="rootFor">
+
+<div class="no-games">
+Select a team above.
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- HISTORICAL -->
+
+<h2 class="section-title">
+📜 Historical Perspective
+</h2>
+
+<div class="card">
+
+<div id="historical">
+
+<div class="no-games">
+Select a team above.
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- FUTURE FEATURES -->
+
+<h2 class="section-title">
+🚀 What's Coming
+</h2>
+
+<div class="card">
+
+<div class="insight">
+
+<strong>
+20/20 Team Score
+</strong>
+
+<br>
+
+A single score combining playoff position,
+performance, schedule and postseason outlook.
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Strength of Schedule
+</strong>
+
+<br>
+
+Who has the easiest and hardest road
+remaining?
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Path to October
+</strong>
+
+<br>
+
+Show fans exactly what their team needs
+to accomplish to reach the postseason.
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Scenario Simulator
+</strong>
+
+<br>
+
+"What happens if the Yankees go 7-3
+and Boston goes 4-6?"
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Games That Matter
+</strong>
+
+<br>
+
+Automatically identify the games that
+could materially change the playoff race.
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Fan Mode
+</strong>
+
+<br>
+
+Select your favorite team and Sports 20/20
+automatically explains what matters to you.
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<footer class="footer">
+
+<strong>
+Sports 20/20
+</strong>
+
+<br><br>
+
+Know where your team stands.
+Know what matters next.
+
+</footer>
+
+
+
+<script>
+
+/* =========================================
+   TEAM DATABASE
+========================================= */
+
+const TEAM_INFO = {
+
+110:{name:"Baltimore Orioles",league:"AL",division:"AL East"},
+111:{name:"Boston Red Sox",league:"AL",division:"AL East"},
+147:{name:"New York Yankees",league:"AL",division:"AL East"},
+139:{name:"Tampa Bay Rays",league:"AL",division:"AL East"},
+141:{name:"Toronto Blue Jays",league:"AL",division:"AL East"},
+
+145:{name:"Chicago White Sox",league:"AL",division:"AL Central"},
+114:{name:"Cleveland Guardians",league:"AL",division:"AL Central"},
+116:{name:"Detroit Tigers",league:"AL",division:"AL Central"},
+118:{name:"Kansas City Royals",league:"AL",division:"AL Central"},
+142:{name:"Minnesota Twins",league:"AL",division:"AL Central"},
+
+117:{name:"Houston Astros",league:"AL",division:"AL West"},
+108:{name:"Los Angeles Angels",league:"AL",division:"AL West"},
+133:{name:"Athletics",league:"AL",division:"AL West"},
+136:{name:"Seattle Mariners",league:"AL",division:"AL West"},
+140:{name:"Texas Rangers",league:"AL",division:"AL West"},
+
+144:{name:"Atlanta Braves",league:"NL",division:"NL East"},
+146:{name:"Miami Marlins",league:"NL",division:"NL East"},
+121:{name:"New York Mets",league:"NL",division:"NL East"},
+143:{name:"Philadelphia Phillies",league:"NL",division:"NL East"},
+120:{name:"Washington Nationals",league:"NL",division:"NL East"},
+
+158:{name:"Milwaukee Brewers",league:"NL",division:"NL Central"},
+112:{name:"Chicago Cubs",league:"NL",division:"NL Central"},
+113:{name:"Cincinnati Reds",league:"NL",division:"NL Central"},
+134:{name:"Pittsburgh Pirates",league:"NL",division:"NL Central"},
+138:{name:"St. Louis Cardinals",league:"NL",division:"NL Central"},
+
+109:{name:"Arizona Diamondbacks",league:"NL",division:"NL West"},
+115:{name:"Colorado Rockies",league:"NL",division:"NL West"},
+119:{name:"Los Angeles Dodgers",league:"NL",division:"NL West"},
+135:{name:"San Diego Padres",league:"NL",division:"NL West"},
+137:{name:"San Francisco Giants",league:"NL",division:"NL West"}
+
+};
+
+
+const DIVISIONS = [
+
+"AL East",
+"AL Central",
+"AL West",
+"NL East",
+"NL Central",
+"NL West"
+
+];
+
+
+const LEADER_NAMES = {
+
+offense: {
+
+battingAverage:"Batting Average",
+hits:"Hits",
+homeRuns:"Home Runs",
+rbi:"RBI",
+runs:"Runs",
+obp:"On-Base Percentage",
+slg:"Slugging Percentage",
+ops:"OPS",
+stolenBases:"Stolen Bases",
+doubles:"Doubles",
+triples:"Triples"
+
+},
+
+pitching: {
+
+era:"ERA",
+wins:"Wins",
+strikeouts:"Strikeouts",
+whip:"WHIP",
+saves:"Saves",
+innings:"Innings Pitched",
+qualityStarts:"Quality Starts"
+
+},
+
+defense: {
+
+fieldingPercentage:"Fielding Percentage",
+putouts:"Putouts",
+assists:"Assists",
+errors:"Errors",
+doublePlays:"Double Plays"
+
+}
+
+};
+
+
+
+let selectedDate =
+new Date();
+
+let leadersData = null;
+
+let playoffData = null;
+
+let standingsTeams = [];
+
+let currentLeague = "AL";
+
+let currentLeaderGroup = "offense";
+
+let currentPlayoffLeague = "AL";
+
+
+/* =========================================
+   TABS
+========================================= */
+
+function openTab(id, button) {
+
+    document
+    .querySelectorAll(".tab-panel")
+    .forEach(panel =>
+        panel.classList.remove("active")
+    );
+
+    document
+    .querySelectorAll(".main-tab")
+    .forEach(tab =>
+        tab.classList.remove("active")
+    );
+
+    document
+    .getElementById(id)
+    .classList.add("active");
+
+    button.classList.add("active");
+
+    if (id === "twenty") {
+
+        populateTeamSelect();
+
+        renderTwentyView();
+
+        renderGamesThatMatter();
+
+    }
+
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+function dateString(date) {
+
+    return `${date.getFullYear()}-${String(
+        date.getMonth()+1
+    ).padStart(2,"0")}-${String(
+        date.getDate()
+    ).padStart(2,"0")}`;
+
+}
+
+
+function displayDate(date) {
+
+    return date.toLocaleDateString(
+        "en-US",
+        {
+            weekday:"long",
+            month:"long",
+            day:"numeric",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+function previousDay() {
+
+    selectedDate.setDate(
+        selectedDate.getDate()-1
+    );
+
+    renderSchedule();
+
+}
+
+
+function nextDay() {
+
+    selectedDate.setDate(
+        selectedDate.getDate()+1
+    );
+
+    renderSchedule();
+
+}
+
+
+function today() {
+
+    selectedDate =
+        new Date();
+
+    renderSchedule();
+
+}
+
+
+/* =========================================
+   LIVE GAME API
+========================================= */
+
+async function getLiveGame(gamePk) {
+
+    try {
+
+        const response =
+            await fetch(
+                `https://statsapi.mlb.com/api/v1.1/game/${gamePk}/feed/live`
+            );
+
+        if (!response.ok)
+            return null;
+
+        return await response.json();
+
+    }
+
+    catch(error) {
+
+        return null;
+
+    }
+
+}
+
+
+/* =========================================
+   LIVE INFORMATION
+========================================= */
+
+function liveInfoHTML(data) {
+
+    if (!data)
+        return "";
+
+    const linescore =
+        data.liveData?.linescore || {};
+
+    const offense =
+        linescore.offense || {};
+
+    const defense =
+        linescore.defense || {};
+
+    const bases = [
+
+        !!offense.first,
+        !!offense.second,
+        !!offense.third
+
+    ];
+
+    let runners = [];
+
+    if (bases[0])
+        runners.push("1st");
+
+    if (bases[1])
+        runners.push("2nd");
+
+    if (bases[2])
+        runners.push("3rd");
+
+
+    return `
+
+    <div class="live-box">
+
+        <div class="live-row">
+
+        <span class="live-label">
+        ⚾ At Bat:
+        </span>
+
+        ${offense.batter?.fullName || "—"}
+
+        </div>
+
+
+        <div class="live-row">
+
+        <span class="live-label">
+        🎯 Pitching:
+        </span>
+
+        ${defense.pitcher?.fullName || "—"}
+
+        </div>
+
+
+        <div class="live-row">
+
+        <span class="live-label">
+        🕐 Inning:
+        </span>
+
+        ${linescore.inningState || ""}
+        ${linescore.currentInningOrdinal || "—"}
+
+        </div>
+
+
+        <div class="live-row">
+
+        <span class="live-label">
+        🔢 Count:
+        </span>
+
+        ${linescore.balls ?? 0} -
+        ${linescore.strikes ?? 0}
+
+        </div>
+
+
+        <div class="live-row">
+
+        <span class="live-label">
+        🚨 Outs:
+        </span>
+
+        ${linescore.outs ?? 0}
+
+        </div>
+
+
+        <div class="live-row">
+
+        <span class="live-label">
+        🏃 Runners:
+        </span>
+
+        ${
+            runners.length
+            ?
+            runners.join(" • ")
+            :
+            "Bases empty"
+        }
+
+        </div>
+
+
+        <div class="bases">
+
+        ${bases.map(base => `
+
+            <div class="
+            base
+            ${base ? "occupied" : ""}
+            ">
+            </div>
+
+        `).join("")}
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   PITCHING DECISIONS
+========================================= */
+
+function finalDecisionsHTML(data) {
+
+    const decisions =
+        data?.liveData?.decisions;
+
+    if (!decisions)
+        return "";
+
+    let html = `
+
+    <div class="final-decisions">
+
+    <div class="final-title">
+    🎯 Pitching Decisions
+    </div>
+
+    `;
+
+
+    if (decisions.winner) {
+
+        html += `
+
+        <div class="decision">
+
+        <span class="decision-label">
+        W:
+        </span>
+
+        ${decisions.winner.fullName}
+
+        </div>
+
+        `;
+
+    }
+
+
+    if (decisions.loser) {
+
+        html += `
+
+        <div class="decision">
+
+        <span class="decision-label">
+        L:
+        </span>
+
+        ${decisions.loser.fullName}
+
+        </div>
+
+        `;
+
+    }
+
+
+    if (decisions.save) {
+
+        html += `
+
+        <div class="decision">
+
+        <span class="decision-label">
+        SV:
+        </span>
+
+        ${decisions.save.fullName}
+
+        </div>
+
+        `;
+
+    }
+
+
+    return html + "</div>";
+
+}
+
+
+/* =========================================
+   GAME CARD
+========================================= */
+
+function createGameCard(game) {
+
+    const status =
+        (
+            game.status ||
+            "Scheduled"
+        ).toLowerCase();
+
+
+    const live =
+        status.includes("progress") ||
+        status.includes("live");
+
+
+    const final =
+        status.includes("final");
+
+
+    let statusText;
+
+
+    if (live)
+
+        statusText =
+            "🔴 LIVE";
+
+
+    else if (final)
+
+        statusText =
+            "✅ FINAL";
+
+
+    else
+
+        statusText =
+            "🕐 " +
+            new Date(
+                game.gameDate
+            ).toLocaleTimeString(
+                "en-US",
+                {
+                    hour:"numeric",
+                    minute:"2-digit"
+                }
+            );
+
+
+    return `
+
+    <div class="game-card">
+
+        <div class="
+        status
+        ${live ? "live" : ""}
+        ${final ? "final" : ""}
+        ">
+
+        ${statusText}
+
+        </div>
+
+
+        <div class="team">
+
+        <span>
+        ${game.awayTeam.name}
+        </span>
+
+        <span class="score">
+        ${game.awayScore ?? "-"}
+        </span>
+
+        </div>
+
+
+        <div class="team">
+
+        <span>
+        ${game.homeTeam.name}
+        </span>
+
+        <span class="score">
+        ${game.homeScore ?? "-"}
+        </span>
+
+        </div>
+
+
+        ${
+            live
+            ?
+            `<div id="live-${game.gamePk}"></div>`
+            :
+            ""
+        }
+
+
+        ${
+            final
+            ?
+            `<div id="decision-${game.gamePk}"></div>`
+            :
+            ""
+        }
+
+
+        <div class="game-details">
+
+        ${
+            game.venue
+            ?
+            `📍 ${game.venue}`
+            :
+            ""
+        }
+
+        </div>
+
+
+        <a
+        class="view-game"
+        href="game.html?gamePk=${game.gamePk}">
+
+        📊 VIEW GAME
+
+        </a>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   SCHEDULE
+========================================= */
+
+async function renderSchedule() {
+
+    const container =
+        document.getElementById(
+            "schedule"
+        );
+
+
+    document.getElementById(
+        "selectedDate"
+    ).textContent =
+        displayDate(
+            selectedDate
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                `data/schedule.json?cache=${Date.now()}`
+            );
+
+
+        if (!response.ok)
+            throw new Error();
+
+
+        const data =
+            await response.json();
+
+
+        const date =
+            dateString(
+                selectedDate
+            );
+
+
+        const games =
+            (data.games || [])
+            .filter(
+                game =>
+                    game.date === date
+            )
+            .sort(
+                (a,b) =>
+                    new Date(a.gameDate) -
+                    new Date(b.gameDate)
+            );
+
+
+        if (data.lastUpdated) {
+
+            document.getElementById(
+                "updated"
+            ).textContent =
+                "Last data update: " +
+                new Date(
+                    data.lastUpdated
+                ).toLocaleString();
+
+        }
+
+
+        if (!games.length) {
+
+            container.innerHTML = `
+
+            <div class="no-games">
+
+            No MLB games scheduled
+            for this date.
+
+            </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            games
+            .map(createGameCard)
+            .join("");
+
+
+        await Promise.all(
+
+            games
+            .filter(game => {
+
+                const s =
+                    (
+                        game.status ||
+                        ""
+                    ).toLowerCase();
+
+                return (
+                    s.includes("live") ||
+                    s.includes("progress") ||
+                    s.includes("final")
+                );
+
+            })
+            .map(async game => {
+
+                const data =
+                    await getLiveGame(
+                        game.gamePk
+                    );
+
+                if (!data)
+                    return;
+
+
+                const s =
+                    (
+                        game.status ||
+                        ""
+                    ).toLowerCase();
+
+
+                if (
+                    s.includes("live") ||
+                    s.includes("progress")
+                ) {
+
+                    const element =
+                        document.getElementById(
+                            "live-" +
+                            game.gamePk
+                        );
+
+                    if (element) {
+
+                        element.innerHTML =
+                            liveInfoHTML(
+                                data
+                            );
+
+                    }
+
+                }
+
+
+                if (
+                    s.includes("final")
+                ) {
+
+                    const element =
+                        document.getElementById(
+                            "decision-" +
+                            game.gamePk
+                        );
+
+                    if (element) {
+
+                        element.innerHTML =
+                            finalDecisionsHTML(
+                                data
+                            );
+
+                    }
+
+                }
+
+            })
+
+        );
+
+    }
+
+    catch(error) {
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Unable to load the MLB schedule.
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   STANDINGS
+========================================= */
+
+function sortTeams(a,b) {
+
+    const aWins =
+        Number(a.wins || 0);
+
+    const aLosses =
+        Number(a.losses || 0);
+
+    const bWins =
+        Number(b.wins || 0);
+
+    const bLosses =
+        Number(b.losses || 0);
+
+
+    const aPct =
+        aWins /
+        (
+            aWins +
+            aLosses ||
+            1
+        );
+
+
+    const bPct =
+        bWins /
+        (
+            bWins +
+            bLosses ||
+            1
+        );
+
+
+    return bPct - aPct;
+
+}
+
+
+function pct(team) {
+
+    const wins =
+        Number(team.wins || 0);
+
+    const losses =
+        Number(team.losses || 0);
+
+
+    if (!wins + losses)
+        return ".000";
+
+
+    return (
+        wins /
+        (wins + losses)
+    )
+    .toFixed(3)
+    .replace(
+        "0.",
+        "."
+    );
+
+}
+
+
+async function loadStandings() {
+
+    try {
+
+        const response =
+            await fetch(
+                `data/standings.json?cache=${Date.now()}`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        standingsTeams =
+            (data.teams || [])
+            .map(team => {
+
+                return {
+
+                    ...team,
+
+                    ...(TEAM_INFO[
+                        Number(team.id)
+                    ] || {})
+
+                };
+
+            });
+
+
+        renderDivisions(
+            standingsTeams
+        );
+
+
+        renderWildCards(
+            standingsTeams
+        );
+
+
+        populateTeamSelect();
+
+
+        renderTwentyView();
+
+
+        renderGamesThatMatter();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+    }
+
+}
+
+
+function renderDivisions(teams) {
+
+    const container =
+        document.getElementById(
+            "divisions"
+        );
+
+
+    container.innerHTML = "";
+
+
+    DIVISIONS.forEach(
+        division => {
+
+            const group =
+                teams
+                .filter(
+                    team =>
+                        team.division ===
+                        division
+                )
+                .sort(
+                    sortTeams
+                );
+
+
+            if (!group.length)
+                return;
+
+
+            const leader =
+                group[0];
+
+
+            let rows = "";
+
+
+            group.forEach(
+                (team,index) => {
+
+                    const gb =
+                        (
+                            (
+                                Number(
+                                    leader.wins || 0
+                                ) -
+                                Number(
+                                    team.wins || 0
+                                )
+                            )
+                            +
+                            (
+                                Number(
+                                    team.losses || 0
+                                ) -
+                                Number(
+                                    leader.losses || 0
+                                )
+                            )
+                        ) / 2;
+
+
+                    rows += `
+
+                    <tr>
+
+                    <td class="team-name">
+
+                    ${index + 1}.
+                    ${team.name}
+
+                    </td>
+
+                    <td>
+                    ${team.wins || 0}
+                    </td>
+
+                    <td>
+                    ${team.losses || 0}
+                    </td>
+
+                    <td>
+                    ${pct(team)}
+                    </td>
+
+                    <td>
+
+                    ${
+                        gb === 0
+                        ?
+                        "-"
+                        :
+                        gb.toFixed(1)
+                    }
+
+                    </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+
+            container.innerHTML += `
+
+            <div class="division">
+
+            <h3>
+            ${division}
+            </h3>
+
+            <table>
+
+            <thead>
+
+            <tr>
+
+            <th>Team</th>
+            <th>W</th>
+            <th>L</th>
+            <th>PCT</th>
+            <th>GB</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            ${rows}
+
+            </tbody>
+
+            </table>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+function renderWildCards(teams) {
+
+    const container =
+        document.getElementById(
+            "wildCards"
+        );
+
+
+    container.innerHTML = "";
+
+
+    ["AL","NL"].forEach(
+        league => {
+
+            const leagueTeams =
+                teams.filter(
+                    team =>
+                        team.league ===
+                        league
+                );
+
+
+            const winners = [];
+
+
+            ["East","Central","West"]
+            .forEach(
+                division => {
+
+                    const group =
+                        leagueTeams
+                        .filter(
+                            team =>
+                                team.division ===
+                                `${league} ${division}`
+                        )
+                        .sort(
+                            sortTeams
+                        );
+
+
+                    if (group.length)
+                        winners.push(
+                            group[0]
+                        );
+
+                }
+            );
+
+
+            const winnerIds =
+                winners.map(
+                    team =>
+                        Number(team.id)
+                );
+
+
+            const wildcard =
+                leagueTeams
+                .filter(
+                    team =>
+                        !winnerIds.includes(
+                            Number(team.id)
+                        )
+                )
+                .sort(
+                    sortTeams
+                )
+                .slice(0,3);
+
+
+            let rows = "";
+
+
+            wildcard.forEach(
+                (team,index) => {
+
+                    rows += `
+
+                    <tr>
+
+                    <td>
+                    WC${index + 1}
+                    </td>
+
+                    <td class="team-name">
+                    ${team.name}
+                    </td>
+
+                    <td>
+                    ${team.wins || 0}
+                    </td>
+
+                    <td>
+                    ${team.losses || 0}
+                    </td>
+
+                    <td>
+                    ${pct(team)}
+                    </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+
+            container.innerHTML += `
+
+            <div class="wildcard">
+
+            <h3>
+
+            🃏
+
+            ${
+                league === "AL"
+                ?
+                "American"
+                :
+                "National"
+            }
+
+            League Wild Card
+
+            </h3>
+
+
+            <table>
+
+            <thead>
+
+            <tr>
+
+            <th>WC</th>
+            <th>Team</th>
+            <th>W</th>
+            <th>L</th>
+            <th>PCT</th>
+
+            </tr>
+
+            </thead>
+
+
+            <tbody>
+
+            ${rows}
+
+            </tbody>
+
+            </table>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   LEADERS
+========================================= */
+
+async function loadLeaders() {
+
+    try {
+
+        const response =
+            await fetch(
+                `data/leaders.json?cache=${Date.now()}`
+            );
+
+
+        leadersData =
+            await response.json();
+
+
+        if (
+            leadersData.lastUpdated
+        ) {
+
+            document.getElementById(
+                "leadersUpdated"
+            ).textContent =
+                "Leaders updated: " +
+                new Date(
+                    leadersData.lastUpdated
+                ).toLocaleString();
+
+        }
+
+
+        showLeaders(
+            currentLeaderGroup
+        );
+
+    }
+
+    catch(error) {
+
+        document.getElementById(
+            "leaders"
+        ).innerHTML = `
+
+        <div class="no-games">
+
+        Unable to load MLB leaders.
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+
+function showLeague(league) {
+
+    currentLeague =
+        league;
+
+
+    document.getElementById(
+        "alButton"
+    ).classList.toggle(
+        "active",
+        league === "AL"
+    );
+
+
+    document.getElementById(
+        "nlButton"
+    ).classList.toggle(
+        "active",
+        league === "NL"
+    );
+
+
+    showLeaders(
+        currentLeaderGroup
+    );
+
+}
+
+
+function showLeaders(group) {
+
+    currentLeaderGroup =
+        group;
+
+
+    ["offense","pitching","defense"]
+    .forEach(
+        type => {
+
+            document
+            .getElementById(
+                type +
+                "Button"
+            )
+            .classList.toggle(
+                "active",
+                type === group
+            );
+
+        }
+    );
+
+
+    const container =
+        document.getElementById(
+            "leaders"
+        );
+
+
+    if (!leadersData) {
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Loading MLB leaders...
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const categories =
+        leadersData
+        .leagues?.[
+            currentLeague
+        ]?.[
+            group
+        ] || {};
+
+
+    container.innerHTML = "";
+
+
+    Object.entries(
+        categories
+    )
+    .forEach(
+        ([stat,players]) => {
+
+            const title =
+                LEADER_NAMES[
+                    group
+                ]?.[
+                    stat
+                ] ||
+                stat;
+
+
+            let rows = "";
+
+
+            (players || [])
+            .forEach(
+                (player,index) => {
+
+                    rows += `
+
+                    <div class="leader-row">
+
+                    <div class="leader-rank">
+
+                    ${
+                        player.rank ||
+                        index + 1
+                    }
+
+                    </div>
+
+
+                    <div>
+
+                    <div class="leader-player">
+
+                    ${player.player}
+
+                    </div>
+
+
+                    <span class="leader-team">
+
+                    ${player.team}
+
+                    ${
+                        player.position
+                        ?
+                        " • " +
+                        player.position
+                        :
+                        ""
+                    }
+
+                    </span>
+
+                    </div>
+
+
+                    <div class="leader-value">
+
+                    ${player.value}
+
+                    </div>
+
+                    </div>
+
+                    `;
+
+                }
+            );
+
+
+            container.innerHTML += `
+
+            <div class="leader-category">
+
+            <h3>
+            ${title}
+            </h3>
+
+            ${rows}
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   PLAYOFF DATA
+========================================= */
+
+async function loadPlayoffData() {
+
+    try {
+
+        const response =
+            await fetch(
+                `data/playoff_odds.json?cache=${Date.now()}`
+            );
+
+
+        playoffData =
+            await response.json();
+
+
+        showPlayoffLeague(
+            currentPlayoffLeague
+        );
+
+
+        renderTwentyView();
+
+    }
+
+    catch(error) {
+
+        document.getElementById(
+            "playoffPicture"
+        ).innerHTML = `
+
+        <div class="no-games">
+
+        Playoff projections are
+        currently unavailable.
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+
+function showPlayoffLeague(
+    league
+) {
+
+    currentPlayoffLeague =
+        league;
+
+
+    document.getElementById(
+        "playoffAL"
+    ).classList.toggle(
+        "active",
+        league === "AL"
+    );
+
+
+    document.getElementById(
+        "playoffNL"
+    ).classList.toggle(
+        "active",
+        league === "NL"
+    );
+
+
+    const container =
+        document.getElementById(
+            "playoffPicture"
+        );
+
+
+    if (!playoffData) {
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Loading playoff projections...
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const teams =
+        (playoffData.teams || [])
+        .filter(
+            team =>
+                team.league ===
+                league
+        );
+
+
+    container.innerHTML = "";
+
+
+    teams.forEach(
+        team => {
+
+            const playoff =
+                Number(
+                    team.playoffProbability ||
+                    0
+                );
+
+
+            const division =
+                Number(
+                    team.divisionProbability ||
+                    0
+                );
+
+
+            const wildcard =
+                Number(
+                    team.wildCardProbability ||
+                    0
+                );
+
+
+            const miss =
+                Number(
+                    team.missProbability ||
+                    0
+                );
+
+
+            container.innerHTML += `
+
+            <div class="playoff-team">
+
+
+            <div class="playoff-team-header">
+
+            <div>
+
+            <div class="playoff-team-name">
+
+            ${team.team}
+
+            </div>
+
+
+            <div class="playoff-record">
+
+            ${team.wins}-${team.losses}
+
+            ${
+                team.gamesRemaining !== undefined
+                ?
+                " • " +
+                team.gamesRemaining +
+                " games remaining"
+                :
+                ""
+            }
+
+            </div>
+
+            </div>
+
+
+            <div class="playoff-percent">
+
+            ${playoff}%
+
+            </div>
+
+            </div>
+
+
+            <div class="playoff-status">
+
+            ${
+                team.status ||
+                "Playoff projection"
+            }
+
+            </div>
+
+
+            ${probabilityRow(
+                "Playoff Chance",
+                playoff
+            )}
+
+
+            ${probabilityRow(
+                "Division",
+                division
+            )}
+
+
+            ${probabilityRow(
+                "Wild Card",
+                wildcard
+            )}
+
+
+            ${probabilityRow(
+                "Miss Playoffs",
+                miss
+            )}
+
+
+            <div class="what-needed">
+
+            <strong>
+            What they need:
+            </strong>
+
+            <br>
+
+            ${
+                team.whatTheyNeed ||
+                "Continue winning and improve their position."
+            }
+
+            ${
+                team.projectedPlayoffTarget
+                ?
+                `
+                <br><br>
+
+                <strong>
+                Projected playoff line:
+                </strong>
+
+                ${team.projectedPlayoffTarget}
+                wins
+
+                `
+                :
+                ""
+            }
+
+            ${
+                team.projectedWins
+                ?
+                `
+                <br>
+
+                <strong>
+                Projected wins:
+                </strong>
+
+                ${team.projectedWins}
+
+                `
+                :
+                ""
+            }
+
+            </div>
+
+
+            </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+function probabilityRow(
+    label,
+    value
+) {
+
+    return `
+
+    <div class="probability-row">
+
+    <div class="probability-label">
+
+    ${label}
+
+    </div>
+
+
+    <div class="probability-value">
+
+    ${value}%
+
+    </div>
+
+
+    <div class="progress">
+
+    <div
+    class="progress-bar"
+    style="width:${Math.max(
+        0,
+        Math.min(
+            100,
+            value
+        )
+    )}%">
+
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   TEAM SELECT
+========================================= */
+
+function populateTeamSelect() {
+
+    const select =
+        document.getElementById(
+            "teamSelect"
+        );
+
+
+    if (
+        !select ||
+        !standingsTeams.length
+    )
+        return;
+
+
+    const oldValue =
+        select.value;
+
+
+    select.innerHTML = `
+
+    <option value="">
+    Select a team...
+    </option>
+
+    `;
+
+
+    standingsTeams
+    .slice()
+    .sort(
+        (a,b) =>
+            a.name.localeCompare(
+                b.name
+            )
+    )
+    .forEach(
+        team => {
+
+            select.innerHTML += `
+
+            <option value="${team.id}">
+
+            ${team.name}
+
+            </option>
+
+            `;
+
+        }
+    );
+
+
+    if (oldValue)
+        select.value =
+            oldValue;
+
+}
+
+
+function getSelectedTeam() {
+
+    const value =
+        document.getElementById(
+            "teamSelect"
+        )?.value;
+
+
+    return standingsTeams.find(
+        team =>
+            String(team.id) ===
+            String(value)
+    );
+
+}
+
+
+/* =========================================
+   20/20 DASHBOARD
+========================================= */
+
+function renderTwentyView() {
+
+    const team =
+        getSelectedTeam();
+
+
+    const container =
+        document.getElementById(
+            "twentyDashboard"
+        );
+
+
+    if (!team) {
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Select a team to see its
+        20/20 outlook.
+
+        </div>
+
+        `;
+
+        renderRootFor();
+
+        renderHistorical();
+
+        return;
+
+    }
+
+
+    const projection =
+        (playoffData?.teams || [])
+        .find(
+            x =>
+                x.team ===
+                team.name
+        );
+
+
+    const wins =
+        Number(team.wins || 0);
+
+
+    const losses =
+        Number(team.losses || 0);
+
+
+    const recordTotal =
+        wins + losses;
+
+
+    const winningPct =
+        recordTotal
+        ?
+        wins / recordTotal
+        :
+        0;
+
+
+    const playoff =
+        Number(
+            projection?.playoffProbability ||
+            0
+        );
+
+
+    /*
+       20/20 SCORE
+
+       This is intentionally labeled
+       as our own Sports 20/20 score.
+
+       It is NOT an official MLB metric.
+    */
+
+    let score =
+        Math.round(
+            (
+                winningPct * 60
+            ) +
+            (
+                playoff * .40
+            )
+        );
+
+
+    score =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                score
+            )
+        );
+
+
+    let outlook =
+        score >= 75
+        ?
+        "Strong"
+        :
+        score >= 50
+        ?
+        "Competitive"
+        :
+        "Danger";
+
+
+    let scoreClass =
+        score >= 75
+        ?
+        "good"
+        :
+        score >= 50
+        ?
+        "warn"
+        :
+        "bad";
+
+
+    const divisionTeams =
+        standingsTeams
+        .filter(
+            x =>
+                x.division ===
+                team.division
+        )
+        .sort(
+            sortTeams
+        );
+
+
+    const rank =
+        divisionTeams.findIndex(
+            x =>
+                Number(x.id) ===
+                Number(team.id)
+        ) + 1;
+
+
+    const leader =
+        divisionTeams[0];
+
+
+    const gamesBack =
+        leader
+        ?
+        (
+            (
+                Number(
+                    leader.wins || 0
+                ) -
+                wins
+            )
+            +
+            (
+                losses -
+                Number(
+                    leader.losses || 0
+                )
+            )
+        ) / 2
+        :
+        0;
+
+
+    container.innerHTML = `
+
+    <div class="view-grid">
+
+
+    <div class="metric">
+
+    <div class="metric-label">
+
+    20/20 Score
+
+    </div>
+
+
+    <div class="
+    score-ring
+    ${scoreClass}
+    ">
+
+    ${score}/100
+
+    </div>
+
+
+    <div class="metric-note">
+
+    ${outlook} outlook
+
+    </div>
+
+    </div>
+
+
+
+    <div class="metric">
+
+    <div class="metric-label">
+
+    Record
+
+    </div>
+
+
+    <div class="metric-value">
+
+    ${wins}-${losses}
+
+    </div>
+
+
+    <div class="metric-note">
+
+    ${
+        (
+            winningPct * 100
+        ).toFixed(1)
+    }% winning percentage
+
+    </div>
+
+    </div>
+
+
+
+    <div class="metric">
+
+    <div class="metric-label">
+
+    Division Position
+
+    </div>
+
+
+    <div class="metric-value">
+
+    #${rank}
+
+    </div>
+
+
+    <div class="metric-note">
+
+    ${
+        gamesBack === 0
+        ?
+        "Division leader"
+        :
+        gamesBack.toFixed(1) +
+        " games back"
+    }
+
+    </div>
+
+    </div>
+
+
+
+    <div class="metric">
+
+    <div class="metric-label">
+
+    Playoff Chance
+
+    </div>
+
+
+    <div class="metric-value">
+
+    ${
+        projection
+        ?
+        playoff + "%"
+        :
+        "—"
+    }
+
+    </div>
+
+
+    <div class="metric-note">
+
+    ${
+        projection?.status ||
+        "Projection unavailable"
+    }
+
+    </div>
+
+    </div>
+
+
+    </div>
+
+
+
+    <div class="card"
+    style="margin-top:18px">
+
+
+    <h3>
+    👁️ The 20/20 Read
+    </h3>
+
+
+    ${
+        createTwentyInsights(
+            team,
+            projection,
+            rank,
+            gamesBack
+        )
+    }
+
+
+    </div>
+
+    `;
+
+
+    renderRootFor();
+
+    renderHistorical();
+
+}
+
+
+function createTwentyInsights(
+    team,
+    projection,
+    rank,
+    gamesBack
+) {
+
+    const playoff =
+        Number(
+            projection?.playoffProbability ||
+            0
+        );
+
+
+    let html = "";
+
+
+    if (rank === 1) {
+
+        html += `
+
+        <div class="insight success">
+
+        <strong>
+        Position:
+        </strong>
+
+        ${team.name}
+        currently leads the
+        ${team.division}.
+
+        </div>
+
+        `;
+
+    }
+
+    else {
+
+        html += `
+
+        <div class="insight">
+
+        <strong>
+        Position:
+        </strong>
+
+        ${team.name}
+        is
+        ${gamesBack.toFixed(1)}
+        games behind the division leader.
+
+        </div>
+
+        `;
+
+    }
+
+
+    if (projection) {
+
+        html += `
+
+        <div class="insight
+        ${
+            playoff >= 70
+            ?
+            "success"
+            :
+            playoff >= 40
+            ?
+            ""
+            :
+            "warning"
+        }">
+
+        <strong>
+        Playoff outlook:
+        </strong>
+
+        Current projection:
+
+        ${playoff}%
+
+        </div>
+
+        `;
+
+    }
+
+
+    html += `
+
+    <div class="insight">
+
+    <strong>
+    What matters next:
+    </strong>
+
+    Watch the teams directly above
+    and below ${team.name}.
+
+    Those teams have the greatest
+    potential to change the team's
+    playoff position.
+
+    </div>
+
+    `;
+
+
+    return html;
+
+}
+
+
+/* =========================================
+   GAMES THAT MATTER
+========================================= */
+
+function renderGamesThatMatter() {
+
+    const container =
+        document.getElementById(
+            "gamesThatMatter"
+        );
+
+
+    if (!standingsTeams.length) {
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Waiting for standings...
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const selected =
+        getSelectedTeam();
+
+
+    const focus =
+        selected ||
+        standingsTeams[0];
+
+
+    const nearby =
+        standingsTeams
+        .filter(
+            team =>
+                team.league ===
+                focus.league &&
+                team.id !==
+                focus.id
+        )
+        .sort(
+            sortTeams
+        )
+        .slice(0,5);
+
+
+    container.innerHTML =
+        nearby
+        .map(
+            (team,index) => `
+
+            <div class="matter-row">
+
+            <div>
+
+            <div class="matter-title">
+
+            🔥 ${team.name}
+
+            </div>
+
+
+            <div class="matter-note">
+
+            ${team.division}
+
+            • ${team.wins || 0}-
+            ${team.losses || 0}
+
+            • Nearby contender
+            in the ${focus.name}
+            playoff picture.
+
+            </div>
+
+            </div>
+
+
+            <div class="importance">
+
+            ${
+                index < 2
+                ?
+                "HIGH"
+                :
+                "WATCH"
+            }
+
+            </div>
+
+            </div>
+
+            `
+        )
+        .join("");
+
+}
+
+
+/* =========================================
+   WHO SHOULD I ROOT FOR?
+========================================= */
+
+function renderRootFor() {
+
+    const container =
+        document.getElementById(
+            "rootFor"
+        );
+
+
+    const team =
+        getSelectedTeam();
+
+
+    if (!team) {
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Select a team above.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const rivals =
+        standingsTeams
+        .filter(
+            x =>
+                x.league ===
+                team.league &&
+                x.id !==
+                team.id
+        )
+        .sort(
+            sortTeams
+        )
+        .slice(0,3);
+
+
+    container.innerHTML =
+        rivals
+        .map(
+            rival => `
+
+            <div class="insight">
+
+            <strong>
+
+            👀 Watch ${rival.name}
+
+            </strong>
+
+            <br>
+
+            If ${rival.name}
+            drops games, it can
+            improve ${team.name}'s
+            position in the race.
+
+            </div>
+
+            `
+        )
+        .join("");
+
+}
+
+
+/* =========================================
+   HISTORICAL PACE
+========================================= */
+
+function renderHistorical() {
+
+    const container =
+        document.getElementById(
+            "historical"
+        );
+
+
+    const team =
+        getSelectedTeam();
+
+
+    if (!team) {
+
+        container.innerHTML = `
+
+        <div class="no-games">
+
+        Select a team above.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const wins =
+        Number(
+            team.wins || 0
+        );
+
+
+    const losses =
+        Number(
+            team.losses || 0
+        );
+
+
+    const pct =
+        wins /
+        (
+            wins +
+            losses ||
+            1
+        );
+
+
+    const pace =
+        Math.round(
+            pct * 162
+        );
+
+
+    container.innerHTML = `
+
+    <div class="insight">
+
+    <strong>
+    Current season pace:
+    </strong>
+
+    ${team.name}
+    is currently on pace for
+    approximately
+
+    <strong>
+    ${pace} wins
+    </strong>
+
+    over 162 games.
+
+    </div>
+
+
+    <p class="note">
+
+    This is a simple pace calculation,
+    not a guarantee or an official
+    projection.
+
+    </p>
+
+    `;
+
+}
+
+
+/* =========================================
+   WHAT IF
+========================================= */
+
+function runWhatIf() {
+
+    const team =
+        getSelectedTeam();
+
+
+    const output =
+        document.getElementById(
+            "simResult"
+        );
+
+
+    if (!team) {
+
+        output.innerHTML = `
+
+        <div class="insight warning">
+
+        Select a team first.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const wins =
+        Math.max(
+            0,
+            Math.min(
+                10,
+                Number(
+                    document.getElementById(
+                        "simWins"
+                    ).value
+                ) || 0
+            )
+        );
+
+
+    const losses =
+        Math.max(
+            0,
+            Math.min(
+                10,
+                Number(
+                    document.getElementById(
+                        "simLosses"
+                    ).value
+                ) || 0
+            )
+        );
+
+
+    const currentWins =
+        Number(
+            team.wins || 0
+        );
+
+
+    const currentLosses =
+        Number(
+            team.losses || 0
+        );
+
+
+    const newWins =
+        currentWins +
+        wins;
+
+
+    const newLosses =
+        currentLosses +
+        losses;
+
+
+    const percentage =
+        newWins /
+        (
+            newWins +
+            newLosses
+        );
+
+
+    const projectedWins =
+        Math.round(
+            percentage * 162
+        );
+
+
+    output.innerHTML = `
+
+    <div class="sim-result">
+
+    <strong>
+    ${team.name}
+    </strong>
+
+    after a
+
+    <strong>
+    ${wins}-${losses}
+    </strong>
+
+    stretch:
+
+    <h2>
+
+    ${newWins}-${newLosses}
+
+    </h2>
+
+
+    Winning percentage:
+
+    <strong>
+
+    ${
+        (
+            percentage * 100
+        ).toFixed(1)
+    }%
+
+    </strong>
+
+
+    <br><br>
+
+
+    162-game pace:
+
+    <strong>
+
+    ${projectedWins} wins
+
+    </strong>
+
+
+    <p style="color:#cbd5e1">
+
+    This scenario changes the team's
+    record and season pace. It does not
+    pretend to recalculate official
+    playoff probabilities.
+
+    </p>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+renderSchedule();
+
+loadStandings();
+
+loadLeaders();
+
+loadPlayoffData();
+
+
+/* =========================================
+   AUTO REFRESH
+========================================= */
+
+setInterval(
+    () => {
+
+        renderSchedule();
+
+        loadStandings();
+
+        loadLeaders();
+
+        loadPlayoffData();
+
+    },
+    60000
+);
+
+</script>
+
+</body>
+</html>
