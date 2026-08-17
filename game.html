@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sports 20/20 — Game</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
+}
+
+.header {
+    background: #0b1220;
+    color: white;
+    padding: 22px 16px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #60a5fa;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 16px;
+    background: #1e293b;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 14px 60px;
+}
+
+/* GAME HEADER */
+
+.game-header {
+    background: #0b1220;
+    color: white;
+    border-radius: 24px;
+    padding: 25px 15px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.game-status {
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.live {
+    color: #f87171;
+}
+
+.final {
+    color: #4ade80;
+}
+
+.scheduled {
+    color: #60a5fa;
+}
+
+.matchup {
+    display: grid;
+    grid-template-columns: 1fr 70px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-name {
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.score {
+    font-size: 48px;
+    font-weight: 900;
+    margin-top: 6px;
+}
+
+.at {
+    color: #94a3b8;
+    font-weight: 900;
+}
+
+.game-meta {
+    color: #94a3b8;
+    margin-top: 16px;
+}
+
+/* MAIN TABS */
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    background: white;
+    padding: 8px;
+    border-radius: 16px;
+    overflow-x: auto;
+    margin-bottom: 18px;
+}
+
+.tab {
+    border: 0;
+    background: #e5e7eb;
+    padding: 13px 17px;
+    border-radius: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #2563eb;
+    color: white;
+}
+
+.panel {
+    display: none;
+}
+
+.panel.active {
+    display: block;
+}
+
+/* CARDS */
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.06);
+}
+
+.card h2 {
+    margin: 0 0 18px;
+    font-size: 27px;
+}
+
+.loading {
+    text-align: center;
+    color: #6b7280;
+    padding: 30px;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+/* LIVE */
+
+.live-box {
+    background: #0f172a;
+    color: white;
+    border-radius: 19px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.live-title {
+    color: #f87171;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.live-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 10px;
+}
+
+.live-stat {
+    background: #1e293b;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+.live-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+
+/* TABLES */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #111827;
+    color: white;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+td {
+    padding: 11px 8px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+
+.player {
+    font-weight: 900;
+}
+
+.position {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.team-section {
+    background: #111827;
+    color: white;
+    padding: 14px 16px;
+    border-radius: 13px 13px 0 0;
+    margin-top: 18px;
+}
+
+/* DECISIONS */
+
+.decisions {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+}
+
+.decision {
+    background: #f1f5f9;
+    padding: 17px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.decision-label {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.decision-name {
+    margin-top: 8px;
+    font-weight: 900;
+}
+
+/* KEY PLAYS */
+
+.play {
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.play:last-child {
+    border-bottom: 0;
+}
+
+.play-time {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.play-text {
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+/* =====================================================
+   SPORTS 20/20
+===================================================== */
+
+.intel-header {
+    background: #0b1220;
+    color: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 18px;
+}
+
+.intel-header h2 {
+    margin: 0 0 8px;
+}
+
+.intel-header p {
+    color: #cbd5e1;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 20/20 BUTTONS */
+
+.intel-menu {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(150px,1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.intel-button {
+    border: 2px solid #e5e7eb;
+    background: white;
+    border-radius: 15px;
+    padding: 16px 10px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 14px;
+    transition: .15s;
+}
+
+.intel-button:hover {
+    transform: translateY(-2px);
+}
+
+.intel-button.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.intel-icon {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+/* 20/20 CONTENT */
+
+.intel-content {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.06);
+    min-height: 220px;
+}
+
+.intel-content h2 {
+    margin-top: 0;
+}
+
+.intel-answer {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.intel-answer-title {
+    color: #2563eb;
+    font-weight: 900;
+    font-size: 13px;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+}
+
+.intel-big {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.intel-text {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.intel-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+    gap: 14px;
+}
+
+.intel-mini {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 18px;
+}
+
+.intel-mini h3 {
+    margin-top: 0;
+}
+
+.intel-number {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.intel-muted {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* FULL 20/20 */
+
+.rating {
+    background: #111827;
+    color: white;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 15px;
+}
+
+.rating-number {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.rating-label {
+    color: #94a3b8;
+}
+
+.footer {
+    background: #0b1220;
+    color: #94a3b8;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+@media(max-width:650px) {
+
+    .matchup {
+        grid-template-columns: 1fr;
+    }
+
+    .at {
+        display: none;
+    }
+
+    .score {
+        font-size: 40px;
+    }
+
+    .decisions {
+        grid-template-columns: 1fr;
+    }
+
+    .intel-menu {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+<div class="logo">
+Sports <span>20/20</span>
+</div>
+
+<a
+href="mlb.html"
+class="back">
+← Back to MLB
+</a>
+
+</header>
+
+
+<main class="container">
+
+
+<div id="error"></div>
+
+
+<!-- =====================================================
+     GAME HEADER
+===================================================== -->
+
+<section class="game-header">
+
+<div
+id="status"
+class="game-status">
+Loading game...
+</div>
+
+
+<div class="matchup">
+
+
+<div>
+
+<div
+id="awayName"
+class="team-name">
+Away
+</div>
+
+<div
+id="awayScore"
+class="score">
+—
+</div>
+
+</div>
+
+
+<div class="at">
+@
+</div>
+
+
+<div>
+
+<div
+id="homeName"
+class="team-name">
+Home
+</div>
+
+<div
+id="homeScore"
+class="score">
+—
+</div>
+
+</div>
+
+
+</div>
+
+
+<div
+id="meta"
+class="game-meta">
+Loading...
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN TABS
+===================================================== -->
+
+<div class="tabs">
+
+<button
+class="tab active"
+onclick="showTab('game',this)">
+📋 Game
+</button>
+
+
+<button
+class="tab"
+onclick="showTab('boxscore',this)">
+📊 Box Score
+</button>
+
+
+<button
+class="tab"
+onclick="showTab('twenty',this)">
+👁️ 20/20
+</button>
+
+</div>
+
+
+<!-- =====================================================
+     GAME
+===================================================== -->
+
+<section
+id="game"
+class="panel active">
+
+
+<div id="liveContainer"></div>
+
+
+<div class="card">
+
+<h2>
+📈 Linescore
+</h2>
+
+<div
+id="linescore"
+class="table-wrap">
+
+<div class="loading">
+Loading...
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Pitching Decisions
+</h2>
+
+<div id="decisions">
+
+<div class="loading">
+Loading...
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🔥 Key Plays
+</h2>
+
+<div id="plays">
+
+<div class="loading">
+Loading...
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     BOXSCORE
+===================================================== -->
+
+<section
+id="boxscore"
+class="panel">
+
+
+<div class="card">
+
+<h2>
+⚾ Batting
+</h2>
+
+<div id="batting">
+
+<div class="loading">
+Loading actual lineup...
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Pitching
+</h2>
+
+<div id="pitching">
+
+<div class="loading">
+Loading actual pitchers...
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+📊 Team Statistics
+</h2>
+
+<div id="teamStats">
+
+<div class="loading">
+Loading...
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     20/20
+===================================================== -->
+
+<section
+id="twenty"
+class="panel">
+
+
+<div class="intel-header">
+
+<h2>
+👁️ Sports 20/20
+</h2>
+
+<p>
+The score tells you what happened.
+20/20 tells you why it happened.
+</p>
+
+</div>
+
+
+<!-- CLICKABLE OPTIONS -->
+
+<div class="intel-menu">
+
+
+<button
+class="intel-button active"
+onclick="showIntel('decider',this)">
+
+<span class="intel-icon">
+🎯
+</span>
+
+Game Decider
+
+</button>
+
+
+<button
+class="intel-button"
+onclick="showIntel('turning',this)">
+
+<span class="intel-icon">
+🔥
+</span>
+
+Turning Point
+
+</button>
+
+
+<button
+class="intel-button"
+onclick="showIntel('offense',this)">
+
+<span class="intel-icon">
+⚾
+</span>
+
+Offense
+
+</button>
+
+
+<button
+class="intel-button"
+onclick="showIntel('pitching',this)">
+
+<span class="intel-icon">
+🎯
+</span>
+
+Pitching
+
+</button>
+
+
+<button
+class="intel-button"
+onclick="showIntel('running',this)">
+
+<span class="intel-icon">
+🏃
+</span>
+
+Base Running
+
+</button>
+
+
+<button
+class="intel-button"
+onclick="showIntel('defense',this)">
+
+<span class="intel-icon">
+🧤
+</span>
+
+Defense
+
+</button>
+
+
+<button
+class="intel-button"
+onclick="showIntel('momentum',this)">
+
+<span class="intel-icon">
+📈
+</span>
+
+Momentum
+
+</button>
+
+
+<button
+class="intel-button"
+onclick="showIntel('full',this)">
+
+<span class="intel-icon">
+👁️
+</span>
+
+Full 20/20
+
+</button>
+
+
+</div>
+
+
+<!-- CONTENT CHANGES WHEN BUTTON IS CLICKED -->
+
+<div
+id="intelContent"
+class="intel-content">
+
+<div class="loading">
+Building Sports 20/20...
+</div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+<strong>
+Sports 20/20
+</strong>
+
+<br><br>
+
+See the game. Understand the game.
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   GAME ID
+===================================================== */
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const gamePk =
+params.get("gamePk");
+
+
+let gameData = null;
+let boxscore = null;
+
+
+/* =====================================================
+   BASIC HELPERS
+===================================================== */
+
+function text(value){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === ""
+    ){
+        return "—";
+    }
+
+    return String(value);
+
+}
+
+
+function number(value){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === ""
+    ){
+        return 0;
+    }
+
+    const n =
+    Number(value);
+
+    return Number.isFinite(n)
+        ? n
+        : 0;
+
+}
+
+
+/* =====================================================
+   MAIN TABS
+===================================================== */
+
+function showTab(
+    id,
+    button
+){
+
+    document
+    .querySelectorAll(".panel")
+    .forEach(
+        panel =>
+        panel.classList.remove("active")
+    );
+
+
+    document
+    .querySelectorAll(".tabs .tab")
+    .forEach(
+        tab =>
+        tab.classList.remove("active")
+    );
+
+
+    document
+    .getElementById(id)
+    .classList.add("active");
+
+
+    button.classList.add("active");
+
+
+    /*
+     * If user opens 20/20,
+     * make sure the content exists.
+     */
+
+    if(id === "twenty"){
+
+        showIntel(
+            "decider",
+            document.querySelector(
+                ".intel-button"
+            )
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD GAME
+===================================================== */
+
+async function loadGame(){
+
+    if(!gamePk){
+
+        showError(
+            "No game ID was supplied."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        const feedURL =
+        "https://statsapi.mlb.com/api/v1.1/game/"
+        + gamePk +
+        "/feed/live";
+
+
+        const boxURL =
+        "https://statsapi.mlb.com/api/v1/game/"
+        + gamePk +
+        "/boxscore";
+
+
+        const responses =
+        await Promise.all([
+            fetch(feedURL),
+            fetch(boxURL)
+        ]);
+
+
+        if(!responses[0].ok){
+
+            throw new Error(
+                "MLB game feed could not be loaded."
+            );
+
+        }
+
+
+        if(!responses[1].ok){
+
+            throw new Error(
+                "MLB box score could not be loaded."
+            );
+
+        }
+
+
+        gameData =
+        await responses[0].json();
+
+
+        boxscore =
+        await responses[1].json();
+
+
+        renderHeader();
+
+        renderLive();
+
+        renderLinescore();
+
+        renderDecisions();
+
+        renderPlays();
+
+        renderBatting();
+
+        renderPitching();
+
+        renderTeamStats();
+
+        showIntel(
+            "decider",
+            document.querySelector(
+                ".intel-button"
+            )
+        );
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        showError(
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+function showError(message){
+
+    document.getElementById(
+        "error"
+    ).innerHTML = `
+
+    <div class="error">
+
+    Sports 20/20 couldn't load this game.
+
+    <br><br>
+
+    ${text(message)}
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+function renderHeader(){
+
+    const teams =
+    gameData.gameData.teams;
+
+    const line =
+    gameData.liveData.linescore;
+
+
+    document.getElementById(
+        "awayName"
+    ).textContent =
+    teams.away.name;
+
+
+    document.getElementById(
+        "homeName"
+    ).textContent =
+    teams.home.name;
+
+
+    document.getElementById(
+        "awayScore"
+    ).textContent =
+    text(
+        line.teams.away.runs
+    );
+
+
+    document.getElementById(
+        "homeScore"
+    ).textContent =
+    text(
+        line.teams.home.runs
+    );
+
+
+    const state =
+    gameData.gameData.status.abstractGameState;
+
+
+    const status =
+    document.getElementById(
+        "status"
+    );
+
+
+    status.textContent =
+    gameData.gameData.status.detailedState;
+
+
+    status.className =
+    "game-status " +
+    (
+        state === "Live"
+        ? "live"
+        :
+        state === "Final"
+        ? "final"
+        :
+        "scheduled"
+    );
+
+
+    const date =
+    gameData.gameData.datetime.dateTime;
+
+
+    document.getElementById(
+        "meta"
+    ).textContent =
+
+    new Date(date)
+    .toLocaleString(
+        "en-US",
+        {
+            dateStyle:"medium",
+            timeStyle:"short"
+        }
+    )
+    +
+    " • " +
+    gameData.gameData.venue.name;
+
+}
+
+
+/* =====================================================
+   LIVE
+===================================================== */
+
+function renderLive(){
+
+    const state =
+    gameData.gameData.status.abstractGameState;
+
+
+    if(state !== "Live"){
+
+        document.getElementById(
+            "liveContainer"
+        ).innerHTML = "";
+
+        return;
+
+    }
+
+
+    const line =
+    gameData.liveData.linescore;
+
+    const offense =
+    line.offense || {};
+
+    const defense =
+    line.defense || {};
+
+
+    const runners=[];
+
+
+    if(offense.first)
+        runners.push("1st");
+
+
+    if(offense.second)
+        runners.push("2nd");
+
+
+    if(offense.third)
+        runners.push("3rd");
+
+
+    document.getElementById(
+        "liveContainer"
+    ).innerHTML = `
+
+    <div class="live-box">
+
+    <div class="live-title">
+    🔴 LIVE GAME
+    </div>
+
+    <div class="live-grid">
+
+    <div class="live-stat">
+
+    <span class="live-label">
+    AT BAT
+    </span>
+
+    ${text(
+        offense.batter?.fullName
+    )}
+
+    </div>
+
+
+    <div class="live-stat">
+
+    <span class="live-label">
+    PITCHER
+    </span>
+
+    ${text(
+        defense.pitcher?.fullName
+    )}
+
+    </div>
+
+
+    <div class="live-stat">
+
+    <span class="live-label">
+    INNING
+    </span>
+
+    ${text(
+        line.currentInningOrdinal
+    )}
+
+    </div>
+
+
+    <div class="live-stat">
+
+    <span class="live-label">
+    COUNT
+    </span>
+
+    ${text(line.balls)}
+    -
+    ${text(line.strikes)}
+
+    </div>
+
+
+    <div class="live-stat">
+
+    <span class="live-label">
+    OUTS
+    </span>
+
+    ${text(line.outs)}
+
+    </div>
+
+
+    <div class="live-stat">
+
+    <span class="live-label">
+    RUNNERS
+    </span>
+
+    ${
+        runners.length
+        ? runners.join(" • ")
+        : "Bases empty"
+    }
+
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   LINESCORE
+===================================================== */
+
+function renderLinescore(){
+
+    const line =
+    gameData.liveData.linescore;
+
+
+    const innings =
+    line.innings || [];
+
+
+    if(!innings.length){
+
+        document.getElementById(
+            "linescore"
+        ).innerHTML =
+        `<div class="loading">
+        Linescore unavailable.
+        </div>`;
+
+        return;
+
+    }
+
+
+    let html = `
+
+    <table>
+
+    <thead>
+
+    <tr>
+
+    <th>Team</th>
+    `;
+
+
+    innings.forEach(
+        inning => {
+
+            html += `
+            <th>
+            ${inning.num}
+            </th>
+            `;
+
+        }
+    );
+
+
+    html += `
+    <th>R</th>
+    <th>H</th>
+    <th>E</th>
+    </tr>
+    </thead>
+    <tbody>
+    `;
+
+
+    ["away","home"]
+    .forEach(
+        side => {
+
+            const team =
+            gameData.gameData.teams[side];
+
+            const totals =
+            line.teams[side];
+
+
+            html += `
+
+            <tr>
+
+            <td>
+            <strong>
+            ${team.name}
+            </strong>
+            </td>
+
+            `;
+
+
+            innings.forEach(
+                inning => {
+
+                    html += `
+
+                    <td>
+                    ${
+                        inning[side]?.runs ??
+                        "—"
+                    }
+                    </td>
+
+                    `;
+
+                }
+            );
+
+
+            html += `
+
+            <td>
+            <strong>
+            ${text(totals.runs)}
+            </strong>
+            </td>
+
+            <td>
+            <strong>
+            ${text(totals.hits)}
+            </strong>
+            </td>
+
+            <td>
+            <strong>
+            ${text(totals.errors)}
+            </strong>
+            </td>
+
+            </tr>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+    </tbody>
+    </table>
+    `;
+
+
+    document.getElementById(
+        "linescore"
+    ).innerHTML =
+    html;
+
+}
+
+
+/* =====================================================
+   DECISIONS
+===================================================== */
+
+function renderDecisions(){
+
+    const d =
+    gameData.liveData.decisions;
+
+
+    document.getElementById(
+        "decisions"
+    ).innerHTML = `
+
+    <div class="decisions">
+
+    <div class="decision">
+
+    <div class="decision-label">
+    WINNING PITCHER
+    </div>
+
+    <div class="decision-name">
+    ${
+        text(
+            d?.winner?.fullName
+        )
+    }
+    </div>
+
+    </div>
+
+
+    <div class="decision">
+
+    <div class="decision-label">
+    LOSING PITCHER
+    </div>
+
+    <div class="decision-name">
+    ${
+        text(
+            d?.loser?.fullName
+        )
+    }
+    </div>
+
+    </div>
+
+
+    <div class="decision">
+
+    <div class="decision-label">
+    SAVE
+    </div>
+
+    <div class="decision-name">
+    ${
+        text(
+            d?.save?.fullName
+        )
+    }
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   KEY PLAYS
+===================================================== */
+
+function renderPlays(){
+
+    const plays =
+    gameData.liveData
+    ?.plays
+    ?.allPlays || [];
+
+
+    const important =
+    plays
+    .filter(
+        play =>
+        play.result?.event
+    )
+    .slice(-15)
+    .reverse();
+
+
+    if(!important.length){
+
+        document.getElementById(
+            "plays"
+        ).innerHTML = `
+
+        <div class="loading">
+        No key plays available yet.
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    let html = "";
+
+
+    important.forEach(
+        play => {
+
+            html += `
+
+            <div class="play">
+
+            <div class="play-time">
+
+            Inning
+            ${text(
+                play.about?.inning
+            )}
+
+            ${
+                play.about?.halfInning === "top"
+                ? "▲"
+                : "▼"
+            }
+
+            </div>
+
+            <div class="play-text">
+
+            ${text(
+                play.result?.description ||
+                play.result?.event
+            )}
+
+            </div>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+
+    document.getElementById(
+        "plays"
+    ).innerHTML =
+    html;
+
+}
+
+
+/* =====================================================
+   PLAYER LOOKUP
+===================================================== */
+
+function getPlayer(
+    team,
+    id
+){
+
+    return team.players?.[
+        "ID" + id
+    ];
+
+}
+
+
+/* =====================================================
+   BATTING
+===================================================== */
+
+function renderBatting(){
+
+    let html = "";
+
+
+    ["away","home"]
+    .forEach(
+        side => {
+
+            const team =
+            boxscore.teams[side];
+
+
+            /*
+             * IMPORTANT:
+             * MLB provides battingOrder.
+             * We use it directly.
+             */
+
+            const order =
+            team.battingOrder || [];
+
+
+            html += `
+
+            <div class="team-section">
+
+            ${team.team.name}
+
+            </div>
+
+            <div class="table-wrap">
+
+            <table>
+
+            <thead>
+
+            <tr>
+
+            <th>Player</th>
+            <th>AB</th>
+            <th>H</th>
+            <th>R</th>
+            <th>HR</th>
+            <th>RBI</th>
+            <th>BB</th>
+            <th>SO</th>
+            <th>SB</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            `;
+
+
+            order.forEach(
+                (id,index) => {
+
+                    const player =
+                    getPlayer(
+                        team,
+                        id
+                    );
+
+
+                    if(!player)
+                        return;
+
+
+                    const stats =
+                    player.stats?.batting || {};
+
+
+                    html += `
+
+                    <tr>
+
+                    <td>
+
+                    <div class="player">
+
+                    ${index + 1}.
+                    ${text(
+                        player.person?.fullName
+                    )}
+
+                    </div>
+
+                    <div class="position">
+
+                    ${
+                        text(
+                            player.position?.abbreviation ||
+                            player.position?.name
+                        )
+                    }
+
+                    </div>
+
+                    </td>
+
+                    <td>
+                    ${text(stats.atBats)}
+                    </td>
+
+                    <td>
+                    ${text(stats.hits)}
+                    </td>
+
+                    <td>
+                    ${text(stats.runs)}
+                    </td>
+
+                    <td>
+                    ${text(stats.homeRuns)}
+                    </td>
+
+                    <td>
+                    ${text(
+                        stats.rbi ??
+                        stats.runsBattedIn
+                    )}
+                    </td>
+
+                    <td>
+                    ${text(stats.baseOnBalls)}
+                    </td>
+
+                    <td>
+                    ${text(stats.strikeOuts)}
+                    </td>
+
+                    <td>
+                    ${text(stats.stolenBases)}
+                    </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+
+            html += `
+
+            </tbody>
+
+            </table>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+
+    document.getElementById(
+        "batting"
+    ).innerHTML =
+    html;
+
+}
+
+
+/* =====================================================
+   PITCHING
+===================================================== */
+
+function renderPitching(){
+
+    let html = "";
+
+
+    ["away","home"]
+    .forEach(
+        side => {
+
+            const team =
+            boxscore.teams[side];
+
+
+            const pitchers =
+            team.pitchers || [];
+
+
+            html += `
+
+            <div class="team-section">
+
+            ${team.team.name}
+
+            </div>
+
+            <div class="table-wrap">
+
+            <table>
+
+            <thead>
+
+            <tr>
+
+            <th>Pitcher</th>
+            <th>IP</th>
+            <th>H</th>
+            <th>R</th>
+            <th>ER</th>
+            <th>BB</th>
+            <th>SO</th>
+            <th>HR</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            `;
+
+
+            pitchers.forEach(
+                id => {
+
+                    const player =
+                    getPlayer(
+                        team,
+                        id
+                    );
+
+
+                    if(!player)
+                        return;
+
+
+                    const stats =
+                    player.stats?.pitching || {};
+
+
+                    html += `
+
+                    <tr>
+
+                    <td>
+
+                    <div class="player">
+
+                    ${text(
+                        player.person?.fullName
+                    )}
+
+                    </div>
+
+                    </td>
+
+                    <td>
+                    ${text(stats.inningsPitched)}
+                    </td>
+
+                    <td>
+                    ${text(stats.hits)}
+                    </td>
+
+                    <td>
+                    ${text(stats.runs)}
+                    </td>
+
+                    <td>
+                    ${text(stats.earnedRuns)}
+                    </td>
+
+                    <td>
+                    ${text(stats.baseOnBalls)}
+                    </td>
+
+                    <td>
+                    ${text(stats.strikeOuts)}
+                    </td>
+
+                    <td>
+                    ${text(stats.homeRuns)}
+                    </td>
+
+                    </tr>
+
+                    `;
+
+                }
+            );
+
+
+            html += `
+            </tbody>
+            </table>
+            </div>
+            `;
+
+        }
+    );
+
+
+    document.getElementById(
+        "pitching"
+    ).innerHTML =
+    html;
+
+}
+
+
+/* =====================================================
+   TEAM STATS
+===================================================== */
+
+function renderTeamStats(){
+
+    const away =
+    boxscore.teams.away;
+
+    const home =
+    boxscore.teams.home;
+
+
+    const a =
+    away.teamStats?.batting || {};
+
+    const h =
+    home.teamStats?.batting || {};
+
+
+    const stats = [
+
+        ["At Bats","atBats"],
+
+        ["Runs","runs"],
+
+        ["Hits","hits"],
+
+        ["Doubles","doubles"],
+
+        ["Triples","triples"],
+
+        ["Home Runs","homeRuns"],
+
+        ["RBI","rbi"],
+
+        ["Walks","baseOnBalls"],
+
+        ["Strikeouts","strikeOuts"],
+
+        ["Stolen Bases","stolenBases"],
+
+        ["Left on Base","leftOnBase"]
+
+    ];
+
+
+    let html = `
+
+    <div class="table-wrap">
+
+    <table>
+
+    <thead>
+
+    <tr>
+
+    <th>Statistic</th>
+
+    <th>${away.team.name}</th>
+
+    <th>${home.team.name}</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    `;
+
+
+    stats.forEach(
+        item => {
+
+            html += `
+
+            <tr>
+
+            <td>
+            <strong>
+            ${item[0]}
+            </strong>
+            </td>
+
+            <td>
+            ${text(a[item[1]])}
+            </td>
+
+            <td>
+            ${text(h[item[1]])}
+            </td>
+
+            </tr>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+    </tbody>
+    </table>
+    </div>
+    `;
+
+
+    document.getElementById(
+        "teamStats"
+    ).innerHTML =
+    html;
+
+}
+
+
+/* =====================================================
+   DATA FOR 20/20
+===================================================== */
+
+function getTwentyData(){
+
+    const away =
+    boxscore.teams.away;
+
+    const home =
+    boxscore.teams.home;
+
+
+    const line =
+    gameData.liveData.linescore;
+
+
+    const awayRuns =
+    number(
+        line.teams.away.runs
+    );
+
+
+    const homeRuns =
+    number(
+        line.teams.home.runs
+    );
+
+
+    const awayHits =
+    number(
+        away.teamStats?.batting?.hits
+    );
+
+
+    const homeHits =
+    number(
+        home.teamStats?.batting?.hits
+    );
+
+
+    const awayHR =
+    number(
+        away.teamStats?.batting?.homeRuns
+    );
+
+
+    const homeHR =
+    number(
+        home.teamStats?.batting?.homeRuns
+    );
+
+
+    const awayBB =
+    number(
+        away.teamStats?.batting?.baseOnBalls
+    );
+
+
+    const homeBB =
+    number(
+        home.teamStats?.batting?.baseOnBalls
+    );
+
+
+    const awaySB =
+    number(
+        away.teamStats?.batting?.stolenBases
+    );
+
+
+    const homeSB =
+    number(
+        home.teamStats?.batting?.stolenBases
+    );
+
+
+    const awayErrors =
+    number(
+        line.teams.away.errors
+    );
+
+
+    const homeErrors =
+    number(
+        line.teams.home.errors
+    );
+
+
+    return {
+
+        away,
+        home,
+
+        awayName:
+        away.team.name,
+
+        homeName:
+        home.team.name,
+
+        awayRuns,
+        homeRuns,
+
+        awayHits,
+        homeHits,
+
+        awayHR,
+        homeHR,
+
+        awayBB,
+        homeBB,
+
+        awaySB,
+        homeSB,
+
+        awayErrors,
+        homeErrors
+
+    };
+
+}
+
+
+/* =====================================================
+   FIND BEST HITTER
+===================================================== */
+
+function bestHitter(team){
+
+    const order =
+    team.battingOrder || [];
+
+
+    const players =
+    order
+    .map(
+        id =>
+        getPlayer(team,id)
+    )
+    .filter(Boolean);
+
+
+    players.sort(
+        (a,b) => {
+
+            const ah =
+            number(
+                a.stats?.batting?.hits
+            );
+
+            const bh =
+            number(
+                b.stats?.batting?.hits
+            );
+
+
+            if(bh !== ah)
+                return bh - ah;
+
+
+            const ar =
+            number(
+                a.stats?.batting?.rbi
+            );
+
+            const br =
+            number(
+                b.stats?.batting?.rbi
+            );
+
+
+            return br - ar;
+
+        }
+    );
+
+
+    return players[0] || null;
+
+}
+
+
+/* =====================================================
+   FIND BEST PITCHER
+===================================================== */
+
+function bestPitcher(team){
+
+    const pitchers =
+    (team.pitchers || [])
+    .map(
+        id =>
+        getPlayer(team,id)
+    )
+    .filter(Boolean);
+
+
+    pitchers.sort(
+        (a,b) => {
+
+            const aso =
+            number(
+                a.stats?.pitching?.strikeOuts
+            );
+
+            const bso =
+            number(
+                b.stats?.pitching?.strikeOuts
+            );
+
+
+            return bso - aso;
+
+        }
+    );
+
+
+    return pitchers[0] || null;
+
+}
+
+
+/* =====================================================
+   20/20 BUTTON SYSTEM
+===================================================== */
+
+function showIntel(
+    type,
+    button
+){
+
+    /*
+     * Make the clicked button active.
+     */
+
+    document
+    .querySelectorAll(".intel-button")
+    .forEach(
+        b =>
+        b.classList.remove("active")
+    );
+
+
+    if(button)
+        button.classList.add("active");
+
+
+    const data =
+    getTwentyData();
+
+
+    const content =
+    document.getElementById(
+        "intelContent"
+    );
+
+
+    if(type === "decider"){
+
+        renderDecider(
+            data,
+            content
+        );
+
+    }
+
+    else if(type === "turning"){
+
+        renderTurningPoint(
+            data,
+            content
+        );
+
+    }
+
+    else if(type === "offense"){
+
+        renderOffense(
+            data,
+            content
+        );
+
+    }
+
+    else if(type === "pitching"){
+
+        renderIntelPitching(
+            data,
+            content
+        );
+
+    }
+
+    else if(type === "running"){
+
+        renderRunning(
+            data,
+            content
+        );
+
+    }
+
+    else if(type === "defense"){
+
+        renderDefense(
+            data,
+            content
+        );
+
+    }
+
+    else if(type === "momentum"){
+
+        renderMomentum(
+            data,
+            content
+        );
+
+    }
+
+    else if(type === "full"){
+
+        renderFullTwenty(
+            data,
+            content
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   GAME DECIDER
+===================================================== */
+
+function renderDecider(
+    d,
+    content
+){
+
+    let answer;
+
+
+    if(d.awayRuns > d.homeRuns){
+
+        answer =
+        d.awayName +
+        " currently has the advantage.";
+
+    }
+
+    else if(d.homeRuns > d.awayRuns){
+
+        answer =
+        d.homeName +
+        " currently has the advantage.";
+
+    }
+
+    else{
+
+        answer =
+        "The game is currently tied.";
+
+    }
+
+
+    const difference =
+    Math.abs(
+        d.awayRuns -
+        d.homeRuns
+    );
+
+
+    let explanation;
+
+
+    if(difference === 0){
+
+        explanation =
+        "Neither team has separated itself on the scoreboard yet.";
+
+    }
+
+    else if(difference <= 2){
+
+        explanation =
+        "This is a close game. One swing, defensive play or pitching mistake could change the result.";
+
+    }
+
+    else{
+
+        explanation =
+        "The current scoring margin gives the leading team a meaningful advantage.";
+
+    }
+
+
+    content.innerHTML = `
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Current Game Decider
+    </div>
+
+    <div class="intel-big">
+    ${answer}
+    </div>
+
+    <div class="intel-text">
+    ${explanation}
+    </div>
+
+    </div>
+
+
+    <div class="intel-grid">
+
+    <div class="intel-mini">
+
+    <h3>
+    ${d.awayName}
+    </h3>
+
+    <div class="intel-number">
+    ${d.awayRuns}
+    </div>
+
+    <div class="intel-muted">
+    ${d.awayHits} hits •
+    ${d.awayHR} HR
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    ${d.homeName}
+    </h3>
+
+    <div class="intel-number">
+    ${d.homeRuns}
+    </div>
+
+    <div class="intel-muted">
+    ${d.homeHits} hits •
+    ${d.homeHR} HR
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   TURNING POINT
+===================================================== */
+
+function renderTurningPoint(
+    d,
+    content
+){
+
+    const plays =
+    gameData.liveData
+    ?.plays
+    ?.allPlays || [];
+
+
+    const scoring =
+    plays.filter(
+        play =>
+        play.about?.isScoringPlay
+    );
+
+
+    if(!scoring.length){
+
+        content.innerHTML = `
+
+        <div class="intel-answer">
+
+        <div class="intel-answer-title">
+        Turning Point
+        </div>
+
+        <div class="intel-big">
+        No major scoring turning point yet.
+        </div>
+
+        <div class="intel-text">
+
+        As the game develops, Sports 20/20
+        will use scoring plays to identify
+        the moments that changed the game.
+
+        </div>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const play =
+    scoring[scoring.length - 1];
+
+
+    content.innerHTML = `
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Most Recent Scoring Turning Point
+    </div>
+
+    <div class="intel-big">
+
+    Inning ${text(
+        play.about?.inning
+    )}
+
+    </div>
+
+    <div class="intel-text">
+
+    ${text(
+        play.result?.description
+    )}
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Why It Matters
+    </div>
+
+    <div class="intel-text">
+
+    Scoring plays directly change the
+    scoreboard and can shift the game's
+    momentum. Sports 20/20 tracks these
+    events to identify the biggest swings.
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   OFFENSE
+===================================================== */
+
+function renderOffense(
+    d,
+    content
+){
+
+    const awayHitter =
+    bestHitter(d.away);
+
+
+    const homeHitter =
+    bestHitter(d.home);
+
+
+    const advantage =
+    d.awayHits > d.homeHits
+    ? d.awayName
+    :
+    d.homeHits > d.awayHits
+    ? d.homeName
+    :
+    "Even";
+
+
+    content.innerHTML = `
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Offensive Advantage
+    </div>
+
+    <div class="intel-big">
+    ${advantage}
+    </div>
+
+    <div class="intel-text">
+
+    ${d.awayName}:
+    ${d.awayHits} hits,
+    ${d.awayHR} HR,
+    ${d.awayBB} BB
+
+    <br><br>
+
+    ${d.homeName}:
+    ${d.homeHits} hits,
+    ${d.homeHR} HR,
+    ${d.homeBB} BB
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-grid">
+
+    <div class="intel-mini">
+
+    <h3>
+    🔥 ${d.awayName}
+    </h3>
+
+    <div class="intel-muted">
+
+    ${
+        awayHitter
+        ?
+        text(
+            awayHitter.person?.fullName
+        )
+        :
+        "No hitter data yet."
+    }
+
+    <br><br>
+
+    ${
+        awayHitter
+        ?
+        text(
+            awayHitter.stats?.batting?.hits
+        ) +
+        " H • " +
+        text(
+            awayHitter.stats?.batting?.rbi
+        ) +
+        " RBI"
+        :
+        ""
+    }
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    🔥 ${d.homeName}
+    </h3>
+
+    <div class="intel-muted">
+
+    ${
+        homeHitter
+        ?
+        text(
+            homeHitter.person?.fullName
+        )
+        :
+        "No hitter data yet."
+    }
+
+    <br><br>
+
+    ${
+        homeHitter
+        ?
+        text(
+            homeHitter.stats?.batting?.hits
+        ) +
+        " H • " +
+        text(
+            homeHitter.stats?.batting?.rbi
+        ) +
+        " RBI"
+        :
+        ""
+    }
+
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   PITCHING
+===================================================== */
+
+function renderIntelPitching(
+    d,
+    content
+){
+
+    const awayPitcher =
+    bestPitcher(d.away);
+
+
+    const homePitcher =
+    bestPitcher(d.home);
+
+
+    const decisions =
+    gameData.liveData.decisions;
+
+
+    content.innerHTML = `
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Pitching Decisions
+    </div>
+
+    <div class="intel-big">
+
+    ${
+        decisions?.winner?.fullName
+        ?
+        decisions.winner.fullName +
+        " earned the win."
+        :
+        "No official decision yet."
+    }
+
+    </div>
+
+    <div class="intel-text">
+
+    ${
+        decisions?.loser?.fullName
+        ?
+        decisions.loser.fullName +
+        " took the loss."
+        :
+        "The losing pitcher has not been determined."
+    }
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-grid">
+
+    <div class="intel-mini">
+
+    <h3>
+    ${d.awayName}
+    </h3>
+
+    <div class="intel-muted">
+
+    ${
+        awayPitcher
+        ?
+        text(
+            awayPitcher.person?.fullName
+        )
+        :
+        "No pitcher data."
+    }
+
+    <br><br>
+
+    ${
+        awayPitcher
+        ?
+        text(
+            awayPitcher.stats?.pitching?.inningsPitched
+        ) +
+        " IP • " +
+        text(
+            awayPitcher.stats?.pitching?.strikeOuts
+        ) +
+        " K"
+        :
+        ""
+    }
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    ${d.homeName}
+    </h3>
+
+    <div class="intel-muted">
+
+    ${
+        homePitcher
+        ?
+        text(
+            homePitcher.person?.fullName
+        )
+        :
+        "No pitcher data."
+    }
+
+    <br><br>
+
+    ${
+        homePitcher
+        ?
+        text(
+            homePitcher.stats?.pitching?.inningsPitched
+        ) +
+        " IP • " +
+        text(
+            homePitcher.stats?.pitching?.strikeOuts
+        ) +
+        " K"
+        :
+        ""
+    }
+
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   BASE RUNNING
+===================================================== */
+
+function renderRunning(
+    d,
+    content
+){
+
+    let leader =
+    "Neither team has a stolen-base advantage.";
+
+
+    if(d.awaySB > d.homeSB){
+
+        leader =
+        d.awayName +
+        " has the base-running advantage.";
+
+    }
+
+    else if(d.homeSB > d.awaySB){
+
+        leader =
+        d.homeName +
+        " has the base-running advantage.";
+
+    }
+
+
+    content.innerHTML = `
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Base Running
+    </div>
+
+    <div class="intel-big">
+    ${leader}
+    </div>
+
+    <div class="intel-text">
+
+    ${
+        d.awayName
+    }:
+    ${d.awaySB} stolen bases
+
+    <br>
+
+    ${
+        d.homeName
+    }:
+    ${d.homeSB} stolen bases
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-grid">
+
+    <div class="intel-mini">
+
+    <h3>
+    🏃 ${d.awayName}
+    </h3>
+
+    <div class="intel-number">
+    ${d.awaySB}
+    </div>
+
+    <div class="intel-muted">
+    Stolen bases
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    🏃 ${d.homeName}
+    </h3>
+
+    <div class="intel-number">
+    ${d.homeSB}
+    </div>
+
+    <div class="intel-muted">
+    Stolen bases
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   DEFENSE
+===================================================== */
+
+function renderDefense(
+    d,
+    content
+){
+
+    let leader =
+    "Both teams are even in errors.";
+
+
+    if(d.awayErrors < d.homeErrors){
+
+        leader =
+        d.awayName +
+        " has the cleaner defensive game.";
+
+    }
+
+    else if(d.homeErrors < d.awayErrors){
+
+        leader =
+        d.homeName +
+        " has the cleaner defensive game.";
+
+    }
+
+
+    content.innerHTML = `
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Defensive Advantage
+    </div>
+
+    <div class="intel-big">
+    ${leader}
+    </div>
+
+    <div class="intel-text">
+
+    ${d.awayName}:
+    ${d.awayErrors} errors
+
+    <br>
+
+    ${d.homeName}:
+    ${d.homeErrors} errors
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    20/20 Defensive Read
+    </div>
+
+    <div class="intel-text">
+
+    Fewer errors generally means fewer
+    additional opportunities given to the
+    opponent. Sports 20/20 will eventually
+    combine this with individual defensive
+    plays to identify the biggest defensive
+    impact.
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   MOMENTUM
+===================================================== */
+
+function renderMomentum(
+    d,
+    content
+){
+
+    const plays =
+    gameData.liveData
+    ?.plays
+    ?.allPlays || [];
+
+
+    const scoring =
+    plays.filter(
+        play =>
+        play.about?.isScoringPlay
+    );
+
+
+    content.innerHTML = `
+
+    <div class="intel-answer">
+
+    <div class="intel-answer-title">
+    Momentum
+    </div>
+
+    <div class="intel-big">
+
+    ${
+        scoring.length
+        ?
+        scoring.length +
+        " scoring plays recorded."
+        :
+        "No scoring plays recorded yet."
+    }
+
+    </div>
+
+    <div class="intel-text">
+
+    Sports 20/20 uses scoring events
+    and game situations to track when
+    the balance of the game changes.
+
+    </div>
+
+    </div>
+
+
+    <div class="intel-grid">
+
+    <div class="intel-mini">
+
+    <h3>
+    Score
+    </h3>
+
+    <div class="intel-number">
+
+    ${d.awayRuns}
+    -
+    ${d.homeRuns}
+
+    </div>
+
+    <div class="intel-muted">
+    Current score
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    Scoring Events
+    </h3>
+
+    <div class="intel-number">
+    ${scoring.length}
+    </div>
+
+    <div class="intel-muted">
+    Recorded scoring plays
+    </div>
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   FULL 20/20
+===================================================== */
+
+function renderFullTwenty(
+    d,
+    content
+){
+
+    let leader;
+
+
+    if(d.awayRuns > d.homeRuns)
+        leader = d.awayName;
+
+    else if(d.homeRuns > d.awayRuns)
+        leader = d.homeName;
+
+    else
+        leader = "Tied";
+
+
+    const hitLeader =
+    d.awayHits > d.homeHits
+    ? d.awayName
+    :
+    d.homeHits > d.awayHits
+    ? d.homeName
+    :
+    "Even";
+
+
+    const powerLeader =
+    d.awayHR > d.homeHR
+    ? d.awayName
+    :
+    d.homeHR > d.awayHR
+    ? d.homeName
+    :
+    "Even";
+
+
+    const runLeader =
+    d.awaySB > d.homeSB
+    ? d.awayName
+    :
+    d.homeSB > d.awaySB
+    ? d.homeName
+    :
+    "Even";
+
+
+    const defensiveLeader =
+    d.awayErrors < d.homeErrors
+    ? d.awayName
+    :
+    d.homeErrors < d.awayErrors
+    ? d.homeName
+    :
+    "Even";
+
+
+    content.innerHTML = `
+
+    <div class="rating">
+
+    <div class="rating-label">
+    SPORTS 20/20 GAME READ
+    </div>
+
+    <div class="rating-number">
+    ${leader}
+    </div>
+
+    <div class="rating-label">
+    Current scoreboard advantage
+    </div>
+
+    </div>
+
+
+    <div class="intel-grid">
+
+
+    <div class="intel-mini">
+
+    <h3>
+    🎯 Game Decider
+    </h3>
+
+    <div class="intel-muted">
+    ${leader}
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    ⚾ Offense
+    </h3>
+
+    <div class="intel-muted">
+    ${hitLeader}
+    has the hit advantage.
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    💥 Power
+    </h3>
+
+    <div class="intel-muted">
+    ${powerLeader}
+    has the home-run advantage.
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    🏃 Base Running
+    </h3>
+
+    <div class="intel-muted">
+    ${runLeader}
+    has the stolen-base advantage.
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    🧤 Defense
+    </h3>
+
+    <div class="intel-muted">
+    ${defensiveLeader}
+    has the cleaner error total.
+    </div>
+
+    </div>
+
+
+    <div class="intel-mini">
+
+    <h3>
+    📈 Score
+    </h3>
+
+    <div class="intel-number">
+
+    ${d.awayRuns}
+    -
+    ${d.homeRuns}
+
+    </div>
+
+    <div class="intel-muted">
+
+    ${d.awayName}
+    vs
+    ${d.homeName}
+
+    </div>
+
+    </div>
+
+
+    </div>
+
+
+    <div class="intel-answer"
+    style="margin-top:15px;">
+
+    <div class="intel-answer-title">
+    👁️ Sports 20/20 Takeaway
+    </div>
+
+    <div class="intel-big">
+
+    Look beyond the scoreboard.
+
+    </div>
+
+    <div class="intel-text">
+
+    Sports 20/20 combines the score,
+    offensive production, power,
+    pitching, base running, defense
+    and game events to explain what
+    is driving the game.
+
+    This is the foundation for the
+    deeper analytical system we can
+    continue building into Sports 20/20.
+
+    </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadGame();
+
+
+/* =====================================================
+   AUTO REFRESH
+===================================================== */
+
+setInterval(
+    loadGame,
+    30000
+);
+
+</script>
+
+</body>
+
+</html>
