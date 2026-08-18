@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-18T05:16:40.325501+00:00",
+  "lastUpdated": "2026-08-18T09:53:09.904738+00:00",
   "games": [
     {
       "gamePk": 822786,
@@ -10368,7 +10368,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Oriole Park at Camden Yards",
-      "awayPitcher": "Max Fried",
+      "awayPitcher": null,
       "homePitcher": "Chris Bassitt"
     },
     {
