@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-18T22:59:30.122525+00:00",
+  "lastUpdated": "2026-08-18T23:55:28.839155+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -17,7 +17,7 @@
             "player": "Chandler Simpson",
             "team": "Tampa Bay Rays",
             "position": "LF",
-            "value": ".308"
+            "value": ".310"
           },
           {
             "rank": 3,
@@ -38,7 +38,7 @@
             "player": "Ceddanne Rafaela",
             "team": "Boston Red Sox",
             "position": "CF",
-            "value": ".288"
+            "value": ".289"
           }
         ],
         "hits": [
@@ -61,21 +61,21 @@
             "player": "Ceddanne Rafaela",
             "team": "Boston Red Sox",
             "position": "CF",
-            "value": "136"
+            "value": "137"
           },
           {
             "rank": 4,
             "player": "Chandler Simpson",
             "team": "Tampa Bay Rays",
             "position": "LF",
-            "value": "134"
+            "value": "135"
           },
           {
             "rank": 5,
             "player": "Ernie Clement",
             "team": "Toronto Blue Jays",
             "position": "2B",
-            "value": "132"
+            "value": "133"
           }
         ],
         "homeRuns": [
@@ -209,14 +209,14 @@
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": ".391"
+            "value": ".390"
           },
           {
             "rank": 4,
             "player": "Kevin McGonigle",
             "team": "Detroit Tigers",
             "position": "SS",
-            "value": ".385"
+            "value": ".386"
           },
           {
             "rank": 5,
@@ -246,21 +246,21 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".537"
+            "value": ".538"
           },
           {
             "rank": 4,
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": ".533"
+            "value": ".532"
           },
           {
             "rank": 5,
             "player": "Ben Rice",
             "team": "New York Yankees",
             "position": "DH",
-            "value": ".532"
+            "value": ".530"
           }
         ],
         "ops": [
@@ -276,7 +276,7 @@
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": ".924"
+            "value": ".922"
           },
           {
             "rank": 3,
@@ -290,7 +290,7 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".900"
+            "value": ".902"
           },
           {
             "rank": 5,
@@ -541,17 +541,17 @@
           },
           {
             "rank": 3,
-            "player": "Keider Montero",
-            "team": "Detroit Tigers",
+            "player": "Logan Gilbert",
+            "team": "Seattle Mariners",
             "position": "P",
             "value": "0.99"
           },
           {
             "rank": 4,
-            "player": "Logan Gilbert",
-            "team": "Seattle Mariners",
+            "player": "Keider Montero",
+            "team": "Detroit Tigers",
             "position": "P",
-            "value": "0.99"
+            "value": "1.00"
           },
           {
             "rank": 5,
@@ -681,7 +681,7 @@
             "player": "Spencer Torkelson",
             "team": "Detroit Tigers",
             "position": "1B",
-            "value": "931"
+            "value": "937"
           },
           {
             "rank": 2,
@@ -695,14 +695,14 @@
             "player": "Jonathan Aranda",
             "team": "Tampa Bay Rays",
             "position": "1B",
-            "value": "828"
+            "value": "831"
           },
           {
             "rank": 4,
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": "798"
+            "value": "801"
           },
           {
             "rank": 5,
@@ -841,7 +841,7 @@
             "player": "Otto Lopez",
             "team": "Miami Marlins",
             "position": "SS",
-            "value": ".309"
+            "value": ".308"
           },
           {
             "rank": 3,
@@ -1033,21 +1033,21 @@
             "player": "Jake Bauers",
             "team": "Milwaukee Brewers",
             "position": "1B",
-            "value": ".384"
+            "value": ".385"
           },
           {
             "rank": 4,
             "player": "Gabriel Moreno",
             "team": "Arizona Diamondbacks",
             "position": "C",
-            "value": ".384"
+            "value": ".383"
           },
           {
             "rank": 5,
             "player": "Bryce Harper",
             "team": "Philadelphia Phillies",
             "position": "1B",
-            "value": ".380"
+            "value": ".381"
           }
         ],
         "slg": [
@@ -1063,7 +1063,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": ".552"
+            "value": ".551"
           },
           {
             "rank": 3,
@@ -1114,14 +1114,14 @@
             "player": "Kyle Schwarber",
             "team": "Philadelphia Phillies",
             "position": "DH",
-            "value": ".900"
+            "value": ".897"
           },
           {
             "rank": 5,
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": ".893"
+            "value": ".892"
           }
         ],
         "stolenBases": [
@@ -1453,10 +1453,10 @@
           },
           {
             "rank": 5,
-            "player": "Yoshinobu Yamamoto",
-            "team": "Los Angeles Dodgers",
+            "player": "Braxton Ashcraft",
+            "team": "Pittsburgh Pirates",
             "position": "P",
-            "value": "145.1"
+            "value": "146.2"
           }
         ],
         "qualityStarts": []
@@ -1505,21 +1505,21 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "970"
+            "value": "973"
           },
           {
             "rank": 2,
             "player": "William Contreras",
             "team": "Milwaukee Brewers",
             "position": "C",
-            "value": "947"
+            "value": "949"
           },
           {
             "rank": 3,
             "player": "J.T. Realmuto",
             "team": "Philadelphia Phillies",
             "position": "C",
-            "value": "931"
+            "value": "936"
           },
           {
             "rank": 4,
@@ -1542,21 +1542,21 @@
             "player": "JJ Wetherholt",
             "team": "St. Louis Cardinals",
             "position": "2B",
-            "value": "339"
+            "value": "340"
           },
           {
             "rank": 2,
             "player": "Masyn Winn",
             "team": "St. Louis Cardinals",
             "position": "SS",
-            "value": "313"
+            "value": "314"
           },
           {
             "rank": 3,
             "player": "Luis Arraez",
             "team": "Philadelphia Phillies",
             "position": "2B",
-            "value": "309"
+            "value": "310"
           },
           {
             "rank": 4,
@@ -1607,7 +1607,7 @@
             "player": "Elly De La Cruz",
             "team": "Cincinnati Reds",
             "position": "SS",
-            "value": "14"
+            "value": "15"
           }
         ],
         "doublePlays": [
