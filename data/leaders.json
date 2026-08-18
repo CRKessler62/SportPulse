@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-18T03:13:52.976943+00:00",
+  "lastUpdated": "2026-08-18T06:02:25.563091+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -283,7 +283,7 @@
             "player": "Munetaka Murakami",
             "team": "Chicago White Sox",
             "position": "1B",
-            "value": ".909"
+            "value": ".910"
           },
           {
             "rank": 4,
@@ -926,17 +926,17 @@
           },
           {
             "rank": 4,
-            "player": "James Wood",
-            "team": "Washington Nationals",
-            "position": "RF",
+            "player": "Pete Crow-Armstrong",
+            "team": "Chicago Cubs",
+            "position": "CF",
             "value": "30"
           },
           {
             "rank": 5,
-            "player": "CJ Abrams",
+            "player": "James Wood",
             "team": "Washington Nationals",
-            "position": "SS",
-            "value": "29"
+            "position": "RF",
+            "value": "30"
           }
         ],
         "rbi": [
@@ -989,7 +989,7 @@
             "player": "Pete Crow-Armstrong",
             "team": "Chicago Cubs",
             "position": "CF",
-            "value": "88"
+            "value": "89"
           },
           {
             "rank": 3,
@@ -1070,7 +1070,7 @@
             "player": "Pete Crow-Armstrong",
             "team": "Chicago Cubs",
             "position": "CF",
-            "value": ".543"
+            "value": ".550"
           },
           {
             "rank": 4,
@@ -1097,17 +1097,17 @@
           },
           {
             "rank": 2,
+            "player": "Pete Crow-Armstrong",
+            "team": "Chicago Cubs",
+            "position": "CF",
+            "value": ".929"
+          },
+          {
+            "rank": 3,
             "player": "James Wood",
             "team": "Washington Nationals",
             "position": "RF",
             "value": ".928"
-          },
-          {
-            "rank": 3,
-            "player": "Pete Crow-Armstrong",
-            "team": "Chicago Cubs",
-            "position": "CF",
-            "value": ".920"
           },
           {
             "rank": 4,
