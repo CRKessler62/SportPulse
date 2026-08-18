@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-18T19:35:51.456799+00:00",
+  "lastUpdated": "2026-08-18T20:54:54.898525+00:00",
   "games": [
     {
       "gamePk": 822786,
@@ -9981,8 +9981,8 @@
         "name": "Philadelphia Phillies",
         "abbreviation": "PHI"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Citizens Bank Park",
       "awayPitcher": "Cade Gibson",
       "homePitcher": "Zack Wheeler"
@@ -10029,8 +10029,8 @@
         "name": "New York Mets",
         "abbreviation": "NYM"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Citi Field",
       "awayPitcher": "Robbie Ray",
       "homePitcher": "Zac Thornton"
@@ -10040,9 +10040,9 @@
       "date": "2026-08-18",
       "gameDate": "2026-08-18T23:40:00Z",
       "localGameTime": "2026-08-18T19:40:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 133,
         "name": "Athletics",
@@ -10056,17 +10056,17 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Kauffman Stadium",
-      "awayPitcher": "Jack Perkins",
-      "homePitcher": null
+      "awayPitcher": "Brady Basso",
+      "homePitcher": "Daniel Lynch IV"
     },
     {
       "gamePk": 823667,
       "date": "2026-08-18",
       "gameDate": "2026-08-18T23:40:00Z",
       "localGameTime": "2026-08-18T19:40:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 144,
         "name": "Atlanta Braves",
@@ -10077,8 +10077,8 @@
         "name": "Minnesota Twins",
         "abbreviation": "MIN"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Target Field",
       "awayPitcher": "Tyler Mahle",
       "homePitcher": "Zebby Matthews"
@@ -10088,9 +10088,9 @@
       "date": "2026-08-18",
       "gameDate": "2026-08-18T23:40:00Z",
       "localGameTime": "2026-08-18T19:40:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 136,
         "name": "Seattle Mariners",
@@ -10101,8 +10101,8 @@
         "name": "Milwaukee Brewers",
         "abbreviation": "MIL"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "American Family Field",
       "awayPitcher": "Bryce Miller",
       "homePitcher": "Kyle Harrison"
@@ -10112,9 +10112,9 @@
       "date": "2026-08-18",
       "gameDate": "2026-08-19T00:05:00Z",
       "localGameTime": "2026-08-18T20:05:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 120,
         "name": "Washington Nationals",
@@ -10125,8 +10125,8 @@
         "name": "Texas Rangers",
         "abbreviation": "TEX"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Globe Life Field",
       "awayPitcher": "Jackson Kent",
       "homePitcher": "Cal Quantrill"
@@ -10136,9 +10136,9 @@
       "date": "2026-08-18",
       "gameDate": "2026-08-19T00:05:00Z",
       "localGameTime": "2026-08-18T20:05:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 145,
         "name": "Chicago White Sox",
@@ -10149,10 +10149,10 @@
         "name": "Chicago Cubs",
         "abbreviation": "CHC"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Wrigley Field",
-      "awayPitcher": null,
+      "awayPitcher": "Bryan Hudson",
       "homePitcher": "Kevin Gausman"
     },
     {
@@ -10160,9 +10160,9 @@
       "date": "2026-08-18",
       "gameDate": "2026-08-19T00:10:00Z",
       "localGameTime": "2026-08-18T20:10:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 108,
         "name": "Los Angeles Angels",
