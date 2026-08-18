@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-18T21:55:09.723257+00:00",
+  "lastUpdated": "2026-08-18T22:59:30.122525+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -17,7 +17,7 @@
             "player": "Chandler Simpson",
             "team": "Tampa Bay Rays",
             "position": "LF",
-            "value": ".309"
+            "value": ".308"
           },
           {
             "rank": 3,
@@ -216,7 +216,7 @@
             "player": "Kevin McGonigle",
             "team": "Detroit Tigers",
             "position": "SS",
-            "value": ".386"
+            "value": ".385"
           },
           {
             "rank": 5,
@@ -246,7 +246,7 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".538"
+            "value": ".537"
           },
           {
             "rank": 4,
@@ -260,7 +260,7 @@
             "player": "Ben Rice",
             "team": "New York Yankees",
             "position": "DH",
-            "value": ".533"
+            "value": ".532"
           }
         ],
         "ops": [
@@ -290,7 +290,7 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".901"
+            "value": ".900"
           },
           {
             "rank": 5,
@@ -444,10 +444,10 @@
           },
           {
             "rank": 5,
-            "player": "Nick Martinez",
+            "player": "Drew Rasmussen",
             "team": "Tampa Bay Rays",
             "position": "P",
-            "value": "2.74"
+            "value": "2.78"
           }
         ],
         "wins": [
@@ -541,15 +541,15 @@
           },
           {
             "rank": 3,
-            "player": "Logan Gilbert",
-            "team": "Seattle Mariners",
+            "player": "Keider Montero",
+            "team": "Detroit Tigers",
             "position": "P",
             "value": "0.99"
           },
           {
             "rank": 4,
-            "player": "Keider Montero",
-            "team": "Detroit Tigers",
+            "player": "Logan Gilbert",
+            "team": "Seattle Mariners",
             "position": "P",
             "value": "0.99"
           },
@@ -681,7 +681,7 @@
             "player": "Spencer Torkelson",
             "team": "Detroit Tigers",
             "position": "1B",
-            "value": "927"
+            "value": "931"
           },
           {
             "rank": 2,
@@ -834,14 +834,14 @@
             "player": "Luis Arraez",
             "team": "Philadelphia Phillies",
             "position": "2B",
-            "value": ".314"
+            "value": ".315"
           },
           {
             "rank": 2,
             "player": "Otto Lopez",
             "team": "Miami Marlins",
             "position": "SS",
-            "value": ".310"
+            "value": ".309"
           },
           {
             "rank": 3,
@@ -878,7 +878,7 @@
             "player": "Luis Arraez",
             "team": "Philadelphia Phillies",
             "position": "2B",
-            "value": "150"
+            "value": "151"
           },
           {
             "rank": 3,
@@ -1047,7 +1047,7 @@
             "player": "Bryce Harper",
             "team": "Philadelphia Phillies",
             "position": "1B",
-            "value": ".379"
+            "value": ".380"
           }
         ],
         "slg": [
@@ -1114,7 +1114,7 @@
             "player": "Kyle Schwarber",
             "team": "Philadelphia Phillies",
             "position": "DH",
-            "value": ".901"
+            "value": ".900"
           },
           {
             "rank": 5,
@@ -1505,7 +1505,7 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "969"
+            "value": "970"
           },
           {
             "rank": 2,
@@ -1519,7 +1519,7 @@
             "player": "J.T. Realmuto",
             "team": "Philadelphia Phillies",
             "position": "C",
-            "value": "930"
+            "value": "931"
           },
           {
             "rank": 4,
@@ -1549,7 +1549,7 @@
             "player": "Masyn Winn",
             "team": "St. Louis Cardinals",
             "position": "SS",
-            "value": "312"
+            "value": "313"
           },
           {
             "rank": 3,
