@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-18T03:10:45.618483+00:00",
+  "lastUpdated": "2026-08-18T05:16:40.325501+00:00",
   "games": [
     {
       "gamePk": 822786,
@@ -9776,9 +9776,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-17T23:40:00Z",
       "localGameTime": "2026-08-17T19:40:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 144,
         "name": "Atlanta Braves",
@@ -9800,9 +9800,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-18T00:05:00Z",
       "localGameTime": "2026-08-17T20:05:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 145,
         "name": "Chicago White Sox",
@@ -9814,7 +9814,7 @@
         "abbreviation": "CHC"
       },
       "awayScore": 5,
-      "homeScore": 5,
+      "homeScore": 7,
       "venue": "Wrigley Field",
       "awayPitcher": "Luis Castillo",
       "homePitcher": "Shota Imanaga"
@@ -9824,9 +9824,9 @@
       "date": "2026-08-17",
       "gameDate": "2026-08-18T00:40:00Z",
       "localGameTime": "2026-08-17T20:40:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 119,
         "name": "Los Angeles Dodgers",
@@ -9838,7 +9838,7 @@
         "abbreviation": "COL"
       },
       "awayScore": 11,
-      "homeScore": 2,
+      "homeScore": 5,
       "venue": "Coors Field",
       "awayPitcher": "Blake Snell",
       "homePitcher": "Tomoyuki Sugano"
