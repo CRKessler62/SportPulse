@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-18T16:01:39.191866+00:00",
+  "lastUpdated": "2026-08-18T17:59:36.478055+00:00",
   "games": [
     {
       "gamePk": 822786,
@@ -10680,7 +10680,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Rate Field",
-      "awayPitcher": null,
+      "awayPitcher": "Grant Holmes",
       "homePitcher": null
     },
     {
@@ -10800,7 +10800,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "American Family Field",
-      "awayPitcher": null,
+      "awayPitcher": "Chris Sale",
       "homePitcher": null
     },
     {
