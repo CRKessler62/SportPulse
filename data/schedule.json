@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-19T22:56:44.405048+00:00",
+  "lastUpdated": "2026-08-19T23:51:42.364867+00:00",
   "games": [
     {
       "gamePk": 824410,
@@ -9920,9 +9920,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T20:10:00Z",
       "localGameTime": "2026-08-19T16:10:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 109,
         "name": "Arizona Diamondbacks",
@@ -9933,8 +9933,8 @@
         "name": "Boston Red Sox",
         "abbreviation": "BOS"
       },
-      "awayScore": 5,
-      "homeScore": 5,
+      "awayScore": 7,
+      "homeScore": 6,
       "venue": "Fenway Park",
       "awayPitcher": "Brandon Pfaadt",
       "homePitcher": "Payton Tolle"
@@ -9957,7 +9957,7 @@
         "name": "Philadelphia Phillies",
         "abbreviation": "PHI"
       },
-      "awayScore": 0,
+      "awayScore": 1,
       "homeScore": 3,
       "venue": "Citizens Bank Park",
       "awayPitcher": "Sandy Alcantara",
@@ -9981,8 +9981,8 @@
         "name": "Baltimore Orioles",
         "abbreviation": "BAL"
       },
-      "awayScore": 0,
-      "homeScore": 1,
+      "awayScore": 3,
+      "homeScore": 2,
       "venue": "Oriole Park at Camden Yards",
       "awayPitcher": "Will Warren",
       "homePitcher": "Chris Bassitt"
@@ -10005,7 +10005,7 @@
         "name": "Cleveland Guardians",
         "abbreviation": "CLE"
       },
-      "awayScore": 0,
+      "awayScore": 1,
       "homeScore": 0,
       "venue": "Progressive Field",
       "awayPitcher": "Matt Wilkinson",
@@ -10029,7 +10029,7 @@
         "name": "Cincinnati Reds",
         "abbreviation": "CIN"
       },
-      "awayScore": 0,
+      "awayScore": 2,
       "homeScore": 0,
       "venue": "Great American Ball Park",
       "awayPitcher": "Matthew Liberatore",
@@ -10053,8 +10053,8 @@
         "name": "Tampa Bay Rays",
         "abbreviation": "TB"
       },
-      "awayScore": 0,
-      "homeScore": 2,
+      "awayScore": 1,
+      "homeScore": 7,
       "venue": "Tropicana Field",
       "awayPitcher": "Max Scherzer",
       "homePitcher": "Drew Rasmussen"
@@ -10064,9 +10064,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T23:40:00Z",
       "localGameTime": "2026-08-19T19:40:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 133,
         "name": "Athletics",
@@ -10077,7 +10077,7 @@
         "name": "Kansas City Royals",
         "abbreviation": "KC"
       },
-      "awayScore": 0,
+      "awayScore": 2,
       "homeScore": 0,
       "venue": "Kauffman Stadium",
       "awayPitcher": "Jeffrey Springs",
@@ -10088,9 +10088,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T23:40:00Z",
       "localGameTime": "2026-08-19T19:40:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 136,
         "name": "Seattle Mariners",
@@ -10101,7 +10101,7 @@
         "name": "Milwaukee Brewers",
         "abbreviation": "MIL"
       },
-      "awayScore": 0,
+      "awayScore": 2,
       "homeScore": 0,
       "venue": "American Family Field",
       "awayPitcher": "Logan Gilbert",
@@ -10112,8 +10112,8 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-20T00:05:00Z",
       "localGameTime": "2026-08-19T20:05:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 120,
@@ -10136,8 +10136,8 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-20T00:10:00Z",
       "localGameTime": "2026-08-19T20:10:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 108,
@@ -10657,7 +10657,7 @@
       "homeScore": null,
       "venue": "Coors Field",
       "awayPitcher": "Joey Cantillo",
-      "homePitcher": null
+      "homePitcher": "Tanner Gordon"
     },
     {
       "gamePk": 825045,
@@ -10729,7 +10729,7 @@
       "homeScore": null,
       "venue": "UNIQLO Field at Dodger Stadium",
       "awayPitcher": "Bubba Chandler",
-      "homePitcher": null
+      "homePitcher": "Yoshinobu Yamamoto"
     },
     {
       "gamePk": 823101,
@@ -10752,7 +10752,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "T-Mobile Park",
-      "awayPitcher": null,
+      "awayPitcher": "Matthew Boyd",
       "homePitcher": null
     },
     {
@@ -10993,7 +10993,7 @@
       "homeScore": null,
       "venue": "UNIQLO Field at Dodger Stadium",
       "awayPitcher": "Jared Jones",
-      "homePitcher": null
+      "homePitcher": "Tarik Skubal"
     },
     {
       "gamePk": 823100,
@@ -11016,7 +11016,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "T-Mobile Park",
-      "awayPitcher": null,
+      "awayPitcher": "David Peterson",
       "homePitcher": null
     },
     {
@@ -11089,7 +11089,7 @@
       "homeScore": null,
       "venue": "Coors Field",
       "awayPitcher": "Tanner Bibee",
-      "homePitcher": null
+      "homePitcher": "Gabriel Hughes"
     },
     {
       "gamePk": 823261,
@@ -11329,7 +11329,7 @@
       "homeScore": null,
       "venue": "Coors Field",
       "awayPitcher": "Foster Griffin",
-      "homePitcher": null
+      "homePitcher": "Tomoyuki Sugano"
     },
     {
       "gamePk": 824720,
@@ -11377,7 +11377,7 @@
       "homeScore": null,
       "venue": "UNIQLO Field at Dodger Stadium",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Blake Snell"
     },
     {
       "gamePk": 823099,
@@ -11400,7 +11400,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "T-Mobile Park",
-      "awayPitcher": null,
+      "awayPitcher": "Shota Imanaga",
       "homePitcher": null
     },
     {
