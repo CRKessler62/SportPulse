@@ -1,6 +1,6 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-19T21:58:33.891319+00:00",
+  "lastUpdated": "2026-08-19T22:57:32.676555+00:00",
   "games": [
     {
       "gamePk": 823342,
@@ -271,12 +271,12 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Boston Red Sox",
       "awayScore": 5,
-      "homeScore": 2,
+      "homeScore": 5,
       "status": "In Progress",
       "gameDate": "2026-08-19T20:10:00Z",
-      "inning": 6,
-      "inningOrdinal": "6th",
-      "inningState": "Middle",
+      "inning": 8,
+      "inningOrdinal": "8th",
+      "inningState": "End",
       "outs": 3,
       "battingTeam": "Arizona Diamondbacks",
       "runners": {
@@ -313,6 +313,16 @@
         {
           "inning": 6,
           "awayRuns": 2,
+          "homeRuns": 3
+        },
+        {
+          "inning": 7,
+          "awayRuns": 0,
+          "homeRuns": 0
+        },
+        {
+          "inning": 8,
+          "awayRuns": 0,
           "homeRuns": 0
         }
       ]
@@ -322,13 +332,13 @@
       "awayTeam": "Miami Marlins",
       "homeTeam": "Philadelphia Phillies",
       "awayScore": 0,
-      "homeScore": 0,
-      "status": "Warmup",
+      "homeScore": 3,
+      "status": "In Progress",
       "gameDate": "2026-08-19T22:05:00Z",
-      "inning": 1,
-      "inningOrdinal": "1st",
-      "inningState": "Top",
-      "outs": 0,
+      "inning": 3,
+      "inningOrdinal": "3rd",
+      "inningState": "End",
+      "outs": 3,
       "battingTeam": "Miami Marlins",
       "runners": {
         "first": false,
@@ -340,6 +350,16 @@
           "inning": 1,
           "awayRuns": 0,
           "homeRuns": 0
+        },
+        {
+          "inning": 2,
+          "awayRuns": 0,
+          "homeRuns": 1
+        },
+        {
+          "inning": 3,
+          "awayRuns": 0,
+          "homeRuns": 2
         }
       ]
     },
@@ -348,13 +368,13 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Baltimore Orioles",
       "awayScore": 0,
-      "homeScore": 0,
-      "status": "Pre-Game",
+      "homeScore": 1,
+      "status": "In Progress",
       "gameDate": "2026-08-19T22:35:00Z",
       "inning": 1,
       "inningOrdinal": "1st",
-      "inningState": "Top",
-      "outs": 0,
+      "inningState": "End",
+      "outs": 3,
       "battingTeam": "New York Yankees",
       "runners": {
         "first": false,
@@ -365,7 +385,7 @@
         {
           "inning": 1,
           "awayRuns": 0,
-          "homeRuns": 0
+          "homeRuns": 1
         }
       ]
     },
@@ -375,12 +395,12 @@
       "homeTeam": "Cleveland Guardians",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Pre-Game",
+      "status": "In Progress",
       "gameDate": "2026-08-19T22:40:00Z",
-      "inning": 1,
-      "inningOrdinal": "1st",
+      "inning": 2,
+      "inningOrdinal": "2nd",
       "inningState": "Top",
-      "outs": 0,
+      "outs": 1,
       "battingTeam": "San Francisco Giants",
       "runners": {
         "first": false,
@@ -392,6 +412,11 @@
           "inning": 1,
           "awayRuns": 0,
           "homeRuns": 0
+        },
+        {
+          "inning": 2,
+          "awayRuns": 0,
+          "homeRuns": 0
         }
       ]
     },
@@ -401,12 +426,12 @@
       "homeTeam": "Cincinnati Reds",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Pre-Game",
+      "status": "In Progress",
       "gameDate": "2026-08-19T22:40:00Z",
-      "inning": 1,
-      "inningOrdinal": "1st",
+      "inning": 2,
+      "inningOrdinal": "2nd",
       "inningState": "Top",
-      "outs": 0,
+      "outs": 1,
       "battingTeam": "St. Louis Cardinals",
       "runners": {
         "first": false,
@@ -418,6 +443,11 @@
           "inning": 1,
           "awayRuns": 0,
           "homeRuns": 0
+        },
+        {
+          "inning": 2,
+          "awayRuns": 0,
+          "homeRuns": 0
         }
       ]
     },
@@ -426,11 +456,11 @@
       "awayTeam": "Toronto Blue Jays",
       "homeTeam": "Tampa Bay Rays",
       "awayScore": 0,
-      "homeScore": 0,
-      "status": "Pre-Game",
+      "homeScore": 2,
+      "status": "In Progress",
       "gameDate": "2026-08-19T22:40:00Z",
-      "inning": 1,
-      "inningOrdinal": "1st",
+      "inning": 2,
+      "inningOrdinal": "2nd",
       "inningState": "Top",
       "outs": 0,
       "battingTeam": "Toronto Blue Jays",
@@ -442,6 +472,11 @@
       "inningScores": [
         {
           "inning": 1,
+          "awayRuns": 0,
+          "homeRuns": 2
+        },
+        {
+          "inning": 2,
           "awayRuns": 0,
           "homeRuns": 0
         }
