@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-19T19:35:44.598869+00:00",
+  "lastUpdated": "2026-08-19T21:12:33.743524+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -35,9 +35,9 @@
           },
           {
             "rank": 5,
-            "player": "Ceddanne Rafaela",
-            "team": "Boston Red Sox",
-            "position": "CF",
+            "player": "Bobby Witt Jr.",
+            "team": "Kansas City Royals",
+            "position": "SS",
             "value": ".287"
           }
         ],
@@ -158,7 +158,7 @@
             "player": "Miguel Vargas",
             "team": "Chicago White Sox",
             "position": "3B",
-            "value": "84"
+            "value": "86"
           },
           {
             "rank": 2,
@@ -209,7 +209,7 @@
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": ".393"
+            "value": ".394"
           },
           {
             "rank": 4,
@@ -239,7 +239,7 @@
             "player": "Munetaka Murakami",
             "team": "Chicago White Sox",
             "position": "1B",
-            "value": ".540"
+            "value": ".537"
           },
           {
             "rank": 3,
@@ -276,14 +276,14 @@
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": ".928"
+            "value": ".926"
           },
           {
             "rank": 3,
             "player": "Munetaka Murakami",
             "team": "Chicago White Sox",
             "position": "1B",
-            "value": ".909"
+            "value": ".904"
           },
           {
             "rank": 4,
@@ -347,23 +347,23 @@
           },
           {
             "rank": 2,
+            "player": "Miguel Vargas",
+            "team": "Chicago White Sox",
+            "position": "3B",
+            "value": "29"
+          },
+          {
+            "rank": 3,
             "player": "Ernie Clement",
             "team": "Toronto Blue Jays",
             "position": "2B",
             "value": "28"
           },
           {
-            "rank": 3,
+            "rank": 4,
             "player": "Brandon Nimmo",
             "team": "Texas Rangers",
             "position": "RF",
-            "value": "28"
-          },
-          {
-            "rank": 4,
-            "player": "Miguel Vargas",
-            "team": "Chicago White Sox",
-            "position": "3B",
             "value": "28"
           },
           {
@@ -702,7 +702,7 @@
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": "808"
+            "value": "810"
           },
           {
             "rank": 5,
@@ -739,7 +739,7 @@
             "player": "Chase Meidroth",
             "team": "Chicago White Sox",
             "position": "2B",
-            "value": "249"
+            "value": "251"
           },
           {
             "rank": 5,
@@ -810,15 +810,15 @@
           },
           {
             "rank": 4,
-            "player": "Pete Alonso",
-            "team": "Baltimore Orioles",
+            "player": "Willson Contreras",
+            "team": "Boston Red Sox",
             "position": "1B",
-            "value": "74"
+            "value": "75"
           },
           {
             "rank": 5,
-            "player": "Willson Contreras",
-            "team": "Boston Red Sox",
+            "player": "Pete Alonso",
+            "team": "Baltimore Orioles",
             "position": "1B",
             "value": "74"
           }
@@ -855,7 +855,7 @@
             "player": "Gabriel Moreno",
             "team": "Arizona Diamondbacks",
             "position": "C",
-            "value": ".308"
+            "value": ".306"
           },
           {
             "rank": 5,
@@ -1040,7 +1040,7 @@
             "player": "Gabriel Moreno",
             "team": "Arizona Diamondbacks",
             "position": "C",
-            "value": ".385"
+            "value": ".383"
           },
           {
             "rank": 5,
@@ -1063,7 +1063,7 @@
             "player": "Pete Crow-Armstrong",
             "team": "Chicago Cubs",
             "position": "CF",
-            "value": ".553"
+            "value": ".550"
           },
           {
             "rank": 3,
@@ -1100,7 +1100,7 @@
             "player": "Pete Crow-Armstrong",
             "team": "Chicago Cubs",
             "position": "CF",
-            "value": ".932"
+            "value": ".928"
           },
           {
             "rank": 3,
@@ -1519,7 +1519,7 @@
             "player": "Michael Busch",
             "team": "Chicago Cubs",
             "position": "1B",
-            "value": "945"
+            "value": "948"
           },
           {
             "rank": 4,
@@ -1533,7 +1533,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": "903"
+            "value": "906"
           }
         ],
         "assists": [
