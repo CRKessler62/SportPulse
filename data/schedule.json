@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-19T20:58:46.261439+00:00",
+  "lastUpdated": "2026-08-19T21:57:08.329681+00:00",
   "games": [
     {
       "gamePk": 824410,
@@ -9933,7 +9933,7 @@
         "name": "Boston Red Sox",
         "abbreviation": "BOS"
       },
-      "awayScore": 0,
+      "awayScore": 5,
       "homeScore": 2,
       "venue": "Fenway Park",
       "awayPitcher": "Brandon Pfaadt",
@@ -9944,8 +9944,8 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T22:05:00Z",
       "localGameTime": "2026-08-19T18:05:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 146,
@@ -10160,9 +10160,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-20T00:40:00Z",
       "localGameTime": "2026-08-19T20:40:00-04:00",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "abstractGameState": "Preview",
-      "codedGameState": "S",
+      "codedGameState": "P",
       "awayTeam": {
         "id": 119,
         "name": "Los Angeles Dodgers",
@@ -10173,8 +10173,8 @@
         "name": "Colorado Rockies",
         "abbreviation": "COL"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "Coors Field",
       "awayPitcher": "Roki Sasaki",
       "homePitcher": "Kyle Freeland"
@@ -10417,7 +10417,7 @@
       "homeScore": null,
       "venue": "American Family Field",
       "awayPitcher": "Chris Sale",
-      "homePitcher": null
+      "homePitcher": "Jacob Misiorowski"
     },
     {
       "gamePk": 823420,
@@ -10801,7 +10801,7 @@
       "homeScore": null,
       "venue": "American Family Field",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Logan Henderson"
     },
     {
       "gamePk": 823831,
@@ -11328,7 +11328,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Coors Field",
-      "awayPitcher": null,
+      "awayPitcher": "Foster Griffin",
       "homePitcher": null
     },
     {
@@ -11473,7 +11473,7 @@
       "homeScore": null,
       "venue": "Journey Bank Ballpark",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Shane Drohan"
     },
     {
       "gamePk": 824235,
