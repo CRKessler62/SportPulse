@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-19T17:57:35.430323+00:00",
+  "lastUpdated": "2026-08-19T19:35:44.598869+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -239,7 +239,7 @@
             "player": "Munetaka Murakami",
             "team": "Chicago White Sox",
             "position": "1B",
-            "value": ".545"
+            "value": ".540"
           },
           {
             "rank": 3,
@@ -283,7 +283,7 @@
             "player": "Munetaka Murakami",
             "team": "Chicago White Sox",
             "position": "1B",
-            "value": ".917"
+            "value": ".909"
           },
           {
             "rank": 4,
@@ -518,10 +518,10 @@
           },
           {
             "rank": 5,
-            "player": "Sean Burke",
-            "team": "Chicago White Sox",
+            "player": "Taj Bradley",
+            "team": "Minnesota Twins",
             "position": "P",
-            "value": "154"
+            "value": "158"
           }
         ],
         "whip": [
@@ -681,7 +681,7 @@
             "player": "Spencer Torkelson",
             "team": "Detroit Tigers",
             "position": "1B",
-            "value": "947"
+            "value": "949"
           },
           {
             "rank": 2,
@@ -736,15 +736,15 @@
           },
           {
             "rank": 4,
-            "player": "Zach Neto",
-            "team": "Los Angeles Angels",
-            "position": "SS",
+            "player": "Chase Meidroth",
+            "team": "Chicago White Sox",
+            "position": "2B",
             "value": "249"
           },
           {
             "rank": 5,
-            "player": "Bobby Witt Jr.",
-            "team": "Kansas City Royals",
+            "player": "Zach Neto",
+            "team": "Los Angeles Angels",
             "position": "SS",
             "value": "249"
           }
@@ -792,7 +792,7 @@
             "player": "Spencer Torkelson",
             "team": "Detroit Tigers",
             "position": "1B",
-            "value": "88"
+            "value": "89"
           },
           {
             "rank": 2,
@@ -841,7 +841,7 @@
             "player": "Nick Gonzales",
             "team": "Pittsburgh Pirates",
             "position": "3B",
-            "value": ".309"
+            "value": ".310"
           },
           {
             "rank": 3,
@@ -889,16 +889,16 @@
           },
           {
             "rank": 4,
-            "player": "Alec Burleson",
-            "team": "St. Louis Cardinals",
-            "position": "1B",
-            "value": "139"
-          },
-          {
-            "rank": 5,
             "player": "Nick Gonzales",
             "team": "Pittsburgh Pirates",
             "position": "3B",
+            "value": "140"
+          },
+          {
+            "rank": 5,
+            "player": "Alec Burleson",
+            "team": "St. Louis Cardinals",
+            "position": "1B",
             "value": "139"
           }
         ],
@@ -970,9 +970,9 @@
           },
           {
             "rank": 5,
-            "player": "Shohei Ohtani",
-            "team": "Los Angeles Dodgers",
-            "position": "TWP",
+            "player": "Brandon Lowe",
+            "team": "Pittsburgh Pirates",
+            "position": "2B",
             "value": "80"
           }
         ],
@@ -996,7 +996,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": "88"
+            "value": "89"
           },
           {
             "rank": 4,
@@ -1044,10 +1044,10 @@
           },
           {
             "rank": 5,
-            "player": "Pete Crow-Armstrong",
-            "team": "Chicago Cubs",
-            "position": "CF",
-            "value": ".381"
+            "player": "Bryce Harper",
+            "team": "Philadelphia Phillies",
+            "position": "1B",
+            "value": ".380"
           }
         ],
         "slg": [
@@ -1063,7 +1063,7 @@
             "player": "Pete Crow-Armstrong",
             "team": "Chicago Cubs",
             "position": "CF",
-            "value": ".555"
+            "value": ".553"
           },
           {
             "rank": 3,
@@ -1100,7 +1100,7 @@
             "player": "Pete Crow-Armstrong",
             "team": "Chicago Cubs",
             "position": "CF",
-            "value": ".936"
+            "value": ".932"
           },
           {
             "rank": 3,
@@ -1516,24 +1516,24 @@
           },
           {
             "rank": 3,
+            "player": "Michael Busch",
+            "team": "Chicago Cubs",
+            "position": "1B",
+            "value": "945"
+          },
+          {
+            "rank": 4,
             "player": "J.T. Realmuto",
             "team": "Philadelphia Phillies",
             "position": "C",
             "value": "939"
           },
           {
-            "rank": 4,
-            "player": "Michael Busch",
-            "team": "Chicago Cubs",
-            "position": "1B",
-            "value": "938"
-          },
-          {
             "rank": 5,
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": "900"
+            "value": "903"
           }
         ],
         "assists": [
@@ -1623,7 +1623,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": "97"
+            "value": "98"
           },
           {
             "rank": 3,
