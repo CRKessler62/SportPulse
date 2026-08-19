@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-19T21:57:08.329681+00:00",
+  "lastUpdated": "2026-08-19T22:56:44.405048+00:00",
   "games": [
     {
       "gamePk": 824410,
@@ -9934,7 +9934,7 @@
         "abbreviation": "BOS"
       },
       "awayScore": 5,
-      "homeScore": 2,
+      "homeScore": 5,
       "venue": "Fenway Park",
       "awayPitcher": "Brandon Pfaadt",
       "homePitcher": "Payton Tolle"
@@ -9944,9 +9944,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T22:05:00Z",
       "localGameTime": "2026-08-19T18:05:00-04:00",
-      "status": "Warmup",
+      "status": "In Progress",
       "abstractGameState": "Live",
-      "codedGameState": "P",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 146,
         "name": "Miami Marlins",
@@ -9958,7 +9958,7 @@
         "abbreviation": "PHI"
       },
       "awayScore": 0,
-      "homeScore": 0,
+      "homeScore": 3,
       "venue": "Citizens Bank Park",
       "awayPitcher": "Sandy Alcantara",
       "homePitcher": "Aaron Nola"
@@ -9968,9 +9968,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T22:35:00Z",
       "localGameTime": "2026-08-19T18:35:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 147,
         "name": "New York Yankees",
@@ -9982,7 +9982,7 @@
         "abbreviation": "BAL"
       },
       "awayScore": 0,
-      "homeScore": 0,
+      "homeScore": 1,
       "venue": "Oriole Park at Camden Yards",
       "awayPitcher": "Will Warren",
       "homePitcher": "Chris Bassitt"
@@ -9992,9 +9992,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T22:40:00Z",
       "localGameTime": "2026-08-19T18:40:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 137,
         "name": "San Francisco Giants",
@@ -10016,9 +10016,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T22:40:00Z",
       "localGameTime": "2026-08-19T18:40:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 138,
         "name": "St. Louis Cardinals",
@@ -10040,9 +10040,9 @@
       "date": "2026-08-19",
       "gameDate": "2026-08-19T22:40:00Z",
       "localGameTime": "2026-08-19T18:40:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 141,
         "name": "Toronto Blue Jays",
@@ -10054,7 +10054,7 @@
         "abbreviation": "TB"
       },
       "awayScore": 0,
-      "homeScore": 0,
+      "homeScore": 2,
       "venue": "Tropicana Field",
       "awayPitcher": "Max Scherzer",
       "homePitcher": "Drew Rasmussen"
@@ -10369,7 +10369,7 @@
       "homeScore": null,
       "venue": "Globe Life Field",
       "awayPitcher": "Andrew Alvarez",
-      "homePitcher": null
+      "homePitcher": "Jacob deGrom"
     },
     {
       "gamePk": 824153,
