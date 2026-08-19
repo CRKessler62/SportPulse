@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-19T03:14:03.308799+00:00",
+  "lastUpdated": "2026-08-19T05:17:19.252322+00:00",
   "games": [
     {
       "gamePk": 824410,
@@ -9752,9 +9752,9 @@
       "date": "2026-08-18",
       "gameDate": "2026-08-19T00:05:00Z",
       "localGameTime": "2026-08-18T20:05:00-04:00",
-      "status": "Delayed",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 145,
         "name": "Chicago White Sox",
@@ -9766,7 +9766,7 @@
         "abbreviation": "CHC"
       },
       "awayScore": 3,
-      "homeScore": 3,
+      "homeScore": 4,
       "venue": "Wrigley Field",
       "awayPitcher": "Bryan Hudson",
       "homePitcher": "Kevin Gausman"
@@ -9800,9 +9800,9 @@
       "date": "2026-08-18",
       "gameDate": "2026-08-19T00:40:00Z",
       "localGameTime": "2026-08-18T20:40:00-04:00",
-      "status": "In Progress",
-      "abstractGameState": "Live",
-      "codedGameState": "I",
+      "status": "Final",
+      "abstractGameState": "Final",
+      "codedGameState": "F",
       "awayTeam": {
         "id": 119,
         "name": "Los Angeles Dodgers",
@@ -9814,7 +9814,7 @@
         "abbreviation": "COL"
       },
       "awayScore": 7,
-      "homeScore": 5,
+      "homeScore": 6,
       "venue": "Coors Field",
       "awayPitcher": "Eric Lauer",
       "homePitcher": "Ryan Feltner"
