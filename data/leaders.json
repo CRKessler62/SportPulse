@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-19T21:12:33.743524+00:00",
+  "lastUpdated": "2026-08-19T22:00:43.491400+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -276,7 +276,7 @@
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": ".926"
+            "value": ".929"
           },
           {
             "rank": 3,
@@ -845,17 +845,17 @@
           },
           {
             "rank": 3,
-            "player": "Otto Lopez",
-            "team": "Miami Marlins",
-            "position": "SS",
+            "player": "Gabriel Moreno",
+            "team": "Arizona Diamondbacks",
+            "position": "C",
             "value": ".308"
           },
           {
             "rank": 4,
-            "player": "Gabriel Moreno",
-            "team": "Arizona Diamondbacks",
-            "position": "C",
-            "value": ".306"
+            "player": "Otto Lopez",
+            "team": "Miami Marlins",
+            "position": "SS",
+            "value": ".308"
           },
           {
             "rank": 5,
@@ -1040,7 +1040,7 @@
             "player": "Gabriel Moreno",
             "team": "Arizona Diamondbacks",
             "position": "C",
-            "value": ".383"
+            "value": ".384"
           },
           {
             "rank": 5,
