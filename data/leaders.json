@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-19T17:05:01.224109+00:00",
+  "lastUpdated": "2026-08-19T17:57:35.430323+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -681,7 +681,7 @@
             "player": "Spencer Torkelson",
             "team": "Detroit Tigers",
             "position": "1B",
-            "value": "942"
+            "value": "947"
           },
           {
             "rank": 2,
@@ -792,7 +792,7 @@
             "player": "Spencer Torkelson",
             "team": "Detroit Tigers",
             "position": "1B",
-            "value": "87"
+            "value": "88"
           },
           {
             "rank": 2,
@@ -838,24 +838,24 @@
           },
           {
             "rank": 2,
+            "player": "Nick Gonzales",
+            "team": "Pittsburgh Pirates",
+            "position": "3B",
+            "value": ".309"
+          },
+          {
+            "rank": 3,
             "player": "Otto Lopez",
             "team": "Miami Marlins",
             "position": "SS",
             "value": ".308"
           },
           {
-            "rank": 3,
+            "rank": 4,
             "player": "Gabriel Moreno",
             "team": "Arizona Diamondbacks",
             "position": "C",
             "value": ".308"
-          },
-          {
-            "rank": 4,
-            "player": "Nick Gonzales",
-            "team": "Pittsburgh Pirates",
-            "position": "3B",
-            "value": ".307"
           },
           {
             "rank": 5,
@@ -899,7 +899,7 @@
             "player": "Nick Gonzales",
             "team": "Pittsburgh Pirates",
             "position": "3B",
-            "value": "138"
+            "value": "139"
           }
         ],
         "homeRuns": [
@@ -1070,7 +1070,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": ".547"
+            "value": ".546"
           },
           {
             "rank": 4,
@@ -1338,7 +1338,7 @@
             "player": "Paul Skenes",
             "team": "Pittsburgh Pirates",
             "position": "P",
-            "value": "167"
+            "value": "171"
           },
           {
             "rank": 5,
@@ -1533,7 +1533,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": "899"
+            "value": "900"
           }
         ],
         "assists": [
