@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-19T22:00:43.491400+00:00",
+  "lastUpdated": "2026-08-19T23:00:17.318884+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -17,14 +17,14 @@
             "player": "Chandler Simpson",
             "team": "Tampa Bay Rays",
             "position": "LF",
-            "value": ".310"
+            "value": ".309"
           },
           {
             "rank": 3,
             "player": "Yandy D\u00edaz",
             "team": "Tampa Bay Rays",
             "position": "DH",
-            "value": ".306"
+            "value": ".307"
           },
           {
             "rank": 4,
@@ -47,7 +47,7 @@
             "player": "Yandy D\u00edaz",
             "team": "Tampa Bay Rays",
             "position": "DH",
-            "value": "145"
+            "value": "146"
           },
           {
             "rank": 2,
@@ -183,10 +183,10 @@
           },
           {
             "rank": 5,
-            "player": "Pete Alonso",
-            "team": "Baltimore Orioles",
-            "position": "1B",
-            "value": "77"
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "position": "3B",
+            "value": "78"
           }
         ],
         "obp": [
@@ -236,16 +236,16 @@
           },
           {
             "rank": 2,
-            "player": "Munetaka Murakami",
-            "team": "Chicago White Sox",
-            "position": "1B",
-            "value": ".537"
-          },
-          {
-            "rank": 3,
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
+            "value": ".540"
+          },
+          {
+            "rank": 3,
+            "player": "Munetaka Murakami",
+            "team": "Chicago White Sox",
+            "position": "1B",
             "value": ".537"
           },
           {
@@ -260,7 +260,7 @@
             "player": "Ben Rice",
             "team": "New York Yankees",
             "position": "DH",
-            "value": ".529"
+            "value": ".530"
           }
         ],
         "ops": [
@@ -280,17 +280,17 @@
           },
           {
             "rank": 3,
+            "player": "Junior Caminero",
+            "team": "Tampa Bay Rays",
+            "position": "3B",
+            "value": ".905"
+          },
+          {
+            "rank": 4,
             "player": "Munetaka Murakami",
             "team": "Chicago White Sox",
             "position": "1B",
             "value": ".904"
-          },
-          {
-            "rank": 4,
-            "player": "Junior Caminero",
-            "team": "Tampa Bay Rays",
-            "position": "3B",
-            "value": ".901"
           },
           {
             "rank": 5,
@@ -433,7 +433,7 @@
             "player": "Parker Messick",
             "team": "Cleveland Guardians",
             "position": "P",
-            "value": "2.59"
+            "value": "2.56"
           },
           {
             "rank": 4,
@@ -447,7 +447,7 @@
             "player": "Drew Rasmussen",
             "team": "Tampa Bay Rays",
             "position": "P",
-            "value": "2.78"
+            "value": "2.76"
           }
         ],
         "wins": [
@@ -695,14 +695,14 @@
             "player": "Jonathan Aranda",
             "team": "Tampa Bay Rays",
             "position": "1B",
-            "value": "840"
+            "value": "842"
           },
           {
             "rank": 4,
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
-            "value": "810"
+            "value": "812"
           },
           {
             "rank": 5,
@@ -725,7 +725,7 @@
             "player": "Gunnar Henderson",
             "team": "Baltimore Orioles",
             "position": "SS",
-            "value": "287"
+            "value": "288"
           },
           {
             "rank": 3,
@@ -834,7 +834,7 @@
             "player": "Luis Arraez",
             "team": "Philadelphia Phillies",
             "position": "2B",
-            "value": ".317"
+            "value": ".320"
           },
           {
             "rank": 2,
@@ -855,7 +855,7 @@
             "player": "Otto Lopez",
             "team": "Miami Marlins",
             "position": "SS",
-            "value": ".308"
+            "value": ".307"
           },
           {
             "rank": 5,
@@ -871,7 +871,7 @@
             "player": "Luis Arraez",
             "team": "Philadelphia Phillies",
             "position": "2B",
-            "value": "153"
+            "value": "155"
           },
           {
             "rank": 2,
@@ -1040,14 +1040,14 @@
             "player": "Gabriel Moreno",
             "team": "Arizona Diamondbacks",
             "position": "C",
-            "value": ".384"
+            "value": ".386"
           },
           {
             "rank": 5,
             "player": "Bryce Harper",
             "team": "Philadelphia Phillies",
             "position": "1B",
-            "value": ".380"
+            "value": ".381"
           }
         ],
         "slg": [
@@ -1121,7 +1121,7 @@
             "player": "Kyle Schwarber",
             "team": "Philadelphia Phillies",
             "position": "DH",
-            "value": ".896"
+            "value": ".892"
           }
         ],
         "stolenBases": [
@@ -1257,7 +1257,7 @@
             "player": "Chase Burns",
             "team": "Cincinnati Reds",
             "position": "P",
-            "value": "2.47"
+            "value": "2.45"
           },
           {
             "rank": 4,
@@ -1428,7 +1428,7 @@
             "player": "Sandy Alcantara",
             "team": "Miami Marlins",
             "position": "P",
-            "value": "170.2"
+            "value": "173.2"
           },
           {
             "rank": 2,
@@ -1505,7 +1505,7 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "975"
+            "value": "976"
           },
           {
             "rank": 2,
@@ -1549,7 +1549,7 @@
             "player": "Masyn Winn",
             "team": "St. Louis Cardinals",
             "position": "SS",
-            "value": "315"
+            "value": "316"
           },
           {
             "rank": 3,
@@ -1567,9 +1567,9 @@
           },
           {
             "rank": 5,
-            "player": "Dansby Swanson",
-            "team": "Chicago Cubs",
-            "position": "SS",
+            "player": "Xavier Edwards",
+            "team": "Miami Marlins",
+            "position": "2B",
             "value": "299"
           }
         ],
