@@ -1,17 +1,17 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-19T15:52:13.240677+00:00",
+  "lastUpdated": "2026-08-19T17:00:34.255978+00:00",
   "games": [
     {
       "gamePk": 823342,
       "awayTeam": "Detroit Tigers",
       "homeTeam": "Pittsburgh Pirates",
       "awayScore": 0,
-      "homeScore": 0,
-      "status": "Pre-Game",
+      "homeScore": 1,
+      "status": "In Progress",
       "gameDate": "2026-08-19T16:35:00Z",
-      "inning": 1,
-      "inningOrdinal": "1st",
+      "inning": 2,
+      "inningOrdinal": "2nd",
       "inningState": "Top",
       "outs": 0,
       "battingTeam": "Detroit Tigers",
@@ -24,6 +24,11 @@
         {
           "inning": 1,
           "awayRuns": 0,
+          "homeRuns": 1
+        },
+        {
+          "inning": 2,
+          "awayRuns": 0,
           "homeRuns": 0
         }
       ]
@@ -34,7 +39,7 @@
       "homeTeam": "New York Mets",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Pre-Game",
+      "status": "Warmup",
       "gameDate": "2026-08-19T17:10:00Z",
       "inning": 1,
       "inningOrdinal": "1st",
@@ -88,17 +93,23 @@
       "homeScore": 0,
       "status": "Pre-Game",
       "gameDate": "2026-08-19T18:20:00Z",
-      "inning": null,
-      "inningOrdinal": null,
-      "inningState": null,
-      "outs": null,
-      "battingTeam": null,
+      "inning": 1,
+      "inningOrdinal": "1st",
+      "inningState": "Top",
+      "outs": 0,
+      "battingTeam": "Chicago White Sox",
       "runners": {
         "first": false,
         "second": false,
         "third": false
       },
-      "inningScores": []
+      "inningScores": [
+        {
+          "inning": 1,
+          "awayRuns": 0,
+          "homeRuns": 0
+        }
+      ]
     },
     {
       "gamePk": 824722,
@@ -106,7 +117,7 @@
       "homeTeam": "Boston Red Sox",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-19T20:10:00Z",
       "inning": null,
       "inningOrdinal": null,
