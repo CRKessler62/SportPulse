@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-20T03:14:52.439353+00:00",
+  "lastUpdated": "2026-08-20T09:56:11.569829+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -1026,7 +1026,7 @@
             "player": "Shohei Ohtani",
             "team": "Los Angeles Dodgers",
             "position": "TWP",
-            "value": ".389"
+            "value": ".388"
           },
           {
             "rank": 3,
@@ -1056,7 +1056,7 @@
             "player": "Shohei Ohtani",
             "team": "Los Angeles Dodgers",
             "position": "TWP",
-            "value": ".555"
+            "value": ".554"
           },
           {
             "rank": 2,
@@ -1093,7 +1093,7 @@
             "player": "Shohei Ohtani",
             "team": "Los Angeles Dodgers",
             "position": "TWP",
-            "value": ".944"
+            "value": ".942"
           },
           {
             "rank": 2,
