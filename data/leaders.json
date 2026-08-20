@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-20T17:00:42.886622+00:00",
+  "lastUpdated": "2026-08-20T18:03:04.331217+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -24,7 +24,7 @@
             "player": "Yandy D\u00edaz",
             "team": "Tampa Bay Rays",
             "position": "DH",
-            "value": ".306"
+            "value": ".305"
           },
           {
             "rank": 4,
@@ -246,7 +246,7 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".536"
+            "value": ".535"
           },
           {
             "rank": 4,
@@ -290,7 +290,7 @@
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
-            "value": ".899"
+            "value": ".897"
           },
           {
             "rank": 5,
@@ -500,7 +500,7 @@
             "player": "Gavin Williams",
             "team": "Cleveland Guardians",
             "position": "P",
-            "value": "190"
+            "value": "197"
           },
           {
             "rank": 3,
@@ -608,31 +608,31 @@
           },
           {
             "rank": 2,
+            "player": "Gavin Williams",
+            "team": "Cleveland Guardians",
+            "position": "P",
+            "value": "152.2"
+          },
+          {
+            "rank": 3,
             "player": "Cam Schlittler",
             "team": "New York Yankees",
             "position": "P",
             "value": "152.0"
           },
           {
-            "rank": 3,
+            "rank": 4,
             "player": "Tanner Bibee",
             "team": "Cleveland Guardians",
             "position": "P",
             "value": "150.1"
           },
           {
-            "rank": 4,
+            "rank": 5,
             "player": "Logan Gilbert",
             "team": "Seattle Mariners",
             "position": "P",
             "value": "150.1"
-          },
-          {
-            "rank": 5,
-            "player": "Parker Messick",
-            "team": "Cleveland Guardians",
-            "position": "P",
-            "value": "149.0"
           }
         ],
         "qualityStarts": []
@@ -695,7 +695,7 @@
             "player": "Jonathan Aranda",
             "team": "Tampa Bay Rays",
             "position": "1B",
-            "value": "845"
+            "value": "848"
           },
           {
             "rank": 4,
@@ -949,23 +949,23 @@
           },
           {
             "rank": 2,
+            "player": "Jordan Walker",
+            "team": "St. Louis Cardinals",
+            "position": "RF",
+            "value": "94"
+          },
+          {
+            "rank": 3,
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
             "value": "92"
           },
           {
-            "rank": 3,
+            "rank": 4,
             "player": "CJ Abrams",
             "team": "Washington Nationals",
             "position": "SS",
-            "value": "91"
-          },
-          {
-            "rank": 4,
-            "player": "Jordan Walker",
-            "team": "St. Louis Cardinals",
-            "position": "RF",
             "value": "91"
           },
           {
@@ -1505,7 +1505,7 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "979"
+            "value": "985"
           },
           {
             "rank": 2,
@@ -1583,24 +1583,24 @@
           },
           {
             "rank": 2,
+            "player": "Willy Adames",
+            "team": "San Francisco Giants",
+            "position": "SS",
+            "value": "18"
+          },
+          {
+            "rank": 3,
             "player": "Otto Lopez",
             "team": "Miami Marlins",
             "position": "SS",
             "value": "18"
           },
           {
-            "rank": 3,
+            "rank": 4,
             "player": "Trea Turner",
             "team": "Philadelphia Phillies",
             "position": "SS",
             "value": "18"
-          },
-          {
-            "rank": 4,
-            "player": "Willy Adames",
-            "team": "San Francisco Giants",
-            "position": "SS",
-            "value": "17"
           },
           {
             "rank": 5,
