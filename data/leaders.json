@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-20T14:21:05.954820+00:00",
+  "lastUpdated": "2026-08-20T17:00:42.886622+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -966,7 +966,7 @@
             "player": "Jordan Walker",
             "team": "St. Louis Cardinals",
             "position": "RF",
-            "value": "90"
+            "value": "91"
           },
           {
             "rank": 5,
@@ -1505,7 +1505,7 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "977"
+            "value": "979"
           },
           {
             "rank": 2,
@@ -1616,7 +1616,7 @@
             "player": "Alec Burleson",
             "team": "St. Louis Cardinals",
             "position": "1B",
-            "value": "108"
+            "value": "109"
           },
           {
             "rank": 2,
