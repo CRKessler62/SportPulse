@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-20T23:03:51.043491+00:00",
+  "lastUpdated": "2026-08-20T23:59:15.124132+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -149,7 +149,7 @@
             "player": "Ben Rice",
             "team": "New York Yankees",
             "position": "DH",
-            "value": "79"
+            "value": "80"
           }
         ],
         "runs": [
@@ -688,7 +688,7 @@
             "player": "Pete Alonso",
             "team": "Baltimore Orioles",
             "position": "1B",
-            "value": "867"
+            "value": "869"
           },
           {
             "rank": 3,
@@ -725,7 +725,7 @@
             "player": "Gunnar Henderson",
             "team": "Baltimore Orioles",
             "position": "SS",
-            "value": "288"
+            "value": "290"
           },
           {
             "rank": 3,
@@ -769,7 +769,7 @@
             "player": "Gunnar Henderson",
             "team": "Baltimore Orioles",
             "position": "SS",
-            "value": "14"
+            "value": "15"
           },
           {
             "rank": 4,
@@ -810,17 +810,17 @@
           },
           {
             "rank": 4,
-            "player": "Willson Contreras",
-            "team": "Boston Red Sox",
+            "player": "Pete Alonso",
+            "team": "Baltimore Orioles",
             "position": "1B",
             "value": "76"
           },
           {
             "rank": 5,
-            "player": "Pete Alonso",
-            "team": "Baltimore Orioles",
+            "player": "Willson Contreras",
+            "team": "Boston Red Sox",
             "position": "1B",
-            "value": "74"
+            "value": "76"
           }
         ]
       },
