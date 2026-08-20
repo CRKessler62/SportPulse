@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-20T21:58:28.084295+00:00",
+  "lastUpdated": "2026-08-20T23:01:37.533488+00:00",
   "games": [
     {
       "gamePk": 824409,
@@ -9968,9 +9968,9 @@
       "date": "2026-08-20",
       "gameDate": "2026-08-20T22:35:00Z",
       "localGameTime": "2026-08-20T18:35:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 147,
         "name": "New York Yankees",
@@ -10249,7 +10249,7 @@
       "homeScore": null,
       "venue": "Daikin Park",
       "awayPitcher": "J.T. Ginn",
-      "homePitcher": null
+      "homePitcher": "Hayden Wesneski"
     },
     {
       "gamePk": 822857,
@@ -10272,8 +10272,8 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Globe Life Field",
-      "awayPitcher": null,
-      "homePitcher": null
+      "awayPitcher": "Reid Detmers",
+      "homePitcher": "MacKenzie Gore"
     },
     {
       "gamePk": 824317,
@@ -10536,7 +10536,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Globe Life Field",
-      "awayPitcher": null,
+      "awayPitcher": "Ryan Johnson",
       "homePitcher": null
     },
     {
@@ -10561,7 +10561,7 @@
       "homeScore": null,
       "venue": "Daikin Park",
       "awayPitcher": "Jacob Lopez",
-      "homePitcher": null
+      "homePitcher": "Hunter Brown"
     },
     {
       "gamePk": 824560,
