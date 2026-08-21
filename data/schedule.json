@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-21T11:57:56.899247+00:00",
+  "lastUpdated": "2026-08-21T14:07:16.888859+00:00",
   "games": [
     {
       "gamePk": 823518,
@@ -9744,7 +9744,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Yankee Stadium",
-      "awayPitcher": null,
+      "awayPitcher": "Mason Fluharty",
       "homePitcher": "Cam Schlittler"
     },
     {
