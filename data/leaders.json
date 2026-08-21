@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-21T19:33:54.089177+00:00",
+  "lastUpdated": "2026-08-21T20:59:33.891902+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -1030,17 +1030,17 @@
           },
           {
             "rank": 3,
-            "player": "Jake Bauers",
-            "team": "Milwaukee Brewers",
-            "position": "1B",
-            "value": ".386"
-          },
-          {
-            "rank": 4,
             "player": "Gabriel Moreno",
             "team": "Arizona Diamondbacks",
             "position": "C",
             "value": ".385"
+          },
+          {
+            "rank": 4,
+            "player": "Jake Bauers",
+            "team": "Milwaukee Brewers",
+            "position": "1B",
+            "value": ".384"
           },
           {
             "rank": 5,
@@ -1067,17 +1067,17 @@
           },
           {
             "rank": 3,
-            "player": "Matt Olson",
-            "team": "Atlanta Braves",
-            "position": "1B",
-            "value": ".541"
-          },
-          {
-            "rank": 4,
             "player": "Hunter Goodman",
             "team": "Colorado Rockies",
             "position": "C",
             "value": ".541"
+          },
+          {
+            "rank": 4,
+            "player": "Matt Olson",
+            "team": "Atlanta Braves",
+            "position": "1B",
+            "value": ".540"
           },
           {
             "rank": 5,
@@ -1111,17 +1111,17 @@
           },
           {
             "rank": 4,
-            "player": "Jake Bauers",
-            "team": "Milwaukee Brewers",
-            "position": "1B",
-            "value": ".891"
-          },
-          {
-            "rank": 5,
             "player": "Kyle Schwarber",
             "team": "Philadelphia Phillies",
             "position": "DH",
             "value": ".888"
+          },
+          {
+            "rank": 5,
+            "player": "Jake Bauers",
+            "team": "Milwaukee Brewers",
+            "position": "1B",
+            "value": ".887"
           }
         ],
         "stolenBases": [
@@ -1243,14 +1243,14 @@
             "player": "Jacob Misiorowski",
             "team": "Milwaukee Brewers",
             "position": "P",
-            "value": "1.75"
+            "value": "1.71"
           },
           {
             "rank": 2,
             "player": "Chris Sale",
             "team": "Atlanta Braves",
             "position": "P",
-            "value": "2.16"
+            "value": "2.26"
           },
           {
             "rank": 3,
@@ -1317,7 +1317,7 @@
             "player": "Jacob Misiorowski",
             "team": "Milwaukee Brewers",
             "position": "P",
-            "value": "210"
+            "value": "213"
           },
           {
             "rank": 2,
@@ -1368,7 +1368,7 @@
             "player": "Chris Sale",
             "team": "Atlanta Braves",
             "position": "P",
-            "value": "1.02"
+            "value": "1.03"
           },
           {
             "rank": 4,
@@ -1512,7 +1512,7 @@
             "player": "William Contreras",
             "team": "Milwaukee Brewers",
             "position": "C",
-            "value": "965"
+            "value": "968"
           },
           {
             "rank": 3,
@@ -1533,7 +1533,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": "915"
+            "value": "918"
           }
         ],
         "assists": [
