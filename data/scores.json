@@ -1,6 +1,6 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-21T15:54:57.378989+00:00",
+  "lastUpdated": "2026-08-21T17:15:21.781451+00:00",
   "games": [
     {
       "gamePk": 823746,
@@ -8,7 +8,7 @@
       "homeTeam": "Milwaukee Brewers",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-21T20:10:00Z",
       "inning": null,
       "inningOrdinal": null,
