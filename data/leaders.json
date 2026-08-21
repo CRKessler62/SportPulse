@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-20T23:59:15.124132+00:00",
+  "lastUpdated": "2026-08-21T03:32:55.309107+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -10,7 +10,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": ".317"
+            "value": ".319"
           },
           {
             "rank": 2,
@@ -28,17 +28,17 @@
           },
           {
             "rank": 4,
-            "player": "Josh Jung",
-            "team": "Texas Rangers",
-            "position": "3B",
-            "value": ".294"
-          },
-          {
-            "rank": 5,
             "player": "Bobby Witt Jr.",
             "team": "Kansas City Royals",
             "position": "SS",
             "value": ".286"
+          },
+          {
+            "rank": 5,
+            "player": "Chase DeLauter",
+            "team": "Cleveland Guardians",
+            "position": "RF",
+            "value": ".285"
           }
         ],
         "hits": [
@@ -54,7 +54,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": "144"
+            "value": "145"
           },
           {
             "rank": 3,
@@ -165,7 +165,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": "83"
+            "value": "84"
           },
           {
             "rank": 3,
@@ -195,7 +195,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": ".430"
+            "value": ".432"
           },
           {
             "rank": 2,
@@ -232,28 +232,28 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": ".610"
+            "value": ".613"
           },
           {
             "rank": 2,
-            "player": "Ben Rice",
-            "team": "New York Yankees",
-            "position": "DH",
-            "value": ".534"
-          },
-          {
-            "rank": 3,
             "player": "Junior Caminero",
             "team": "Tampa Bay Rays",
             "position": "3B",
             "value": ".534"
           },
           {
-            "rank": 4,
+            "rank": 3,
             "player": "Willson Contreras",
             "team": "Boston Red Sox",
             "position": "1B",
             "value": ".534"
+          },
+          {
+            "rank": 4,
+            "player": "Ben Rice",
+            "team": "New York Yankees",
+            "position": "DH",
+            "value": ".532"
           },
           {
             "rank": 5,
@@ -269,7 +269,7 @@
             "player": "Yordan Alvarez",
             "team": "Houston Astros",
             "position": "DH",
-            "value": "1.040"
+            "value": "1.045"
           },
           {
             "rank": 2,
@@ -398,16 +398,16 @@
           },
           {
             "rank": 4,
-            "player": "Gunnar Henderson",
-            "team": "Baltimore Orioles",
+            "player": "Ezequiel Duran",
+            "team": "Texas Rangers",
             "position": "SS",
             "value": "4"
           },
           {
             "rank": 5,
-            "player": "Colt Keith",
-            "team": "Detroit Tigers",
-            "position": "3B",
+            "player": "Gunnar Henderson",
+            "team": "Baltimore Orioles",
+            "position": "SS",
             "value": "4"
           }
         ]
@@ -688,7 +688,7 @@
             "player": "Pete Alonso",
             "team": "Baltimore Orioles",
             "position": "1B",
-            "value": "869"
+            "value": "873"
           },
           {
             "rank": 3,
@@ -725,28 +725,28 @@
             "player": "Gunnar Henderson",
             "team": "Baltimore Orioles",
             "position": "SS",
-            "value": "290"
+            "value": "292"
           },
           {
             "rank": 3,
             "player": "Jazz Chisholm Jr.",
             "team": "New York Yankees",
             "position": "2B",
-            "value": "274"
+            "value": "277"
           },
           {
             "rank": 4,
+            "player": "Zach Neto",
+            "team": "Los Angeles Angels",
+            "position": "SS",
+            "value": "255"
+          },
+          {
+            "rank": 5,
             "player": "Chase Meidroth",
             "team": "Chicago White Sox",
             "position": "2B",
             "value": "254"
-          },
-          {
-            "rank": 5,
-            "player": "Bobby Witt Jr.",
-            "team": "Kansas City Royals",
-            "position": "SS",
-            "value": "252"
           }
         ],
         "errors": [
@@ -813,7 +813,7 @@
             "player": "Pete Alonso",
             "team": "Baltimore Orioles",
             "position": "1B",
-            "value": "76"
+            "value": "77"
           },
           {
             "rank": 5,
