@@ -1,6 +1,6 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-21T19:08:28.912170+00:00",
+  "lastUpdated": "2026-08-21T19:53:16.706657+00:00",
   "games": [
     {
       "gamePk": 823746,
@@ -8,7 +8,7 @@
       "homeTeam": "Milwaukee Brewers",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Pre-Game",
+      "status": "Warmup",
       "gameDate": "2026-08-21T20:10:00Z",
       "inning": 1,
       "inningOrdinal": "1st",
@@ -82,17 +82,23 @@
       "homeScore": 0,
       "status": "Pre-Game",
       "gameDate": "2026-08-21T23:10:00Z",
-      "inning": null,
-      "inningOrdinal": null,
-      "inningState": null,
-      "outs": null,
-      "battingTeam": null,
+      "inning": 1,
+      "inningOrdinal": "1st",
+      "inningState": "Top",
+      "outs": 0,
+      "battingTeam": "San Francisco Giants",
       "runners": {
         "first": false,
         "second": false,
         "third": false
       },
-      "inningScores": []
+      "inningScores": [
+        {
+          "inning": 1,
+          "awayRuns": 0,
+          "homeRuns": 0
+        }
+      ]
     },
     {
       "gamePk": 823830,
@@ -100,7 +106,7 @@
       "homeTeam": "Miami Marlins",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-21T23:10:00Z",
       "inning": null,
       "inningOrdinal": null,
@@ -120,7 +126,7 @@
       "homeTeam": "Baltimore Orioles",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-21T23:15:00Z",
       "inning": null,
       "inningOrdinal": null,
@@ -140,7 +146,7 @@
       "homeTeam": "Chicago White Sox",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-21T23:40:00Z",
       "inning": null,
       "inningOrdinal": null,
