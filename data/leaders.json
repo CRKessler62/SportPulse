@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-21T20:59:33.891902+00:00",
+  "lastUpdated": "2026-08-21T21:58:48.901397+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -1077,7 +1077,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": ".540"
+            "value": ".538"
           },
           {
             "rank": 5,
@@ -1121,7 +1121,7 @@
             "player": "Jake Bauers",
             "team": "Milwaukee Brewers",
             "position": "1B",
-            "value": ".887"
+            "value": ".885"
           }
         ],
         "stolenBases": [
@@ -1243,14 +1243,14 @@
             "player": "Jacob Misiorowski",
             "team": "Milwaukee Brewers",
             "position": "P",
-            "value": "1.71"
+            "value": "1.68"
           },
           {
             "rank": 2,
             "player": "Chris Sale",
             "team": "Atlanta Braves",
             "position": "P",
-            "value": "2.26"
+            "value": "2.20"
           },
           {
             "rank": 3,
@@ -1317,7 +1317,7 @@
             "player": "Jacob Misiorowski",
             "team": "Milwaukee Brewers",
             "position": "P",
-            "value": "213"
+            "value": "216"
           },
           {
             "rank": 2,
@@ -1342,10 +1342,10 @@
           },
           {
             "rank": 5,
-            "player": "Cade Cavalli",
-            "team": "Washington Nationals",
+            "player": "Chris Sale",
+            "team": "Atlanta Braves",
             "position": "P",
-            "value": "162"
+            "value": "166"
           }
         ],
         "whip": [
@@ -1354,7 +1354,7 @@
             "player": "Jacob Misiorowski",
             "team": "Milwaukee Brewers",
             "position": "P",
-            "value": "0.75"
+            "value": "0.76"
           },
           {
             "rank": 2,
@@ -1512,7 +1512,7 @@
             "player": "William Contreras",
             "team": "Milwaukee Brewers",
             "position": "C",
-            "value": "968"
+            "value": "971"
           },
           {
             "rank": 3,
@@ -1533,7 +1533,7 @@
             "player": "Matt Olson",
             "team": "Atlanta Braves",
             "position": "1B",
-            "value": "918"
+            "value": "922"
           }
         ],
         "assists": [
@@ -1560,15 +1560,15 @@
           },
           {
             "rank": 4,
-            "player": "Xavier Edwards",
-            "team": "Miami Marlins",
+            "player": "Ozzie Albies",
+            "team": "Atlanta Braves",
             "position": "2B",
             "value": "301"
           },
           {
             "rank": 5,
-            "player": "Nico Hoerner",
-            "team": "Chicago Cubs",
+            "player": "Xavier Edwards",
+            "team": "Miami Marlins",
             "position": "2B",
             "value": "301"
           }
