@@ -1,7 +1,7 @@
 {
   "league": "MLB",
   "timezone": "America/New_York",
-  "lastUpdated": "2026-08-21T22:55:58.993040+00:00",
+  "lastUpdated": "2026-08-21T23:53:29.120001+00:00",
   "games": [
     {
       "gamePk": 823518,
@@ -9718,7 +9718,7 @@
         "abbreviation": "PHI"
       },
       "awayScore": 2,
-      "homeScore": 0,
+      "homeScore": 3,
       "venue": "Citizens Bank Park",
       "awayPitcher": "Hunter Dobbins",
       "homePitcher": "Jes\u00fas Luzardo"
@@ -9728,9 +9728,9 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-21T23:05:00Z",
       "localGameTime": "2026-08-21T19:05:00-04:00",
-      "status": "Warmup",
+      "status": "In Progress",
       "abstractGameState": "Live",
-      "codedGameState": "P",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 141,
         "name": "Toronto Blue Jays",
@@ -9742,7 +9742,7 @@
         "abbreviation": "NYY"
       },
       "awayScore": 0,
-      "homeScore": 0,
+      "homeScore": 2,
       "venue": "Yankee Stadium",
       "awayPitcher": "Mason Fluharty",
       "homePitcher": "Cam Schlittler"
@@ -9752,9 +9752,9 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-21T23:10:00Z",
       "localGameTime": "2026-08-21T19:10:00-04:00",
-      "status": "Warmup",
+      "status": "In Progress",
       "abstractGameState": "Live",
-      "codedGameState": "P",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 137,
         "name": "San Francisco Giants",
@@ -9776,9 +9776,9 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-21T23:10:00Z",
       "localGameTime": "2026-08-21T19:10:00-04:00",
-      "status": "Warmup",
+      "status": "In Progress",
       "abstractGameState": "Live",
-      "codedGameState": "P",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 120,
         "name": "Washington Nationals",
@@ -9800,9 +9800,9 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-21T23:15:00Z",
       "localGameTime": "2026-08-21T19:15:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
-      "codedGameState": "P",
+      "status": "In Progress",
+      "abstractGameState": "Live",
+      "codedGameState": "I",
       "awayTeam": {
         "id": 139,
         "name": "Tampa Bay Rays",
@@ -9813,8 +9813,8 @@
         "name": "Baltimore Orioles",
         "abbreviation": "BAL"
       },
-      "awayScore": 0,
-      "homeScore": 0,
+      "awayScore": 3,
+      "homeScore": 2,
       "venue": "Oriole Park at Camden Yards",
       "awayPitcher": "Freddy Peralta",
       "homePitcher": "Trevor Rogers"
@@ -9824,8 +9824,8 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-21T23:40:00Z",
       "localGameTime": "2026-08-21T19:40:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 121,
@@ -9848,8 +9848,8 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-22T00:10:00Z",
       "localGameTime": "2026-08-21T20:10:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 116,
@@ -9872,8 +9872,8 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-22T00:10:00Z",
       "localGameTime": "2026-08-21T20:10:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 133,
@@ -9896,8 +9896,8 @@
       "date": "2026-08-21",
       "gameDate": "2026-08-22T00:15:00Z",
       "localGameTime": "2026-08-21T20:15:00-04:00",
-      "status": "Pre-Game",
-      "abstractGameState": "Preview",
+      "status": "Warmup",
+      "abstractGameState": "Live",
       "codedGameState": "P",
       "awayTeam": {
         "id": 108,
@@ -10005,8 +10005,8 @@
         "name": "Los Angeles Dodgers",
         "abbreviation": "LAD"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "UNIQLO Field at Dodger Stadium",
       "awayPitcher": "Bubba Chandler",
       "homePitcher": "Yoshinobu Yamamoto"
@@ -10029,8 +10029,8 @@
         "name": "Seattle Mariners",
         "abbreviation": "SEA"
       },
-      "awayScore": null,
-      "homeScore": null,
+      "awayScore": 0,
+      "homeScore": 0,
       "venue": "T-Mobile Park",
       "awayPitcher": "Matthew Boyd",
       "homePitcher": "Emerson Hancock"
@@ -10177,7 +10177,7 @@
       "homeScore": null,
       "venue": "Globe Life Field",
       "awayPitcher": "Ryan Johnson",
-      "homePitcher": null
+      "homePitcher": "Cody Bradford"
     },
     {
       "gamePk": 824151,
@@ -10224,7 +10224,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Rate Field",
-      "awayPitcher": null,
+      "awayPitcher": "Christian Scott",
       "homePitcher": "Luis Castillo"
     },
     {
@@ -10344,7 +10344,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Chase Field",
-      "awayPitcher": null,
+      "awayPitcher": "Rhett Lowder",
       "homePitcher": "Michael Soroka"
     },
     {
@@ -10512,7 +10512,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Kauffman Stadium",
-      "awayPitcher": "Framber Valdez",
+      "awayPitcher": null,
       "homePitcher": "Daniel Lynch IV"
     },
     {
@@ -10560,7 +10560,7 @@
       "awayScore": null,
       "homeScore": null,
       "venue": "Rate Field",
-      "awayPitcher": null,
+      "awayPitcher": "Nolan McLean",
       "homePitcher": null
     },
     {
@@ -10585,7 +10585,7 @@
       "homeScore": null,
       "venue": "Globe Life Field",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Cal Quantrill"
     },
     {
       "gamePk": 824315,
@@ -10921,7 +10921,7 @@
       "homeScore": null,
       "venue": "Petco Park",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Robbie Ray"
     },
     {
       "gamePk": 824964,
@@ -11137,7 +11137,7 @@
       "homeScore": null,
       "venue": "Citi Field",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Zac Thornton"
     },
     {
       "gamePk": 824881,
@@ -11281,7 +11281,7 @@
       "homeScore": null,
       "venue": "Petco Park",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Michael King"
     },
     {
       "gamePk": 824962,
@@ -11617,7 +11617,7 @@
       "homeScore": null,
       "venue": "Citi Field",
       "awayPitcher": null,
-      "homePitcher": null
+      "homePitcher": "Robert Stock"
     },
     {
       "gamePk": 824878,
