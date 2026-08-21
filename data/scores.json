@@ -1,6 +1,6 @@
 {
   "league": "MLB",
-  "lastUpdated": "2026-08-21T17:15:21.781451+00:00",
+  "lastUpdated": "2026-08-21T19:08:28.912170+00:00",
   "games": [
     {
       "gamePk": 823746,
@@ -10,17 +10,23 @@
       "homeScore": 0,
       "status": "Pre-Game",
       "gameDate": "2026-08-21T20:10:00Z",
-      "inning": null,
-      "inningOrdinal": null,
-      "inningState": null,
-      "outs": null,
-      "battingTeam": null,
+      "inning": 1,
+      "inningOrdinal": "1st",
+      "inningState": "Top",
+      "outs": 0,
+      "battingTeam": "Atlanta Braves",
       "runners": {
         "first": false,
         "second": false,
         "third": false
       },
-      "inningScores": []
+      "inningScores": [
+        {
+          "inning": 1,
+          "awayRuns": 0,
+          "homeRuns": 0
+        }
+      ]
     },
     {
       "gamePk": 823420,
@@ -28,19 +34,25 @@
       "homeTeam": "Philadelphia Phillies",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-21T22:40:00Z",
-      "inning": null,
-      "inningOrdinal": null,
-      "inningState": null,
-      "outs": null,
-      "battingTeam": null,
+      "inning": 1,
+      "inningOrdinal": "1st",
+      "inningState": "Top",
+      "outs": 0,
+      "battingTeam": "St. Louis Cardinals",
       "runners": {
         "first": false,
         "second": false,
         "third": false
       },
-      "inningScores": []
+      "inningScores": [
+        {
+          "inning": 1,
+          "awayRuns": 0,
+          "homeRuns": 0
+        }
+      ]
     },
     {
       "gamePk": 823510,
@@ -68,7 +80,7 @@
       "homeTeam": "Boston Red Sox",
       "awayScore": 0,
       "homeScore": 0,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "gameDate": "2026-08-21T23:10:00Z",
       "inning": null,
       "inningOrdinal": null,
