@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-22T11:00:20.947261+00:00",
+  "lastUpdated": "2026-08-22T11:54:48.933910+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -74,7 +74,7 @@
             "rank": 5,
             "player": "Ernie Clement",
             "team": "Toronto Blue Jays",
-            "position": "",
+            "position": "2B",
             "value": "137"
           }
         ],
@@ -363,7 +363,7 @@
             "rank": 4,
             "player": "Ernie Clement",
             "team": "Toronto Blue Jays",
-            "position": "",
+            "position": "2B",
             "value": "28"
           },
           {
