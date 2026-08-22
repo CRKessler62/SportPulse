@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "lastUpdated": "2026-08-22T15:56:08.279895+00:00",
+  "lastUpdated": "2026-08-22T16:58:51.856779+00:00",
   "leagues": {
     "AL": {
       "offense": {
@@ -370,7 +370,7 @@
             "rank": 5,
             "player": "Brandon Nimmo",
             "team": "Texas Rangers",
-            "position": "",
+            "position": "RF",
             "value": "28"
           }
         ],
@@ -393,7 +393,7 @@
             "rank": 3,
             "player": "Leody Taveras",
             "team": "Baltimore Orioles",
-            "position": "",
+            "position": "CF",
             "value": "6"
           },
           {
